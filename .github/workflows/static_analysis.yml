@@ -7,5 +7,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install modules
         run: npm ci
-      - name: Run ESLint
+      - name: Lint
         run: npm run lint
