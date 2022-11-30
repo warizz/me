@@ -1,7 +1,7 @@
 name: Static analysis
 on: push
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -9,3 +9,11 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
+  tsc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: npm ci
+      - name: Lint
+        run: npm run tsc
