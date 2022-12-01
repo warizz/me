@@ -19,7 +19,7 @@
     "turbo": "latest"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=16.0.0"
   },
   "dependencies": {},
   "packageManager": "npm@8.19.2"
