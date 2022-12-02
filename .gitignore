@@ -34,3 +34,7 @@ yarn-error.log*
 
 #
 *.tsbuildinfo
+
+# testing
+**/.nyc_output
+**/playwright-report

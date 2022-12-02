@@ -15,13 +15,16 @@
     "tsc": "turbo run tsc"
   },
   "devDependencies": {
+    "@playwright/test": "1.28.1",
+    "babel-plugin-istanbul": "6.1.1",
     "eslint-config-custom": "*",
+    "nyc": "15.1.0",
     "prettier": "latest",
+    "swc-plugin-coverage-instrument": "0.0.14",
     "turbo": "latest"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
   "packageManager": "npm@8.19.2"
 }
