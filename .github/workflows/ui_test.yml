@@ -18,3 +18,4 @@ jobs:
           coverageLocations: |
             ${{github.workspace}}/apps/web/coverage/lcov.info:lcov
           debug: true
+          prefix: "apps/web"
