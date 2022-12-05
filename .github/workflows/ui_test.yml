@@ -15,4 +15,6 @@ jobs:
         uses: paambaati/codeclimate-action@v3.2.0
         with:
           coverageCommand: npm run test
+          coverageLocations: |
+            ${{github.workspace}}/apps/web/coverage/lcov.info:lcov
           debug: true
