@@ -2,6 +2,7 @@ name: UI Tests
 on: push
 env:
   IS_UI_TEST: true
+  CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 jobs:
   test:
     timeout-minutes: 60
