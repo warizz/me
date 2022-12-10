@@ -13,8 +13,9 @@
     "tsc": {
       "outputs": []
     },
-    "test": {
-      "dependsOn": ["build"]
-    }
+    "start": {
+      "dependsOn": ["^build"]
+    },
+    "test": {}
   }
 }
