@@ -6,7 +6,9 @@ node_modules
 .pnp.js
 
 # testing
+.nyc_output
 coverage
+videos
 
 # next.js
 .next/
