@@ -16,9 +16,6 @@
     "tsc": "turbo run tsc"
   },
   "devDependencies": {
-    "@cypress/code-coverage": "3.10.0",
-    "@types/cypress__code-coverage": "3.10.0",
-    "babel-plugin-istanbul": "6.1.1",
     "eslint-config-custom": "*",
     "prettier": "latest",
     "turbo": "latest"
