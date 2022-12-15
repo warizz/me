@@ -5,6 +5,8 @@ import path from "path";
 import React from "react";
 import { BlogLayout } from "../../components/BlogLayout";
 import getPostData from "../../lib/getPostData";
+import "prismjs/themes/prism-tomorrow.min.css";
+import Link from "next/link";
 
 interface Post {
   contentHtml: string;
@@ -18,6 +20,16 @@ const Post = ({ contentHtml, title }: Post) => {
         <title>{title + " - Warizz' blog"}</title>
       </Head>
       <BlogLayout>
+        <nav className="mb-2 flex gap-2 prose-sm">
+          <Link className="no-underline" href="/">
+            {"home"}
+          </Link>
+          /
+          <Link className="no-underline" href="/posts">
+            {"posts"}
+          </Link>
+          /<span className="text-amber-300">current</span>
+        </nav>
         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </BlogLayout>
     </>

@@ -9,7 +9,7 @@ publish: true
 
 Wrong: declare a debounced function inside a render function.
 
-```
+```ts
 function SomeInput(){
   const debouncedCalculation = debounce(calculation,1000)
   return <Input onChange={(e)=>debouncedCalculation(e)}/>
@@ -27,7 +27,7 @@ render 4:  debouncedCalculation4
 
 Correct: declare a debounced function once outside a render function.
 
-```
+```ts
 const debouncedCalculation = debounce(calculation,1000)
 
 function SomeInput(){
