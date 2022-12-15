@@ -4,6 +4,7 @@ import Head from "next/head";
 import path from "path";
 import React from "react";
 import matter from "gray-matter";
+import { BlogLayout } from "../../components/BlogLayout";
 
 interface Post {
   id: string;
@@ -16,20 +17,19 @@ const Posts = ({ posts }: { posts: Post[] }) => {
       <Head>
         <title>{"Warizz' blogs"}</title>
       </Head>
-      <article className="prose lg:prose-xl mx-auto px-4 bg-white lg:pt-20 pt-12 dark:bg-black min-h-screen font-serif">
+      <BlogLayout>
         <h1>Blogs</h1>
-        <ul>
-          {posts.map((post) => {
-            return (
-              <li>
-                <a className="text-gray-300" href={"/posts/" + post.id}>
-                  {post.title}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </article>
+        {posts.map((post) => {
+          return (
+            <a
+              className="text-gray-300 no-underline block"
+              href={"/posts/" + post.id}
+            >
+              {post.title}
+            </a>
+          );
+        })}
+      </BlogLayout>
     </>
   );
 };

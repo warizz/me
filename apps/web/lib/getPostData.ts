@@ -8,7 +8,7 @@ const postsDirectory = path.join(process.cwd(), "posts");
 
 export default async function getPostData(
   id: string
-): Promise<{ id: string; contentHtml: string }> {
+): Promise<{ id: string; contentHtml: string; title: string }> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
@@ -25,6 +25,6 @@ export default async function getPostData(
   return {
     id,
     contentHtml,
-    ...matterResult.data,
+    title: String(matterResult.data.title),
   };
 }

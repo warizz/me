@@ -3,23 +3,23 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import path from "path";
 import React from "react";
+import { BlogLayout } from "../../components/BlogLayout";
 import getPostData from "../../lib/getPostData";
 
-const Post = ({
-  postData,
-}: {
-  postData: { id: string; contentHtml: string; title: string; date: string };
-}) => {
-  console.log("postData", postData);
+interface Post {
+  contentHtml: string;
+  title: string;
+}
 
+const Post = ({ contentHtml, title }: Post) => {
   return (
     <>
       <Head>
-        <title>{postData.title + " - Warizz' blog"}</title>
+        <title>{title + " - Warizz' blog"}</title>
       </Head>
-      <article className="prose lg:prose-xl mx-auto px-4 bg-white lg:pt-20 pt-12 dark:bg-black min-h-screen font-serif">
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
+      <BlogLayout>
+        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      </BlogLayout>
     </>
   );
 };
@@ -40,9 +40,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id = params?.id;
   if (!id) return { notFound: true };
 
-  const postData = await getPostData(id.toString());
+  const { contentHtml, title } = await getPostData(id.toString());
 
-  return { props: { postData } };
+  return { props: { contentHtml, title } };
 };
 
 export default Post;
