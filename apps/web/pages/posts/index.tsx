@@ -36,7 +36,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const postsDirectory = path.join(process.cwd(), "posts");
-  const matters = readdirSync(postsDirectory).map((fileNames) => {
+  const matters: Post[] = readdirSync(postsDirectory).map((fileNames) => {
     const fullPath = path.join(postsDirectory, fileNames);
     const fileContents = readFileSync(fullPath, "utf8");
     const blogMetaData = matter(fileContents);
@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps = async () => {
       title: String(blogMetaData.data.title),
       id: path.parse(fullPath).name,
     };
-  }) satisfies Post[];
+  });
 
   return { props: { posts: matters } };
 };
