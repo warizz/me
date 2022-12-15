@@ -6,6 +6,7 @@ import React from "react";
 import matter from "gray-matter";
 import { BlogLayout } from "../../components/BlogLayout";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 interface Post {
   id: string;
@@ -22,6 +23,12 @@ const Posts = ({ posts }: { posts: Post[] }) => {
         <title>{"Warizz' blogs"}</title>
       </Head>
       <BlogLayout>
+        <nav className="mb-2 flex gap-2 prose-sm">
+          <Link className="no-underline" href="/">
+            {"home"}
+          </Link>
+          /<span className="text-amber-300">posts</span>
+        </nav>
         <h1>Blogs</h1>
         <div data-testid="posts">
           {posts
@@ -34,23 +41,23 @@ const Posts = ({ posts }: { posts: Post[] }) => {
               return (
                 <div key={post.id} className="mb-8 lg:mb-12">
                   <div>
-                    <a
+                    <Link
                       className="text-gray-300 no-underline prose-xl"
                       href={"/posts/" + post.id}
                     >
                       {post.title}
-                    </a>
+                    </Link>
                   </div>
                   <div className="prose-sm font-sans flex gap-2">
                     {post.tags.map((tag) => {
                       return (
-                        <a
+                        <Link
                           key={tag}
                           href={"/posts?tag=" + tag}
-                          className="no-underline text-gray-400"
+                          className="no-underline text-amber-300"
                         >
                           #{tag}
-                        </a>
+                        </Link>
                       );
                     })}
                   </div>
