@@ -3,6 +3,7 @@ title: "Add suffix to multiple files."
 tags:
     - programming
     - shell
+publish: true
 ---
 # Add suffix to multiple files.
 

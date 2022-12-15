@@ -5,13 +5,17 @@ import path from "path";
 import React from "react";
 import matter from "gray-matter";
 import { BlogLayout } from "../../components/BlogLayout";
+import router, { useRouter } from "next/router";
 
 interface Post {
   id: string;
   title: string;
+  tags: string[];
 }
 
 const Posts = ({ posts }: { posts: Post[] }) => {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -19,16 +23,38 @@ const Posts = ({ posts }: { posts: Post[] }) => {
       </Head>
       <BlogLayout>
         <h1>Blogs</h1>
-        {posts.map((post) => {
-          return (
-            <a
-              className="text-gray-300 no-underline block"
-              href={"/posts/" + post.id}
-            >
-              {post.title}
-            </a>
-          );
-        })}
+        {posts
+          .filter((post) => {
+            if (router.query.tag)
+              return post.tags.includes(String(router.query.tag));
+            return true;
+          })
+          .map((post) => {
+            return (
+              <div key={post.id} className="mb-8 lg:mb-12">
+                <div>
+                  <a
+                    className="text-gray-300 no-underline prose-xl"
+                    href={"/posts/" + post.id}
+                  >
+                    {post.title}
+                  </a>
+                </div>
+                <div className="prose-sm font-sans flex gap-2">
+                  {post.tags.map((tag) => {
+                    return (
+                      <a
+                        href={"/posts?tag=" + tag}
+                        className="no-underline text-gray-400"
+                      >
+                        #{tag}
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
       </BlogLayout>
     </>
   );
@@ -36,15 +62,19 @@ const Posts = ({ posts }: { posts: Post[] }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const postsDirectory = path.join(process.cwd(), "posts");
-  const matters: Post[] = readdirSync(postsDirectory).map((fileNames) => {
-    const fullPath = path.join(postsDirectory, fileNames);
-    const fileContents = readFileSync(fullPath, "utf8");
-    const blogMetaData = matter(fileContents);
-    return {
-      title: String(blogMetaData.data.title),
-      id: path.parse(fullPath).name,
-    };
-  });
+  const matters: Post[] = readdirSync(postsDirectory)
+    .map((fileNames) => {
+      const fullPath = path.join(postsDirectory, fileNames);
+      const fileContents = readFileSync(fullPath, "utf8");
+      const blogMetaData = matter(fileContents);
+      return {
+        title: String(blogMetaData.data.title),
+        id: path.parse(fullPath).name,
+        tags: blogMetaData.data.tags ?? [],
+        isPublished: !!blogMetaData.data.publish,
+      };
+    })
+    .filter((post) => post.isPublished);
 
   return { props: { posts: matters } };
 };

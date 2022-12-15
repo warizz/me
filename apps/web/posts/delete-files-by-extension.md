@@ -2,6 +2,7 @@
 title: Delete files by extension
 tags:
     - shell
+publish: true
 ---
 # Delete files by extension
 
