@@ -5,7 +5,12 @@ import path from "path";
 import React from "react";
 import matter from "gray-matter";
 
-const Posts = ({ posts }: { posts: { title: string }[] }) => {
+interface Post {
+  id: string;
+  title: string;
+}
+
+const Posts = ({ posts }: { posts: Post[] }) => {
   return (
     <>
       <Head>
@@ -35,8 +40,11 @@ export const getStaticProps: GetStaticProps = async () => {
     const fullPath = path.join(postsDirectory, fileNames);
     const fileContents = readFileSync(fullPath, "utf8");
     const blogMetaData = matter(fileContents);
-    return { ...blogMetaData.data, id: path.parse(fullPath).name };
-  });
+    return {
+      title: String(blogMetaData.data.title),
+      id: path.parse(fullPath).name,
+    };
+  }) satisfies Post[];
 
   return { props: { posts: matters } };
 };
