@@ -5,7 +5,7 @@ import path from "path";
 import React from "react";
 import matter from "gray-matter";
 import { BlogLayout } from "../../components/BlogLayout";
-import router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 interface Post {
   id: string;
@@ -23,38 +23,41 @@ const Posts = ({ posts }: { posts: Post[] }) => {
       </Head>
       <BlogLayout>
         <h1>Blogs</h1>
-        {posts
-          .filter((post) => {
-            if (router.query.tag)
-              return post.tags.includes(String(router.query.tag));
-            return true;
-          })
-          .map((post) => {
-            return (
-              <div key={post.id} className="mb-8 lg:mb-12">
-                <div>
-                  <a
-                    className="text-gray-300 no-underline prose-xl"
-                    href={"/posts/" + post.id}
-                  >
-                    {post.title}
-                  </a>
+        <div data-testid="posts">
+          {posts
+            .filter((post) => {
+              if (router.query.tag)
+                return post.tags.includes(String(router.query.tag));
+              return true;
+            })
+            .map((post) => {
+              return (
+                <div key={post.id} className="mb-8 lg:mb-12">
+                  <div>
+                    <a
+                      className="text-gray-300 no-underline prose-xl"
+                      href={"/posts/" + post.id}
+                    >
+                      {post.title}
+                    </a>
+                  </div>
+                  <div className="prose-sm font-sans flex gap-2">
+                    {post.tags.map((tag) => {
+                      return (
+                        <a
+                          key={tag}
+                          href={"/posts?tag=" + tag}
+                          className="no-underline text-gray-400"
+                        >
+                          #{tag}
+                        </a>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className="prose-sm font-sans flex gap-2">
-                  {post.tags.map((tag) => {
-                    return (
-                      <a
-                        href={"/posts?tag=" + tag}
-                        className="no-underline text-gray-400"
-                      >
-                        #{tag}
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+        </div>
       </BlogLayout>
     </>
   );

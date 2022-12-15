@@ -1,7 +1,6 @@
 ---
 title: "Git: see diff between 2 branches"
 tags:
-    - programming
     - git
 publish: true
 ---
