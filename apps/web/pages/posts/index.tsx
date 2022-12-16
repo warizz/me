@@ -2,7 +2,7 @@ import { readdirSync, readFileSync } from "fs";
 import path from "path";
 
 import matter from "gray-matter";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";

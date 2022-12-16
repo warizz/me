@@ -11,12 +11,12 @@ import getPostData from "../../lib/getPostData";
 
 import "prismjs/themes/prism-tomorrow.min.css";
 
-interface Post {
+interface IPost {
   contentHtml: string;
   title: string;
 }
 
-const Post = ({ contentHtml, title }: Post) => {
+const Post = ({ contentHtml, title }: IPost) => {
   return (
     <>
       <Head>

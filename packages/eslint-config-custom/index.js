@@ -3,6 +3,7 @@ module.exports = {
     "next",
     "turbo",
     "prettier",
+    "eslint:recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
   ],
@@ -12,18 +13,12 @@ module.exports = {
     "import/order": [
       "error",
       {
-        alphabetize: {
-          order: "asc",
-          caseInsensitive: true,
-        },
+        alphabetize: { order: "asc", caseInsensitive: true },
         "newlines-between": "always",
       },
     ],
   },
   settings: {
-    "import/resolver": {
-      node: true,
-      typescript: true,
-    },
+    "import/resolver": { node: true, typescript: true },
   },
 };
