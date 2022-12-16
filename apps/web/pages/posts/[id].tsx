@@ -1,20 +1,22 @@
 import { readdirSync } from "fs";
+import path from "path";
+
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import path from "path";
 import React from "react";
-import BlogLayout from "../../components/BlogLayout";
-import getPostData from "../../lib/getPostData";
-import "prismjs/themes/prism-tomorrow.min.css";
-import Link from "next/link";
-import Breadcrumbs from "../../components/Breadcrumbs";
 
-interface Post {
+import BlogLayout from "../../components/BlogLayout";
+import Breadcrumbs from "../../components/Breadcrumbs";
+import getPostData from "../../lib/getPostData";
+
+import "prismjs/themes/prism-tomorrow.min.css";
+
+interface IPost {
   contentHtml: string;
   title: string;
 }
 
-const Post = ({ contentHtml, title }: Post) => {
+const Post = ({ contentHtml, title }: IPost) => {
   return (
     <>
       <Head>
