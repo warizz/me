@@ -1,12 +1,14 @@
 import { readdirSync, readFileSync } from "fs";
+import path from "path";
+
+import matter from "gray-matter";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
-import path from "path";
-import React from "react";
-import matter from "gray-matter";
-import BlogLayout from "../../components/BlogLayout";
-import { useRouter } from "next/router";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import React from "react";
+
+import BlogLayout from "../../components/BlogLayout";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 interface Post {
