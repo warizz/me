@@ -13,7 +13,7 @@ jobs:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
-          coverageCommand: npx start-server-and-test start http://localhost:3000 "npm run test -- --record"
+          coverageCommand: npx start-server-and-test start http://localhost:3000 test
           coverageLocations: |
             ${{github.workspace}}/packages/test-cypress/coverage/lcov.info:lcov
           debug: true
