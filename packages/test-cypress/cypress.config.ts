@@ -1,6 +1,7 @@
 import { defineConfig } from "cypress";
 
 export default defineConfig({
+  projectId: "9trkv4",
   fixturesFolder: "fixtures",
   supportFolder: "support",
   videosFolder: "videos",
@@ -14,5 +15,6 @@ export default defineConfig({
       require("@cypress/code-coverage/task")(on, config);
       return config;
     },
+    video: false,
   },
 });

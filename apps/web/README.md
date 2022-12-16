@@ -1,3 +1,5 @@
+[![me](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/simple/9trkv4/main&style=flat&logo=cypress)](https://cloud.cypress.io/projects/9trkv4/runs)
+
 ## Getting Started
 
 First, run the development server:
