@@ -4,9 +4,10 @@ import Head from "next/head";
 import path from "path";
 import React from "react";
 import matter from "gray-matter";
-import { BlogLayout } from "../../components/BlogLayout";
+import BlogLayout from "../../components/BlogLayout";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 interface Post {
   id: string;
@@ -23,12 +24,12 @@ const Posts = ({ posts }: { posts: Post[] }) => {
         <title>{"Warizz' blogs"}</title>
       </Head>
       <BlogLayout>
-        <nav className="mb-2 flex gap-2 prose-sm">
-          <Link className="no-underline" href="/">
-            {"home"}
-          </Link>
-          /<span className="text-amber-300">posts</span>
-        </nav>
+        <Breadcrumbs
+          list={[
+            { type: "link", text: "home", href: "/" },
+            { type: "text", text: "posts" },
+          ]}
+        />
         <h1>Blogs</h1>
         <div data-testid="posts">
           {posts

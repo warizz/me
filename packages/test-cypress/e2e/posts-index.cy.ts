@@ -6,6 +6,6 @@ describe("posts", () => {
 
   specify("with filter", () => {
     cy.visit("/posts?tag=git");
-    cy.get("[data-testid=posts]").children().should("have.length", 1);
+    cy.get("[data-testid=posts]").children().should("have.length", 2);
   });
 });
