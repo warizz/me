@@ -6,7 +6,6 @@ import Head from "next/head";
 import React from "react";
 
 import BlogLayout from "../../components/BlogLayout";
-import Breadcrumbs from "../../components/Breadcrumbs";
 import getPostData from "../../lib/getPostData";
 
 import "prismjs/themes/prism-tomorrow.min.css";
@@ -22,14 +21,12 @@ const Post = ({ contentHtml, title }: IPost) => {
       <Head>
         <title>{title + " - Warizz' blog"}</title>
       </Head>
-      <BlogLayout>
-        <Breadcrumbs
-          list={[
-            { type: "link", text: "home", href: "/" },
-            { type: "link", text: "posts", href: "/posts" },
-            { type: "text", text: "current" },
-          ]}
-        />
+      <BlogLayout
+        breadcrumbs={[
+          { text: "posts", href: "/posts" },
+          { text: "current", href: "/posts" },
+        ]}
+      >
         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </BlogLayout>
     </>

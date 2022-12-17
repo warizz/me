@@ -1,7 +1,7 @@
 ---
 title: "Add suffix to multiple files."
 tags:
-    - shell
+    - command-line
 publish: true
 ---
 # Add suffix to multiple files.
