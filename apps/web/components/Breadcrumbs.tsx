@@ -19,16 +19,15 @@ export default function Breadcrumbs({ list }: { list: Item[] }) {
         if (item.type === "link") {
           return (
             <Fragment key={index}>
-              {index !== 0 ? <span>/</span> : null}
               <Link className="no-underline" href={item.href}>
                 {item.text}
               </Link>
+              <span>/</span>
             </Fragment>
           );
         }
         return (
           <Fragment key={index}>
-            <span>/</span>
             <span className="text-white">{item.text}</span>
           </Fragment>
         );
