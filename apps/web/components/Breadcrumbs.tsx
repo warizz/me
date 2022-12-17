@@ -1,14 +1,18 @@
 import Link from "next/link";
 import React, { Fragment } from "react";
 
-type Item = {
+interface Item {
   text: string;
   href: string;
-};
+}
 
 export type Breadcrumb = Item;
 
-export default function Breadcrumbs({ list }: { list: Item[] }) {
+interface Props {
+  list: Item[];
+}
+
+export default function Breadcrumbs({ list }: Props) {
   return (
     <nav className="flex gap-2 prose-sm font-sans flex-wrap">
       {list.map((item, index) => {
@@ -21,9 +25,9 @@ export default function Breadcrumbs({ list }: { list: Item[] }) {
           );
         }
         return (
-          <Fragment key={index}>
-            <span className="dark:text-white">{item.text}</span>
-          </Fragment>
+          <span key={index} className="dark:text-white">
+            {item.text}
+          </span>
         );
       })}
     </nav>

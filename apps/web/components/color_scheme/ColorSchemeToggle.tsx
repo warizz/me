@@ -2,11 +2,11 @@ import clsx from "clsx";
 
 import usePreferredColorScheme from "./usePreferredColorScheme";
 
-export default function ColorSchemeToggle({
-  className,
-}: {
+interface Props {
   className?: string;
-}) {
+}
+
+export default function ColorSchemeToggle({ className }: Props) {
   const { preferredColorScheme, toggleColorScheme } = usePreferredColorScheme();
 
   return (
