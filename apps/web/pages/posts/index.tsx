@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from "fs";
 import path from "path";
 
+import clsx from "clsx";
 import matter from "gray-matter";
 import { GetStaticProps } from "next";
 import Head from "next/head";
@@ -9,7 +10,6 @@ import { useRouter } from "next/router";
 import React from "react";
 
 import BlogLayout from "../../components/BlogLayout";
-import Breadcrumbs from "../../components/Breadcrumbs";
 
 interface Post {
   id: string;
@@ -19,20 +19,22 @@ interface Post {
 
 const Posts = ({ posts }: { posts: Post[] }) => {
   const router = useRouter();
+  const tag =
+    typeof router.query.tag === "string" ? router.query.tag : undefined;
+  const breadcrumbs = [{ text: "posts", href: "/posts" }];
+  if (tag) {
+    breadcrumbs.push({ text: "tag: " + tag, href: "/post?tag=" + tag });
+  }
 
   return (
     <>
       <Head>
         <title>{"Warizz' blogs"}</title>
       </Head>
-      <BlogLayout>
-        <Breadcrumbs
-          list={[
-            { type: "link", text: "home", href: "/" },
-            { type: "text", text: "posts" },
-          ]}
-        />
-        <h1 className="dark:text-white">Blogs</h1>
+      <BlogLayout
+        breadcrumbs={breadcrumbs}
+        h1={<h1 className="dark:text-white">Blogs</h1>}
+      >
         <div data-testid="posts">
           {posts
             .filter((post) => {
@@ -45,7 +47,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                 <div key={post.id} className="mb-8 lg:mb-12">
                   <div>
                     <Link
-                      className="text-amber-500 no-underline prose-xl hover:text-amber-600"
+                      className="text-amber-500 font-bold dark:text-amber-500 no-underline prose-xl dark:hover:text-amber-600"
                       href={"/posts/" + post.id}
                     >
                       {post.title}
@@ -57,7 +59,9 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                         <Link
                           key={tag}
                           href={"/posts?tag=" + tag}
-                          className="no-underline text-gray-50 hover:text-gray-300"
+                          className={clsx(
+                            "text-gray-700 hover:text-gray-800 dark:text-gray-50 dark:hover:text-gray-300"
+                          )}
                         >
                           #{tag}
                         </Link>

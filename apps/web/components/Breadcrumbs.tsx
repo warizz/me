@@ -1,35 +1,33 @@
 import Link from "next/link";
 import React, { Fragment } from "react";
 
-type Item =
-  | {
-      type: "link";
-      text: string;
-      href: string;
-    }
-  | {
-      type: "text";
-      text: string;
-    };
+interface Item {
+  text: string;
+  href: string;
+}
 
-export default function Breadcrumbs({ list }: { list: Item[] }) {
+export type Breadcrumb = Item;
+
+interface Props {
+  list: Item[];
+}
+
+export default function Breadcrumbs({ list }: Props) {
   return (
-    <nav className="mb-2 flex gap-2 prose-sm font-sans">
+    <nav className="flex gap-2 prose-sm font-sans flex-wrap">
       {list.map((item, index) => {
-        if (item.type === "link") {
+        if (index + 1 !== list.length) {
           return (
             <Fragment key={index}>
-              <Link className="no-underline" href={item.href}>
-                {item.text}
-              </Link>
+              <Link href={item.href}>{item.text}</Link>
               <span>/</span>
             </Fragment>
           );
         }
         return (
-          <Fragment key={index}>
-            <span className="text-white">{item.text}</span>
-          </Fragment>
+          <span key={index} className="dark:text-white">
+            {item.text}
+          </span>
         );
       })}
     </nav>

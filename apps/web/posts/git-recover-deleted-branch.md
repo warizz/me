@@ -3,6 +3,7 @@ title: "Recover a deleted branch"
 date: "2022-12-16"
 tags:
     - git
+    - command-line
 publish: true
 ---
 # Git: recover a deleted branch

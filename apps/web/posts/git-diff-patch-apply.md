@@ -2,6 +2,7 @@
 title: "See diff between 2 branches"
 tags:
     - git
+    - command-line
 publish: true
 ---
 # Git: see diff between 2 branches
