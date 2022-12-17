@@ -29,7 +29,7 @@ export default function Breadcrumbs({ list }: { list: Item[] }) {
         return (
           <Fragment key={index}>
             {index !== 0 ? <span>/</span> : null}
-            <span key={index} className="text-amber-300">
+            <span key={index} className="text-white">
               {item.text}
             </span>
           </Fragment>
