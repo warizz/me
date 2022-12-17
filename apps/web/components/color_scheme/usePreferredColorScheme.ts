@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 
 import mapToColorScheme from "./mapToColorScheme";
 
-export default function usePreferredColorScheme() {
-  const [preferredColorScheme, setPreferredColorScheme] = useState<
-    "light" | "dark" | "system"
-  >("light");
+type ColorScheme = "light" | "dark" | "system";
 
-  const toggleColorScheme = () => {
+function _getToggleHandler(
+  preferredColorScheme: string,
+  setPreferredColorScheme: (colorScheme: ColorScheme) => void
+) {
+  return () => {
     switch (preferredColorScheme) {
       case "light": {
         localStorage.setItem("preferredColorScheme", "dark");
@@ -26,10 +27,16 @@ export default function usePreferredColorScheme() {
       }
     }
   };
+}
+
+export default function usePreferredColorScheme() {
+  const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
+
+  const toggleColorScheme = _getToggleHandler(colorScheme, setColorScheme);
 
   useEffect(() => {
     const colorScheme = mapToColorScheme(localStorage.preferredColorScheme);
-    setPreferredColorScheme(colorScheme);
+    setColorScheme(colorScheme);
   }, []);
 
   useEffect(() => {
@@ -38,16 +45,16 @@ export default function usePreferredColorScheme() {
     ).matches;
 
     const useDarkColorScheme =
-      preferredColorScheme === "dark" ||
-      (!preferredColorScheme && isDarkColorScheme) ||
-      (preferredColorScheme === "system" && isDarkColorScheme);
+      colorScheme === "dark" ||
+      (!colorScheme && isDarkColorScheme) ||
+      (colorScheme === "system" && isDarkColorScheme);
 
     if (useDarkColorScheme) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, [preferredColorScheme]);
+  }, [colorScheme]);
 
-  return { preferredColorScheme, toggleColorScheme };
+  return { preferredColorScheme: colorScheme, toggleColorScheme };
 }

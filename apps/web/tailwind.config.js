@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const colors = require("tailwindcss/colors");
 
 /** @type {import('tailwindcss').Config} */
@@ -24,9 +25,6 @@ module.exports = {
             "--tw-prose-invert-links": colors.amber["500"],
           },
         },
-      },
-      boxShadow: {
-        lg: "4px 4px 0px 0px rgba(0,0,0,1)",
       },
     },
   },

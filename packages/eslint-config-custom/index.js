@@ -6,6 +6,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
   ],
   rules: {
     "@next/next/no-html-link-for-pages": "off",
