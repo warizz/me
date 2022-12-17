@@ -8,9 +8,12 @@ import prism from "remark-prism";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-export default async function getPostData(
-  id: string
-): Promise<{ id: string; contentHtml: string; title: string }> {
+export default async function getPostData(id: string): Promise<{
+  id: string;
+  contentHtml: string;
+  title: string;
+  description: string;
+}> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
@@ -29,5 +32,6 @@ export default async function getPostData(
     id,
     contentHtml,
     title: String(matterResult.data.title),
+    description: String(matterResult.data.description),
   };
 }
