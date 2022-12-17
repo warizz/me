@@ -11,8 +11,9 @@ jobs:
         uses: paambaati/codeclimate-action@v3.2.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
-          coverageCommand: npx start-server-and-test start http://localhost:3000 test
+          coverageCommand: npx start-server-and-test start http://localhost:3000 "test:ci"
           coverageLocations: |
             ${{github.workspace}}/packages/test-cypress/coverage/lcov.info:lcov
           debug: true

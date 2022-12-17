@@ -32,7 +32,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
             { type: "text", text: "posts" },
           ]}
         />
-        <h1>Blogs</h1>
+        <h1 className="dark:text-white">Blogs</h1>
         <div data-testid="posts">
           {posts
             .filter((post) => {
@@ -45,7 +45,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                 <div key={post.id} className="mb-8 lg:mb-12">
                   <div>
                     <Link
-                      className="text-gray-300 no-underline prose-xl"
+                      className="text-amber-500 no-underline prose-xl hover:text-amber-600"
                       href={"/posts/" + post.id}
                     >
                       {post.title}
@@ -57,7 +57,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                         <Link
                           key={tag}
                           href={"/posts?tag=" + tag}
-                          className="no-underline text-amber-300"
+                          className="no-underline text-gray-50 hover:text-gray-300"
                         >
                           #{tag}
                         </Link>

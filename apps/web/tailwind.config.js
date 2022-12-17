@@ -19,6 +19,7 @@ module.exports = {
             "--tw-prose-invert-body": colors.gray["200"],
             "--tw-prose-invert-pre-code": colors.gray["700"],
             "--tw-prose-invert-pre-bg": colors.amber["100"],
+            "--tw-prose-invert-links": colors.amber["500"],
           },
         },
       },

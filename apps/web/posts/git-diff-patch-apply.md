@@ -1,5 +1,5 @@
 ---
-title: "Git: see diff between 2 branches"
+title: "See diff between 2 branches"
 tags:
     - git
 publish: true
