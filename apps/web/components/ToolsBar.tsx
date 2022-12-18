@@ -13,7 +13,7 @@ export default function ToolsBar({ breadcrumbs, className }: Props) {
   return (
     <div className={clsx("flex justify-between items-start", className)}>
       <Breadcrumbs list={breadcrumbs} />
-      <ColorSchemeToggle className=" shrink-0" />
+      <ColorSchemeToggle className="shrink-0" />
     </div>
   );
 }

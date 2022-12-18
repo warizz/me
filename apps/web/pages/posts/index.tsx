@@ -4,12 +4,11 @@ import path from "path";
 import clsx from "clsx";
 import matter from "gray-matter";
 import { GetStaticProps } from "next";
-import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 
-import BlogLayout from "../../components/BlogLayout";
+import Page from "../../components/Page";
 
 interface Post {
   id: string;
@@ -27,53 +26,48 @@ const Posts = ({ posts }: { posts: Post[] }) => {
   }
 
   return (
-    <>
-      <Head>
-        <title>{"Warizz' blogs"}</title>
-      </Head>
-      <BlogLayout
-        breadcrumbs={breadcrumbs}
-        h1={<h1 className="dark:text-white">Blogs</h1>}
-      >
-        <div data-testid="posts">
-          {posts
-            .filter((post) => {
-              if (router.query.tag)
-                return post.tags.includes(String(router.query.tag));
-              return true;
-            })
-            .map((post) => {
-              return (
-                <div key={post.id} className="mb-8 lg:mb-12">
-                  <div>
-                    <Link
-                      className="text-amber-500 font-bold dark:text-amber-500 no-underline prose-xl dark:hover:text-amber-600"
-                      href={"/posts/" + post.id}
-                    >
-                      {post.title}
-                    </Link>
-                  </div>
-                  <div className="prose-sm font-sans flex gap-2">
-                    {post.tags.map((tag) => {
-                      return (
-                        <Link
-                          key={tag}
-                          href={"/posts?tag=" + tag}
-                          className={clsx(
-                            "text-gray-700 hover:text-gray-800 dark:text-gray-50 dark:hover:text-gray-300"
-                          )}
-                        >
-                          #{tag}
-                        </Link>
-                      );
-                    })}
-                  </div>
+    <Page
+      meta={{ title: "Warizz's Blog", description: "In my humble opinions" }}
+      layout={{ breadcrumbs, h1: <h1 className="dark:text-white">Blogs</h1> }}
+    >
+      <div data-testid="posts">
+        {posts
+          .filter((post) => {
+            if (router.query.tag)
+              return post.tags.includes(String(router.query.tag));
+            return true;
+          })
+          .map((post) => {
+            return (
+              <div key={post.id} className="mb-8 lg:mb-12">
+                <div>
+                  <Link
+                    className="text-red-800 font-bold dark:text-amber-500 no-underline prose-xl dark:hover:text-amber-600"
+                    href={"/posts/" + post.id}
+                  >
+                    {post.title}
+                  </Link>
                 </div>
-              );
-            })}
-        </div>
-      </BlogLayout>
-    </>
+                <div className="prose-sm font-sans flex gap-2">
+                  {post.tags.map((tag) => {
+                    return (
+                      <Link
+                        key={tag}
+                        href={"/posts?tag=" + tag}
+                        className={clsx(
+                          "text-black hover:text-gray-800 dark:text-gray-50 dark:hover:text-gray-300"
+                        )}
+                      >
+                        #{tag}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+      </div>
+    </Page>
   );
 };
 

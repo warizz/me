@@ -19,7 +19,7 @@ export default function ColorSchemeToggle({ className }: Props) {
       )}
     >
       <span className="font-sans">{"color: "}</span>
-      <strong className="text-amber-500">
+      <strong className="dark:text-amber-500 text-red-800">
         <i>{preferredColorScheme}</i>
       </strong>
     </button>

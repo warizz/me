@@ -1,7 +1,7 @@
 describe("homepage", () => {
   specify("Render", () => {
     cy.visit("/");
-    cy.get("h1").should("have.text", "Warizz");
+    cy.get("h1").should("have.text", "Warizz's whatever");
   });
 
   specify("Color scheme toggle", () => {

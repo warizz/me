@@ -2,34 +2,36 @@ import { readdirSync } from "fs";
 import path from "path";
 
 import { GetStaticPaths, GetStaticProps } from "next";
-import Head from "next/head";
 import React from "react";
 
-import BlogLayout from "../../components/BlogLayout";
-import getPostData from "../../lib/getPostData";
-
 import "prismjs/themes/prism-tomorrow.min.css";
+
+import Page from "../../components/Page";
+import getPostData from "../../lib/getPostData";
 
 interface IPost {
   contentHtml: string;
   title: string;
+  description: string;
 }
 
-const Post = ({ contentHtml, title }: IPost) => {
+const Post = ({ contentHtml, title, description }: IPost) => {
   return (
-    <>
-      <Head>
-        <title>{title + " - Warizz' blog"}</title>
-      </Head>
-      <BlogLayout
-        breadcrumbs={[
+    <Page
+      layout={{
+        breadcrumbs: [
           { text: "posts", href: "/posts" },
           { text: "current", href: "/posts" },
-        ]}
-      >
-        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-      </BlogLayout>
-    </>
+        ],
+        h1: null,
+      }}
+      meta={{
+        title: title + " - Warizz' blog",
+        description,
+      }}
+    >
+      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+    </Page>
   );
 };
 
@@ -49,9 +51,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id = params?.id;
   if (!id) return { notFound: true };
 
-  const { contentHtml, title } = await getPostData(id.toString());
+  const { contentHtml, title, description } = await getPostData(id.toString());
 
-  return { props: { contentHtml, title } };
+  return { props: { contentHtml, title, description } };
 };
 
 export default Post;

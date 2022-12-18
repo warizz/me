@@ -1,25 +1,28 @@
-import Head from "next/head";
 import Link from "next/link";
 
-import BlogLayout from "../components/BlogLayout";
+import Page from "../components/Page";
 
 export default function Web() {
   return (
-    <>
-      <Head>
-        <title>Warizz Yutanan</title>
-        <meta
-          name="description"
-          content="The homepage of Warizz Yutanan personal website."
-        />
-      </Head>
-      <BlogLayout breadcrumbs={[]} h1={<h1>Warizz</h1>}>
-        <ul>
-          <li>
-            <Link href="/posts">blogs</Link>
-          </li>
-        </ul>
-      </BlogLayout>
-    </>
+    <Page
+      meta={{
+        title: "Warizz Yutanan",
+        description: "Warizz's whatever",
+      }}
+      layout={{
+        breadcrumbs: [],
+        h1: (
+          <h1 className="text-red-800 dark:text-amber-500">
+            {"Warizz's whatever"}
+          </h1>
+        ),
+      }}
+    >
+      <ul>
+        <li>
+          <Link href="/posts">blogs</Link>
+        </li>
+      </ul>
+    </Page>
   );
 }
