@@ -14,9 +14,9 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
-            "--tw-prose-headings": colors.gray["700"],
-            "--tw-prose-bullets": colors.amber["500"],
-            "--tw-prose-links": colors.amber["500"],
+            "--tw-prose-headings": colors.black,
+            "--tw-prose-bullets": colors.black,
+            "--tw-prose-links": colors.black,
             "--tw-prose-invert-headings": colors.amber["500"],
             "--tw-prose-invert-bullets": colors.amber["500"],
             "--tw-prose-invert-body": colors.gray["200"],

@@ -25,7 +25,7 @@ export default function Breadcrumbs({ list }: Props) {
           );
         }
         return (
-          <span key={index} className="dark:text-white">
+          <span key={index} className="dark:text-white text-black">
             {item.text}
           </span>
         );

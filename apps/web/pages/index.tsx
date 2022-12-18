@@ -11,7 +11,11 @@ export default function Web() {
       }}
       layout={{
         breadcrumbs: [],
-        h1: <h1>{"Warizz's whatever"}</h1>,
+        h1: (
+          <h1 className="text-red-800 dark:text-amber-500">
+            {"Warizz's whatever"}
+          </h1>
+        ),
       }}
     >
       <ul>

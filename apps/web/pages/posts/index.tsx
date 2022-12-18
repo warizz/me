@@ -42,7 +42,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
               <div key={post.id} className="mb-8 lg:mb-12">
                 <div>
                   <Link
-                    className="text-amber-500 font-bold dark:text-amber-500 no-underline prose-xl dark:hover:text-amber-600"
+                    className="text-red-800 font-bold dark:text-amber-500 no-underline prose-xl dark:hover:text-amber-600"
                     href={"/posts/" + post.id}
                   >
                     {post.title}
@@ -55,7 +55,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                         key={tag}
                         href={"/posts?tag=" + tag}
                         className={clsx(
-                          "text-gray-700 hover:text-gray-800 dark:text-gray-50 dark:hover:text-gray-300"
+                          "text-black hover:text-gray-800 dark:text-gray-50 dark:hover:text-gray-300"
                         )}
                       >
                         #{tag}
