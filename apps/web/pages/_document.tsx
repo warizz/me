@@ -8,7 +8,7 @@ export default function Document() {
     <Html>
       <Head>
         <Script
-          src={"https://www.googletagmanager.com/gtag/js?id=" + ID}
+          src={`https://www.googletagmanager.com/gtag/js?id=${ID}`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">

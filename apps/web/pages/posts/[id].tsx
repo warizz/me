@@ -26,7 +26,7 @@ const Post = ({ contentHtml, title, description }: IPost) => {
         h1: null,
       }}
       meta={{
-        title: title + " - Warizz' blog",
+        title: `${title} - Warizz' blog`,
         description,
       }}
     >

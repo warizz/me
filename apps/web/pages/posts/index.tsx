@@ -22,7 +22,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
     typeof router.query.tag === "string" ? router.query.tag : undefined;
   const breadcrumbs = [{ text: "posts", href: "/posts" }];
   if (tag) {
-    breadcrumbs.push({ text: "tag: " + tag, href: "/post?tag=" + tag });
+    breadcrumbs.push({ text: `tag: ${tag}`, href: `/post?tag=${tag}` });
   }
 
   return (
@@ -43,7 +43,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                 <div>
                   <Link
                     className="text-red-800 font-bold dark:text-amber-500 no-underline prose-xl dark:hover:text-amber-600"
-                    href={"/posts/" + post.id}
+                    href={`/posts/${post.id}`}
                   >
                     {post.title}
                   </Link>
@@ -53,7 +53,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                     return (
                       <Link
                         key={tag}
-                        href={"/posts?tag=" + tag}
+                        href={`/posts?tag=${tag}`}
                         className={clsx(
                           "text-black hover:text-gray-800 dark:text-gray-50 dark:hover:text-gray-300"
                         )}
