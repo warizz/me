@@ -9,6 +9,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
   ],
   rules: {
+    "prefer-template": "error",
     "@next/next/no-html-link-for-pages": "off",
     "react/jsx-key": "error",
     "import/order": [
