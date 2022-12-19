@@ -14,6 +14,8 @@ interface Post {
   id: string;
   title: string;
   tags: string[];
+  date: string;
+  isPublished: boolean;
 }
 
 const Posts = ({ posts }: { posts: Post[] }) => {
@@ -32,6 +34,13 @@ const Posts = ({ posts }: { posts: Post[] }) => {
     >
       <div data-testid="posts">
         {posts
+          .sort((a, b) => {
+            const aDate = new Date(a.date);
+            const bDate = new Date(b.date);
+            if (aDate > bDate) return -1;
+            if (aDate < bDate) return 1;
+            return 0;
+          })
           .filter((post) => {
             if (router.query.tag)
               return post.tags.includes(String(router.query.tag));
@@ -48,15 +57,21 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                     {post.title}
                   </Link>
                 </div>
-                <div className="prose-sm font-sans flex gap-2">
+                <div className="prose-sm font-sans flex gap-2 items-center">
+                  <span className="font-serif">
+                    {new Intl.DateTimeFormat("default", {
+                      year: "numeric",
+                      day: "numeric",
+                      month: "short",
+                    }).format(new Date(post.date))}
+                  </span>
+                  <span>•</span>
                   {post.tags.map((tag) => {
                     return (
                       <Link
                         key={tag}
                         href={`/posts?tag=${tag}`}
-                        className={clsx(
-                          "text-black hover:text-gray-800 dark:text-gray-50 dark:hover:text-gray-300"
-                        )}
+                        className="text-black hover:text-gray-800 dark:text-gray-50 dark:hover:text-gray-300"
                       >
                         #{tag}
                       </Link>
@@ -83,6 +98,7 @@ export const getStaticProps: GetStaticProps = async () => {
         id: path.parse(fullPath).name,
         tags: blogMetaData.data.tags ?? [],
         isPublished: !!blogMetaData.data.publish,
+        date: blogMetaData.data.date, // Date can't be serialized to JSON
       };
     })
     .filter((post) => post.isPublished);

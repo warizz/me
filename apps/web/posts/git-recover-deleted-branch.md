@@ -1,5 +1,5 @@
 ---
-title: "Recover a deleted branch"
+title: "Git: recover a deleted branch"
 date: "2022-12-16"
 tags:
     - git

@@ -1,5 +1,6 @@
 ---
 title: Delete files by extension
+date: "2022-07-14"
 tags:
     - command-line
 publish: true

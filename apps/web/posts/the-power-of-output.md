@@ -1,6 +1,6 @@
 ---
 title: 'The Power of Output'
-date: 2021-03-20
+date: "2021-03-20"
 publish: true
 tags:
     - reading
