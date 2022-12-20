@@ -12,4 +12,4 @@ publish: true
 git checkout -b <branch-name> <sha>
 ```
 
-ref: https://stackoverflow.com/a/3640806/3213610
+ref: (https://stackoverflow.com/a/3640806/3213610)[https://stackoverflow.com/a/3640806/3213610]
