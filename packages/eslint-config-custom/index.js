@@ -19,6 +19,7 @@ module.exports = {
         "newlines-between": "always",
       },
     ],
+    "@typescript-eslint/no-unused-vars": "error",
   },
   settings: {
     "import/resolver": { node: true, typescript: true },

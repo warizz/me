@@ -1,7 +1,6 @@
 import { readdirSync, readFileSync } from "fs";
 import path from "path";
 
-import clsx from "clsx";
 import matter from "gray-matter";
 import { GetStaticProps } from "next";
 import Link from "next/link";
