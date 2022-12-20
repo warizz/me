@@ -1,5 +1,6 @@
 ---
 title: "Using \"lodash.debounce\" in function components."
+date: "2021-10-12"
 tags:
     - react
     - lodash

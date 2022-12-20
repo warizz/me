@@ -14,6 +14,7 @@ interface Props {
   layout: {
     h1: ReactNode;
     breadcrumbs: Breadcrumb[];
+    date?: string;
   };
 }
 
@@ -24,7 +25,11 @@ export default function Page({ children, meta, layout }: Props) {
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
       </Head>
-      <BlogLayout breadcrumbs={layout.breadcrumbs} h1={layout.h1}>
+      <BlogLayout
+        date={layout.date ? new Date(layout.date) : undefined}
+        breadcrumbs={layout.breadcrumbs}
+        h1={layout.h1}
+      >
         {children}
       </BlogLayout>
     </>
