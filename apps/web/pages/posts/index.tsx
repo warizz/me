@@ -37,8 +37,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
             const aDate = new Date(a.date);
             const bDate = new Date(b.date);
             if (aDate > bDate) return -1;
-            if (aDate < bDate) return 1;
-            return 0;
+            return 1;
           })
           .filter((post) => {
             if (router.query.tag)
