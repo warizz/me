@@ -1,9 +1,10 @@
 ---
 title: Dependency Injection in React
 date: "2022-12-21"
+tags:
+    - react
 publish: true
 ---
-# Dependency Injection in React
 
 > In software engineering, dependency injection is a design pattern in which an object or function receives other objects or functions that it depends on. [^1]
 

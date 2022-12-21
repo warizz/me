@@ -24,7 +24,7 @@ const Post = ({ contentHtml, title, description, date }: IPost) => {
           { text: "posts", href: "/posts" },
           { text: "current", href: "/posts" },
         ],
-        h1: null,
+        h1: <h1 className="!mb-0">{title}</h1>,
         date,
       }}
       meta={{
