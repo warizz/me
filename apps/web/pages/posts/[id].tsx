@@ -1,10 +1,10 @@
+import "prismjs/themes/prism-tomorrow.min.css";
+
 import { readdirSync } from "fs";
 import path from "path";
 
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
-
-import "prismjs/themes/prism-tomorrow.min.css";
 
 import Page from "../../components/Page";
 import getPostData from "../../lib/getPostData";
