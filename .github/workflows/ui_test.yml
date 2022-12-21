@@ -16,7 +16,7 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          IS_DISABLED_GA: true
+          NEXT_PUBLIC_IS_DISABLED_GA: true
         with:
           coverageCommand: npx start-server-and-test start http://localhost:3000 "test:ci"
           coverageLocations: |

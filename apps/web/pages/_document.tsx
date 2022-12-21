@@ -7,7 +7,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        {!process.env.IS_DISABLED_GA ? (
+        {!process.env.NEXT_PUBLIC_IS_DISABLED_GA ? (
           <>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${ID}`}
