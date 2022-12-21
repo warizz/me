@@ -15,6 +15,7 @@
     "test": "turbo run test",
     "test:ci": "turbo run test:ci",
     "start": "turbo run start",
+    "start:test": "turbo run start:test",
     "tsc": "turbo run tsc"
   },
   "devDependencies": {

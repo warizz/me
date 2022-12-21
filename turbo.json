@@ -20,6 +20,9 @@
     "start": {
       "dependsOn": ["build"]
     },
+    "start:test": {
+      "dependsOn": ["build:test"]
+    },
     "test": {},
     "test:ci": {}
   }

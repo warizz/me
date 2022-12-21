@@ -8,6 +8,7 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
+    "start:test": "next start",
     "tsc": "tsc"
   },
   "dependencies": {
