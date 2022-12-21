@@ -4,6 +4,9 @@
     "build": {
       "outputs": ["dist/**", ".next/**"]
     },
+    "build:test": {
+      "outputs": ["dist/**", ".next/**"]
+    },
     "lint": {
       "outputs": []
     },

@@ -27,9 +27,7 @@ export default async function getPostData(id: string): Promise<{
   const processedContent = await remark()
     .use(remarkGfm)
     .use(html, { sanitize: false })
-    .use(prism, {
-      transformInlineCode: true,
-    })
+    .use(prism, { transformInlineCode: true })
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
