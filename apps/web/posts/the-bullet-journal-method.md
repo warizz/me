@@ -6,7 +6,6 @@ tags:
     - reading
 tldr: 'Writing with your hand is delightful'
 ---
-# The Bullet Journal Method
 
 I have always wanted to write a diary for a very long time. I have tried so many times for my entire life but I have never done it longer than a month. I don't know why I can't keep the routine but a feeling I remembered was it is too much for a day, I don't know where to start and what to write. I have tried apps and it never works for reasons. One day, I found this, "The Bullet Journal Method" book from a Facebook page, [The Curator](https://www.facebook.com/thecuratorclub.co), I didn't buy it at first, I googled about it and found out that it is interesting. I learned from the official BuJo web and BuJo veteran videos. I tried for a few weeks then bought this book to learn the principles and fundamentals of it.
 

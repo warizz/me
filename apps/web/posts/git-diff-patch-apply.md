@@ -6,7 +6,6 @@ tags:
     - command-line
 publish: true
 ---
-# Git: see diff between 2 branches
 
 ```sh
 // On the main branch

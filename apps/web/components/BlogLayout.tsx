@@ -21,9 +21,8 @@ export default function BlogLayout({ children, breadcrumbs, h1, date }: Props) {
           breadcrumbs={[{ text: "home", href: "/" }].concat(breadcrumbs)}
         />
         {h1}
-        {date ? <span className="prose-sm">{formatDate(date)}</span> : null}
+        {date ? <div className="prose-sm mb-16">{formatDate(date)}</div> : null}
         {children}
-        <hr></hr>
       </article>
     </div>
   );

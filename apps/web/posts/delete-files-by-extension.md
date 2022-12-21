@@ -5,7 +5,6 @@ tags:
     - command-line
 publish: true
 ---
-# Delete files by extension
 
 ```
 find . -name "*.spec.ts" -type f -delete

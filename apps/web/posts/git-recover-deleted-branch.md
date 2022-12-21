@@ -6,7 +6,6 @@ tags:
     - command-line
 publish: true
 ---
-# Git: recover a deleted branch
 
 ```sh
 git checkout -b <branch-name> <sha>

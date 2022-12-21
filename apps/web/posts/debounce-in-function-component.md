@@ -6,7 +6,6 @@ tags:
     - lodash
 publish: true
 ---
-# Using "lodash.debounce" in function components.
 
 Wrong: declare a debounced function inside a render function.
 
