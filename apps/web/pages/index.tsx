@@ -8,6 +8,7 @@ export default function Web() {
       meta={{
         title: "Warizz Yutanan",
         description: "Warizz's whatever",
+        robots: "index, follow",
       }}
       layout={{
         breadcrumbs: [],
