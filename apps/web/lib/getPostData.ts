@@ -15,6 +15,7 @@ export default async function getPostData(id: string): Promise<{
   title: string;
   description: string;
   date: string;
+  isPublished: boolean;
 }> {
   const fullPath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -39,5 +40,6 @@ export default async function getPostData(id: string): Promise<{
     title: String(matterResult.data.title),
     description: String(matterResult.data.description),
     date: String(matterResult.data.date),
+    isPublished: !!matterResult.data.publish,
   };
 }

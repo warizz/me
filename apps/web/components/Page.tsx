@@ -10,6 +10,7 @@ interface Props {
   meta: {
     title: string;
     description: string;
+    robots: "index, follow" | "noindex, nofollow";
   };
   layout: {
     h1: ReactNode;
@@ -24,6 +25,7 @@ export default function Page({ children, meta, layout }: Props) {
       <Head>
         <title>{meta.title}</title>
         <meta name="description" content={meta.description} />
+        <meta name="robots" content={meta.robots} />
       </Head>
       <BlogLayout
         date={layout.date ? new Date(layout.date) : undefined}

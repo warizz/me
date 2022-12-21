@@ -14,9 +14,16 @@ interface IPost {
   title: string;
   description: string;
   date: string;
+  isPublished: boolean;
 }
 
-const Post = ({ contentHtml, title, description, date }: IPost) => {
+const Post = ({
+  contentHtml,
+  title,
+  description,
+  date,
+  isPublished,
+}: IPost) => {
   return (
     <Page
       layout={{
@@ -30,6 +37,7 @@ const Post = ({ contentHtml, title, description, date }: IPost) => {
       meta={{
         title: `${title} - Warizz' blog`,
         description,
+        robots: isPublished ? "index, follow" : "noindex, nofollow",
       }}
     >
       <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
@@ -53,11 +61,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id = params?.id;
   if (!id) return { notFound: true };
 
-  const { contentHtml, title, description, date } = await getPostData(
-    id.toString()
-  );
+  const { contentHtml, title, description, date, isPublished } =
+    await getPostData(id.toString());
 
-  return { props: { contentHtml, title, description, date } };
+  return { props: { contentHtml, title, description, date, isPublished } };
 };
 
 export default Post;

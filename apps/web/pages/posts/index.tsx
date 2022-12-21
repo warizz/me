@@ -28,7 +28,11 @@ const Posts = ({ posts }: { posts: Post[] }) => {
 
   return (
     <Page
-      meta={{ title: "Warizz's Blog", description: "In my humble opinions" }}
+      meta={{
+        title: "Warizz's Blog",
+        description: "In my humble opinions",
+        robots: "index, follow",
+      }}
       layout={{ breadcrumbs, h1: <h1 className="dark:text-white">Blogs</h1> }}
     >
       <div data-testid="posts">
