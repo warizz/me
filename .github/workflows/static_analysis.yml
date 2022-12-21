@@ -4,7 +4,10 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
       - name: Install modules
         run: npm ci
       - name: Lint
@@ -12,7 +15,10 @@ jobs:
   tsc:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
       - name: Install modules
         run: npm ci
       - name: Lint
