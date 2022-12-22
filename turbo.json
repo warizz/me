@@ -1,7 +1,11 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["$NEXT_PUBLIC_IS_DISABLED_GA"],
   "pipeline": {
     "build": {
+      "outputs": ["dist/**", ".next/**"]
+    },
+    "build:test": {
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {
@@ -15,6 +19,9 @@
     },
     "start": {
       "dependsOn": ["build"]
+    },
+    "start:test": {
+      "dependsOn": ["build:test"]
     },
     "test": {},
     "test:ci": {}
