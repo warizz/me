@@ -12,8 +12,9 @@ export default function Document() {
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${ID}`}
               strategy="afterInteractive"
+              data-testid="ga_lib"
             />
-            <Script id="google-analytics" strategy="afterInteractive">
+            <Script id="ga_datalayer" strategy="afterInteractive">
               {`function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","${ID}");`}
             </Script>
           </>
