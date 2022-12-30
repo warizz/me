@@ -22,4 +22,3 @@ jobs:
           coverageLocations: |
             ${{github.workspace}}/packages/test-cypress/coverage/lcov.info:lcov
           debug: true
-          prefix: "../../"
