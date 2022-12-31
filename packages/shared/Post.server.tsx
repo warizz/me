@@ -1,5 +1,3 @@
-import "prismjs/themes/prism-tomorrow.min.css";
-
 import { readdirSync } from "fs";
 import path from "path";
 
