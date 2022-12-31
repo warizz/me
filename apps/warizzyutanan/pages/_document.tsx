@@ -3,7 +3,7 @@ import Script from "next/script";
 
 import { GA_ID } from "../app.config";
 
-export default function Document() {
+export default function _Document() {
   return (
     <Html>
       <Head>

@@ -2,6 +2,6 @@ import "../public/global.css";
 
 import type { AppProps } from "next/app";
 
-export default function Web({ Component, pageProps }: AppProps) {
+export default function _App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
