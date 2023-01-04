@@ -15,7 +15,7 @@ Let's say that you have a package from your private registry `@your-company/awes
 ```
 `.yarnrc`
 
-```
+```sh
 "@your-company:registry" "//your.company.com/private/registry/"
 ```
 
