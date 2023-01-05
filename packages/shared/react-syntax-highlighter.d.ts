@@ -4,11 +4,11 @@ declare module "react-syntax-highlighter/dist/cjs/styles/prism" {
 }
 
 declare module "react-syntax-highlighter/dist/cjs/styles/prism/one-dark" {
-  const style: { [key: string]: React.CSSProperties };
+  const style: any;
   export default style;
 }
 
 declare module "react-syntax-highlighter/dist/cjs/styles/prism/one-light" {
-  const style: { [key: string]: React.CSSProperties };
+  const style: any;
   export default style;
 }

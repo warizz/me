@@ -1,5 +1,6 @@
+import omit from "lodash.omit";
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import Prism from "react-syntax-highlighter/dist/cjs/prism";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import remarkGfm from "remark-gfm";
 
@@ -43,25 +44,26 @@ const Post = ({
           pre({ children }) {
             return <>{children}</>;
           },
-          code({ node, inline, className, children, ...props }) {
+          code({ inline, className, children, ...props }) {
+            const _props = omit(props, "node");
             const match = /language-(\w+)/.exec(className || "");
             if (inline) {
               return (
                 <span className="not-prose text-primary dark:text-primary-invert">
-                  <code className={className} {...props}>
+                  <code className={className} {..._props}>
                     {children}
                   </code>
                 </span>
               );
             }
             return (
-              <SyntaxHighlighter
+              <Prism
                 style={oneDark}
                 language={match?.[1] ?? undefined}
-                {...props}
+                {..._props}
               >
                 {children.toString()}
-              </SyntaxHighlighter>
+              </Prism>
             );
           },
         }}
