@@ -21,8 +21,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const id = params?.id;
   if (!id) return { notFound: true };
 
-  const { contentHtml, title, description, date, isPublished } =
+  const { title, description, date, isPublished, markdownString } =
     await getPostData(id.toString());
 
-  return { props: { contentHtml, title, description, date, isPublished } };
+  return {
+    props: { title, description, date, isPublished, markdownString },
+  };
 };
