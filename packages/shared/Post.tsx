@@ -1,4 +1,8 @@
-import "prismjs/themes/prism-tomorrow.min.css";
+import omit from "lodash.omit";
+import ReactMarkdown from "react-markdown";
+import Prism from "react-syntax-highlighter/dist/cjs/prism";
+import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import remarkGfm from "remark-gfm";
 
 import Page from "./Page";
 
@@ -8,14 +12,15 @@ export interface IPost {
   description: string;
   date: string;
   isPublished: boolean;
+  markdownString: string;
 }
 
 const Post = ({
-  contentHtml,
   title,
   description,
   date,
   isPublished,
+  markdownString,
 }: IPost) => {
   return (
     <Page
@@ -33,7 +38,38 @@ const Post = ({
         robots: isPublished ? "index, follow" : "noindex, nofollow",
       }}
     >
-      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          pre({ children }) {
+            return <>{children}</>;
+          },
+          code({ inline, className, children, ...props }) {
+            const _props = omit(props, "node");
+            const match = /language-(\w+)/.exec(className || "");
+            if (inline) {
+              return (
+                <span className="not-prose text-primary dark:text-primary-invert">
+                  <code className={className} {..._props}>
+                    {children}
+                  </code>
+                </span>
+              );
+            }
+            return (
+              <Prism
+                style={oneDark}
+                language={match?.[1] ?? undefined}
+                {..._props}
+              >
+                {children.toString()}
+              </Prism>
+            );
+          },
+        }}
+      >
+        {markdownString}
+      </ReactMarkdown>
     </Page>
   );
 };
