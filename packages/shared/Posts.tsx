@@ -2,20 +2,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import Page from "./Page";
+import type { IPostsPage } from "./Posts.server";
+import Tag from "./Tag";
 
-interface Post {
-  id: string;
-  title: string;
-  tags: string[];
-  date: string;
-  isPublished: boolean;
-}
+type Props = IPostsPage;
 
-interface Props {
-  posts: Post[];
-}
-
-const Posts = ({ posts }: Props) => {
+const Posts = ({ posts, title }: Props) => {
   const router = useRouter();
   const tag =
     typeof router.query.tag === "string" ? router.query.tag : undefined;
@@ -27,7 +19,7 @@ const Posts = ({ posts }: Props) => {
   return (
     <Page
       meta={{
-        title: "Warizz's Blog",
+        title,
         description: "In my humble opinions",
         robots: "index, follow",
       }}
@@ -66,17 +58,9 @@ const Posts = ({ posts }: Props) => {
                     }).format(new Date(post.date))}
                   </span>
                   <span>•</span>
-                  {post.tags.map((tag) => {
-                    return (
-                      <Link
-                        key={tag}
-                        href={`/posts?tag=${tag}`}
-                        className="text-black hover:text-gray-800 dark:text-gray-50 dark:hover:text-gray-300"
-                      >
-                        #{tag}
-                      </Link>
-                    );
-                  })}
+                  {post.tags.map((tag) => (
+                    <Tag key={tag} txt={tag} />
+                  ))}
                 </div>
               </div>
             );

@@ -1,21 +1,14 @@
 import omit from "lodash.omit";
-import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import Prism from "react-syntax-highlighter/dist/cjs/prism";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import remarkGfm from "remark-gfm";
 
+import { IPost } from "./lib/getPostData";
 import Page from "./Page";
+import Tag from "./Tag";
 
-export interface IPost {
-  contentHtml: string;
-  title: string;
-  description: string;
-  date: string;
-  isPublished: boolean;
-  markdownString: string;
-  tags: string[];
-}
+type Props = IPost;
 
 const Post = ({
   date,
@@ -24,7 +17,7 @@ const Post = ({
   markdownString,
   tags,
   title,
-}: IPost) => {
+}: Props) => {
   return (
     <Page
       layout={{
@@ -75,17 +68,9 @@ const Post = ({
       </ReactMarkdown>
       <hr />
       <div className="flex gap-4">
-        {tags.map((tag) => {
-          return (
-            <Link
-              key={tag}
-              href={`/posts?tag=${tag}`}
-              className="text-black hover:text-gray-800 dark:text-gray-50 dark:hover:text-gray-300"
-            >
-              #{tag}
-            </Link>
-          );
-        })}
+        {tags.map((tag) => (
+          <Tag key={tag} txt={tag} />
+        ))}
       </div>
     </Page>
   );
