@@ -4,4 +4,6 @@ export const homeConfig = {
   h1: "Warizz's whatever",
 };
 
+export const DOMAIN = "warizzyutanan.com";
+
 export const GA_ID = "G-F7QMBWEZW5";

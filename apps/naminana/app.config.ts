@@ -4,4 +4,6 @@ export const homeConfig = {
   h1: "Nami Nana",
 };
 
+export const DOMAIN = "naminana.com";
+
 export const GA_ID = "G-F7QMBWEZW5";
