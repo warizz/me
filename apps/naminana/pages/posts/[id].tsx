@@ -1,6 +1,6 @@
 import type { GetStaticPaths, GetStaticProps } from "next";
+import type { IPost } from "shared/lib/getPostData";
 import Post from "shared/Post";
-import type { IPost } from "shared/Post";
 import {
   getStaticPaths as _getStaticPaths,
   getStaticProps as _getStaticProps,

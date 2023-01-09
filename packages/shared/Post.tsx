@@ -4,7 +4,7 @@ import Prism from "react-syntax-highlighter/dist/cjs/prism";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import remarkGfm from "remark-gfm";
 
-import { IPost } from "./lib/getPostData";
+import type { IPost } from "./lib/getPostData";
 import Page from "./Page";
 import Tag from "./Tag";
 
