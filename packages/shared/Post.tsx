@@ -1,4 +1,5 @@
 import omit from "lodash.omit";
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import Prism from "react-syntax-highlighter/dist/cjs/prism";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -13,14 +14,16 @@ export interface IPost {
   date: string;
   isPublished: boolean;
   markdownString: string;
+  tags: string[];
 }
 
 const Post = ({
-  title,
-  description,
   date,
+  description,
   isPublished,
   markdownString,
+  tags,
+  title,
 }: IPost) => {
   return (
     <Page
@@ -70,6 +73,20 @@ const Post = ({
       >
         {markdownString}
       </ReactMarkdown>
+      <hr />
+      <div className="flex gap-4">
+        {tags.map((tag) => {
+          return (
+            <Link
+              key={tag}
+              href={`/posts?tag=${tag}`}
+              className="text-black hover:text-gray-800 dark:text-gray-50 dark:hover:text-gray-300"
+            >
+              #{tag}
+            </Link>
+          );
+        })}
+      </div>
     </Page>
   );
 };
