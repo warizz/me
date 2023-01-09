@@ -1,5 +1,7 @@
 describe("sitemap.xml", () => {
   it("passes", () => {
-    cy.visit("http://localhost:3000/sitemap.xml");
+    cy.request("http://localhost:3000/sitemap.xml").then((res) => {
+      expect(res.status).to.eq(200);
+    });
   });
 });
