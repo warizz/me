@@ -1,15 +1,15 @@
-import type { GetStaticPaths, GetStaticProps } from "next";
-import Post, { IPost } from "shared/Post";
+import type { GetStaticPaths } from "next";
+import Post from "shared/Post";
 import {
   getStaticPaths as _getStaticPaths,
   getStaticProps as _getStaticProps,
 } from "shared/Post.server";
+import type { IPostPage } from "shared/Post.server";
 
-export default function PostPage(props: IPost) {
+export default function PostPage(props: IPostPage) {
   return <Post {...props} />;
 }
 
 export const getStaticPaths: GetStaticPaths = (context) =>
   _getStaticPaths(context);
-export const getStaticProps: GetStaticProps = (context) =>
-  _getStaticProps(context);
+export const getStaticProps = _getStaticProps({ siteTitle: "Nami Nana" });

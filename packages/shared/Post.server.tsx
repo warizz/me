@@ -4,6 +4,9 @@ import path from "path";
 import { GetStaticPaths, GetStaticProps } from "next";
 
 import getPostData from "./lib/getPostData";
+import type { IPost } from "./lib/getPostData";
+
+export type IPostPage = { siteTitle: string; post: IPost };
 
 export const getStaticPaths: GetStaticPaths = () => {
   const postsDirectory = path.join(process.cwd(), "posts");
@@ -17,14 +20,17 @@ export const getStaticPaths: GetStaticPaths = () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const id = params?.id;
-  if (!id) return { notFound: true };
+export const getStaticProps = ({
+  siteTitle,
+}: {
+  siteTitle: string;
+}): GetStaticProps<IPostPage> => {
+  return async ({ params }) => {
+    const id = params?.id;
+    if (!id) return { notFound: true };
 
-  const { title, description, date, isPublished, markdownString } =
-    await getPostData(id.toString());
+    const post = await getPostData(`${id}.md`);
 
-  return {
-    props: { title, description, date, isPublished, markdownString },
+    return { props: { siteTitle, post } };
   };
 };

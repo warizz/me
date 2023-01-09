@@ -2,28 +2,35 @@ import fs from "fs";
 import path from "path";
 
 import matter from "gray-matter";
+import { z } from "zod";
 
-const postsDirectory = path.join(process.cwd(), "posts");
+export const postsDirectory = path.join(process.cwd(), "posts");
 
-export default async function getPostData(id: string): Promise<{
-  date: string;
-  description: string;
-  id: string;
-  isPublished: boolean;
-  markdownString: string;
-  title: string;
-}> {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
+export const Post = z.object({
+  date: z.string(),
+  description: z.string(),
+  id: z.string(),
+  isPublished: z.boolean(),
+  markdownString: z.string(),
+  tags: z.string().array(),
+  title: z.string(),
+});
+
+export type IPost = z.infer<typeof Post>;
+
+export default function getPostData(fileName: string) {
+  const fullPath = path.join(postsDirectory, fileName);
   const fileContents = fs.readFileSync(fullPath, "utf8");
+  const meta = matter(fileContents);
+  const [id] = fileName.split(".");
 
-  const matterResult = matter(fileContents);
-
-  return {
-    date: String(matterResult.data.date),
-    description: String(matterResult.data.description),
+  return Post.parse({
+    date: meta.data.date,
+    description: meta.data.description ?? "",
     id,
-    isPublished: !!matterResult.data.publish,
-    markdownString: matterResult.content,
-    title: String(matterResult.data.title),
-  };
+    isPublished: !!meta.data.publish,
+    markdownString: meta.content,
+    tags: meta.data.tags ?? [],
+    title: meta.data.title,
+  });
 }

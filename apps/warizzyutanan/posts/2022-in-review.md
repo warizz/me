@@ -1,5 +1,6 @@
 ---
 title: "2022 in review"
+description: "The big change near the end of the year, getting into car camping, steady & polished habits, Elden Ring, Horror movies, Metal bands, The more we fight the more we understand each other, happiness, principle and 2023 wish list."
 date: "2023-01-09"
 publish: true
 tags:

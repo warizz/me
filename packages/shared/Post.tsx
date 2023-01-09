@@ -4,24 +4,19 @@ import Prism from "react-syntax-highlighter/dist/cjs/prism";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import remarkGfm from "remark-gfm";
 
+import type { IPost } from "./lib/getPostData";
 import Page from "./Page";
+import Tag from "./Tag";
 
-export interface IPost {
-  contentHtml: string;
-  title: string;
-  description: string;
-  date: string;
-  isPublished: boolean;
-  markdownString: string;
-}
+type Props = {
+  siteTitle: string;
+  post: IPost;
+};
 
 const Post = ({
-  title,
-  description,
-  date,
-  isPublished,
-  markdownString,
-}: IPost) => {
+  siteTitle,
+  post: { date, description, isPublished, markdownString, tags, title },
+}: Props) => {
   return (
     <Page
       layout={{
@@ -33,7 +28,7 @@ const Post = ({
         date,
       }}
       meta={{
-        title: `${title} - Warizz' blog`,
+        title: `${title} - ${siteTitle}`,
         description,
         robots: isPublished ? "index, follow" : "noindex, nofollow",
       }}
@@ -70,6 +65,12 @@ const Post = ({
       >
         {markdownString}
       </ReactMarkdown>
+      <hr />
+      <div className="flex gap-4">
+        {tags.map((tag) => (
+          <Tag key={tag} txt={tag} />
+        ))}
+      </div>
     </Page>
   );
 };
