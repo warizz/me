@@ -10,6 +10,12 @@ const PostsPage = z.object({
   title: z.string(),
 });
 
+export function getPosts() {
+  return readdirSync(postsDirectory)
+    .map(getPostData)
+    .filter((post) => post.isPublished);
+}
+
 export type IPostsPage = z.infer<typeof PostsPage>;
 
 interface Args {
@@ -18,10 +24,7 @@ interface Args {
 
 export const getStaticProps = ({ title }: Args): GetStaticProps<IPostsPage> => {
   return async () => {
-    const posts = readdirSync(postsDirectory)
-      .map(getPostData)
-      .filter((post) => post.isPublished);
-
+    const posts = getPosts();
     return { props: { title, posts } };
   };
 };
