@@ -1,5 +1,5 @@
-import type { GetStaticPaths, GetStaticProps } from "next";
-import { IPost } from "shared/lib/getPostData";
+import type { GetStaticPaths } from "next";
+import type { IPost } from "shared/lib/getPostData";
 import Post from "shared/Post";
 import {
   getStaticPaths as _getStaticPaths,
@@ -12,5 +12,4 @@ export default function PostPage(props: IPost) {
 
 export const getStaticPaths: GetStaticPaths = (context) =>
   _getStaticPaths(context);
-export const getStaticProps: GetStaticProps = (context) =>
-  _getStaticProps(context);
+export const getStaticProps = _getStaticProps({ siteTitle: "Warizz Yutanan" });

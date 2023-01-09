@@ -18,11 +18,17 @@ export const getStaticPaths: GetStaticPaths = () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<IPost> = async ({ params }) => {
-  const id = params?.id;
-  if (!id) return { notFound: true };
+export const getStaticProps = ({
+  siteTitle,
+}: {
+  siteTitle: string;
+}): GetStaticProps<{ siteTitle: string; post: IPost }> => {
+  return async ({ params }) => {
+    const id = params?.id;
+    if (!id) return { notFound: true };
 
-  const post = await getPostData(`${id}.md`);
+    const post = await getPostData(`${id}.md`);
 
-  return { props: post };
+    return { props: { siteTitle, post } };
+  };
 };
