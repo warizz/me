@@ -1,12 +1,12 @@
 import type { GetStaticPaths } from "next";
-import type { IPost } from "shared/lib/getPostData";
 import Post from "shared/Post";
 import {
   getStaticPaths as _getStaticPaths,
   getStaticProps as _getStaticProps,
 } from "shared/Post.server";
+import type { IPostPage } from "shared/Post.server";
 
-export default function PostPage(props: IPost) {
+export default function PostPage(props: IPostPage) {
   return <Post {...props} />;
 }
 

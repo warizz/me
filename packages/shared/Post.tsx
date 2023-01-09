@@ -8,15 +8,14 @@ import type { IPost } from "./lib/getPostData";
 import Page from "./Page";
 import Tag from "./Tag";
 
-type Props = IPost;
+type Props = {
+  siteTitle: string;
+  post: IPost;
+};
 
 const Post = ({
-  date,
-  description,
-  isPublished,
-  markdownString,
-  tags,
-  title,
+  siteTitle,
+  post: { date, description, isPublished, markdownString, tags, title },
 }: Props) => {
   return (
     <Page
@@ -29,7 +28,7 @@ const Post = ({
         date,
       }}
       meta={{
-        title: `${title} - Warizz' blog`,
+        title: `${title} - ${siteTitle}`,
         description,
         robots: isPublished ? "index, follow" : "noindex, nofollow",
       }}

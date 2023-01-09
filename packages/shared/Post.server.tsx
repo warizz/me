@@ -6,6 +6,8 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import getPostData from "./lib/getPostData";
 import type { IPost } from "./lib/getPostData";
 
+export type IPostPage = { siteTitle: string; post: IPost };
+
 export const getStaticPaths: GetStaticPaths = () => {
   const postsDirectory = path.join(process.cwd(), "posts");
   const fileNames = readdirSync(postsDirectory);
@@ -22,7 +24,7 @@ export const getStaticProps = ({
   siteTitle,
 }: {
   siteTitle: string;
-}): GetStaticProps<{ siteTitle: string; post: IPost }> => {
+}): GetStaticProps<IPostPage> => {
   return async ({ params }) => {
     const id = params?.id;
     if (!id) return { notFound: true };
