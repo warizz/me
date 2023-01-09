@@ -1,6 +1,6 @@
 import { readdirSync } from "fs";
 
-import { GetStaticProps } from "next";
+import type { GetStaticProps } from "next";
 import { z } from "zod";
 
 import getPostData, { postsDirectory, Post } from "./lib/getPostData";
