@@ -5,8 +5,6 @@ import { getPosts } from "shared/Posts.server";
 import { DOMAIN } from "../../app.config";
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  console.log("hello");
-
   const posts = getPosts();
   const sitemap = generateSiteMap(DOMAIN, posts);
 
