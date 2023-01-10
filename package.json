@@ -11,11 +11,12 @@
     "build:test": "turbo run build:test",
     "dev": "turbo run dev --parallel",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "gen-sitemap": "turbo run gen-sitemap",
     "lint": "turbo run lint",
-    "test": "turbo run test",
-    "test:ci": "turbo run test:ci",
     "start": "turbo run start",
     "start:test": "turbo run start:test",
+    "test": "turbo run test",
+    "test:ci": "turbo run test:ci",
     "tsc": "turbo run tsc"
   },
   "devDependencies": {

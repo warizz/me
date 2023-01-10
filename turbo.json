@@ -24,6 +24,7 @@
       "dependsOn": ["build:test"]
     },
     "test": {},
-    "test:ci": {}
+    "test:ci": {},
+    "gen-sitemap": {}
   }
 }
