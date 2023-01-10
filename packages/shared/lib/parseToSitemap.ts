@@ -1,6 +1,6 @@
 import type { IPost } from "shared/lib/getPostData";
 
-export default function generateSiteMap(DOMAIN: string, posts: IPost[]) {
+export default function parseToSitemap(DOMAIN: string, posts: IPost[]) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <url>

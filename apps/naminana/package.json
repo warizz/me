@@ -9,6 +9,7 @@
     "lint": "next lint",
     "start": "next start -p 3001",
     "start:test": "next start -p 3001",
+    "gen-sitemap": "ts-node -O '{\"module\": \"commonjs\"}' gen-sitemap.ts",
     "tsc": "tsc"
   },
   "dependencies": {
