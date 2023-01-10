@@ -67,6 +67,7 @@ const Post = ({
       </ReactMarkdown>
       <hr />
       <div className="flex gap-4">
+        🏷️
         {tags.map((tag) => (
           <Tag key={tag} txt={tag} />
         ))}
