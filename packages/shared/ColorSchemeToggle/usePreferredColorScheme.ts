@@ -30,14 +30,14 @@ function _getToggleHandler(
 }
 
 export default function usePreferredColorScheme() {
-  const [colorScheme, setColorScheme] = useState<ColorScheme>("light");
+  const [colorScheme, setColorScheme] = useState<ColorScheme>("system");
 
   const toggleColorScheme = _getToggleHandler(colorScheme, setColorScheme);
 
   useEffect(() => {
-    const colorScheme = mapToColorScheme(localStorage.preferredColorScheme);
-    setColorScheme(colorScheme);
-  }, []);
+    const _colorScheme = mapToColorScheme(localStorage.preferredColorScheme);
+    if (colorScheme !== _colorScheme) setColorScheme(_colorScheme);
+  }, [colorScheme]);
 
   useEffect(() => {
     const isDarkColorScheme = window.matchMedia(
