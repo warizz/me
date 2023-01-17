@@ -7,18 +7,20 @@ import Post from "shared/Post";
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "posts");
   const fileNames = readdirSync(postsDirectory);
-
   return fileNames.map((fileName) => {
     return { slug: path.parse(fileName).name };
   });
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
+interface Props {
+  params: { slug: string };
+}
+
+export default async function Page({ params }: Props) {
   const { date, description, isPublished, markdownString, tags, title } =
     await getPostData(`${params.slug}.md`);
   return (
     <Post
-      siteTitle="slug"
       post={{
         id: params.slug,
         date,
