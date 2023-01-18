@@ -12,3 +12,5 @@ export const OWNER_NAME = "Warizz Yutanan";
 
 export const NEXT_PUBLIC_IS_DISABLED_GA =
   process.env.NEXT_PUBLIC_IS_DISABLED_GA === "true";
+
+console.log({ NEXT_PUBLIC_IS_DISABLED_GA });
