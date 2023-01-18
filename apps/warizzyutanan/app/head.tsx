@@ -1,9 +1,9 @@
-export default function Head() {
+import { OWNER_NAME } from "../app.config";
+
+import DefaultHeadTag from "./DefaultHeadTags";
+
+export default async function Head() {
   return (
-    <>
-      <title></title>
-      <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <link rel="icon" href="/favicon.ico" />
-    </>
-  )
+    <DefaultHeadTag title={`Home - ${OWNER_NAME}`} robots="index, follow" />
+  );
 }
