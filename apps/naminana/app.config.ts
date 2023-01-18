@@ -7,3 +7,5 @@ export const homeConfig = {
 export const DOMAIN = "naminana.com";
 
 export const GA_ID = "G-F7QMBWEZW5";
+
+export const OWNER_NAME = "Nami Nana";
