@@ -6,7 +6,7 @@ import Tag from "./Tag";
 
 type Props = IPosts;
 
-const Posts = ({ posts, title, tag }: Props) => {
+const Posts = ({ posts, tag }: Props) => {
   const breadcrumbs = [{ text: "posts", href: "/posts" }];
   if (tag) {
     breadcrumbs.push({ text: `tag: ${tag}`, href: `/post?tag=${tag}` });
@@ -14,11 +14,6 @@ const Posts = ({ posts, title, tag }: Props) => {
 
   return (
     <Page
-      meta={{
-        title,
-        description: "In my humble opinions",
-        robots: "index, follow",
-      }}
       layout={{ breadcrumbs, h1: <h1 className="dark:text-white">Blog</h1> }}
     >
       <div data-testid="posts">
