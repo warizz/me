@@ -13,8 +13,6 @@ const Posts = ({ posts }: Props) => {
   const searchParams = useSearchParams();
   const tag = searchParams?.get("tag");
 
-  console.log({ tag });
-
   const breadcrumbs = [{ text: "posts", href: "/posts" }];
   if (tag) {
     breadcrumbs.push({ text: `tag: ${tag}`, href: `/posts?tag=${tag}` });
