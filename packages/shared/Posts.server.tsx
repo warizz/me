@@ -1,14 +1,9 @@
 import { readdirSync } from "fs";
 
 import type { GetStaticProps } from "next";
-import { z } from "zod";
 
-import getPostData, { postsDirectory, Post } from "./lib/getPostData";
-
-const PostsPage = z.object({
-  posts: Post.array(),
-  title: z.string(),
-});
+import getPostData, { postsDirectory } from "./lib/getPostData";
+import { IPosts } from "./Posts.schema";
 
 export function getPosts() {
   return readdirSync(postsDirectory)
@@ -16,13 +11,11 @@ export function getPosts() {
     .filter((post) => post.isPublished);
 }
 
-export type IPostsPage = z.infer<typeof PostsPage>;
-
 interface Args {
   title: string;
 }
 
-export const getStaticProps = ({ title }: Args): GetStaticProps<IPostsPage> => {
+export const getStaticProps = ({ title }: Args): GetStaticProps<IPosts> => {
   return async () => {
     const posts = getPosts();
     return { props: { title, posts } };

@@ -4,7 +4,10 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "../../packages/shared/react-syntax-highlighter.d.ts"
+    "../../packages/shared/react-syntax-highlighter.d.ts",
+    ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

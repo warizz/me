@@ -8,15 +8,11 @@ import type { IPost } from "./lib/getPostData";
 import Page from "./Page";
 import Tag from "./Tag";
 
-type Props = {
-  siteTitle: string;
+interface Props {
   post: IPost;
-};
+}
 
-const Post = ({
-  siteTitle,
-  post: { date, description, isPublished, markdownString, tags, title },
-}: Props) => {
+const Post = ({ post: { date, markdownString, tags, title } }: Props) => {
   return (
     <Page
       layout={{
@@ -26,11 +22,6 @@ const Post = ({
         ],
         h1: <h1 className="!mb-0">{title}</h1>,
         date,
-      }}
-      meta={{
-        title: `${title} - ${siteTitle}`,
-        description,
-        robots: isPublished ? "index, follow" : "noindex, nofollow",
       }}
     >
       <ReactMarkdown
