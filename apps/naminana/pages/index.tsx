@@ -3,9 +3,14 @@ import Page from "shared/Page";
 
 import { homeConfig } from "../app.config";
 
-export default function Home() {
+export default function Web() {
   return (
     <Page
+      meta={{
+        title: homeConfig.title,
+        description: homeConfig.description,
+        robots: "index, follow",
+      }}
       layout={{
         breadcrumbs: [],
         h1: (
@@ -17,7 +22,7 @@ export default function Home() {
     >
       <ul>
         <li>
-          <Link href="/posts">Blog</Link>
+          <Link href="/posts">blogs</Link>
         </li>
       </ul>
     </Page>

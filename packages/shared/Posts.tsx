@@ -1,26 +1,29 @@
-"use client";
-
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 
 import Page from "./Page";
-import { IPosts } from "./Posts.schema";
+import type { IPostsPage } from "./Posts.server";
 import Tag from "./Tag";
 
-type Props = IPosts;
+type Props = IPostsPage;
 
-const Posts = ({ posts }: Props) => {
-  const searchParams = useSearchParams();
-  const tag = searchParams?.get("tag");
-
+const Posts = ({ posts, title }: Props) => {
+  const router = useRouter();
+  const tag =
+    typeof router.query.tag === "string" ? router.query.tag : undefined;
   const breadcrumbs = [{ text: "posts", href: "/posts" }];
   if (tag) {
-    breadcrumbs.push({ text: `tag: ${tag}`, href: `/posts?tag=${tag}` });
+    breadcrumbs.push({ text: `tag: ${tag}`, href: `/post?tag=${tag}` });
   }
 
   return (
     <Page
-      layout={{ breadcrumbs, h1: <h1 className="dark:text-white">Blog</h1> }}
+      meta={{
+        title,
+        description: "In my humble opinions",
+        robots: "index, follow",
+      }}
+      layout={{ breadcrumbs, h1: <h1 className="dark:text-white">Blogs</h1> }}
     >
       <div data-testid="posts">
         {posts
@@ -31,7 +34,8 @@ const Posts = ({ posts }: Props) => {
             return 1;
           })
           .filter((post) => {
-            if (tag) return post.tags.includes(tag);
+            if (router.query.tag)
+              return post.tags.includes(String(router.query.tag));
             return true;
           })
           .map((post) => {

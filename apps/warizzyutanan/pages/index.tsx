@@ -6,6 +6,11 @@ import { homeConfig } from "../app.config";
 export default function Web() {
   return (
     <Page
+      meta={{
+        title: homeConfig.title,
+        description: homeConfig.description,
+        robots: "index, follow",
+      }}
       layout={{
         breadcrumbs: [],
         h1: (
