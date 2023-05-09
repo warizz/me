@@ -8,10 +8,10 @@ import type { IPost } from "./lib/getPostData";
 import Page from "./Page";
 import Tag from "./Tag";
 
-type Props = {
+interface Props {
   siteTitle: string;
   post: IPost;
-};
+}
 
 const Post = ({
   siteTitle,
@@ -53,9 +53,11 @@ const Post = ({
             }
             return (
               <Prism
-                style={oneDark}
                 language={match?.[1] ?? undefined}
                 {..._props}
+                // "style" has to be under {..._props} because of style props are different.
+                // https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/479#issuecomment-1369660231
+                style={oneDark}
               >
                 {children.toString()}
               </Prism>
