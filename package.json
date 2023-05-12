@@ -22,15 +22,15 @@
   "devDependencies": {
     "eslint-config-custom": "*",
     "prettier": "2.8.8",
-    "turbo": "1.9.3"
+    "turbo": "1.9.4"
   },
   "engines": {
     "node": ">=16.0.0"
   },
   "packageManager": "npm@9.2.0",
   "optionalDependencies": {
-    "@next/swc-linux-x64-gnu": "13.4.1",
-    "@next/swc-linux-x64-musl": "13.4.1",
-    "turbo-linux-64": "1.9.3"
+    "@next/swc-linux-x64-gnu": "13.4.2",
+    "@next/swc-linux-x64-musl": "13.4.2",
+    "turbo-linux-64": "1.9.4"
   }
 }
