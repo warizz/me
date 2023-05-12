@@ -1,6 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["$NEXT_PUBLIC_IS_DISABLED_GA"],
+  "globalDependencies": ["$NEXT_PUBLIC_IS_DISABLED_GA", "$IS_CONSERVATIVE"],
   "pipeline": {
     "build": {
       "outputs": ["dist/**", ".next/**"]
