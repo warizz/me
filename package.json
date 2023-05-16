@@ -22,7 +22,7 @@
   "devDependencies": {
     "eslint-config-custom": "*",
     "prettier": "2.8.8",
-    "turbo": "1.9.4"
+    "turbo": "1.9.5"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -31,6 +31,6 @@
   "optionalDependencies": {
     "@next/swc-linux-x64-gnu": "13.4.2",
     "@next/swc-linux-x64-musl": "13.4.2",
-    "turbo-linux-64": "1.9.4"
+    "turbo-linux-64": "1.9.5"
   }
 }
