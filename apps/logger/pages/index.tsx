@@ -2,9 +2,9 @@ import { createClient } from "@supabase/supabase-js";
 import { formatDuration, intervalToDuration } from "date-fns";
 import lodashSortBy from "lodash.sortby";
 import Head from "next/head";
+import ColorSchemeToggle from "shared/ColorSchemeToggle";
 
 import Button from "../components/Button";
-import ColorSchemeToggle from "../components/ColorSchemeToggle";
 import { secretEnvVars } from "../secretEnvVars";
 import { definitions } from "../types/db";
 import useSorting from "../utils/useSorting";
