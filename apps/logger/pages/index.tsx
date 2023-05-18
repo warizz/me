@@ -5,6 +5,7 @@ import Head from "next/head";
 
 import Button from "../components/Button";
 import ColorSchemeToggle from "../components/ColorSchemeToggle";
+import { secretEnvVars } from "../secretEnvVars";
 import { definitions } from "../types/db";
 import useSorting from "../utils/useSorting";
 
@@ -13,15 +14,10 @@ type Record = definitions["log_groups"] & {
 };
 
 export async function getServerSideProps() {
-  const { SUPABASE_PROJECT_URL, SUPABASE_API_SECRET_KEY } = process.env;
-  if (!SUPABASE_PROJECT_URL) {
-    throw new Error("Missing SUPABASE_PROJECT_URL");
-  }
-  if (!SUPABASE_API_SECRET_KEY) {
-    throw new Error("Missing SUPABASE_API_SECRET_KEY");
-  }
-
-  const supabase = createClient(SUPABASE_PROJECT_URL, SUPABASE_API_SECRET_KEY);
+  const supabase = createClient(
+    secretEnvVars.SUPABASE_PROJECT_URL,
+    secretEnvVars.SUPABASE_API_SECRET_KEY
+  );
   const { data } = await supabase
     .from<Record>("log_groups")
     .select(`*, log_items(*)`);
