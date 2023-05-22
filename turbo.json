@@ -1,6 +1,5 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["$NEXT_PUBLIC_IS_DISABLED_GA"],
   "pipeline": {
     "build": {
       "outputs": ["dist/**", ".next/**"]
@@ -26,5 +25,11 @@
     "test": {},
     "test:ci": {},
     "gen-sitemap": {}
-  }
+  },
+  "globalEnv": [
+    "NEXT_PUBLIC_IS_DISABLED_GA",
+    "SUPABASE_PROJECT_URL",
+    "SUPABASE_API_SECRET_KEY",
+    "VERCEL_ENV"
+  ]
 }
