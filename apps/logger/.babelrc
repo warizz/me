@@ -1,0 +1,9 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "istanbul",
+      { "cwd": "../..", "exclude": ["**/*.config.ts", "**/*.config.js"] }
+    ]
+  ]
+}
