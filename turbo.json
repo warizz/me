@@ -22,7 +22,9 @@
     "start:test": {
       "dependsOn": ["build:test"]
     },
-    "test": {},
+    "test": {
+      "cache": false
+    },
     "test:ci": {},
     "gen-sitemap": {}
   },
