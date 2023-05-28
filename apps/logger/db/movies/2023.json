@@ -1,0 +1,32 @@
+[
+  {
+    "title": "You and Me and Me",
+    "slug": "2023-05-10-you_and_me_and_me.webp",
+    "rating": 3,
+    "date": "2023-05-10"
+  },
+  {
+    "title": "The Life Aquatic with Steve Zissou",
+    "slug": "2023-05-28-steve_zissou.jpg",
+    "rating": 3,
+    "date": "2023-05-28"
+  },
+  {
+    "title": "Ant Man and the Wasp Quantumania",
+    "slug": "2023-05-17-ant_man_quantumania.webp",
+    "rating": 2,
+    "date": "2023-05-17"
+  },
+  {
+    "title": "The French Dispatch",
+    "slug": "2023-05-26-the_french_dispatch.jpg",
+    "rating": 4,
+    "date": "2023-05-26"
+  },
+  {
+    "title": "Four Good Days",
+    "slug": "2023-04-23-four_good_days.webp",
+    "rating": 2,
+    "date": "2023-05-23"
+  }
+]
