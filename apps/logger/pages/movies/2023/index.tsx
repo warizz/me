@@ -33,7 +33,7 @@ export default function Movies() {
           <ColorSchemeToggle />
         </div>
 
-        <div className="flex relative h-full gap-4 flex-wrap mt-8">
+        <div id="movies" className="flex relative h-full gap-4 flex-wrap mt-8">
           {db
             .sort((a, b) => {
               const aDate = new Date(a.date);
