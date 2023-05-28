@@ -21,5 +21,9 @@ describe("homepage", () => {
     cy.get("button[data-testid='sort-by']")
       .should("have.text", "Sort by date asc")
       .click();
+
+    cy.get("button[data-testid='sort-by']")
+      .should("have.text", "Sort by date dsc")
+      .click();
   });
 });
