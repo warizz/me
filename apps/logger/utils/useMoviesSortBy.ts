@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 type Sorting = "date asc" | "date dsc";
-const storageKey = "movies-sort-by";
+const STORAGE_KEY = "movies-sort-by";
 
 function _mapToSorting(value: string): Sorting {
   switch (value) {
@@ -20,20 +20,20 @@ export function useMoviesSortBy() {
   const toggleSorting = () => {
     switch (sortBy) {
       case "date asc": {
-        localStorage.setItem(storageKey, "date");
+        localStorage.setItem(STORAGE_KEY, "date dsc");
         return setSortBy("date dsc");
       }
 
       case "date dsc":
       default: {
-        localStorage.setItem(storageKey, "title");
+        localStorage.setItem(STORAGE_KEY, "date asc");
         return setSortBy("date asc");
       }
     }
   };
 
   useEffect(() => {
-    const _sortBy = _mapToSorting(localStorage[storageKey]);
+    const _sortBy = _mapToSorting(localStorage[STORAGE_KEY]);
     setSortBy(_sortBy);
   }, []);
 
