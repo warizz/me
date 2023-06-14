@@ -13,7 +13,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@sentry/nextjs": "7.54.0",
+    "@sentry/nextjs": "7.55.0",
     "@supabase/supabase-js": "1.35.7",
     "@types/lodash.sortby": "4.7.7",
     "date-fns": "2.30.0",
