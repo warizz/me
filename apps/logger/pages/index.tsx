@@ -1,37 +1,25 @@
-import { createClient } from "@supabase/supabase-js";
 import { formatDuration, intervalToDuration } from "date-fns";
 import lodashSortBy from "lodash.sortby";
 import Head from "next/head";
 import ColorSchemeToggle from "shared/ColorSchemeToggle";
 
 import Button from "../components/Button";
-import { secretEnvVars } from "../secretEnvVars";
-import { definitions } from "../types/db";
+import logGroups from "../db/log_groups.json";
+import logItems from "../db/log_items.json";
 import useSorting from "../utils/useSorting";
 
-type Record = definitions["log_groups"] & {
-  log_items: definitions["log_items"][];
-};
-
-export async function getServerSideProps() {
-  const supabase = createClient(
-    secretEnvVars.SUPABASE_PROJECT_URL,
-    secretEnvVars.SUPABASE_API_SECRET_KEY
-  );
-  const { data } = await supabase
-    .from<Record>("log_groups")
-    .select(`*, log_items(*)`);
-
+const groups = logGroups.map((group) => {
+  const items = logItems.filter((item) => item.group_id === group.id);
   return {
-    props: { data },
+    title: group.title,
+    rank: Number(group.rank),
+    log_items: items,
   };
-}
+});
 
-export default function Home({ data }: { data: Record[] | null }) {
+export default function Home() {
   const title = "time. space. relativities.";
   const { sortBy, toggleSorting } = useSorting();
-
-  if (!data) return null;
 
   return (
     <div className="bg-white dark:bg-black h-screen overflow-auto">
@@ -59,7 +47,7 @@ export default function Home({ data }: { data: Record[] | null }) {
           <ColorSchemeToggle />
         </div>
 
-        {data
+        {groups
           .sort((a, b) => a.rank - b.rank)
           .map((cat) => {
             return (

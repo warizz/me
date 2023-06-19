@@ -1,0 +1,11 @@
+{
+  "name": "csv-to-json",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "gen-logger-db": "deno task gen-logger-db",
+    "lint": "deno lint"
+  },
+  "author": "",
+  "license": "ISC"
+}

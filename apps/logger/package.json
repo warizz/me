@@ -10,11 +10,11 @@
     "lint": "next lint",
     "start": "next start -p 3002",
     "start:test": "next start -p 3002",
+    "gen-db": "cd ../../cli/csv-to-json && deno task gen-logger-db",
     "tsc": "tsc"
   },
   "dependencies": {
     "@sentry/nextjs": "7.55.0",
-    "@supabase/supabase-js": "1.35.7",
     "@types/lodash.sortby": "4.7.7",
     "date-fns": "2.30.0",
     "lodash.orderby": "4.6.0",

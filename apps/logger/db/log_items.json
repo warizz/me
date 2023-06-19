@@ -1,0 +1,272 @@
+[
+  {
+    "id": "1",
+    "created_at": "2023-06-14 09:23:37.298258",
+    "updated_at": "2023-06-14 09:23:37.298258",
+    "ended_at": null,
+    "title": "Wedding anniversary (Nami)",
+    "date": "2020-11-28",
+    "group_id": "1"
+  },
+  {
+    "id": "2",
+    "created_at": "2023-06-14 09:36:26.658744",
+    "updated_at": "2023-06-14 09:36:26.658744",
+    "ended_at": null,
+    "title": "First met (Nami)",
+    "date": "2016-06-14",
+    "group_id": "1"
+  },
+  {
+    "id": "3",
+    "created_at": "2023-06-14 09:36:26.658744",
+    "updated_at": "2023-06-14 09:36:26.658744",
+    "ended_at": null,
+    "title": "Anniversary (Nami)",
+    "date": "2016-07-20",
+    "group_id": "1"
+  },
+  {
+    "id": "4",
+    "created_at": "2023-06-14 09:36:26.658744",
+    "updated_at": "2023-06-14 09:36:26.658744",
+    "ended_at": null,
+    "title": "The Sky Door Battery",
+    "date": "2022-04-21",
+    "group_id": "5"
+  },
+  {
+    "id": "5",
+    "created_at": "2023-06-14 09:36:26.658744",
+    "updated_at": "2023-06-14 09:36:26.658744",
+    "ended_at": null,
+    "title": "The Sky Mortgage",
+    "date": "2018-01-31",
+    "group_id": "1"
+  },
+  {
+    "id": "6",
+    "created_at": "2023-06-14 09:36:26.658744",
+    "updated_at": "2023-06-14 09:36:26.658744",
+    "ended_at": null,
+    "title": "Climbing",
+    "date": "2017-08-21",
+    "group_id": "2"
+  },
+  {
+    "id": "7",
+    "created_at": "2023-06-14 09:36:26.658744",
+    "updated_at": "2023-06-14 09:36:26.658744",
+    "ended_at": null,
+    "title": "Bujo",
+    "date": "2020-12-29",
+    "group_id": "2"
+  },
+  {
+    "id": "8",
+    "created_at": "2023-06-14 09:36:26.658744",
+    "updated_at": "2023-06-14 09:36:26.658744",
+    "ended_at": null,
+    "title": "IF",
+    "date": "2021-04-24",
+    "group_id": "2"
+  },
+  {
+    "id": "9",
+    "created_at": "2023-06-14 09:36:26.658744",
+    "updated_at": "2023-06-14 09:36:26.658744",
+    "ended_at": null,
+    "title": "iPad Air 4",
+    "date": "2020-12-01",
+    "group_id": "3"
+  },
+  {
+    "id": "10",
+    "created_at": "2023-06-14 09:36:26.658744",
+    "updated_at": "2023-06-14 09:36:26.658744",
+    "ended_at": null,
+    "title": "iPhone 11",
+    "date": "2019-01-12",
+    "group_id": "3"
+  },
+  {
+    "id": "11",
+    "created_at": "2023-06-14 09:36:26.658744",
+    "updated_at": "2023-06-14 09:36:26.658744",
+    "ended_at": null,
+    "title": "Dental",
+    "date": "2022-12-31",
+    "group_id": "5"
+  },
+  {
+    "id": "12",
+    "created_at": "2023-06-19 14:50:54.148109",
+    "updated_at": "2023-06-19 14:50:54.148109",
+    "ended_at": null,
+    "title": "Netflix",
+    "date": "2017-03-01",
+    "group_id": "4"
+  },
+  {
+    "id": "13",
+    "created_at": "2023-06-19 14:50:54.148109",
+    "updated_at": "2023-06-19 14:50:54.148109",
+    "ended_at": null,
+    "title": "PS+",
+    "date": "2021-12-18",
+    "group_id": "4"
+  },
+  {
+    "id": "14",
+    "created_at": "2023-06-19 14:50:54.148109",
+    "updated_at": "2023-06-19 14:50:54.148109",
+    "ended_at": null,
+    "title": "Adobe Creative Cloud",
+    "date": "2013-12-23",
+    "group_id": "4"
+  },
+  {
+    "id": "15",
+    "created_at": "2023-06-19 14:50:54.148109",
+    "updated_at": "2023-06-19 14:50:54.148109",
+    "ended_at": null,
+    "title": "Spotify",
+    "date": "2017-11-17",
+    "group_id": "4"
+  },
+  {
+    "id": "16",
+    "created_at": "2023-06-19 14:50:54.148109",
+    "updated_at": "2023-06-19 14:50:54.148109",
+    "ended_at": null,
+    "title": "Youtube Premium",
+    "date": "2019-11-01",
+    "group_id": "4"
+  },
+  {
+    "id": "17",
+    "created_at": "2023-06-19 14:50:54.148109",
+    "updated_at": "2023-06-19 14:50:54.148109",
+    "ended_at": null,
+    "title": "Headspace",
+    "date": "2023-02-01",
+    "group_id": "4"
+  },
+  {
+    "id": "18",
+    "created_at": "2023-06-19 14:50:54.148109",
+    "updated_at": "2023-06-19 14:50:54.148109",
+    "ended_at": "2023-06-30 00:00:00",
+    "title": "Disney+",
+    "date": "2021-06-30",
+    "group_id": "4"
+  },
+  {
+    "id": "19",
+    "created_at": "2023-06-19 15:27:30.351569",
+    "updated_at": "2023-06-19 15:27:30.351569",
+    "ended_at": null,
+    "title": "Apple Watch",
+    "date": "2019-12-01",
+    "group_id": "3"
+  },
+  {
+    "id": "20",
+    "created_at": "2023-06-19 15:27:30.351569",
+    "updated_at": "2023-06-19 15:27:30.351569",
+    "ended_at": null,
+    "title": "Airpods Pro",
+    "date": "2021-01-01",
+    "group_id": "3"
+  },
+  {
+    "id": "21",
+    "created_at": "2023-06-19 15:27:30.351569",
+    "updated_at": "2023-06-19 15:27:30.351569",
+    "ended_at": null,
+    "title": "Air Fryer",
+    "date": "2021-08-08",
+    "group_id": "3"
+  },
+  {
+    "id": "22",
+    "created_at": "2023-06-19 15:27:30.351569",
+    "updated_at": "2023-06-19 15:27:30.351569",
+    "ended_at": null,
+    "title": "Cotopaxi Allpa 35L",
+    "date": "2021-01-01",
+    "group_id": "3"
+  },
+  {
+    "id": "23",
+    "created_at": "2023-06-19 15:27:30.351569",
+    "updated_at": "2023-06-19 15:27:30.351569",
+    "ended_at": null,
+    "title": "Patagonia Black Hole 25L",
+    "date": "2021-11-21",
+    "group_id": "3"
+  },
+  {
+    "id": "24",
+    "created_at": "2023-06-19 15:27:30.351569",
+    "updated_at": "2023-06-19 15:27:30.351569",
+    "ended_at": null,
+    "title": "PS5",
+    "date": "2022-08-06",
+    "group_id": "3"
+  },
+  {
+    "id": "25",
+    "created_at": "2023-06-19 15:27:30.351569",
+    "updated_at": "2023-06-19 15:27:30.351569",
+    "ended_at": null,
+    "title": "Kindle Paperwhite",
+    "date": "2023-01-29",
+    "group_id": "3"
+  },
+  {
+    "id": "26",
+    "created_at": "2023-06-19 15:27:30.351569",
+    "updated_at": "2023-06-19 15:27:30.351569",
+    "ended_at": null,
+    "title": "Rayban Wayfarer",
+    "date": "2023-02-06",
+    "group_id": "3"
+  },
+  {
+    "id": "27",
+    "created_at": "2023-06-19 15:27:30.351569",
+    "updated_at": "2023-06-19 15:27:30.351569",
+    "ended_at": null,
+    "title": "Pink Rayban",
+    "date": "2023-02-04",
+    "group_id": "3"
+  },
+  {
+    "id": "28",
+    "created_at": "2023-06-19 15:27:30.351569",
+    "updated_at": "2023-06-19 15:27:30.351569",
+    "ended_at": "2022-11-11 00:00:00",
+    "title": "Nikon D7000",
+    "date": "2013-09-10",
+    "group_id": "3"
+  },
+  {
+    "id": "29",
+    "created_at": "2023-06-19 15:31:18.318174",
+    "updated_at": "2023-06-19 15:31:18.318174",
+    "ended_at": null,
+    "title": "Lasik",
+    "date": "2023-02-03",
+    "group_id": "1"
+  },
+  {
+    "id": "30",
+    "created_at": "2023-06-19 15:31:18.318174",
+    "updated_at": "2023-06-19 15:31:18.318174",
+    "ended_at": null,
+    "title": "Born",
+    "date": "1984-08-08",
+    "group_id": "1"
+  }
+]

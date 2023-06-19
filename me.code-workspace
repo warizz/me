@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "."
+    },
+    {
+      "name": "naminana",
+      "path": "apps/naminana"
+    },
+    {
+      "name": "warizzyutanan",
+      "path": "apps/warizzyutanan"
+    },
+    {
+      "name": "logger",
+      "path": "apps/logger"
+    },
+    {
+      "name": "packages",
+      "path": "packages"
+    },
+    {
+      "name": "csv-to-json",
+      "path": "cli/csv-to-json"
+    }
+  ],
+  "settings": {}
+}
