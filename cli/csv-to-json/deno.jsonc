@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "gen-logger-db": "deno run --allow-read --allow-write main.ts ../../apps/logger/db/"
+  }
+}
