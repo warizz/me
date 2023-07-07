@@ -16,7 +16,7 @@
     "@sentry/nextjs": "7.57.0",
     "clsx": "1.2.1",
     "gray-matter": "4.0.3",
-    "next": "13.4.8",
+    "next": "13.4.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark-gfm": "3.0.1",
@@ -24,7 +24,7 @@
     "ts-node": "10.9.1"
   },
   "devDependencies": {
-    "@babel/core": "7.22.6",
+    "@babel/core": "7.22.8",
     "@cypress/code-coverage": "3.10.8",
     "@tailwindcss/typography": "0.5.9",
     "@types/cypress__code-coverage": "3.10.0",
@@ -35,7 +35,7 @@
     "babel-plugin-istanbul": "6.1.1",
     "eslint": "8.44.0",
     "eslint-config-custom": "*",
-    "postcss": "8.4.24",
+    "postcss": "8.4.25",
     "tailwindcss": "3.3.2",
     "tsconfig": "*",
     "typescript": "5.1.6"
