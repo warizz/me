@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "12.17.0",
+    "cypress": "12.17.1",
     "start-server-and-test": "2.0.0",
     "typescript": "5.1.6"
   }
