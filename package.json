@@ -33,6 +33,6 @@
   "optionalDependencies": {
     "@next/swc-linux-x64-gnu": "13.4.12",
     "@next/swc-linux-x64-musl": "13.4.12",
-    "turbo-linux-64": "1.10.9"
+    "turbo-linux-64": "1.10.11"
   }
 }
