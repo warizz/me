@@ -13,7 +13,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@sentry/nextjs": "7.61.0",
+    "@sentry/nextjs": "7.61.1",
     "clsx": "2.0.0",
     "gray-matter": "4.0.3",
     "next": "13.4.12",
@@ -28,7 +28,7 @@
     "@cypress/code-coverage": "3.11.0",
     "@tailwindcss/typography": "0.5.9",
     "@types/cypress__code-coverage": "3.10.0",
-    "@types/node": "20.4.6",
+    "@types/node": "20.4.8",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
