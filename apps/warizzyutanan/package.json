@@ -16,7 +16,7 @@
     "@sentry/nextjs": "7.61.1",
     "clsx": "2.0.0",
     "gray-matter": "4.0.3",
-    "next": "13.4.12",
+    "next": "13.4.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark-gfm": "3.0.1",
@@ -24,7 +24,7 @@
     "ts-node": "10.9.1"
   },
   "devDependencies": {
-    "@babel/core": "7.22.9",
+    "@babel/core": "7.22.10",
     "@cypress/code-coverage": "3.11.0",
     "@tailwindcss/typography": "0.5.9",
     "@types/cypress__code-coverage": "3.10.0",
