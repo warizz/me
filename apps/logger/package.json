@@ -14,16 +14,16 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@sentry/nextjs": "7.61.0",
+    "@sentry/nextjs": "7.63.0",
     "@types/lodash.sortby": "4.7.7",
     "date-fns": "2.30.0",
     "lodash.orderby": "4.6.0",
     "lodash.sortby": "4.7.0",
-    "next": "13.4.12",
+    "next": "13.4.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "shared": "*",
-    "zod": "3.21.4"
+    "zod": "3.22.0"
   },
   "devDependencies": {
     "@cypress/code-coverage": "3.11.0",
@@ -31,16 +31,16 @@
     "@types/cypress__code-coverage": "3.10.0",
     "@types/lodash.orderby": "4.6.7",
     "@types/lodash.sortby": "4.7.7",
-    "@types/node": "20.4.5",
-    "@types/react": "18.2.18",
+    "@types/node": "20.5.0",
+    "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
     "babel-plugin-istanbul": "6.1.1",
-    "eslint": "8.46.0",
+    "eslint": "8.47.0",
     "eslint-config-custom": "*",
     "postcss": "8.4.27",
     "postcss-import": "15.1.0",
-    "prettier": "3.0.0",
+    "prettier": "3.0.1",
     "tailwindcss": "3.3.3",
     "tsconfig": "*",
     "typescript": "5.1.6"
