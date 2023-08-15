@@ -31,8 +31,8 @@
   },
   "packageManager": "npm@9.2.0",
   "optionalDependencies": {
-    "@next/swc-linux-x64-gnu": "13.4.13",
-    "@next/swc-linux-x64-musl": "13.4.13",
+    "@next/swc-linux-x64-gnu": "13.4.16",
+    "@next/swc-linux-x64-musl": "13.4.16",
     "turbo-linux-64": "1.10.12"
   }
 }
