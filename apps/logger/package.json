@@ -32,7 +32,7 @@
     "@types/lodash.orderby": "4.6.7",
     "@types/lodash.sortby": "4.7.7",
     "@types/node": "20.6.0",
-    "@types/react": "18.2.21",
+    "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "babel-plugin-istanbul": "6.1.1",
