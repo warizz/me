@@ -20,7 +20,7 @@
     "@types/lodash.omit": "4.5.8",
     "@types/react": "18.2.36",
     "@types/react-dom": "18.2.14",
-    "@types/react-syntax-highlighter": "15.5.9",
+    "@types/react-syntax-highlighter": "15.5.10",
     "eslint": "8.53.0",
     "eslint-config-custom": "*",
     "tsconfig": "*",
