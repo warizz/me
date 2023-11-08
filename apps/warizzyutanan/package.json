@@ -27,7 +27,7 @@
     "@babel/core": "7.23.2",
     "@cypress/code-coverage": "3.12.9",
     "@tailwindcss/typography": "0.5.10",
-    "@types/cypress__code-coverage": "3.10.1",
+    "@types/cypress__code-coverage": "3.10.2",
     "@types/node": "20.8.10",
     "@types/react": "18.2.36",
     "@types/react-dom": "18.2.14",
