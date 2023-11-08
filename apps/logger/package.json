@@ -29,7 +29,7 @@
     "@cypress/code-coverage": "3.12.9",
     "@tailwindcss/typography": "0.5.10",
     "@types/cypress__code-coverage": "3.10.2",
-    "@types/lodash.orderby": "4.6.8",
+    "@types/lodash.orderby": "4.6.9",
     "@types/lodash.sortby": "4.7.8",
     "@types/node": "20.9.0",
     "@types/react": "18.2.36",
