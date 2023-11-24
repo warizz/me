@@ -28,7 +28,7 @@
     "@cypress/code-coverage": "3.12.11",
     "@tailwindcss/typography": "0.5.10",
     "@types/cypress__code-coverage": "3.10.2",
-    "@types/node": "20.9.3",
+    "@types/node": "20.9.5",
     "@types/react": "18.2.37",
     "@types/react-dom": "18.2.17",
     "autoprefixer": "10.4.16",
