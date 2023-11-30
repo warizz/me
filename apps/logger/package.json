@@ -14,7 +14,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@sentry/nextjs": "7.81.1",
+    "@sentry/nextjs": "7.84.0",
     "@types/lodash.sortby": "4.7.9",
     "date-fns": "2.30.0",
     "lodash.orderby": "4.6.0",
