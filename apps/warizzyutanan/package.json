@@ -21,7 +21,7 @@
     "react-dom": "18.2.0",
     "remark-gfm": "3.0.1",
     "shared": "*",
-    "ts-node": "10.9.1"
+    "ts-node": "10.9.2"
   },
   "devDependencies": {
     "@babel/core": "7.23.3",
