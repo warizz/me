@@ -13,7 +13,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@sentry/nextjs": "7.86.0",
+    "@sentry/nextjs": "7.87.0",
     "clsx": "2.0.0",
     "gray-matter": "4.0.3",
     "next": "14.0.4",
