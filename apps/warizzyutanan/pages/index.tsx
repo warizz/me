@@ -24,6 +24,9 @@ export default function Web() {
         <li>
           <Link href="/posts">blogs</Link>
         </li>
+        <li>
+          <Link href="/movies">movies</Link>
+        </li>
       </ul>
     </Page>
   );
