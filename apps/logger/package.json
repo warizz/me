@@ -14,7 +14,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@sentry/nextjs": "7.98.0",
+    "@sentry/nextjs": "7.99.0",
     "@types/lodash.sortby": "4.7.9",
     "date-fns": "3.3.1",
     "lodash.orderby": "4.6.0",
@@ -31,7 +31,7 @@
     "@types/cypress__code-coverage": "3.10.2",
     "@types/lodash.orderby": "4.6.9",
     "@types/lodash.sortby": "4.7.9",
-    "@types/node": "20.11.10",
+    "@types/node": "20.11.16",
     "@types/react": "18.2.48",
     "@types/react-dom": "18.2.18",
     "autoprefixer": "10.4.17",
