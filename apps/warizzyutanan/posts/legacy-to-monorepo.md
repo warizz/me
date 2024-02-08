@@ -136,3 +136,19 @@ package.json
 pnpm-lock.yaml
 pnpm-workspace.yaml
 ```
+
+this api-gateway is a NodeJs Express app, it also have commands like dev, test, lint and tsc. Now I can test running these 2 apps simulanoesly by just running those commands.
+
+```bash
+> npx nx run-many --targets lint
+
+
+    ✔  nx run gateway:lint  [existing outputs match the cache, left as is]
+    ✔  nx run web-client:lint (45s)
+
+ ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+ >  NX   Successfully ran target lint for 2 projects (45s)
+
+   Nx read the output from the cache instead of running the command for 1 out of 2 tasks.
+```
