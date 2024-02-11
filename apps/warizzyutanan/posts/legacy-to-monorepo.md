@@ -152,3 +152,59 @@ this api-gateway is a NodeJs Express app, it also have commands like dev, test, 
 
    Nx read the output from the cache instead of running the command for 1 out of 2 tasks.
 ```
+
+I have to move another repo, this one would be user-service for getting user information. the flow chart for the system would be like this.
+
+```
+web-client --> gateway --> user-service --> DB
+```
+
+This command copies all contents of the service into `apps/user-service`
+
+```bash
+rsync -av --exclude='.git' --exclude='node_modules' user-service inv-web-monorepo/apps
+```
+
+Now my repo is like this.
+
+```
+.vscode
+apps
+    api-gateway
+    user-service
+    web-client
+.gitignore
+.npmrc
+nx.json
+package.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+```
+
+Again, run `pnpm i` for installing dependencices of the user-service. Run `pnpm lint` for roughly checking if the code is fine.
+
+```bash
+> npx nx run-many --targets lint
+
+
+    ✔  nx run gateway:lint (4s)
+    ✔  nx run account-service:lint (7s)
+    ✔  nx run investment-platform-web:lint (36s)
+
+ ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
+
+ >  NX   Successfully ran target lint for 3 projects (36s)
+```
+
+## Orchastrate all apps together
+
+I have to update each apps server port because they were using the same value. nx has a document on how to define environment variables [here](Define Environment Variables
+). in this case i want to keep the port variables in the root so i can be the only single source for connecting each app together.
+
+i created `.env.local` in the root that look like this.
+
+```
+WEB_CLIENT_PORT=3000
+GATEWAY_PORT=3001
+USER_SERVICE_PORT=3002
+```
