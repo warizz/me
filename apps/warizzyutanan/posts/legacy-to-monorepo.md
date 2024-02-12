@@ -9,7 +9,7 @@ tags:
   - react
 ---
 
-I have a CRA project that have the root looks like this
+Initially, the project's root structure appeared like this:
 
 ```bash
 .
@@ -43,10 +43,10 @@ I have a CRA project that have the root looks like this
 └── vite.config.ts
 ```
 
-Then move all the app specific files into a folder name apps/web-client, my route is like this.
+Next, I began by relocating all the application-specific files into a folder named "apps/web-client," following this route:
 
-> remove `node_modules` to avoid vast size folder copying
-> keep `.git` in the root
+1. Removed "node_modules" to prevent copying a folder of vast size.
+2. Maintained ".git" in the root directory.
 
 ```bash
 .git/
@@ -54,23 +54,21 @@ Then move all the app specific files into a folder name apps/web-client, my rout
 apps/web-client
 ```
 
-create a [`pnpm-workspace.yaml`](https://pnpm.io/pnpm-workspace_yaml) in the root
+To establish the pnpm workspace configuration, I created a pnpm-workspace.yaml file in the root directory with the following content:
 
 ```yml
 packages:
   - "apps/*"
 ```
 
-Init pnpm on the root
+Then, I initiated pnpm in the root directory by executing the following commands:
 
 ```bash
 pnpm init
 pnpm install
 ```
 
-you will see `pnpm-lock.yaml` created on the root
-
-create `.gitignore` in the root.
+Upon completion, A pnpm-lock.yaml file was generated in the root directory. Additionally, I created a .gitignore file in the root directory.
 
 ```
 node_modules
