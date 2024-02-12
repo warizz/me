@@ -1,9 +1,10 @@
+import sortBy from "lodash.sortby";
 import Link from "next/link";
 import Page from "shared/Page";
 
 import { homeConfig } from "../app.config";
 
-export default function Web() {
+export default function Home() {
   return (
     <Page
       meta={{
@@ -21,12 +22,20 @@ export default function Web() {
       }}
     >
       <ul>
-        <li>
-          <Link href="/posts">blogs</Link>
-        </li>
-        <li>
-          <Link href="/movies">movies</Link>
-        </li>
+        {sortBy(
+          [
+            { url: "/posts", title: "blogs", id: 1 },
+            { url: "/movies", title: "movies", id: 3 },
+            { url: "/logs", title: "logs", id: 2 },
+          ],
+          "id"
+        ).map((item) => {
+          return (
+            <li key={item.id}>
+              <Link href={item.url}>{item.title}</Link>
+            </li>
+          );
+        })}
       </ul>
     </Page>
   );
