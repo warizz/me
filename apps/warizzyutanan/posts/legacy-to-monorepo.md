@@ -43,18 +43,19 @@ Initially, the project's root structure appeared like this:
 └── vite.config.ts
 ```
 
-Next, I began by relocating all the application-specific files into a folder named "apps/web-client," following this route:
+Next, I began by relocating all the application-specific files into a folder named `apps/web-client` following this route:
 
-1. Removed "node_modules" to prevent copying a folder of vast size.
-2. Maintained ".git" in the root directory.
+1. Removed `node_modules` to prevent copying a folder of vast size.
+2. Maintained `.git` in the root directory.
 
 ```bash
-.git/
-.vscode/
-apps/web-client
+.
+├── .git/
+├── .vscode/
+└── apps/web-client
 ```
 
-To establish the pnpm workspace configuration, I created a pnpm-workspace.yaml file in the root directory with the following content:
+To establish the pnpm workspace configuration, I created a `pnpm-workspace.yaml` file in the root directory with the following content:
 
 ```yml
 packages:
@@ -68,35 +69,23 @@ pnpm init
 pnpm install
 ```
 
-Upon completion, A pnpm-lock.yaml file was generated in the root directory. Additionally, I created a .gitignore file in the root directory.
+Upon completion, A `pnpm-lock.yaml` file was generated in the root directory.
 
-```
-node_modules
-```
+Once the pnpm monorepo setup was established, I introduced NX to manage the project more efficiently. Here's how I integrated NX into the workflow:
 
-now it's the time for [nx](https://nx.dev/getting-started/installation#installing-nx-into-an-existing-repository) come into play.
+First, I initiated NX by running:
 
 ```bash
 npx create-nx-workspace@latest
 ```
 
-question
+During initialization, I skipped specifying scripts execution order but configured cacheable scripts such as `build`, `test`, `lint`, and `tsc`. I designated the build folder for the output of the build script and left others blank.
 
-> ? Which scripts need to be run in order? (e.g. before building a project, dependent projects must be built) …
-
-hit enter for skipping it for now .
-
-> ? Which scripts are cacheable? (Produce the same output given the same input, e.g. build, test and lint usually are, serve and start are not) …
-
-this one is for caching, i selected build, test, lint, tsc
-
-put build folder for output for build script, leave blank for the others.
-
-after the successful init, `nx.json` will be created in the root.
+Upon successful initialization, nx.json was created in the root directory.
 
 ## Setting up commands
 
-Update scripts field in root's package.json, it will make running these commands trigger the same script name across monorepo.
+To streamline command execution across the monorepo, I updated the scripts field in the root's `package.json`:
 
 ```json
 "scripts": {
@@ -107,7 +96,7 @@ Update scripts field in root's package.json, it will make running these commands
 },
 ```
 
-Check if the commands work by running them from the root for example.
+I verified the functionality of these commands by running them from the root directory:
 
 ```bash
 pnpm run dev
@@ -116,7 +105,7 @@ pnpm run lint
 pnpm run tsc
 ```
 
-If you run these commands the 2nd time they will be super fast because of the caching that nx orchastreted.
+Thanks to NX's caching mechanism, subsequent executions were notably faster.
 
 ## Adding another repo
 
