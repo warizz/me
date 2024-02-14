@@ -5,6 +5,8 @@ publish: true
 tags:
   - create-react-app
   - monorepo
+  - node-js
+  - nx
   - pnpm
   - react
 ---
@@ -107,91 +109,35 @@ pnpm run tsc
 
 Thanks to NX's caching mechanism, subsequent executions were notably faster.
 
-## Adding another repo
+## Adding Another App
 
-It is time for API gateway, this is easier by just copying the target repo into the root/apps/. it would be something like this.
+Integrating an additional app, such as an `api-gateway`, was straightforward. I simply copied the target repository into `{root}/apps/`, maintaining a similar structure to the existing web-client.
 
-```
-.vscode
-apps
-  web-client
-  api-gateway
-.gitignore
-.npmrc
-nx.json
-package.json
-pnpm-lock.yaml
-pnpm-workspace.yaml
-```
-
-this api-gateway is a NodeJs Express app, it also have commands like dev, test, lint and tsc. Now I can test running these 2 apps simulanoesly by just running those commands.
+Next, I added another repository, `user-service`, following a similar procedure. This service was responsible for retrieving user information.
 
 ```bash
-> npx nx run-many --targets lint
-
-
-    ✔  nx run gateway:lint  [existing outputs match the cache, left as is]
-    ✔  nx run web-client:lint (45s)
-
- ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
- >  NX   Successfully ran target lint for 2 projects (45s)
-
-   Nx read the output from the cache instead of running the command for 1 out of 2 tasks.
+.
+├── .vscode
+├── apps
+│   ├── web-client
+│   ├── api-gateway
+│   └── user-service
+├── .gitignore
+├── .npmrc
+├── nx.json
+├── package.json
+├── pnpm-lock.yaml
+└── pnpm-workspace.yaml
 ```
 
-I have to move another repo, this one would be user-service for getting user information. the flow chart for the system would be like this.
+## Orchestrating All Apps Together
 
-```
-web-client --> gateway --> user-service --> DB
-```
-
-This command copies all contents of the service into `apps/user-service`
+To ensure seamless orchestration, I updated each app's server port to avoid conflicts. I centralized the port variables in the root directory by creating a `.env.local` file:
 
 ```bash
-rsync -av --exclude='.git' --exclude='node_modules' user-service inv-web-monorepo/apps
-```
-
-Now my repo is like this.
-
-```
-.vscode
-apps
-    api-gateway
-    user-service
-    web-client
-.gitignore
-.npmrc
-nx.json
-package.json
-pnpm-lock.yaml
-pnpm-workspace.yaml
-```
-
-Again, run `pnpm i` for installing dependencices of the user-service. Run `pnpm lint` for roughly checking if the code is fine.
-
-```bash
-> npx nx run-many --targets lint
-
-
-    ✔  nx run gateway:lint (4s)
-    ✔  nx run account-service:lint (7s)
-    ✔  nx run investment-platform-web:lint (36s)
-
- ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-
- >  NX   Successfully ran target lint for 3 projects (36s)
-```
-
-## Orchastrate all apps together
-
-I have to update each apps server port because they were using the same value. nx has a document on how to define environment variables [here](Define Environment Variables
-). in this case i want to keep the port variables in the root so i can be the only single source for connecting each app together.
-
-i created `.env.local` in the root that look like this.
-
-```
 WEB_CLIENT_PORT=3000
-GATEWAY_PORT=3001
+API_GATEWAY_PORT=3001
 USER_SERVICE_PORT=3002
 ```
+
+With these configurations in place, the monorepo was now ready for efficient development and testing, with NX managing the intricate dependencies between the various apps.
