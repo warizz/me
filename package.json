@@ -4,15 +4,13 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*",
-    "cli/*"
+    "packages/*"
   ],
   "scripts": {
     "build": "turbo run build",
     "build:test": "turbo run build:test",
     "dev": "turbo run dev --parallel",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "gen-db": "turbo run gen-db",
     "gen-sitemap": "turbo run gen-sitemap",
     "lint": "turbo run lint",
     "start": "turbo run start",
