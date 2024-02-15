@@ -26,8 +26,6 @@ export async function parseLogsCsv(filePath: string) {
 
     parser.on("data", (data) => {
       try {
-        console.log({ data });
-
         const movie = LogSchema.parse(data);
         results.push(movie);
       } catch (error) {
