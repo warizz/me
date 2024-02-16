@@ -11,8 +11,7 @@
       "outputs": []
     },
     "dev": {
-      "cache": false,
-      "dependsOn": ["gen-db"]
+      "cache": false
     },
     "tsc": {
       "outputs": []
@@ -25,13 +24,7 @@
     },
     "test": {},
     "test:ci": {},
-    "gen-sitemap": {},
-    "gen-db": {}
+    "gen-sitemap": {}
   },
-  "globalEnv": [
-    "NEXT_PUBLIC_IS_DISABLED_GA",
-    "SUPABASE_PROJECT_URL",
-    "SUPABASE_API_SECRET_KEY",
-    "VERCEL_ENV"
-  ]
+  "globalEnv": ["NEXT_PUBLIC_IS_DISABLED_GA", "VERCEL_ENV"]
 }
