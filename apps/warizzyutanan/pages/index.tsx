@@ -1,4 +1,4 @@
-import sortBy from "lodash.sortby";
+import sortBy from "lodash/sortBy";
 import Link from "next/link";
 import Page from "shared/Page";
 
