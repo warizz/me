@@ -1,6 +1,24 @@
+import { readdirSync } from "fs";
+
+import { orderBy } from "lodash";
 import { Metadata } from "next";
 import Link from "next/link";
 import ToolsBar from "shared/ToolsBar";
+
+function readMoviesFiles() {
+  const pattern = /^\d{4}\.csv$/;
+
+  const files: string[] = readdirSync(`${process.cwd()}/app/movies/[year]`);
+  const matchingFiles: string[] = [];
+
+  files.forEach((file) => {
+    if (pattern.test(file)) {
+      matchingFiles.push(file.replace(".csv", ""));
+    }
+  });
+
+  return matchingFiles;
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -9,6 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
+  const years = readMoviesFiles();
   return (
     <>
       <ToolsBar
@@ -22,11 +41,13 @@ export default async function Page() {
         <h1>{`My movies`}</h1>
         <div className="font-mono">
           <ul>
-            {["2023"].map((item) => {
+            {orderBy(years, (item) => item, "desc").map((item) => {
               return (
-                <Link href={`/movies/${item}`} key={item}>
-                  {item}
-                </Link>
+                <li key={item}>
+                  <Link href={`/movies/${item}`} key={item}>
+                    {item}
+                  </Link>
+                </li>
               );
             })}
           </ul>

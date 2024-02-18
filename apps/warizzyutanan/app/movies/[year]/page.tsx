@@ -1,10 +1,11 @@
+import orderBy from "lodash/orderBy";
 import { Metadata } from "next";
 import ToolsBar from "shared/ToolsBar";
 
 import { parseMoviesCsv } from "./parseMoviesCsv";
 
 export async function generateStaticParams() {
-  return [{ year: "2023" }];
+  return [{ year: "2023" }, { year: "2024" }];
 }
 
 export async function generateMetadata({
@@ -35,10 +36,10 @@ export default async function Page({ params: { year } }: Props) {
 
       <div>
         <h1>{`My movies of ${year}`}</h1>
-        <div className="font-mono">
-          {csv.map((item) => {
+        <ul className="font-mono">
+          {orderBy(csv, "watched_at", "desc").map((item) => {
             return (
-              <div key={item.id}>
+              <li key={item.id}>
                 <time>
                   {item.watched_at.toLocaleDateString("en", {
                     day: "2-digit",
@@ -50,10 +51,10 @@ export default async function Page({ params: { year } }: Props) {
                   target="_blank"
                   href={item.url}
                 >{`${item.title} (${item.release_year})`}</a>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </>
   );
