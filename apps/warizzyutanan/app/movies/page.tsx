@@ -1,24 +1,9 @@
-import { readdirSync } from "fs";
-
 import { orderBy } from "lodash";
 import { Metadata } from "next";
 import Link from "next/link";
 import ToolsBar from "shared/ToolsBar";
 
-function readMoviesFiles() {
-  const pattern = /^\d{4}\.csv$/;
-
-  const files: string[] = readdirSync(`${process.cwd()}/app/movies/[year]`);
-  const matchingFiles: string[] = [];
-
-  files.forEach((file) => {
-    if (pattern.test(file)) {
-      matchingFiles.push(file.replace(".csv", ""));
-    }
-  });
-
-  return matchingFiles;
-}
+import { getMoviesYears } from "./getMoviesYears";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -27,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
-  const years = readMoviesFiles();
+  const years = getMoviesYears();
   return (
     <>
       <ToolsBar
