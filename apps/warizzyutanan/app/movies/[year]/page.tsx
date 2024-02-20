@@ -9,9 +9,9 @@ import { Movie, parseMoviesCsv } from "./parseMoviesCsv";
 function mapRating(rating: Movie["rating"]) {
   switch (rating) {
     case "-1":
-      return null;
+      return "";
     case "0":
-      return null;
+      return "";
     case "1":
       return "👍";
     case "2":
