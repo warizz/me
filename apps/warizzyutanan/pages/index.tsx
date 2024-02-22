@@ -27,6 +27,7 @@ export default function Home() {
             { url: "/posts", title: "blogs", id: 1 },
             { url: "/movies", title: "movies", id: 3 },
             { url: "/logs", title: "logs", id: 2 },
+            { url: "/wihltd", title: "WIHLTD", id: 4 },
           ],
           "id"
         ).map((item) => {
