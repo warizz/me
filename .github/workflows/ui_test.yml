@@ -11,14 +11,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v5.0.0
+      - name: Test
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           NEXT_PUBLIC_IS_DISABLED_GA: true
-        with:
-          coverageCommand: npx start-server-and-test "start:test" http://localhost:3000 "test:ci"
-          coverageLocations: |
-            ${{github.workspace}}/packages/test-cypress/coverage/lcov.info:lcov
-          debug: true
+        run: npx start-server-and-test "start:test" http://localhost:3000 "test:ci"
