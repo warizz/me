@@ -1,10 +1,27 @@
+import orderBy from "lodash/orderBy";
 import { Metadata } from "next";
 import ToolsBar from "shared/ToolsBar";
 
-import { parseMoviesCsv } from "./parseMoviesCsv";
+import { getMoviesYears } from "../getMoviesYears";
+
+import { Movie, parseMoviesCsv } from "./parseMoviesCsv";
+
+function mapRating(rating: Movie["rating"]) {
+  switch (rating) {
+    case "-1":
+      return "";
+    case "0":
+      return "";
+    case "1":
+      return "👍";
+    case "2":
+      return "👍👍";
+  }
+}
 
 export async function generateStaticParams() {
-  return [{ year: "2023" }];
+  const years = getMoviesYears();
+  return orderBy(years, (year) => year, "desc").map((year) => ({ year }));
 }
 
 export async function generateMetadata({
@@ -35,10 +52,10 @@ export default async function Page({ params: { year } }: Props) {
 
       <div>
         <h1>{`My movies of ${year}`}</h1>
-        <div className="font-mono">
-          {csv.map((item) => {
+        <ul className="font-mono">
+          {orderBy(csv, "watched_at", "desc").map((item) => {
             return (
-              <div key={item.id}>
+              <li key={item.id}>
                 <time>
                   {item.watched_at.toLocaleDateString("en", {
                     day: "2-digit",
@@ -49,11 +66,11 @@ export default async function Page({ params: { year } }: Props) {
                 <a
                   target="_blank"
                   href={item.url}
-                >{`${item.title} (${item.release_year})`}</a>
-              </div>
+                >{`${item.title} (${item.release_year}) ${mapRating(item.rating)}`}</a>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </>
   );

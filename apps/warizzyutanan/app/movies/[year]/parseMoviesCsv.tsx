@@ -8,7 +8,7 @@ const MovieSchema = z.object({
   title: z.string(),
   release_year: z.coerce.number(),
   watched_at: z.coerce.date(),
-  rating: z.enum(["bad", "average", "good", "great"]),
+  rating: z.enum(["-1", "0", "1", "2"]),
   url: z.string(),
 });
 

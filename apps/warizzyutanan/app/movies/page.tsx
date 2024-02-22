@@ -1,6 +1,9 @@
+import { orderBy } from "lodash";
 import { Metadata } from "next";
 import Link from "next/link";
 import ToolsBar from "shared/ToolsBar";
+
+import { getMoviesYears } from "./getMoviesYears";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -9,6 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Page() {
+  const years = getMoviesYears();
   return (
     <>
       <ToolsBar
@@ -22,11 +26,13 @@ export default async function Page() {
         <h1>{`My movies`}</h1>
         <div className="font-mono">
           <ul>
-            {["2023"].map((item) => {
+            {orderBy(years, (item) => item, "desc").map((item) => {
               return (
-                <Link href={`/movies/${item}`} key={item}>
-                  {item}
-                </Link>
+                <li key={item}>
+                  <Link href={`/movies/${item}`} key={item}>
+                    {item}
+                  </Link>
+                </li>
               );
             })}
           </ul>
