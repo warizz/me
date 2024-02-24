@@ -1,6 +1,5 @@
 import { Metadata } from "next";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import Markdown from "shared/Markdown";
 import ToolsBar from "shared/ToolsBar";
 
 import { parseWihltdCsv } from "./parseWihltdCsv";
@@ -29,9 +28,7 @@ export default async function Page() {
             {list.map((item, index) => {
               return (
                 <li key={index}>
-                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                    {item.content}
-                  </ReactMarkdown>
+                  <Markdown>{item.content}</Markdown>
                 </li>
               );
             })}
