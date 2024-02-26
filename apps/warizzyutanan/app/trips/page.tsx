@@ -1,36 +1,38 @@
+import { format } from "date-fns";
 import orderBy from "lodash/orderBy";
 import { Metadata } from "next";
-import Markdown from "shared/Markdown";
 import ToolsBar from "shared/ToolsBar";
 
-import { parseWihltdCsv } from "./parseWihltdCsv";
+import { parseCsv } from "./parseCsv";
 
-const _title = "WIHLTD";
+const _title = "Trips";
 
 export async function generateMetadata(): Promise<Metadata> {
   return { title: _title };
 }
 
 export default async function Page() {
-  const list = await parseWihltdCsv("/app/wihltd/db.csv");
+  const list = await parseCsv("/app/trips/db.csv");
   return (
     <>
       <ToolsBar
         className="mb-3 lg:mb-2"
         breadcrumbs={[
           { text: "home", href: "/" },
-          { text: _title, href: "/wihltd" },
+          { text: _title, href: "/trips" },
         ]}
       />
       <div>
         <h1>{_title}</h1>
         <div className="font-mono">
           <ul>
-            {orderBy(list, "date", "desc").map((item, index) => {
+            {orderBy(list, "started_at", "desc").map((item, index) => {
               return (
                 <li key={index}>
-                  <span>{item.date.toLocaleDateString()}</span>
-                  <Markdown>{item.content}</Markdown>
+                  <div>
+                    <i>{format(item.started_at, "yyyy-MM-dd")}</i>
+                    <span>{`: ${item.title}`}</span>
+                  </div>
                 </li>
               );
             })}
