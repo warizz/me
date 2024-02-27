@@ -16,7 +16,7 @@
     "@sentry/nextjs": "7.102.1",
     "@types/lodash": "4.14.202",
     "clsx": "2.1.0",
-    "csv-parse": "5.5.3",
+    "csv-parse": "5.5.4",
     "date-fns": "3.3.1",
     "gray-matter": "4.0.3",
     "lodash": "4.17.21",
