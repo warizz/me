@@ -32,6 +32,6 @@
     "@esbuild/linux-x64": "0.20.2",
     "@next/swc-linux-x64-gnu": "14.1.0",
     "@next/swc-linux-x64-musl": "14.1.0",
-    "turbo-linux-64": "1.12.5"
+    "turbo-linux-64": "1.13.0"
   }
 }
