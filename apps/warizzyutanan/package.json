@@ -43,6 +43,6 @@
     "postcss": "8.4.38",
     "tailwindcss": "3.4.1",
     "tsconfig": "*",
-    "typescript": "5.4.2"
+    "typescript": "5.4.3"
   }
 }
