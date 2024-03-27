@@ -32,7 +32,7 @@
     "@esbuild/linux-x64": "0.20.2",
     "@next/swc-linux-x64-gnu": "14.1.4",
     "@next/swc-linux-x64-musl": "14.1.4",
-    "@rollup/rollup-linux-x64-gnu": "4.13.0",
+    "@rollup/rollup-linux-x64-gnu": "4.13.1",
     "turbo-linux-64": "1.13.0"
   }
 }
