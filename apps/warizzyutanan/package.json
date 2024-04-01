@@ -33,7 +33,7 @@
     "@cypress/code-coverage": "3.12.30",
     "@tailwindcss/typography": "0.5.12",
     "@types/cypress__code-coverage": "3.10.2",
-    "@types/node": "20.11.30",
+    "@types/node": "20.12.2",
     "@types/react": "18.2.73",
     "@types/react-dom": "18.2.23",
     "autoprefixer": "10.4.19",
