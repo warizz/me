@@ -24,7 +24,7 @@
     "ts-node": "10.9.2"
   },
   "devDependencies": {
-    "@babel/core": "7.24.3",
+    "@babel/core": "7.24.4",
     "@cypress/code-coverage": "3.12.30",
     "@tailwindcss/typography": "0.5.12",
     "@types/cypress__code-coverage": "3.10.2",
