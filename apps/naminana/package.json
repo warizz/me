@@ -29,7 +29,7 @@
     "@tailwindcss/typography": "0.5.12",
     "@types/cypress__code-coverage": "3.10.2",
     "@types/node": "20.12.7",
-    "@types/react": "18.2.75",
+    "@types/react": "18.2.79",
     "@types/react-dom": "18.2.25",
     "autoprefixer": "10.4.19",
     "babel-plugin-istanbul": "6.1.1",
