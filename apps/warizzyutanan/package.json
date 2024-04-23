@@ -15,7 +15,7 @@
   "dependencies": {
     "@sentry/nextjs": "7.111.0",
     "@types/lodash": "4.17.0",
-    "clsx": "2.1.0",
+    "clsx": "2.1.1",
     "csv-parse": "5.5.4",
     "date-fns": "3.6.0",
     "gray-matter": "4.0.3",
