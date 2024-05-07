@@ -10,7 +10,7 @@
   "dependencies": {
     "clsx": "2.1.1",
     "lodash.omit": "4.5.0",
-    "react": "18.2.0",
+    "react": "18.3.1",
     "react-markdown": "8.0.7",
     "react-syntax-highlighter": "15.5.0",
     "remark-gfm": "3.0.1",
@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@types/lodash.omit": "4.5.9",
-    "@types/react": "18.2.79",
+    "@types/react": "18.3.1",
     "@types/react-dom": "18.2.25",
     "@types/react-syntax-highlighter": "15.5.11",
     "eslint": "8.57.0",
