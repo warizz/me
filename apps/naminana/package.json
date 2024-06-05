@@ -13,7 +13,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@sentry/nextjs": "8.2.1",
+    "@sentry/nextjs": "8.7.0",
     "clsx": "2.1.1",
     "gray-matter": "4.0.3",
     "next": "14.2.3",
@@ -24,12 +24,12 @@
     "ts-node": "10.9.2"
   },
   "devDependencies": {
-    "@babel/core": "7.24.5",
+    "@babel/core": "7.24.6",
     "@cypress/code-coverage": "3.12.39",
     "@tailwindcss/typography": "0.5.13",
     "@types/cypress__code-coverage": "3.10.2",
     "@types/node": "20.12.12",
-    "@types/react": "18.3.2",
+    "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
     "autoprefixer": "10.4.19",
     "babel-plugin-istanbul": "6.1.1",
