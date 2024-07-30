@@ -4,7 +4,10 @@ import { parse } from "csv-parse";
 import { z } from "zod";
 
 const Schema = z.object({
-  ended_at: z.coerce.date(),
+  ended_at: z
+    .string()
+    .transform((value) => value || null)
+    .transform(z.coerce.date().nullable().parse),
   id: z.string(),
   notes: z.string(),
   started_at: z.coerce.date(),
