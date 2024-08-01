@@ -21,8 +21,8 @@
   },
   "devDependencies": {
     "eslint-config-custom": "*",
-    "prettier": "3.2.4",
-    "turbo": "2.0.4"
+    "prettier": "3.3.3",
+    "turbo": "2.0.11"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -32,7 +32,7 @@
     "@esbuild/linux-x64": "0.21.4",
     "@next/swc-linux-x64-gnu": "14.2.5",
     "@next/swc-linux-x64-musl": "14.2.5",
-    "@rollup/rollup-linux-x64-gnu": "4.19.0",
+    "@rollup/rollup-linux-x64-gnu": "4.19.1",
     "turbo-linux-64": "1.13.3"
   }
 }
