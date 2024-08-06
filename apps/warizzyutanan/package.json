@@ -13,7 +13,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@sentry/nextjs": "8.7.0",
+    "@sentry/nextjs": "8.24.0",
     "@types/lodash": "4.17.7",
     "clsx": "2.1.1",
     "csv-parse": "5.5.6",
