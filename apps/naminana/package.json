@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.25.2",
-    "@cypress/code-coverage": "3.12.44",
+    "@cypress/code-coverage": "3.12.45",
     "@tailwindcss/typography": "0.5.13",
     "@types/cypress__code-coverage": "3.10.2",
     "@types/node": "20.14.5",
