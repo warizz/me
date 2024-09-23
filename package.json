@@ -30,8 +30,8 @@
   "packageManager": "npm@9.2.0",
   "optionalDependencies": {
     "@esbuild/linux-x64": "0.23.1",
-    "@next/swc-linux-x64-gnu": "14.2.7",
-    "@next/swc-linux-x64-musl": "14.2.7",
+    "@next/swc-linux-x64-gnu": "14.2.13",
+    "@next/swc-linux-x64-musl": "14.2.13",
     "@rollup/rollup-linux-x64-gnu": "4.21.1",
     "turbo-linux-64": "1.13.3"
   }
