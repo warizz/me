@@ -33,6 +33,6 @@
     "@next/swc-linux-x64-gnu": "14.2.13",
     "@next/swc-linux-x64-musl": "14.2.13",
     "@rollup/rollup-linux-x64-gnu": "4.21.1",
-    "turbo-linux-64": "1.13.3"
+    "turbo-linux-64": "2.1.2"
   }
 }
