@@ -25,6 +25,6 @@ interface Args {
 export const getStaticProps = ({ title }: Args): GetStaticProps<IPostsPage> => {
   return async () => {
     const posts = getPosts();
-    return { props: { title, posts } };
+    return { props: PostsPage.parse({ posts, title }) };
   };
 };
