@@ -11,7 +11,7 @@
     "eslint-config-prettier": "10.0.1",
     "eslint-config-turbo": "2.1.0",
     "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-react": "7.35.0",
+    "eslint-plugin-react": "7.37.4",
     "typescript": "5.7.3"
   },
   "publishConfig": {
