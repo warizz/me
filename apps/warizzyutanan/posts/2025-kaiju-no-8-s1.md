@@ -5,6 +5,7 @@ publish: true
 tags:
   - anime
   - movie
+  - scifi
 ---
 
 ## 3 Jan
