@@ -3,7 +3,8 @@ title: "Squid Game 2"
 date: "2025-01-10"
 publish: true
 tags:
-  - movies
+  - movie
+  - thriller
 ---
 
 WARNING! Contain spoilers
