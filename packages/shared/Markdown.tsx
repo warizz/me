@@ -13,9 +13,6 @@ export default function Markdown({ children }: Props) {
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
       components={{
-        pre({ children }) {
-          return <>{children}</>;
-        },
         code({ inline, className, children, ...props }) {
           const _props = omit(props, "node");
           const match = /language-(\w+)/.exec(className || "");
@@ -39,6 +36,19 @@ export default function Markdown({ children }: Props) {
               {children.toString()}
             </Prism>
           );
+        },
+        img({ ...props }) {
+          const _props = omit(props, "node");
+          return (
+            // eslint-disable-next-line jsx-a11y/alt-text, @next/next/no-img-element
+            <img
+              {..._props}
+              className="w-full lg:w-auto lg:max-h-[300px] border-2 lg:border-1 border-black dark:border-0 shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] dark:shadow-white"
+            />
+          );
+        },
+        pre({ children }) {
+          return <>{children}</>;
         },
       }}
     >
