@@ -14,6 +14,7 @@ export const Post = z.object({
   markdownString: z.string(),
   tags: z.string().array(),
   title: z.string(),
+  tldr: z.string().nullable().default(null),
 });
 
 export type IPost = z.infer<typeof Post>;
@@ -32,5 +33,6 @@ export default function getPostData(fileName: string) {
     markdownString: meta.content,
     tags: meta.data.tags ?? [],
     title: meta.data.title,
+    tldr: meta.data.tldr,
   });
 }
