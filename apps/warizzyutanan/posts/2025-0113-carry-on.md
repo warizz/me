@@ -1,0 +1,10 @@
+---
+title: "Carry-On"
+date: "2025-01-13"
+publish: true
+tags:
+  - movie
+  - thriller
+---
+
+The plot was engaging, though some parts felt unrealistic—like the police allowing a TSA officer to climb into a plane to defuse a bomb. The main character also faced pressure from his girlfriend to push forward in his career.

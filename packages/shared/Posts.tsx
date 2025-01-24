@@ -49,7 +49,7 @@ const Posts = ({ posts, title }: Props) => {
                     {post.title}
                   </Link>
                 </div>
-                <div className="prose-sm font-sans flex gap-2 items-center">
+                <div className="prose-sm font-sans flex gap-2 items-center flex-wrap">
                   <span className="font-serif">
                     {new Intl.DateTimeFormat("default", {
                       year: "numeric",
