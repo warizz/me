@@ -49,6 +49,7 @@ const Posts = ({ posts, title }: Props) => {
                     {post.title}
                   </Link>
                 </div>
+                <p className="!m-0 prose-base italic">{post.tldr}</p>
                 <div className="prose-sm font-sans flex gap-2 items-center flex-wrap">
                   <span className="font-serif">
                     {new Intl.DateTimeFormat("default", {
