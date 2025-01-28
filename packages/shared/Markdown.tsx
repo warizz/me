@@ -2,6 +2,7 @@ import omit from "lodash.omit";
 import ReactMarkdown from "react-markdown";
 import Prism from "react-syntax-highlighter/dist/cjs/prism";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
 interface Props {
@@ -12,6 +13,8 @@ export default function Markdown({ children }: Props) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
+      // @ts-expect-error 3rd party plugin
+      rehypePlugins={[rehypeRaw]}
       components={{
         code({ inline, className, children, ...props }) {
           const _props = omit(props, "node");
