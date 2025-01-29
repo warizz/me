@@ -30,7 +30,7 @@ export default function Home() {
             { url: "/wihltd", title: "WIHLTD", id: 5 },
             { url: "/trips", title: "trips", id: 4 },
           ],
-          "id"
+          "id",
         ).map((item) => {
           return (
             <li key={item.id}>
