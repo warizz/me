@@ -7,6 +7,7 @@ module.exports = {
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
   ],
   rules: {
     "prefer-template": "error",
@@ -20,6 +21,7 @@ module.exports = {
       },
     ],
     "@typescript-eslint/no-unused-vars": "error",
+    "prettier/prettier": "error",
   },
   settings: {
     "import/resolver": { node: true, typescript: true },
