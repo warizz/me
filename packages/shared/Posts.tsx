@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import Page from "./Page";
+import PostDate from "./PostDate";
 import type { IPostsPage } from "./Posts.server";
 import Tag from "./Tag";
 
@@ -51,13 +52,7 @@ const Posts = ({ posts, title }: Props) => {
                 </div>
                 <p className="!m-0 prose-base italic">{post.tldr}</p>
                 <div className="prose-sm font-sans flex gap-2 items-center flex-wrap">
-                  <span className="font-serif">
-                    {new Intl.DateTimeFormat("default", {
-                      year: "numeric",
-                      day: "numeric",
-                      month: "short",
-                    }).format(new Date(post.date))}
-                  </span>
+                  <PostDate value={new Date(post.date)} />
                   <span>•</span>
                   {post.tags.map((tag) => (
                     <Tag key={tag} txt={tag} />

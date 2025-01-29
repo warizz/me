@@ -8,6 +8,8 @@ tags:
   - horror
 ---
 
+WARNING! Contain full spoilers
+
 ## Plot
 
 An aging actress, unwilling to accept getting old, discovers a drug that allows her to split into two bodies. The movie ignores logic entirely—the drug works instantly, the process requires no instructions, and everything just happens. In the second half, the younger body refuses to switch back, creating a conflict as it tries to cheat time, affecting the older body. The story escalates to an extreme climax where the protagonist transforms into a grotesque creature.

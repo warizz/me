@@ -15,7 +15,7 @@ export default function ColorSchemeToggle({ className }: Props) {
       onClick={() => toggleColorScheme()}
       className={clsx(
         "border px-2 py-0 prose-sm rounded-md border-black dark:border-white",
-        className
+        className,
       )}
     >
       <span className="font-sans">{"color: "}</span>

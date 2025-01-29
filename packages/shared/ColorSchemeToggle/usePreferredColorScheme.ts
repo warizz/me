@@ -6,7 +6,7 @@ type ColorScheme = "light" | "dark" | "system";
 
 function _getToggleHandler(
   preferredColorScheme: string,
-  setPreferredColorScheme: (colorScheme: ColorScheme) => void
+  setPreferredColorScheme: (colorScheme: ColorScheme) => void,
 ) {
   return () => {
     switch (preferredColorScheme) {
@@ -41,7 +41,7 @@ export default function usePreferredColorScheme() {
 
   useEffect(() => {
     const isDarkColorScheme = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     ).matches;
 
     const useDarkColorScheme =
