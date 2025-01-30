@@ -1,7 +1,8 @@
 import { format } from "date-fns";
 import orderBy from "lodash/orderBy";
 import { Metadata } from "next";
-import ToolsBar from "shared/ToolsBar";
+
+import ToolsBar from "../../components/ToolsBar";
 
 import { parseCsv } from "./parseCsv";
 
