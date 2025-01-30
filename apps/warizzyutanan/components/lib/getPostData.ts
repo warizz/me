@@ -4,6 +4,8 @@ import path from "path";
 import matter from "gray-matter";
 import { z } from "zod";
 
+console.log("::process.cwd()", process.cwd());
+
 export const postsDirectory = path.join(process.cwd(), "posts");
 
 export const Post = z.object({
