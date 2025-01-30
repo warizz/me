@@ -17,6 +17,7 @@ export default function updateSitemap(domain: string) {
 
   const posts = readdirSync(postsDirectory)
     .map(getPostData)
+    .filter((post) => post !== null)
     .filter((post) => post.isPublished);
 
   const sitemap = parseToSitemap(domain, posts);

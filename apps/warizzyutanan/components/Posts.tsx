@@ -1,11 +1,17 @@
 import Link from "next/link";
+import { z } from "zod";
 
+import { Post } from "./lib/getPostData";
 import Page from "./Page";
 import PostDate from "./PostDate";
-import type { IPostsPage } from "./Posts.server";
 import Tag from "./Tag";
 
-type Props = IPostsPage & { tag: string | null };
+const PostsPage = z.object({
+  posts: Post.array(),
+  title: z.string(),
+});
+
+type Props = z.infer<typeof PostsPage> & { tag: string | null };
 
 const Posts = ({ posts, title, tag }: Props) => {
   const breadcrumbs = [{ text: "posts", href: "/posts" }];
