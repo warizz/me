@@ -17,6 +17,7 @@ const PostsSchema = z.object({
 function getPosts() {
   return readdirSync(postsDirectory)
     .map(getPostData)
+    .filter((post) => post !== null)
     .filter((post) => post.isPublished);
 }
 

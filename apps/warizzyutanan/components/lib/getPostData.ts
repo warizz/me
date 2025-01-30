@@ -22,19 +22,23 @@ export const Post = z.object({
 export type IPost = z.infer<typeof Post>;
 
 export default function getPostData(fileName: string) {
-  const fullPath = path.join(postsDirectory, fileName);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const meta = matter(fileContents);
-  const [id] = fileName.split(".");
+  try {
+    const fullPath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const meta = matter(fileContents);
+    const [id] = fileName.split(".");
 
-  return Post.parse({
-    date: meta.data.date,
-    description: meta.data.description ?? "",
-    id,
-    isPublished: !!meta.data.publish,
-    markdownString: meta.content,
-    tags: meta.data.tags ?? [],
-    title: meta.data.title,
-    tldr: meta.data.tldr,
-  });
+    return Post.parse({
+      date: meta.data.date,
+      description: meta.data.description ?? "",
+      id,
+      isPublished: !!meta.data.publish,
+      markdownString: meta.content,
+      tags: meta.data.tags ?? [],
+      title: meta.data.title,
+      tldr: meta.data.tldr,
+    });
+  } catch (error) {
+    return null;
+  }
 }

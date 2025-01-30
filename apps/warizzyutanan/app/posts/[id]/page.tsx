@@ -1,6 +1,8 @@
 import { readdirSync } from "fs";
 import path from "path";
 
+import { notFound } from "next/navigation";
+
 import getPostData from "../../../components/lib/getPostData";
 import Post from "../../../components/Post";
 
@@ -17,6 +19,10 @@ export default async function PostPage({ params }: { params: { id: string } }) {
   const id = params?.id;
 
   const post = await getPostData(`${id}.md`);
+
+  if (!post) {
+    notFound();
+  }
 
   return <Post post={post} siteTitle="Warizz Yutanan" />;
 }
