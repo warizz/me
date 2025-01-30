@@ -1,42 +1,19 @@
-"use client";
-
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { z } from "zod";
 
 import Page from "./Page";
 import PostDate from "./PostDate";
 import type { IPostsPage } from "./Posts.server";
 import Tag from "./Tag";
 
-type Props = IPostsPage;
+type Props = IPostsPage & { tag: string | null };
 
-function useTag() {
-  "use client";
-
-  const [tag, setTag] = useState<string | null>(null);
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const t = z
-      .string()
-      .nullish()
-      .default(null)
-      .parse(searchParams?.get("tag"));
-    setTag(t);
-  }, [searchParams]);
-
-  return tag;
-}
-
-const Posts = ({ posts, title }: Props) => {
-  const tag = useTag();
+const Posts = ({ posts, title, tag }: Props) => {
   const breadcrumbs = [{ text: "posts", href: "/posts" }];
 
   if (tag) {
     breadcrumbs.push({ text: `tag: ${tag}`, href: `/post?tag=${tag}` });
   }
+
   return (
     <Page
       meta={{

@@ -20,13 +20,22 @@ function getPosts() {
     .filter((post) => post.isPublished);
 }
 
+const SearchParamsSchema = z.object({
+  tag: z.string().nullish().default(null),
+});
+
 export type IPostsPage = z.infer<typeof PostsSchema>;
 
-function PostsPage() {
+interface Props {
+  searchParams: Promise<unknown>;
+}
+
+async function PostsPage({ searchParams }: Props) {
+  const s = SearchParamsSchema.parse(await searchParams);
   const posts = getPosts();
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Posts posts={posts} title="Warizz Yutanan's blog" />;
+      <Posts tag={s.tag} posts={posts} title="Warizz Yutanan's blog" />
     </Suspense>
   );
 }
