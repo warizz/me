@@ -1,5 +1,6 @@
 import { readdirSync } from "fs";
 
+import { Suspense } from "react";
 import { z } from "zod";
 
 import getPostData, {
@@ -23,7 +24,11 @@ export type IPostsPage = z.infer<typeof PostsSchema>;
 
 function PostsPage() {
   const posts = getPosts();
-  return <Posts posts={posts} title="Warizz Yutanan's blog" />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Posts posts={posts} title="Warizz Yutanan's blog" />;
+    </Suspense>
+  );
 }
 
 export default PostsPage;
