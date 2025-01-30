@@ -39,6 +39,8 @@ export default function getPostData(fileName: string) {
       tldr: meta.data.tldr,
     });
   } catch (error) {
+    console.log("::error", fileName, error);
+
     return null;
   }
 }
