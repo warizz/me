@@ -1,5 +1,4 @@
-import generateSitemap from "shared/lib/updateSitemap";
-
 import { DOMAIN } from "./app.config";
+import updateSitemap from "./component/shared/lib/updateSitemap";
 
-generateSitemap(DOMAIN);
+updateSitemap(DOMAIN);
