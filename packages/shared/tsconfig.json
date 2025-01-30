@@ -1,9 +1,0 @@
-{
-  "extends": "tsconfig/react-library.json",
-  "include": [".", "./react-syntax-highlighter.d.ts"],
-  "exclude": ["dist", "build", "node_modules"],
-  "compilerOptions": {
-    "noEmit": true,
-    "lib": ["dom", "dom.iterable", "esnext"]
-  }
-}

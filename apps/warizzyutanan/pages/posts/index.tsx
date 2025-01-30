@@ -1,6 +1,6 @@
-import Posts from "shared/Posts";
-import { getStaticProps as _getStaticProps } from "shared/Posts.server";
-import type { IPostsPage } from "shared/Posts.server";
+import Posts from "../../component/shared/Posts";
+import { getStaticProps as _getStaticProps } from "../../component/shared/Posts.server";
+import type { IPostsPage } from "../../component/shared/Posts.server";
 
 type Props = IPostsPage;
 
