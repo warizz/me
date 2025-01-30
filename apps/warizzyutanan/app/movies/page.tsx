@@ -1,7 +1,8 @@
-import { orderBy } from "lodash";
+import orderBy from "lodash/orderBy";
 import { Metadata } from "next";
 import Link from "next/link";
-import ToolsBar from "shared/ToolsBar";
+
+import ToolsBar from "../../components/ToolsBar";
 
 import { getMoviesYears } from "./getMoviesYears";
 

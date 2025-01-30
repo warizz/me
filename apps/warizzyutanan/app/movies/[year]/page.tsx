@@ -1,7 +1,7 @@
 import orderBy from "lodash/orderBy";
 import { Metadata } from "next";
-import ToolsBar from "shared/ToolsBar";
 
+import ToolsBar from "../../../components/ToolsBar";
 import { getMoviesYears } from "../getMoviesYears";
 
 import { Movie, parseMoviesCsv } from "./parseMoviesCsv";

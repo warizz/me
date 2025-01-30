@@ -4,7 +4,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "../../packages/shared/react-syntax-highlighter.d.ts",
     ".next/types/**/*.ts"
   ],
   "exclude": [

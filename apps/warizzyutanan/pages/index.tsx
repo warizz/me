@@ -1,8 +1,8 @@
 import sortBy from "lodash/sortBy";
 import Link from "next/link";
-import Page from "shared/Page";
 
 import { homeConfig } from "../app.config";
+import Page from "../components/Page";
 
 export default function Home() {
   return (

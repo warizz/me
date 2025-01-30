@@ -1,7 +1,8 @@
 import orderBy from "lodash/orderBy";
 import { Metadata } from "next";
-import Markdown from "shared/Markdown";
-import ToolsBar from "shared/ToolsBar";
+
+import Markdown from "../../components/Markdown";
+import ToolsBar from "../../components/ToolsBar";
 
 import { parseWihltdCsv } from "./parseWihltdCsv";
 

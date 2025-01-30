@@ -1,4 +1,4 @@
-import type { IPost } from "shared/lib/getPostData";
+import { IPost } from "./getPostData";
 
 export default function parseToSitemap(DOMAIN: string, posts: IPost[]) {
   return `<?xml version="1.0" encoding="UTF-8"?>

@@ -1,4 +1,4 @@
-import omit from "lodash.omit";
+import omit from "lodash/omit";
 import ReactMarkdown from "react-markdown";
 import Prism from "react-syntax-highlighter/dist/cjs/prism";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";

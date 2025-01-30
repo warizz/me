@@ -3,7 +3,8 @@ import capitalize from "lodash/capitalize";
 import groupBy from "lodash/groupBy";
 import map from "lodash/map";
 import { Metadata } from "next";
-import ToolsBar from "shared/ToolsBar";
+
+import ToolsBar from "../../components/ToolsBar";
 
 import { parseLogsCsv } from "./parseLogsCsv";
 

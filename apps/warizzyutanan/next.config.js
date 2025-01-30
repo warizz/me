@@ -6,7 +6,6 @@ const { withSentryConfig } = require("@sentry/nextjs");
  **/
 const nextConfig = {
   reactStrictMode: true,
-  transpilePackages: ["shared"],
   i18n: {
     locales: ["en"],
     defaultLocale: "en",

@@ -8,7 +8,6 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}", // Note the addition of the `app` directory.
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
-    "../../packages/shared/**/*.{ts,tsx}",
   ],
   plugins: [require("@tailwindcss/typography")],
   theme: {

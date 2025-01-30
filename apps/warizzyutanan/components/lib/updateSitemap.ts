@@ -1,8 +1,8 @@
 import { readdirSync, writeFileSync } from "fs";
 import path from "path";
 
-import getPostData, { postsDirectory } from "shared/lib/getPostData";
-import parseToSitemap from "shared/lib/parseToSitemap";
+import getPostData, { postsDirectory } from "./getPostData";
+import parseToSitemap from "./parseToSitemap";
 
 function _info(...args: unknown[]) {
   console.info("[gen-sitemap]", ...args);
