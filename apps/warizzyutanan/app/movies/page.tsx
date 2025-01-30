@@ -1,4 +1,4 @@
-import { orderBy } from "lodash";
+import orderBy from "lodash/orderBy";
 import { Metadata } from "next";
 import Link from "next/link";
 
