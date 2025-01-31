@@ -1,6 +1,5 @@
 import { readdirSync } from "fs";
 
-import { Suspense } from "react";
 import { z } from "zod";
 
 import getPostData, {
@@ -20,24 +19,11 @@ function getPosts() {
     .filter((post) => post.isPublished);
 }
 
-const SearchParamsSchema = z.object({
-  tag: z.string().nullish().default(null),
-});
-
 export type IPostsPage = z.infer<typeof PostsSchema>;
 
-interface Props {
-  searchParams: Promise<unknown>;
-}
-
-async function PostsPage({ searchParams }: Props) {
-  const s = SearchParamsSchema.parse(await searchParams);
+async function PostsPage() {
   const posts = getPosts();
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Posts tag={s.tag} posts={posts} title="Warizz Yutanan's blog" />
-    </Suspense>
-  );
+  return <Posts posts={posts} title="Warizz Yutanan's blog" />;
 }
 
 export default PostsPage;
