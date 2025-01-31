@@ -40,7 +40,6 @@ const Posts = ({ posts, title }: Props) => {
                 <p className="!m-0 prose-base italic">{post.tldr}</p>
                 <div className="prose-sm font-sans flex gap-2 items-center flex-wrap">
                   <PostDate value={new Date(post.date)} />
-                  <span>•</span>
                 </div>
               </div>
             );
