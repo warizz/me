@@ -9,14 +9,18 @@ export async function generateStaticParams() {
   const fileNames = readdirSync(postsDirectory);
 
   return fileNames.map((fileName) => {
-    return { params: { id: path.parse(fileName).name } };
+    const id = path.parse(fileName).name;
+    return { id };
   });
 }
 
-export default async function PostPage({ params }: { params: { id: string } }) {
-  const id = params?.id;
-
-  const post = await getPostData(`${id}.md`);
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const post = getPostData(`${id}.md`);
 
   return <Post post={post} siteTitle="Warizz Yutanan" />;
 }

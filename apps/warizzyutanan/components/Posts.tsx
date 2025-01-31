@@ -3,17 +3,12 @@ import Link from "next/link";
 import Page from "./Page";
 import PostDate from "./PostDate";
 import type { IPostsPage } from "./Posts.server";
-import Tag from "./Tag";
 
-type Props = IPostsPage & { tag: string | null };
+type Props = IPostsPage;
 
-const Posts = ({ posts, title, tag }: Props) => {
-  const breadcrumbs = [{ text: "posts", href: "/posts" }];
+const breadcrumbs = [{ text: "posts", href: "/posts" }];
 
-  if (tag) {
-    breadcrumbs.push({ text: `tag: ${tag}`, href: `/post?tag=${tag}` });
-  }
-
+const Posts = ({ posts, title }: Props) => {
   return (
     <Page
       meta={{
@@ -31,10 +26,6 @@ const Posts = ({ posts, title, tag }: Props) => {
             if (aDate > bDate) return -1;
             return 1;
           })
-          .filter((post) => {
-            if (tag) return post.tags.includes(tag);
-            return true;
-          })
           .map((post) => {
             return (
               <div key={post.id} className="mb-8 lg:mb-12">
@@ -49,10 +40,6 @@ const Posts = ({ posts, title, tag }: Props) => {
                 <p className="!m-0 prose-base italic">{post.tldr}</p>
                 <div className="prose-sm font-sans flex gap-2 items-center flex-wrap">
                   <PostDate value={new Date(post.date)} />
-                  <span>•</span>
-                  {post.tags.map((tag) => (
-                    <Tag key={tag} txt={tag} />
-                  ))}
                 </div>
               </div>
             );
