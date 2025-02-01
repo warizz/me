@@ -1,7 +1,7 @@
 ---
 title: "Boy Kills World"
 date: "2025-01-11"
-tldr: "A live-action movie with cartoonish action scenes that failed to engage, despite some brutal moments."
+tldr: "A cartoon-like live-action movie with brutal scenes."
 publish: true
 tags:
   - movie
