@@ -17,13 +17,8 @@ I decided to enroll in this course because I've heard about Kubernetes (K8s) for
 ---
 
 ## Summary
-
-**Container**: A lightweight software package that runs consistently across environments. This course explains what it is and how it works.
-
-**Docker Compose**: A tool for defining and running multi-container Docker apps. I learned and understood the usage of volumes here.
-
-**Kubernetes (K8s)**: An orchestration system for managing containers in production. I learned that it is used for deployment.
-
-**Helm**: A package manager for Kubernetes, simplifying deployment.
-
-**Skaffold**: A tool for automating local Kubernetes development.
+- Container: A lightweight software package that runs consistently across environments. This course explains what it is and how it works.
+- Docker Compose: A tool for defining and running multi-container Docker apps. I learned and understood the usage of volumes here.
+- Kubernetes (K8s): An orchestration system for managing containers in production. I learned that it is used for deployment.
+- Helm: A package manager for Kubernetes, simplifying deployment.
+- Skaffold: A tool for automating local Kubernetes development.
