@@ -26,5 +26,5 @@
     "test:ci": {},
     "gen-sitemap": {}
   },
-  "globalEnv": ["NEXT_PUBLIC_IS_DISABLED_GA", "VERCEL_ENV"]
+  "globalEnv": ["NEXT_PUBLIC_IS_DISABLED_GA", "VERCEL_ENV", "ANALYZE"]
 }

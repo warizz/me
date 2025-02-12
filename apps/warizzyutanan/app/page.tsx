@@ -2,24 +2,25 @@ import sortBy from "lodash/sortBy";
 import Link from "next/link";
 
 import { homeConfig } from "../app.config";
-import Page from "../components/Page";
+import BlogLayout from "../components/BlogLayout";
+
+export async function generateMetadata() {
+  return {
+    title: homeConfig.title,
+    description: homeConfig.description,
+    robots: "index, follow",
+  };
+}
 
 export default function Home() {
   return (
-    <Page
-      meta={{
-        title: homeConfig.title,
-        description: homeConfig.description,
-        robots: "index, follow",
-      }}
-      layout={{
-        breadcrumbs: [],
-        h1: (
-          <h1 className="text-primary dark:text-primary-invert">
-            {homeConfig.h1}
-          </h1>
-        ),
-      }}
+    <BlogLayout
+      breadcrumbs={[]}
+      h1={
+        <h1 className="text-primary dark:text-primary-invert">
+          {homeConfig.h1}
+        </h1>
+      }
     >
       <ul>
         {sortBy(
@@ -39,6 +40,6 @@ export default function Home() {
           );
         })}
       </ul>
-    </Page>
+    </BlogLayout>
   );
 }
