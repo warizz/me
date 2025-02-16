@@ -25,8 +25,8 @@ importers:
         specifier: 14.2.13
         version: 14.2.13
       turbo-linux-64:
-        specifier: 2.4.1
-        version: 2.4.1
+        specifier: 2.4.2
+        version: 2.4.2
 
   apps/warizzyutanan:
     dependencies:
@@ -2817,6 +2817,11 @@ packages:
 
   turbo-linux-64@2.4.1:
     resolution: {integrity: sha512-iXIeG8YhluaJF/5KQEudRf8ECBWND8X0yxXDrFIq2wmLLCg4A7gSSzVcBq30rYYeyyU4xMj/sm3HbsAaao3jjg==}
+    cpu: [x64]
+    os: [linux]
+
+  turbo-linux-64@2.4.2:
+    resolution: {integrity: sha512-Fy/uL8z/LAYcPbm7a1LwFnTY9pIi5FAi12iuHsgB7zHjdh4eeIKS2NIg4nroAmTcUTUZ0/cVTo4bDOCUcS3aKw==}
     cpu: [x64]
     os: [linux]
 
@@ -6287,6 +6292,9 @@ snapshots:
     optional: true
 
   turbo-linux-64@2.4.1:
+    optional: true
+
+  turbo-linux-64@2.4.2:
     optional: true
 
   turbo-linux-arm64@2.4.1:
