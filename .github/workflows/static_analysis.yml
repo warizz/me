@@ -5,26 +5,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile]
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.x
-      - name: Install modules
-        run: npm ci
+          cache: pnpm
       - name: Lint
-        run: npm run lint
+        run: pnpm run lint
   tsc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile]
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - name: Install modules
-        run: npm ci
+          cache: pnpm
       - name: Lint
-        run: npm run tsc
+        run: pnpm run tsc

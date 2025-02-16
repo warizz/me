@@ -4,9 +4,6 @@
     "build": {
       "outputs": ["dist/**", ".next/**"]
     },
-    "build:test": {
-      "outputs": ["dist/**", ".next/**"]
-    },
     "lint": {
       "outputs": []
     },
@@ -19,11 +16,7 @@
     "start": {
       "dependsOn": ["build"]
     },
-    "start:test": {
-      "dependsOn": ["build:test"]
-    },
     "test": {},
-    "test:ci": {},
     "gen-sitemap": {}
   },
   "globalEnv": ["NEXT_PUBLIC_IS_DISABLED_GA", "VERCEL_ENV", "ANALYZE"]

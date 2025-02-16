@@ -4,17 +4,14 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "build:test": "next build",
     "dev": "next dev -p 3000",
     "lint": "next lint",
     "start": "next start -p 3000",
-    "start:test": "next start -p 3000",
     "gen-sitemap": "ts-node -O '{\"module\": \"commonjs\"}' gen-sitemap.ts",
     "tsc": "tsc"
   },
   "dependencies": {
-    "@sentry/nextjs": "8.33.1",
-    "@types/lodash": "4.17.14",
+    "@types/lodash": "4.17.15",
     "clsx": "2.1.1",
     "csv-parse": "5.6.0",
     "date-fns": "3.6.0",
@@ -24,27 +21,25 @@
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-markdown": "8.0.7",
-    "react-syntax-highlighter": "15.5.0",
+    "react-syntax-highlighter": "15.6.1",
     "rehype-raw": "7.0.0",
     "remark-gfm": "3.0.1",
     "ts-node": "10.9.2",
-    "zod": "3.23.8"
+    "zod": "3.24.2"
   },
   "devDependencies": {
-    "@babel/core": "7.25.2",
-    "@next/bundle-analyzer": "15.1.6",
+    "@next/bundle-analyzer": "15.1.7",
     "@tailwindcss/typography": "0.5.16",
-    "@types/node": "22.10.6",
+    "@types/node": "22.13.1",
     "@types/react": "18.3.8",
     "@types/react-dom": "18.3.0",
     "@types/react-syntax-highlighter": "15.5.13",
     "autoprefixer": "10.4.20",
-    "babel-plugin-istanbul": "7.0.0",
     "eslint": "8.57.1",
-    "eslint-config-custom": "*",
-    "postcss": "8.5.1",
+    "eslint-config-custom": "workspace:*",
+    "postcss": "8.5.2",
     "tailwindcss": "3.4.17",
-    "tsconfig": "*",
+    "tsconfig": "workspace:*",
     "typescript": "5.7.3"
   }
 }
