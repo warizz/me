@@ -19,8 +19,8 @@ importers:
         version: 2.4.1
     optionalDependencies:
       '@next/swc-linux-x64-gnu':
-        specifier: 14.2.13
-        version: 14.2.13
+        specifier: 15.1.7
+        version: 15.1.7
       '@next/swc-linux-x64-musl':
         specifier: 14.2.13
         version: 14.2.13
@@ -292,6 +292,12 @@ packages:
 
   '@next/swc-linux-x64-gnu@14.2.13':
     resolution: {integrity: sha512-aVc7m4YL7ViiRv7SOXK3RplXzOEe/qQzRA5R2vpXboHABs3w8vtFslGTz+5tKiQzWUmTmBNVW0UQdhkKRORmGA==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+
+  '@next/swc-linux-x64-gnu@15.1.7':
+    resolution: {integrity: sha512-GOzXutxuLvLHFDAPsMP2zDBMl1vfUHHpdNpFGhxu90jEzH6nNIgmtw/s1MDwpTOiM+MT5V8+I1hmVFeAUhkbgQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -3203,6 +3209,9 @@ snapshots:
     optional: true
 
   '@next/swc-linux-x64-gnu@14.2.13':
+    optional: true
+
+  '@next/swc-linux-x64-gnu@15.1.7':
     optional: true
 
   '@next/swc-linux-x64-musl@14.2.13':
