@@ -28,7 +28,7 @@
   "optionalDependencies": {
     "@next/swc-linux-x64-gnu": "14.2.13",
     "@next/swc-linux-x64-musl": "14.2.13",
-    "turbo-linux-64": "2.4.1"
+    "turbo-linux-64": "2.4.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": ["cypress"]
