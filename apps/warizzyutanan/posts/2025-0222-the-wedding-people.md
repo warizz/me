@@ -1,7 +1,7 @@
 ---
 title: "The Wedding People"
 date: "2025-02-22"
-tldr: "The Wedding People—a sharp, honest story of grief, connection, and starting over."
+tldr: "A sharp, honest story of grief, connection, and starting over."
 publish: true
 tags:
   - fiction
