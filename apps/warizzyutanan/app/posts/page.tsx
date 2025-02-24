@@ -8,6 +8,7 @@ import PostDate from "../../components/PostDate";
 
 function getPosts() {
   return readdirSync(postsDirectory)
+    .filter((file) => file.endsWith(".md"))
     .map(getPostData)
     .filter((post) => post.isPublished);
 }
