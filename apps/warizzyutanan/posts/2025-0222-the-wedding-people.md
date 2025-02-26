@@ -5,7 +5,7 @@ tldr: "A sharp, honest story of grief, connection, and starting over."
 publish: true
 tags:
   - fiction
-  - drama
+  - book
 ---
 
 WARNING! Contain full spoilers
