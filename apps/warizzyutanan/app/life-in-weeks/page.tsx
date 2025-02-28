@@ -3,8 +3,6 @@ import React from "react";
 
 import weeks from "./data.json";
 
-console.log("::weeks", weeks);
-
 const startDate = new Date("1984-08-08");
 const endDate = new Date("2084-08-08");
 const today = new Date();
@@ -77,7 +75,7 @@ const WeeklyTimeline = () => {
               content={isHighlighted ? (event?.detail ?? "") : ""}
               data-testid="week"
               className={clsx(
-                "h-5 rounded border flex items-center justify-center px-2",
+                "h-5 rounded border flex items-center justify-center px-2 grow",
                 {
                   "bg-blue-500 border-blue-700 text-white min-w-auto flex-grow":
                     isHighlighted,
