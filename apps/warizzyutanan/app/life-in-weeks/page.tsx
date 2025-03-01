@@ -35,6 +35,9 @@ const getColorForWeek = (weekDate: Date) => {
 const weeksCount = getWeeksBetween(startDate, endDate) + 1;
 const currentWeek = getWeeksBetween(startDate, today);
 
+const remainingYearsStartDate = new Date(startDate);
+remainingYearsStartDate.setDate(startDate.getDate() + currentWeek * 7);
+
 const WeeklyTimeline = () => {
   return (
     <div>
