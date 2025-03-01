@@ -15,6 +15,33 @@ const getWeeksBetween = (start: Date, end: Date) => {
 const weeksCount = getWeeksBetween(startDate, endDate);
 const currentWeek = getWeeksBetween(startDate, new Date());
 
+const remainingYearsStartDate = new Date(startDate);
+remainingYearsStartDate.setDate(startDate.getDate() + currentWeek * 7);
+
+const colorConfig = [
+  {
+    start: new Date(
+      weeks.find((w) => w.title === "🐣 Born in 1984")?.date ?? "",
+    ),
+    end: new Date(weeks.find((w) => w.title === "Fabrinet")?.date ?? ""),
+    color: "bg-neutral-100 border-neutral-200",
+  },
+  {
+    start: new Date(weeks.find((w) => w.title === "Fabrinet")?.date ?? ""),
+    end: new Date(),
+    color: "bg-orange-100 border-orange-200",
+  },
+] as const;
+
+console.log("::colorConfig", colorConfig);
+
+const getColorForWeek = (weekDate: Date) => {
+  const config = colorConfig.find(
+    (c) => weekDate >= c.start && weekDate <= c.end,
+  );
+  return config ? config.color : "";
+};
+
 const WeeklyTimeline = () => {
   return (
     <div>
@@ -37,24 +64,21 @@ const WeeklyTimeline = () => {
           });
           const isHighlighted = event && !event.is_private;
           const isCurrentWeek = i === currentWeek;
-          const isFutureWeek = i > currentWeek;
 
           return (
             <div
               key={i}
+              title={weekDate.toDateString()}
               content={isHighlighted ? (event?.detail ?? "") : ""}
               data-testid="week"
               className={clsx(
                 "h-5 rounded border flex items-center justify-center px-2 grow",
                 {
-                  "bg-blue-500 border-blue-700 text-white min-w-auto":
+                  "bg-blue-500 border-blue-700 text-white min-w-auto cursor-pointer":
                     isHighlighted,
                   "bg-[#FFAB5B] border-[#A31D1D] text-white min-w-auto":
                     isCurrentWeek,
-                  "border-[#2DAA9E] bg-[#B4EBE6]":
-                    !isHighlighted && !isCurrentWeek && !isFutureWeek,
-                  "bg-gray-200":
-                    isFutureWeek && !isHighlighted && !isCurrentWeek,
+                  [getColorForWeek(weekDate)]: !isHighlighted && !isCurrentWeek,
                 },
               )}
             >
