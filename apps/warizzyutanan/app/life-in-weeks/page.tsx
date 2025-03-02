@@ -3,16 +3,18 @@ import React from "react";
 
 import weeks from "../../weeks.json";
 
+console.log("::weeks", weeks);
+
 const startDate = new Date("1984-08-08");
 const endDate = new Date(startDate);
-endDate.setFullYear(startDate.getFullYear() + 100);
+endDate.setFullYear(startDate.getFullYear() + 80);
 
 const getWeeksBetween = (start: Date, end: Date) => {
   const diffInMs = end.getTime() - start.getTime();
   return Math.floor(diffInMs / (7 * 24 * 60 * 60 * 1000));
 };
 
-const weeksCount = getWeeksBetween(startDate, endDate);
+const weeksCount = getWeeksBetween(startDate, endDate) + 1;
 const currentWeek = getWeeksBetween(startDate, new Date());
 
 const remainingYearsStartDate = new Date(startDate);
@@ -42,6 +44,8 @@ const getColorForWeek = (weekDate: Date) => {
   return config ? config.color : "";
 };
 
+const progressPercentage = (currentWeek / weeksCount) * 100;
+
 const WeeklyTimeline = () => {
   return (
     <div>
@@ -52,6 +56,16 @@ const WeeklyTimeline = () => {
           https://weeks.ginatrapani.org/
         </a>
       </p>
+      <div className="w-full bg-gray-200 rounded h-5 mb-4 relative">
+        <div
+          className="bg-blue-500 h-5 rounded flex items-center justify-end px-1"
+          style={{ width: `${progressPercentage}%` }}
+        >
+          <span className="text-white text-xs font-sans">
+            {progressPercentage.toFixed(2)}%
+          </span>
+        </div>
+      </div>
       <div className="flex flex-wrap justify-between gap-1 font-sans text-sm">
         {[...Array(weeksCount)].map((_, i) => {
           const weekDate = new Date(startDate);
@@ -72,7 +86,7 @@ const WeeklyTimeline = () => {
               content={isHighlighted ? (event?.detail ?? "") : ""}
               data-testid="week"
               className={clsx(
-                "h-5 rounded border flex items-center justify-center px-2 grow",
+                "h-5 rounded border flex items-center justify-center px-2",
                 {
                   "bg-blue-500 border-blue-700 text-white min-w-auto cursor-pointer":
                     isHighlighted,
