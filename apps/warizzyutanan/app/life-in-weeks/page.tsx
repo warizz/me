@@ -78,7 +78,7 @@ const WeeklyTimeline = () => {
               content={isHighlighted ? (event?.detail ?? "") : ""}
               data-testid="week"
               className={clsx(
-                "h-5 rounded border flex items-center justify-center px-2 grow",
+                "h-5 rounded border flex items-center justify-center px-2",
                 {
                   "bg-blue-500 border-blue-700 text-white min-w-auto flex-grow":
                     isHighlighted,
