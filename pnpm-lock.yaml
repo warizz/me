@@ -71,7 +71,7 @@ importers:
         version: 3.0.1
       ts-node:
         specifier: 10.9.2
-        version: 10.9.2(@types/node@22.13.1)(typescript@5.7.3)
+        version: 10.9.2(@types/node@22.13.9)(typescript@5.7.3)
       zod:
         specifier: 3.24.2
         version: 3.24.2
@@ -81,10 +81,10 @@ importers:
         version: 15.1.7
       '@tailwindcss/typography':
         specifier: 0.5.16
-        version: 0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3)))
+        version: 0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.9)(typescript@5.7.3)))
       '@types/node':
-        specifier: 22.13.1
-        version: 22.13.1
+        specifier: 22.13.9
+        version: 22.13.9
       '@types/react':
         specifier: 18.3.8
         version: 18.3.8
@@ -108,7 +108,7 @@ importers:
         version: 8.5.2
       tailwindcss:
         specifier: 3.4.17
-        version: 3.4.17(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3))
+        version: 3.4.17(ts-node@10.9.2(@types/node@22.13.9)(typescript@5.7.3))
       tsconfig:
         specifier: workspace:*
         version: link:../../packages/tsconfig
@@ -422,8 +422,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@22.13.1':
-    resolution: {integrity: sha512-jK8uzQlrvXqEU91UxiK5J7pKHyzgnI1Qnl0QDHIgVGuolJhRb9EEl28Cj9b3rGR8B2lhFCtvIm5os8lFnO/1Ew==}
+  '@types/node@22.13.9':
+    resolution: {integrity: sha512-acBjXdRJ3A6Pb3tqnw9HZmyR3Fiol3aGxRCK1x3d+6CDAMjl7I649wpSd+yNURCjbOUGu9tqtLKnTGxmK6CyGw==}
 
   '@types/prop-types@15.7.14':
     resolution: {integrity: sha512-gNMvNH49DJ7OJYv+KAKn0Xp45p8PLl6zo2YnvDIbTd4J6MER2BmWN49TG7n9LvkyihINxeKW8+3bfS2yDC9dzQ==}
@@ -3238,13 +3238,13 @@ snapshots:
       '@swc/counter': 0.1.3
       tslib: 2.8.1
 
-  '@tailwindcss/typography@0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3)))':
+  '@tailwindcss/typography@0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.9)(typescript@5.7.3)))':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3))
+      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@22.13.9)(typescript@5.7.3))
 
   '@tsconfig/node10@1.0.11': {}
 
@@ -3292,7 +3292,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@22.13.1':
+  '@types/node@22.13.9':
     dependencies:
       undici-types: 6.20.0
 
@@ -3321,7 +3321,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 22.13.1
+      '@types/node': 22.13.9
     optional: true
 
   '@typescript-eslint/eslint-plugin@8.24.1(@typescript-eslint/parser@8.24.1(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1)(typescript@5.7.3)':
@@ -5609,13 +5609,13 @@ snapshots:
       camelcase-css: 2.0.1
       postcss: 8.5.2
 
-  postcss-load-config@4.0.2(postcss@8.5.2)(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3)):
+  postcss-load-config@4.0.2(postcss@8.5.2)(ts-node@10.9.2(@types/node@22.13.9)(typescript@5.7.3)):
     dependencies:
       lilconfig: 3.1.3
       yaml: 2.7.0
     optionalDependencies:
       postcss: 8.5.2
-      ts-node: 10.9.2(@types/node@22.13.1)(typescript@5.7.3)
+      ts-node: 10.9.2(@types/node@22.13.9)(typescript@5.7.3)
 
   postcss-nested@6.2.0(postcss@8.5.2):
     dependencies:
@@ -6125,7 +6125,7 @@ snapshots:
       '@pkgr/core': 0.1.1
       tslib: 2.8.1
 
-  tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3)):
+  tailwindcss@3.4.17(ts-node@10.9.2(@types/node@22.13.9)(typescript@5.7.3)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -6144,7 +6144,7 @@ snapshots:
       postcss: 8.5.2
       postcss-import: 15.1.0(postcss@8.5.2)
       postcss-js: 4.0.1(postcss@8.5.2)
-      postcss-load-config: 4.0.2(postcss@8.5.2)(ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3))
+      postcss-load-config: 4.0.2(postcss@8.5.2)(ts-node@10.9.2(@types/node@22.13.9)(typescript@5.7.3))
       postcss-nested: 6.2.0(postcss@8.5.2)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.10
@@ -6202,14 +6202,14 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-node@10.9.2(@types/node@22.13.1)(typescript@5.7.3):
+  ts-node@10.9.2(@types/node@22.13.9)(typescript@5.7.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 22.13.1
+      '@types/node': 22.13.9
       acorn: 8.14.0
       acorn-walk: 8.3.4
       arg: 4.1.3
