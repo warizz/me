@@ -1,13 +1,15 @@
 import clsx from "clsx";
 import React from "react";
 
-import weeks from "../../weeks.json";
+import weeks from "./data.json";
+
+console.log("::weeks", weeks);
 
 console.log("::weeks", weeks);
 
 const startDate = new Date("1984-08-08");
-const endDate = new Date(startDate);
-endDate.setFullYear(startDate.getFullYear() + 80);
+const endDate = new Date("2084-08-08");
+const today = new Date();
 
 const getWeeksBetween = (start: Date, end: Date) => {
   const diffInMs = end.getTime() - start.getTime();
@@ -15,36 +17,47 @@ const getWeeksBetween = (start: Date, end: Date) => {
 };
 
 const weeksCount = getWeeksBetween(startDate, endDate) + 1;
-const currentWeek = getWeeksBetween(startDate, new Date());
-
-const remainingYearsStartDate = new Date(startDate);
-remainingYearsStartDate.setDate(startDate.getDate() + currentWeek * 7);
+const currentWeek = getWeeksBetween(startDate, today);
 
 const colorConfig = [
   {
-    start: new Date(
-      weeks.find((w) => w.title === "🐣 Born in 1984")?.date ?? "",
-    ),
-    end: new Date(weeks.find((w) => w.title === "Fabrinet")?.date ?? ""),
-    color: "bg-neutral-100 border-neutral-200",
-  },
+    start: new Date("1984-08-08"),
+    end: new Date("1994-08-08"),
+    color: "bg-red-100 border-red-300",
+  }, // First 10 years
   {
-    start: new Date(weeks.find((w) => w.title === "Fabrinet")?.date ?? ""),
-    end: new Date(),
-    color: "bg-orange-100 border-orange-200",
-  },
-] as const;
-
-console.log("::colorConfig", colorConfig);
+    start: new Date("1994-08-09"),
+    end: new Date("2004-08-08"),
+    color: "bg-yellow-100 border-yellow-300",
+  }, // Next 10 years
+  {
+    start: new Date("2004-08-09"),
+    end: new Date("2014-08-08"),
+    color: "bg-green-100 border-green-300",
+  }, // Next 10 years
+  {
+    start: new Date("2014-08-09"),
+    end: new Date("2024-08-08"),
+    color: "bg-blue-100 border-blue-300",
+  }, // Next 10 years
+  {
+    start: new Date("2024-08-09"),
+    end: new Date("2034-08-08"),
+    color: "bg-purple-100 border-purple-300",
+  }, // Next 10 years
+  {
+    start: new Date("2034-08-09"),
+    end: endDate,
+    color: "bg-gray-100 border-gray-300",
+  }, // Remaining years
+];
 
 const getColorForWeek = (weekDate: Date) => {
   const config = colorConfig.find(
     (c) => weekDate >= c.start && weekDate <= c.end,
   );
-  return config ? config.color : "";
+  return config ? config.color : "bg-gray-200";
 };
-
-const progressPercentage = (currentWeek / weeksCount) * 100;
 
 const WeeklyTimeline = () => {
   return (
@@ -59,14 +72,14 @@ const WeeklyTimeline = () => {
       <div className="w-full bg-gray-200 rounded h-5 mb-4 relative">
         <div
           className="bg-blue-500 h-5 rounded flex items-center justify-end px-1"
-          style={{ width: `${progressPercentage}%` }}
+          style={{ width: `${(currentWeek / weeksCount) * 100}%` }}
         >
           <span className="text-white text-xs font-sans">
-            {progressPercentage.toFixed(2)}%
+            {((currentWeek / weeksCount) * 100).toFixed(2)}%
           </span>
         </div>
       </div>
-      <div className="flex flex-wrap justify-between gap-1 font-sans text-sm">
+      <div className="flex flex-wrap justify-evenly gap-1 font-sans text-sm">
         {[...Array(weeksCount)].map((_, i) => {
           const weekDate = new Date(startDate);
           weekDate.setDate(startDate.getDate() + i * 7);
@@ -88,9 +101,9 @@ const WeeklyTimeline = () => {
               className={clsx(
                 "h-5 rounded border flex items-center justify-center px-2",
                 {
-                  "bg-blue-500 border-blue-700 text-white min-w-auto cursor-pointer":
+                  "bg-blue-500 border-blue-700 text-white min-w-auto flex-grow":
                     isHighlighted,
-                  "bg-[#FFAB5B] border-[#A31D1D] text-white min-w-auto":
+                  "bg-green-500 border-green-700 text-white min-w-auto flex-grow":
                     isCurrentWeek,
                   [getColorForWeek(weekDate)]: !isHighlighted && !isCurrentWeek,
                 },
