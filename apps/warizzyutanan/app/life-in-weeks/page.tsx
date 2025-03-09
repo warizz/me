@@ -5,8 +5,6 @@ import weeks from "./data.json";
 
 console.log("::weeks", weeks);
 
-console.log("::weeks", weeks);
-
 const startDate = new Date("1984-08-08");
 const endDate = new Date("2084-08-08");
 const today = new Date();
@@ -15,9 +13,6 @@ const getWeeksBetween = (start: Date, end: Date) => {
   const diffInMs = end.getTime() - start.getTime();
   return Math.floor(diffInMs / (7 * 24 * 60 * 60 * 1000));
 };
-
-const weeksCount = getWeeksBetween(startDate, endDate) + 1;
-const currentWeek = getWeeksBetween(startDate, today);
 
 const colorConfig = [
   {
@@ -58,6 +53,9 @@ const getColorForWeek = (weekDate: Date) => {
   );
   return config ? config.color : "bg-gray-200";
 };
+
+const weeksCount = getWeeksBetween(startDate, endDate) + 1;
+const currentWeek = getWeeksBetween(startDate, today);
 
 const WeeklyTimeline = () => {
   return (
