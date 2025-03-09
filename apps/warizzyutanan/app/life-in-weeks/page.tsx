@@ -21,30 +21,10 @@ const colorConfig = [
     color: "bg-red-100 border-red-300",
   }, // First 10 years
   {
-    start: new Date("1994-08-09"),
-    end: new Date("2004-08-08"),
-    color: "bg-yellow-100 border-yellow-300",
+    start: new Date("2023-04-01"),
+    end: new Date(),
+    color: "bg-[#f7ba86] border-[#f58220]",
   }, // Next 10 years
-  {
-    start: new Date("2004-08-09"),
-    end: new Date("2014-08-08"),
-    color: "bg-green-100 border-green-300",
-  }, // Next 10 years
-  {
-    start: new Date("2014-08-09"),
-    end: new Date("2024-08-08"),
-    color: "bg-blue-100 border-blue-300",
-  }, // Next 10 years
-  {
-    start: new Date("2024-08-09"),
-    end: new Date("2034-08-08"),
-    color: "bg-purple-100 border-purple-300",
-  }, // Next 10 years
-  {
-    start: new Date("2034-08-09"),
-    end: endDate,
-    color: "bg-gray-100 border-gray-300",
-  }, // Remaining years
 ];
 
 const getColorForWeek = (weekDate: Date) => {
@@ -101,12 +81,15 @@ const WeeklyTimeline = () => {
                 {
                   "bg-blue-500 border-blue-700 text-white min-w-auto flex-grow":
                     isHighlighted,
-                  "bg-green-500 border-green-700 text-white min-w-auto flex-grow":
+                  "bg-green-500 border-green-700 text-white min-w-auto flex-grow relative":
                     isCurrentWeek,
                   [getColorForWeek(weekDate)]: !isHighlighted && !isCurrentWeek,
                 },
               )}
             >
+              {isCurrentWeek ? (
+                <div className="rounded absolute w-full h-full bg-green-500 border-green-700 text-white min-w-auto flex-grow animate-ping"></div>
+              ) : null}
               {isHighlighted ? event.title : ""}
             </div>
           );
