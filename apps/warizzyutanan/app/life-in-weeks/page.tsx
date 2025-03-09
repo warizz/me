@@ -17,12 +17,12 @@ const colorConfig = [
     start: new Date("1984-08-08"),
     end: new Date("1994-08-08"),
     color: "bg-red-100 border-red-300",
-  }, // First 10 years
+  },
   {
     start: new Date("2023-04-01"),
     end: new Date(),
     color: "bg-[#f7ba86] border-[#f58220]",
-  }, // Next 10 years
+  },
 ];
 
 const getColorForWeek = (weekDate: Date) => {
