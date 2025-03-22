@@ -2,6 +2,7 @@
 title: "His Three Daughters"
 date: "2025-03-07"
 tldr: "Touching sibling drama and beautifully shot film."
+rating: 1
 publish: true
 tags:
   - movie

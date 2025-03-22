@@ -1,6 +1,7 @@
 ---
 title: "Late Night with the Devil"
 date: "2025-01-21"
+rating: 1
 publish: true
 tags:
   - movie

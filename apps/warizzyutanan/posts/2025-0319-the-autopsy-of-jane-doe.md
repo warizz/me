@@ -3,6 +3,7 @@ title: "The Autopsy of Jane Doe"
 by: "André Øvredal"
 tldr: "Creepy, tense, minimal jump scares. Brutal ending."
 date: "2025-03-19"
+rating: 1
 publish: true
 tags:
   - movie

@@ -2,6 +2,7 @@
 title: "The Substance"
 tldr: "A visually stunning yet bizarre sci-fi horror."
 date: "2025-01-23"
+rating: 0
 publish: true
 tags:
   - movie
