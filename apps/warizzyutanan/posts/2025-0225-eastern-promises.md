@@ -2,6 +2,7 @@
 title: "Eastern Promises"
 date: "2025-02-25"
 tldr: "Gritty, Violent, and Intriguing but Not Perfect."
+rating: 0
 publish: true
 tags:
   - movie

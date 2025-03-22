@@ -1,6 +1,7 @@
 ---
 title: "Knock at the Cabin"
 date: "2025-01-17"
+rating: 1
 publish: true
 tags:
   - movie

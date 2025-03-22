@@ -2,6 +2,7 @@
 title: "The Paradise of Thorns, วิมานหนาม"
 date: "2025-01-28"
 tldr: "A durian orchard love triangle, highlighted by stunning cinematography and strong performances."
+rating: 1
 publish: true
 tags:
   - movie

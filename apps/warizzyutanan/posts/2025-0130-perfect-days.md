@@ -2,6 +2,7 @@
 title: "Perfect Days"
 date: "2025-01-30"
 tldr: "A slow, peaceful film with a touching yet mysterious protagonist."
+rating: 2
 publish: true
 tags:
   - movie

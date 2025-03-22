@@ -1,6 +1,7 @@
 ---
 title: "Ready Or Not"
 date: "2025-01-18"
+rating: 0
 publish: true
 tags:
   - movie
