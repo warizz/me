@@ -27,16 +27,18 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { year: string };
+  params: Promise<{ year: string }>;
 }): Promise<Metadata> {
-  return { title: `My movies of ${params.year}` };
+  const { year } = await params;
+  return { title: `My movies of ${year}` };
 }
 
 interface Props {
-  params: { year: string };
+  params: Promise<{ year: string }>;
 }
 
-export default async function Page({ params: { year } }: Props) {
+export default async function Page({ params }: Props) {
+  const { year } = await params;
   const filePath = `/app/movies/[year]/${year}.csv`;
   const csv = await parseMoviesCsv(filePath);
   return (
