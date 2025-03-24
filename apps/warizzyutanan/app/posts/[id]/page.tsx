@@ -10,10 +10,12 @@ export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "posts");
   const fileNames = readdirSync(postsDirectory);
 
-  return fileNames.map((fileName) => {
-    const id = path.parse(fileName).name;
-    return { id };
-  });
+  return fileNames
+    .filter((fileName) => fileName.includes(".md"))
+    .map((fileName) => {
+      const id = path.parse(fileName).name;
+      return { id };
+    });
 }
 
 interface Props {
