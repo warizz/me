@@ -26,7 +26,7 @@
   },
   "packageManager": "pnpm@10.5.2",
   "optionalDependencies": {
-    "@next/swc-linux-x64-gnu": "15.2.3",
+    "@next/swc-linux-x64-gnu": "15.2.4",
     "@next/swc-linux-x64-musl": "15.2.3",
     "turbo-linux-64": "2.4.4"
   },
