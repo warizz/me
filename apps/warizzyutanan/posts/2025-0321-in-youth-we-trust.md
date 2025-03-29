@@ -10,6 +10,9 @@ tags:
   - drama
 ---
 
+WARNING! Contain full spoilers  
+DISCLAIMER! This post was created with the help of AI.
+
 ![A crowded prison cell with inmates lying and sitting close together, showing tense and harsh conditions.](/posts/2025-0321-in-youth-we-trust.webp)
 
 ## My Thoughts  
