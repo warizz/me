@@ -10,6 +10,9 @@ tags:
   - horror
 ---
 
+WARNING! Contain full spoilers  
+DISCLAIMER! This post was created with the help of AI.
+
 ![The movie poster](/posts/2025-0319-the-autopsy-of-jane-doe.webp)
 
 ### My Thoughts  
