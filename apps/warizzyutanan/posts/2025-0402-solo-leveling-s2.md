@@ -1,7 +1,7 @@
 ---
 title: "Solo Leveling (season 2)"
 by: "A-1 Pictures, Shunsuke Nakashige"
-tldr: "Each episode had a different focus, but all were intense and well-done."
+tldr: "Satisfying revenge story, fun to watch MC grow stronger."
 date: "2025-04-02"
 publish: true
 tags:
