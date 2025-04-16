@@ -17,7 +17,7 @@
     "date-fns": "3.6.0",
     "gray-matter": "4.0.3",
     "lodash": "4.17.21",
-    "next": "15.2.3",
+    "next": "15.2.4",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-markdown": "8.0.7",
@@ -28,9 +28,9 @@
     "zod": "3.24.2"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "15.2.1",
+    "@next/bundle-analyzer": "15.3.0",
     "@tailwindcss/typography": "0.5.16",
-    "@types/node": "22.13.10",
+    "@types/node": "22.14.1",
     "@types/react": "18.3.8",
     "@types/react-dom": "18.3.0",
     "@types/react-syntax-highlighter": "15.5.13",
