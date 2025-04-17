@@ -3,6 +3,7 @@ title: "Adolescence"
 by: "Philip Barantini"
 tldr: "Each episode had a different focus, but all were intense and well-done."
 date: "2025-03-28"
+rating: 2
 publish: true
 tags:
   - movie

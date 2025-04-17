@@ -3,6 +3,7 @@ title: "The Hot Spot"
 by: "Nippon Television Network System, Bakarhythm"
 tldr: "Light-hearted, charming, great dialogue — ordinary but delightfully weird."
 date: "2025-04-04"
+rating: 1
 publish: true
 tags:
   - movie
