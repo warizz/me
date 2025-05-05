@@ -6,9 +6,10 @@ date: "2025-03-17"
 publish: true
 tags:
   - course
+  - art
 ---
 
-![Course cover](/posts/2025-0317-udemy-procreate.webp)
+![The course cover](/posts/2025-0317-udemy-procreate.webp)
 
 [Link to the course](https://ascend.udemy.com/course/drawing-and-painting-on-the-ipad-with-procreate/learn/lecture/6393238?start=0#overview)
 
