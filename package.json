@@ -28,7 +28,7 @@
   "optionalDependencies": {
     "@next/swc-linux-x64-gnu": "15.3.0",
     "@next/swc-linux-x64-musl": "15.2.3",
-    "turbo-linux-64": "2.4.4"
+    "turbo-linux-64": "2.5.4"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
