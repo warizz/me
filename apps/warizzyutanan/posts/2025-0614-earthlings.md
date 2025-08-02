@@ -10,6 +10,8 @@ tags:
   - fiction
 ---
 
+![](/posts/2025-0614-earthlings.webp)
+
 ### My Thoughts
 At first, I wasn’t sure what this book was trying to say. It started off confusing and quiet, but gradually became more intense and unpredictable. The level of "what is going on?!" kept rising with each chapter. By the final stretch, I couldn’t stop reading—it was gripping, weird, and impossible to predict. The ending left me shocked in the best way. I loved it.
 
