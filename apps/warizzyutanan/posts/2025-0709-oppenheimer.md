@@ -10,6 +10,8 @@ tags:
   - drama
 ---
 
+![](/posts/2025-0709-oppenheimer.webp)
+
 ### My thoughts (Spoilers)
 - The movie is dialogue-heavy but never boring, even at 3 hours.
 - Einstein has a mysterious, wise presence.
