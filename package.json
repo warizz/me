@@ -19,16 +19,16 @@
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
     "prettier": "3.6.2",
-    "turbo": "2.5.4"
+    "turbo": "2.5.8"
   },
   "engines": {
     "node": ">=22.0.0"
   },
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.18.3",
   "optionalDependencies": {
-    "@next/swc-linux-x64-gnu": "15.3.5",
-    "@next/swc-linux-x64-musl": "15.3.5",
-    "turbo-linux-64": "2.5.4"
+    "@next/swc-linux-x64-gnu": "15.5.6",
+    "@next/swc-linux-x64-musl": "15.5.6",
+    "turbo-linux-64": "2.5.8"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
