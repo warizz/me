@@ -31,6 +31,7 @@ export default function Home() {
             { url: "/trips", title: "trips", id: 4 },
             { url: "/life-in-weeks", title: "Life in Weeks", id: 5 },
             { url: "/notes", title: "notes", id: 6 },
+            { url: "/watermark", title: "watermark", id: 7 },
           ],
           "id",
         ).map((item) => {
