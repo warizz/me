@@ -7,19 +7,32 @@ import importPlugin from "eslint-plugin-import";
 import reactPlugin from "eslint-plugin-react";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
+import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
+import globals from "globals";
 
 export default [
   js.configs.recommended,
   {
+    files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.mjs"],
     plugins: {
       "@next/next": nextPlugin,
       turbo: turboPlugin,
       prettier: prettierPlugin,
       import: importPlugin,
       react: reactPlugin,
+      "jsx-a11y": jsxA11yPlugin,
+      "react-hooks": reactHooksPlugin,
       "@typescript-eslint": tsPlugin,
     },
     languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        process: "readonly",
+        console: "readonly",
+        React: "readonly",
+      },
       parser: tsParser,
       parserOptions: {
         ecmaVersion: "latest",
@@ -40,6 +53,9 @@ export default [
     },
     rules: {
       ...prettierConfig.rules,
+      ...reactHooksPlugin.configs.recommended.rules,
+      "react-hooks/exhaustive-deps": "warn",
+      "react-hooks/set-state-in-effect": "off",
       "prefer-template": "error",
       "@next/next/no-html-link-for-pages": "off",
       "react/jsx-key": "error",
@@ -50,8 +66,11 @@ export default [
           "newlines-between": "always",
         },
       ],
-      "@typescript-eslint/no-unused-vars": "error",
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+      "no-undef": "off", // TypeScript handles this
       "prettier/prettier": "error",
+      "react/react-in-jsx-scope": "off",
     },
   },
 ];

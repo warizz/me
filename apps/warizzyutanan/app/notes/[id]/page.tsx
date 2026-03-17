@@ -7,7 +7,6 @@ import Link from "next/link";
 
 import BlogLayout from "../../../components/BlogLayout";
 import Markdown from "../../../components/Markdown";
-import PostDate from "../../../components/PostDate";
 
 const notesDirectory = path.join(process.cwd(), "resource", "notes");
 

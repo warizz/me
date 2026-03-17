@@ -8,14 +8,11 @@ import {
   Image as ImageIcon,
   RotateCcw,
   RefreshCw,
-  ChevronDown,
-  ChevronUp,
 } from "lucide-react";
 import { useState, useRef, useEffect, ChangeEvent, useCallback } from "react";
 
 export default function WatermarkApp() {
   const [originalImage, setOriginalImage] = useState<File | null>(null);
-  const [originalImageUrl, setOriginalImageUrl] = useState<string | null>(null);
   const [originalSize, setOriginalSize] = useState<number>(0);
 
   // Settings
@@ -35,62 +32,6 @@ export default function WatermarkApp() {
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imageElementRef = useRef<HTMLImageElement | null>(null);
-
-  // Load image when file changes
-  useEffect(() => {
-    if (originalImage) {
-      const url = URL.createObjectURL(originalImage);
-      setOriginalImageUrl(url);
-
-      const img = new Image();
-      img.onload = () => {
-        imageElementRef.current = img;
-        drawWatermark();
-      };
-      img.src = url;
-
-      return () => URL.revokeObjectURL(url);
-    }
-  }, [originalImage]);
-
-  // Redraw when settings change
-  useEffect(() => {
-    if (imageElementRef.current) {
-      drawWatermark();
-    }
-  }, [
-    watermarkText,
-    angle,
-    textColor,
-    textOpacity,
-    overlayColor,
-    overlayOpacity,
-    fontSize,
-    gapX,
-    gapY,
-  ]);
-
-  const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    setIsProcessing(true);
-    try {
-      const compressorOptions = {
-        maxSizeMB: 2,
-        maxWidthOrHeight: 2048,
-        useWebWorker: true,
-      };
-      setOriginalSize(file.size);
-      const compressedFile = await imageCompression(file, compressorOptions);
-      setOriginalImage(compressedFile);
-    } catch (error) {
-      console.error("Error compressing image:", error);
-      alert("Failed to compress image.");
-    } finally {
-      setIsProcessing(false);
-    }
-  };
 
   const drawWatermark = useCallback(() => {
     const canvas = canvasRef.current;
@@ -184,6 +125,62 @@ export default function WatermarkApp() {
     gapY,
   ]);
 
+  // Load image when file changes
+  useEffect(() => {
+    if (originalImage) {
+      const url = URL.createObjectURL(originalImage);
+
+      const img = new Image();
+      img.onload = () => {
+        imageElementRef.current = img;
+        drawWatermark();
+      };
+      img.src = url;
+
+      return () => URL.revokeObjectURL(url);
+    }
+  }, [originalImage, drawWatermark]);
+
+  // Redraw when settings change
+  useEffect(() => {
+    if (imageElementRef.current) {
+      drawWatermark();
+    }
+  }, [
+    drawWatermark,
+    watermarkText,
+    angle,
+    textColor,
+    textOpacity,
+    overlayColor,
+    overlayOpacity,
+    fontSize,
+    gapX,
+    gapY,
+  ]);
+
+  const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setIsProcessing(true);
+    try {
+      const compressorOptions = {
+        maxSizeMB: 2,
+        maxWidthOrHeight: 2048,
+        useWebWorker: true,
+      };
+      setOriginalSize(file.size);
+      const compressedFile = await imageCompression(file, compressorOptions);
+      setOriginalImage(compressedFile);
+    } catch (error) {
+      console.error("Error compressing image:", error);
+      alert("Failed to compress image.");
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
   const handleDownload = () => {
     if (!watermarkedUrl) return;
 
@@ -197,7 +194,6 @@ export default function WatermarkApp() {
 
   const handleReset = () => {
     setOriginalImage(null);
-    setOriginalImageUrl(null);
     setOriginalSize(0);
     setWatermarkedUrl(null);
   };

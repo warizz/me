@@ -40,7 +40,6 @@ export default function Markdown({ children }: Props) {
         img({ ...props }) {
           const _props = omit(props, "node");
           return (
-            // eslint-disable-next-line jsx-a11y/alt-text, @next/next/no-img-element
             <img
               {..._props}
               className="w-full lg:w-auto lg:max-h-[300px] border-2 lg:border-1 border-black dark:border-0"

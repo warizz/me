@@ -7,7 +7,7 @@ const Schema = z.object({
   ended_at: z
     .string()
     .transform((value) => value || null)
-    .transform((value) => z.coerce.date().nullable().parse(value)),
+    .transform((_value) => z.coerce.date().nullable().parse(_value)),
   id: z.string(),
   notes: z.string(),
   started_at: z.coerce.date(),
