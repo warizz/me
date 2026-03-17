@@ -1,7 +1,7 @@
 import omit from "lodash/omit";
 import ReactMarkdown from "react-markdown";
-import Prism from "react-syntax-highlighter/dist/cjs/prism";
-import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { Prism } from "react-syntax-highlighter";
+import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
@@ -13,30 +13,27 @@ export default function Markdown({ children }: Props) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
-      // @ts-expect-error 3rd party plugin
       rehypePlugins={[rehypeRaw]}
       components={{
-        code({ inline, className, children, ...props }) {
-          const _props = omit(props, "node");
+        code(props) {
+          const { className, children } = props;
+          const inline = !className; // Basic heuristic for react-markdown 9+
+          const _props = omit(props, ["node", "inline"]);
           const match = /language-(\w+)/.exec(className || "");
           if (inline) {
             return (
               <span className="not-prose text-primary dark:text-primary-invert">
-                <code className={className} {..._props}>
-                  {children}
-                </code>
+                <code className={className}>{children}</code>
               </span>
             );
           }
           return (
             <Prism
               language={match?.[1] ?? undefined}
-              {..._props}
-              // "style" has to be under {..._props} because of style props are different.
-              // https://github.com/react-syntax-highlighter/react-syntax-highlighter/issues/479#issuecomment-1369660231
               style={oneDark}
+              {...(_props as any)}
             >
-              {children.toString()}
+              {String(children).replace(/\n$/, "")}
             </Prism>
           );
         },
