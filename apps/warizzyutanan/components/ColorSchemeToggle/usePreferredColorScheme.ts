@@ -6,7 +6,7 @@ type ColorScheme = "light" | "dark" | "system";
 
 function _getToggleHandler(
   preferredColorScheme: string,
-  setPreferredColorScheme: (colorScheme: ColorScheme) => void,
+  setPreferredColorScheme: (_colorScheme: ColorScheme) => void,
 ) {
   return () => {
     switch (preferredColorScheme) {

@@ -8,7 +8,7 @@ const LogSchema = z.object({
   ended_at: z
     .string()
     .transform((value) => value || null)
-    .transform(z.coerce.date().nullable().parse),
+    .transform((_value) => z.coerce.date().nullable().parse(_value)),
   id: z.string(),
   started_at: z.coerce.date(),
   title: z.string(),

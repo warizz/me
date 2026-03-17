@@ -11,7 +11,7 @@ interface Props {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       {!process.env.NEXT_PUBLIC_IS_DISABLED_GA ? (
         <>
           <Script
@@ -25,11 +25,9 @@ export default function RootLayout({ children }: Props) {
         </>
       ) : null}
 
-      <body>
-        <div className="bg-white lg:pt-20 dark:bg-black min-h-screen ease-in duration-100">
-          <article className="prose lg:prose-xl mx-auto p-4 font-serif dark:prose-invert">
-            {children}
-          </article>
+      <body suppressHydrationWarning>
+        <div className="bg-white dark:bg-black min-h-screen ease-in duration-100">
+          {children}
         </div>
       </body>
     </html>
