@@ -33,6 +33,11 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "cypress"
-    ]
+    ],
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": "10"
+      }
+    }
   }
 }
