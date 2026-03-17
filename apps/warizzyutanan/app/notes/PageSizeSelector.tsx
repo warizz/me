@@ -2,7 +2,11 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function PageSizeSelector({ currentLimit }: { currentLimit: number }) {
+export default function PageSizeSelector({
+  currentLimit,
+}: {
+  currentLimit: number;
+}) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const validLimits = [10, 20, 50];
@@ -35,7 +39,3 @@ export default function PageSizeSelector({ currentLimit }: { currentLimit: numbe
     </div>
   );
 }
-
-
-
-

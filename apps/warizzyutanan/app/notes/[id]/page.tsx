@@ -1,7 +1,8 @@
 import { readdirSync, readFileSync } from "fs";
 import path from "path";
-import { Metadata } from "next";
+
 import matter from "gray-matter";
+import { Metadata } from "next";
 import Link from "next/link";
 
 import BlogLayout from "../../../components/BlogLayout";
@@ -22,10 +23,10 @@ function extractHeading(content: string): string {
   // Extract first h1 or h2 heading from markdown
   const h1Match = content.match(/^#\s+(.+)$/m);
   if (h1Match) return h1Match[1].trim();
-  
+
   const h2Match = content.match(/^##\s+(.+)$/m);
   if (h2Match) return h2Match[1].trim();
-  
+
   return "";
 }
 
@@ -35,19 +36,22 @@ function getNoteById(id: string): NoteData | null {
     const fullPath = path.join(notesDirectory, fileName);
     const fileContents = readFileSync(fullPath, "utf8");
     const meta = matter(fileContents);
-    
+
     // Parse date from filename (format: 2024-01-01-topicxxx.md)
     const dateMatch = fileName.match(/^(\d{4}-\d{2}-\d{2})-/);
-    const date = dateMatch 
-      ? new Date(dateMatch[1]) 
+    const date = dateMatch
+      ? new Date(dateMatch[1])
       : new Date(meta.data.date || Date.now());
-    
+
     // Extract topic from filename
-    const topic = fileName.replace(/^\d{4}-\d{2}-\d{2}-/, "").replace(/\.md$/, "");
-    
+    const topic = fileName
+      .replace(/^\d{4}-\d{2}-\d{2}-/, "")
+      .replace(/\.md$/, "");
+
     // Extract heading from content
-    const heading = meta.data.title || extractHeading(meta.content) || topic || "Untitled";
-    
+    const heading =
+      meta.data.title || extractHeading(meta.content) || topic || "Untitled";
+
     return {
       fileName,
       date,
@@ -83,14 +87,14 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const note = getNoteById(id);
-  
+
   if (!note) {
     return {
       title: "Note Not Found - Warizz",
       robots: "noindex, nofollow",
     };
   }
-  
+
   return {
     title: `${note.heading} - Notes - Warizz`,
     robots: "index, follow",
@@ -141,7 +145,3 @@ export default async function NotePage({ params }: Props) {
     </BlogLayout>
   );
 }
-
-
-
-
