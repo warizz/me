@@ -12,8 +12,10 @@ import {
   CheckCircle2,
   AlertCircle,
 } from "lucide-react";
+import Image from "next/image";
 import { useState, ChangeEvent } from "react";
-import ColorSchemeToggle from "../../components/ColorSchemeToggle/ColorSchemeToggle";
+
+import ColorSchemeToggle from "../../components/ColorSchemeToggle";
 
 interface CompressedImage {
   id: string;
@@ -265,9 +267,12 @@ export default function CompressApp() {
                     >
                       <div className="w-20 h-20 border-2 border-black dark:border-white bg-gray-100 dark:bg-zinc-700 flex-shrink-0 relative overflow-hidden">
                         {img.compressedUrl ? (
-                          <img
+                          <Image
                             src={img.compressedUrl}
                             alt="preview"
+                            width={80}
+                            height={80}
+                            unoptimized
                             className="w-full h-full object-cover"
                           />
                         ) : (
@@ -305,7 +310,7 @@ export default function CompressApp() {
 
                       <div className="flex items-center gap-2">
                         {img.status === "compressing" && (
-                          <RefreshCw className="w-6 h-6 animate-spin text-[#8b5cf6]" />
+                          <RefreshCw className="w-6 h-6 animate-spin text-primary dark:text-primary-invert" />
                         )}
                         {img.status === "completed" && (
                           <div className="flex items-center gap-2">
