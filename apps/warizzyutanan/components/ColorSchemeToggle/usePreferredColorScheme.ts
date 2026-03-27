@@ -1,59 +1,61 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 import mapToColorScheme from "./mapToColorScheme";
 
 type ColorScheme = "light" | "dark" | "system";
 
-function _getToggleHandler(
-  preferredColorScheme: string,
-  setPreferredColorScheme: (_colorScheme: ColorScheme) => void,
-) {
-  return () => {
-    switch (preferredColorScheme) {
-      case "light": {
-        localStorage.setItem("preferredColorScheme", "dark");
-        return setPreferredColorScheme("dark");
-      }
-
-      case "dark": {
-        localStorage.setItem("preferredColorScheme", "system");
-        return setPreferredColorScheme("system");
-      }
-
-      case "system":
-      default: {
-        localStorage.setItem("preferredColorScheme", "light");
-        return setPreferredColorScheme("light");
-      }
-    }
-  };
-}
-
 export default function usePreferredColorScheme() {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("system");
 
-  const toggleColorScheme = _getToggleHandler(colorScheme, setColorScheme);
-
+  // Load from localStorage on mount
   useEffect(() => {
-    const _colorScheme = mapToColorScheme(localStorage.preferredColorScheme);
-    if (colorScheme !== _colorScheme) setColorScheme(_colorScheme);
-  }, [colorScheme]);
-
-  useEffect(() => {
-    const isDarkColorScheme = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
-
-    const useDarkColorScheme =
-      colorScheme === "dark" ||
-      (!colorScheme && isDarkColorScheme) ||
-      (colorScheme === "system" && isDarkColorScheme);
-
-    if (useDarkColorScheme) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+    const saved = localStorage.getItem("preferredColorScheme");
+    if (saved) {
+      setColorScheme(mapToColorScheme(saved));
     }
+  }, []);
+
+  const toggleColorScheme = useCallback(() => {
+    setColorScheme((prev) => {
+      let next: ColorScheme;
+      switch (prev) {
+        case "light":
+          next = "dark";
+          break;
+        case "dark":
+          next = "system";
+          break;
+        case "system":
+        default:
+          next = "light";
+          break;
+      }
+      localStorage.setItem("preferredColorScheme", next);
+      return next;
+    });
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const updateTheme = () => {
+      const isDarkColorScheme = mediaQuery.matches;
+      const useDarkColorScheme =
+        colorScheme === "dark" ||
+        (colorScheme === "system" && isDarkColorScheme);
+
+      if (useDarkColorScheme) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    };
+
+    updateTheme();
+
+    // Listen for system changes
+    mediaQuery.addEventListener("change", updateTheme);
+    return () => mediaQuery.removeEventListener("change", updateTheme);
   }, [colorScheme]);
 
   return { preferredColorScheme: colorScheme, toggleColorScheme };
