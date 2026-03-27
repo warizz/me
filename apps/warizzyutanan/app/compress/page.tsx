@@ -79,9 +79,18 @@ export default function CompressApp() {
           options,
         );
 
-        updatedImages[i].compressedFile = compressedFile;
-        updatedImages[i].compressedUrl = URL.createObjectURL(compressedFile);
-        updatedImages[i].compressedSize = compressedFile.size;
+        if (compressedFile.size > updatedImages[i].originalSize) {
+          // Keep original if compressed is larger
+          updatedImages[i].compressedFile = updatedImages[i].originalFile;
+          updatedImages[i].compressedUrl = URL.createObjectURL(
+            updatedImages[i].originalFile,
+          );
+          updatedImages[i].compressedSize = updatedImages[i].originalSize;
+        } else {
+          updatedImages[i].compressedFile = compressedFile;
+          updatedImages[i].compressedUrl = URL.createObjectURL(compressedFile);
+          updatedImages[i].compressedSize = compressedFile.size;
+        }
         updatedImages[i].status = "completed";
       } catch (error) {
         console.error("Compression error:", error);
@@ -293,13 +302,26 @@ export default function CompressApp() {
                               <span className="text-xs font-bold bg-[#ffeb3b] dark:bg-primary-invert dark:text-black px-2 py-0.5 border-2 border-black dark:border-zinc-100">
                                 {formatBytes(img.compressedSize)}
                               </span>
-                              <span className="text-xs font-black bg-green-400 dark:bg-green-600 px-2 py-0.5 border-2 border-black dark:border-zinc-100">
-                                -
-                                {Math.round(
-                                  (1 - img.compressedSize / img.originalSize) *
-                                    100,
+                              <span
+                                className={`text-xs font-black px-2 py-0.5 border-2 border-black dark:border-zinc-100 ${
+                                  img.compressedSize < img.originalSize
+                                    ? "bg-green-400 dark:bg-green-600 text-black dark:text-white"
+                                    : "bg-gray-300 dark:bg-zinc-700 text-gray-600 dark:text-zinc-400"
+                                }`}
+                              >
+                                {img.compressedSize < img.originalSize ? (
+                                  <>
+                                    -
+                                    {Math.round(
+                                      (1 -
+                                        img.compressedSize / img.originalSize) *
+                                        100,
+                                    )}
+                                    %
+                                  </>
+                                ) : (
+                                  "NO REDUCTION"
                                 )}
-                                %
                               </span>
                             </>
                           )}
