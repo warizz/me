@@ -32,7 +32,7 @@ export default function Home() {
             { url: "/life-in-weeks", title: "Life in Weeks", id: 5 },
             { url: "/notes", title: "notes", id: 6 },
             { url: "/watermark", title: "watermark", id: 7 },
-            { url: "/compress", title: "compress", id: 8 },
+            { url: "/compress", title: "compress images", id: 8 },
           ],
           "id",
         ).map((item) => {
