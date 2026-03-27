@@ -9,7 +9,3 @@ Understanding different testing approaches.
 - **E2E Tests**: Test full user workflows
 
 Balance is key - more unit tests, fewer E2E tests.
-
-
-
-

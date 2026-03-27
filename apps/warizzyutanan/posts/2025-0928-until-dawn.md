@@ -6,16 +6,18 @@ date: "2025-09-28"
 rating: 0
 publish: true
 tags:
-- movie
-- horror
+  - movie
+  - horror
 ---
 
 ![](/posts/2025-0928-until-dawn.webp)
 
 ## My thoughts
+
 It was ok. The plot wasn’t very new, but some death scenes were brutal in a satisfying way. Still, a few situations felt less clever than expected, even though the characters seemed smart at first and almost made it through.
 
 ## Summary (Full Spoilers)
+
 - Clover and friends visit Glore Valley searching for her missing sister, Melanie.
 - They are killed by a masked killer but awaken again — trapped in a repeating night.
 - They discover the loop.

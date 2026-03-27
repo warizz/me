@@ -1,9 +1,9 @@
 ---
-title: "Using \"lodash.debounce\" in function components."
+title: 'Using "lodash.debounce" in function components.'
 date: "2021-10-12"
 tags:
-    - react
-    - lodash
+  - react
+  - lodash
 publish: true
 ---
 

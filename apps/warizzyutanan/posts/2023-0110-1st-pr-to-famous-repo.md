@@ -3,19 +3,21 @@ title: "My first PR to a public repo"
 date: "2023-01-10"
 publish: true
 tags:
-    - life
-    - github
-    - react
-    - typescript
+  - life
+  - github
+  - react
+  - typescript
 ---
 
 ## ✏️ Keys takeaway
+
 - Using the PR description as a guideline for contributors.
 - Having friendly status update messages help people understand what to do next.
 
 ## ❓ The problem and the fix
 
-While I was implementing [react-syntax-highlighter](https://www.npmjs.com/package/react-syntax-highlighter) into my side project, I encountered this error 
+While I was implementing [react-syntax-highlighter](https://www.npmjs.com/package/react-syntax-highlighter) into my side project, I encountered this error
+
 ```ts
 error TS2305: Module '"react-syntax-highlighter/dist/cjs/styles/prism"' has no exported member 'oneDark'.
 
@@ -49,11 +51,12 @@ So I thought this might be a good opportunity for me to contribute to a popular 
 ## 🎁 The contirubtion
 
 The doc said you should test your code on my local machine first.
->Before you share your improvement with the world, use the types yourself by creating a typename.d.ts file in your project and filling out its exports:
+
+> Before you share your improvement with the world, use the types yourself by creating a typename.d.ts file in your project and filling out its exports:
 
 Ok, nice. Done. I did it. Next. [Make a pull request](https://github.com/DefinitelyTyped/DefinitelyTyped#make-a-pull-request). In short, you need to fork and open the PR from the fork to the base repo.
 
-I opened the PR but to my fork, not the base, they have nice instructions that I can easily follow. 
+I opened the PR but to my fork, not the base, they have nice instructions that I can easily follow.
 
 ![pr-description](/posts/1st-pr/pr-description.webp)
 
@@ -62,12 +65,14 @@ All of the checkboxes were checked except the "Add or edit tests". Luckily the r
 ```tsx
 <PrismLightHighlighter style={oneDarkCjs}>{codeString}</PrismLightHighlighter>;
 <PrismLightHighlighter style={oneLightCjs}>{codeString}</PrismLightHighlighter>;
-<PrismLightHighlighter style={{ keyword: { color: 'red' } }}>{codeString}</PrismLightHighlighter>;
+<PrismLightHighlighter style={{ keyword: { color: "red" } }}>
+  {codeString}
+</PrismLightHighlighter>;
 ```
 
-Then run `npm test react-syntax-highlighter`, it was passed, easy! 
+Then run `npm test react-syntax-highlighter`, it was passed, easy!
 
-Now all the marks were ticked, time to open [the PR to the base branch](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/63808)! The typescript-bot greeted me with the status of the PR, this is nice! how can I have something like this in a repo? 
+Now all the marks were ticked, time to open [the PR to the base branch](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/63808)! The typescript-bot greeted me with the status of the PR, this is nice! how can I have something like this in a repo?
 
 ![bot greeting](/posts/1st-pr/bot-1.webp)
 

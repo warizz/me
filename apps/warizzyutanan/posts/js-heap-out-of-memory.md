@@ -3,12 +3,14 @@ title: "Javascript heap out of memory"
 date: "2023-01-17"
 publish: true
 tags:
-    - javascript
-    - nodejs
+  - javascript
+  - nodejs
 ---
 
 ## The problem
+
 I've found this error serveral time when I executed `eslint` on a large code-base. It means that the NodeJs runtime was using memory more than it was allocated.
+
 ```sh
 <--- Last few GCs --->
 
@@ -24,7 +26,9 @@ FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memor
 ```
 
 ## The fix
+
 Fixing is quite easy, just allocate more memory to NodeJs, but the tricky part is how big the memory should it be? The answer is in the error message, `Scavenge 4043.6 (4126.2) -> 4039.0 (4128.0) MB`, you can see that it used up all the 4GB we have, so if we increase it to be more than that should be fine.
+
 ```sh
 export NODE_OPTIONS="--max-old-space-size=8096"
 ```

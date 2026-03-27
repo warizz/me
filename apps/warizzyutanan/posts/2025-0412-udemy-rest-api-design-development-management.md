@@ -25,10 +25,10 @@ tags:
   - **Code on Demand (optional)**: Allows servers to deliver executable code (like JavaScript) to clients.
 
 - **Richardson Maturity Model**: A framework for measuring the level of RESTfulness in an API. It helps evaluate how well an API aligns with REST principles by dividing it into four levels:
-  - **Level 0** – *The Swamp of POX*: Uses a single endpoint and HTTP as a transport protocol only, often with XML or JSON payloads. No use of REST concepts.
-  - **Level 1** – *Resources*: Introduces distinct URIs for individual resources but still uses a single HTTP method (usually POST).
-  - **Level 2** – *HTTP Verbs*: Incorporates proper use of HTTP methods (GET, POST, PUT, DELETE, etc.) for each resource URI, following RESTful interaction.
-  - **Level 3** – *Hypermedia Controls (HATEOAS)*: Adds hypermedia links to responses, guiding clients on available actions, making the API more discoverable and self-explanatory.
+  - **Level 0** – _The Swamp of POX_: Uses a single endpoint and HTTP as a transport protocol only, often with XML or JSON payloads. No use of REST concepts.
+  - **Level 1** – _Resources_: Introduces distinct URIs for individual resources but still uses a single HTTP method (usually POST).
+  - **Level 2** – _HTTP Verbs_: Incorporates proper use of HTTP methods (GET, POST, PUT, DELETE, etc.) for each resource URI, following RESTful interaction.
+  - **Level 3** – _Hypermedia Controls (HATEOAS)_: Adds hypermedia links to responses, guiding clients on available actions, making the API more discoverable and self-explanatory.
 
 - **Naming Conventions**:
   1. Name resources using plural nouns (e.g., `/users`, `/products`).

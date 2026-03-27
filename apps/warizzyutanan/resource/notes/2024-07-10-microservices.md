@@ -17,7 +17,3 @@ Understanding microservices patterns and trade-offs.
 - Deployment orchestration
 
 Not always the right choice - start with monolith if unsure.
-
-
-
-

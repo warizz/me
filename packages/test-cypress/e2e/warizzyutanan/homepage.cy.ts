@@ -29,7 +29,7 @@ describe("homepage", () => {
     cy.reload();
     cy.get("button[data-testid='color-scheme-toggle']").should(
       "have.text",
-      "color: system"
+      "color: system",
     );
   });
 });

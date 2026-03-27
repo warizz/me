@@ -11,6 +11,7 @@ tags:
 🔗 [Course](https://www.udemy.com/course/learn-website-hacking-penetration-testing-from-scratch/)
 
 ## Tools and Techniques:
+
 - **Website Information:**
   - Use [who.is](https://who.is/) and [Robtex](https://robtex.com/) to gather website details.
   - Discovering subdomains can expose vulnerabilities in less-secured or experimental subdomains, potentially allowing access to other subdomains on the same server.

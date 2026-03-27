@@ -7,7 +7,3 @@ More about array methods in JavaScript.
 - `flatMap()` - combines `map()` and `flat()`
 - `reduce()` - powerful for transformations
 - `find()` vs `filter()` - know when to use each
-
-
-
-

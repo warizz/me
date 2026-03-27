@@ -14,11 +14,13 @@ tags:
 ![Jin-Woo and his army](/posts/2025-04-02-solo-leveling-s2.webp)
 
 ## My thoughts
-What makes *Solo Leveling* so fun is the feeling of revenge—watching a weak E-rank hunter rise and shut down everyone who ever looked down on him. It’s that classic underdog story, but with an RPG twist. Every episode gives you that boost of satisfaction seeing the main character get stronger, unlock new powers, and overcome impossible challenges.   
+
+What makes _Solo Leveling_ so fun is the feeling of revenge—watching a weak E-rank hunter rise and shut down everyone who ever looked down on him. It’s that classic underdog story, but with an RPG twist. Every episode gives you that boost of satisfaction seeing the main character get stronger, unlock new powers, and overcome impossible challenges.
 
 I especially enjoyed how his strength grows step by step. Whether he’s clearing secret dungeons, soloing boss fights, or quietly saving teammates, it feels like watching your own game character evolve. By the time he easily defeats a near-S-rank boss, you really feel how far he’s come. He’s definitely overpowered now, but that’s what makes it so fun.
 
 ## Summary (Full spoilers)
+
 - Jin-Woo starts as an E-rank hunter, considered the weakest in Korea.
 - During a dungeon raid, he survives a deadly trial and gains a unique "System".
 - The System lets him level up like in a video game, increasing his stats and skills.

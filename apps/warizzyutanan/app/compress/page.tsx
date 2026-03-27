@@ -69,8 +69,6 @@ export default function CompressApp() {
 
       try {
         const options = {
-          maxSizeMB: 1,
-          maxWidthOrHeight: 2048,
           useWebWorker: true,
           fileType: format,
           initialQuality: 0.75,
@@ -155,8 +153,8 @@ export default function CompressApp() {
           <code className="bg-gray-100 dark:bg-zinc-800 px-1 dark:border dark:border-zinc-700">
             browser-image-compression
           </code>{" "}
-          (Quality: 0.75, Max Size: 1MB, Max Res: 2048px) to process files
-          directly in your browser. No images are ever sent to any server.
+          (Quality: 0.75) to process files directly in your browser. No images
+          are ever sent to any server.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">

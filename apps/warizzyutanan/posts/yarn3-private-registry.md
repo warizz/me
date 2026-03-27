@@ -3,16 +3,19 @@ title: "yarn: migrate private registry from version 1 config to version 3"
 date: "2023-01-04"
 publish: true
 tags:
-    - yarn
+  - yarn
 ---
+
 Let's say that you have a package from your private registry `@your-company/awesome-lib`
 
 ## Before
+
 `.npmrc`
 
 ```
 //your.company.com/private/registry/:_authToken=token
 ```
+
 `.yarnrc`
 
 ```sh
@@ -20,6 +23,7 @@ Let's say that you have a package from your private registry `@your-company/awes
 ```
 
 ## After
+
 `.yarnrc.yml`
 
 ```yml

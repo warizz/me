@@ -17,7 +17,3 @@ The `<T>` syntax creates a type variable that can be used throughout the functio
 - Creating flexible APIs
 - Maintaining type safety
 - Avoiding `any` types
-
-
-
-
