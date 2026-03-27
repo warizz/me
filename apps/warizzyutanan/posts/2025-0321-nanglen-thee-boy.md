@@ -15,7 +15,7 @@ Went to a concert at a theater in Siam Square One. The lighting, visuals, stage 
 
 ![Boy's playing อุ๊ยปลาตาบอด](/posts/2025-0321-nanglen-thee-boy-2.webp)
 
-My wife came mainly to see Boy, who opened the show. I didn’t feel much—he seemed awkward on stage and admitted he hasn’t performed often. He said he didn’t want to repeat songs or stories, which almost caused Nami to miss *อุ๊ยปาตาบอด*, but he played it eventually.
+My wife came mainly to see Boy, who opened the show. I didn’t feel much—he seemed awkward on stage and admitted he hasn’t performed often. He said he didn’t want to repeat songs or stories, which almost caused Nami to miss _อุ๊ยปาตาบอด_, but he played it eventually.
 
 ![Thee's playing เพราะเธอ](/posts/2025-0321-nanglen-thee-boy-3.webp)
 
@@ -23,6 +23,6 @@ I was surprised to learn that NangLen has many original songs. I had thought the
 
 ![Thee's playing Home](/posts/2025-0321-nanglen-thee-boy-4.webp)
 
-Thee performed last and played many new songs. His performance was excellent, though it went on too long. Sadly, he didn’t play *สาป*, which is my favorite.
+Thee performed last and played many new songs. His performance was excellent, though it went on too long. Sadly, he didn’t play _สาป_, which is my favorite.
 
 We quietly left after Thee’s set. The concert started at 4 PM and still wasn’t done by 8 PM. We couldn’t sit any longer—my butt hurt.

@@ -10,7 +10,3 @@ Essential security practices for web development.
 - **Authorization**: Implement proper access controls
 - **CSRF Protection**: Use tokens for state-changing operations
 - **XSS Prevention**: Escape user-generated content
-
-
-
-

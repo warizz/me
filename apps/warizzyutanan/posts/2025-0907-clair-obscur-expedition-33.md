@@ -13,6 +13,7 @@ tags:
 ![](/posts/2025-0907-clair-obscur-expedition-33.webp)
 
 ## My Thoughts (Spoilers)
+
 - Visuals are stunning, though the protagonist’s girlfriend looks oddly unattractive.
 - Game isn’t perfectly polished but overall well done.
 - Combat system is very satisfying; parrying is tricky at first.
@@ -26,6 +27,7 @@ tags:
 - Weak point: the “everything is just a painting” twist reduces the world’s emotional weight.
 
 ### Plot Summary (Spoilers)
+
 - Each year the **Paintress** erases people of a chosen age (the Gommage).
 - Gustave joins Expedition 33 after losing his lover Sophie. Companions: Maelle, Lune, Sciel, Verso, Monoco.
 - They fight Renoir (Verso’s father) and the Paintress, revealed as **Aline**, Verso’s mother.

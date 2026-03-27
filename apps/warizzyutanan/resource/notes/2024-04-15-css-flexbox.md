@@ -8,7 +8,3 @@ Mastering Flexbox layout properties.
 - `align-items`: Controls cross axis alignment
 - `flex-grow`, `flex-shrink`, `flex-basis`: Control item sizing
 - `gap`: Modern way to add spacing between items
-
-
-
-

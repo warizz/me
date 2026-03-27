@@ -10,7 +10,3 @@ Understanding how database indexes work.
 - Monitor index usage and remove unused ones
 
 Balance between read and write performance.
-
-
-
-

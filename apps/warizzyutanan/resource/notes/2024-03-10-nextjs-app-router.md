@@ -10,12 +10,9 @@ Spent time understanding the Next.js App Router architecture.
 ## Key Pattern
 
 Always start with Server Components and only add `"use client"` when you need:
+
 - Event handlers (`onClick`, `onChange`)
 - Browser APIs (`window`, `localStorage`)
 - React hooks (`useState`, `useEffect`)
 
 This approach minimizes the JavaScript bundle size and improves performance.
-
-
-
-

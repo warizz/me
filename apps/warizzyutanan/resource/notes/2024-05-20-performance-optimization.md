@@ -9,7 +9,3 @@ Techniques for improving web app performance.
 - **Caching**: Browser and CDN caching strategies
 - **Image Optimization**: Use modern formats (WebP, AVIF)
 - **Minification**: Reduce bundle sizes
-
-
-
-

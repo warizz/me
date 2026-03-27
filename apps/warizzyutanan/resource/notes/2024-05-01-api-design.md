@@ -10,7 +10,3 @@ Best practices for designing REST APIs.
 - Version your APIs
 - Use pagination for large datasets
 - Include proper error handling
-
-
-
-

@@ -17,7 +17,3 @@ Comparing GraphQL and REST API approaches.
 - Stateless by design
 
 Choose based on your specific needs.
-
-
-
-

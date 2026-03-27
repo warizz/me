@@ -9,7 +9,3 @@ Exploring different Git workflow patterns.
 - **Trunk-based**: Short-lived branches, frequent merges
 
 Choose based on team size and release frequency.
-
-
-
-

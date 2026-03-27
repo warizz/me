@@ -8,7 +8,3 @@ Learning about Docker container optimization today.
 - Leverage layer caching effectively
 - Keep containers stateless when possible
 - Use `.dockerignore` to exclude unnecessary files
-
-
-
-

@@ -15,10 +15,12 @@ DISCLAIMER! This post was created with the help of AI.
 
 ![A crowded prison cell with inmates lying and sitting close together, showing tense and harsh conditions.](/posts/2025-0321-in-youth-we-trust.webp)
 
-## My Thoughts  
+## My Thoughts
+
 The movie looks good and the acting is solid. But Arak Amornsupasiri’s character doesn’t feel convincing—he doesn’t seem like a true prison boss. The story is simple. The ending is dark, with no hope—just pain and sadness.
 
 ## Summary (Full Spoiler)
+
 Puak, a teenager who ends up in juvenile prison after committing a crime.
 Inside the prison, there are two rival teams. One team is led by Gus and Rang, known for being more fair and kind. The other is led by Beer, where Fluke also belongs, and is known for being violent and cruel. Puak is lucky to be moved to Gus’s team.
 

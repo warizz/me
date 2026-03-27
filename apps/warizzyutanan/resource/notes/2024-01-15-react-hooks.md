@@ -9,7 +9,3 @@ Today I learned about the importance of using `useCallback` and `useMemo` proper
 - Don't overuse them - they have their own overhead
 
 Remember: **Premature optimization is the root of all evil**, but strategic memoization can significantly improve performance in React apps.
-
-
-
-

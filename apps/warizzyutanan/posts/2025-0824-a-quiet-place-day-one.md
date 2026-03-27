@@ -13,6 +13,7 @@ tags:
 ![](/posts/2025-0824-a-quiet-place-day-one.webp)
 
 ## My Thoughts (Spoilers)
+
 - Sam’s constant irritability makes sense—she’s a cancer patient in pain, vulnerable and raw.
 - The movie doesn’t build much suspense—watchable, but not thrilling.
 - The evolving bond between Sam and Eric is genuine and refreshing, especially with no romantic angle.
@@ -21,6 +22,7 @@ tags:
 - The cat, Frodo, was the standout—it brought warmth and levity to an otherwise heavy story.
 
 ### Plot Summary (Spoilers)
+
 - Sam, a terminally ill hospice patient, ventures into NYC with her cat, Frodo.
 - Alien creatures invade—sound-sensitive monsters disrupt the city. Sam wakes amid survivors in a puppet theater.
 - She flees toward Harlem; bridges are bombed to quarantine the invasion.

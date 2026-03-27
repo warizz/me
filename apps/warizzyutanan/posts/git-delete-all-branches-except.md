@@ -2,7 +2,7 @@
 title: "Git: delete all branches except a,b,c"
 date: "2023-01-04"
 tags:
-    - git
+  - git
 publish: true
 ---
 
