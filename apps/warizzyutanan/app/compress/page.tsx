@@ -157,9 +157,9 @@ export default function CompressApp() {
       </header>
 
       <main className="max-w-7xl mx-auto p-4 md:p-8">
-        <p className="mb-8 max-w-3xl text-sm font-bold leading-relaxed text-gray-500 dark:text-gray-400">
+        <p className="mb-8 max-w-3xl text-sm font-bold leading-relaxed text-gray-600 dark:text-zinc-400">
           This tool uses{" "}
-          <code className="bg-gray-100 dark:bg-zinc-800 px-1 dark:border dark:border-zinc-700">
+          <code className="bg-gray-100 dark:bg-zinc-800 px-1 dark:border dark:border-zinc-700 text-black dark:text-white">
             browser-image-compression
           </code>{" "}
           (Quality: 0.75) to process files directly in your browser. No images
@@ -240,11 +240,13 @@ export default function CompressApp() {
             {/* Upload Dropzone */}
             <div className="border-4 border-black dark:border-white bg-white dark:bg-zinc-800 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.2)] relative p-8 flex flex-col items-center justify-center min-h-[200px] group">
               <input
+                id="file-upload"
                 type="file"
                 multiple
                 accept="image/*"
                 onChange={handleImageUpload}
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                aria-label="Upload images"
               />
               <Upload className="w-12 h-12 mb-4 text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors" />
               <p className="text-xl font-black uppercase text-center group-hover:text-black dark:group-hover:text-white transition-colors">
