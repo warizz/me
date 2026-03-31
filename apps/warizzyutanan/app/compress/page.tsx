@@ -13,7 +13,8 @@ import {
   AlertCircle,
 } from "lucide-react";
 import Image from "next/image";
-import { useState, ChangeEvent } from "react";
+import Link from "next/link";
+import { useState, ChangeEvent, useEffect } from "react";
 
 import ColorSchemeToggle from "../../components/ColorSchemeToggle";
 
@@ -33,6 +34,7 @@ export default function CompressApp() {
     "image/jpeg",
   );
   const [isProcessing, setIsProcessing] = useState(false);
+  const [autoCompress, setAutoCompress] = useState(true);
 
   const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -102,6 +104,17 @@ export default function CompressApp() {
     setIsProcessing(false);
   };
 
+  useEffect(() => {
+    if (
+      autoCompress &&
+      images.some((img) => img.status === "pending") &&
+      !isProcessing
+    ) {
+      compressAll();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [images, autoCompress, isProcessing]);
+
   const handleDownload = (img: CompressedImage) => {
     if (!img.compressedUrl) return;
     const extension = format === "image/webp" ? "webp" : "jpg";
@@ -115,6 +128,16 @@ export default function CompressApp() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const handleDownloadAll = () => {
+    const completedImages = images.filter((img) => img.status === "completed");
+    completedImages.forEach((img, index) => {
+      // Small delay between downloads to prevent browser blocking
+      setTimeout(() => {
+        handleDownload(img);
+      }, index * 200);
+    });
   };
 
   const handleRemove = (id: string) => {
@@ -149,9 +172,20 @@ export default function CompressApp() {
       {/* Header */}
       <header className="border-b-4 border-black dark:border-zinc-700 bg-[#ffeb3b] dark:bg-zinc-800 p-6 lg:p-8">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <h1 className="text-2xl md:text-3xl font-black uppercase font-serif tracking-widest dark:text-primary-invert">
-            Compress Images
-          </h1>
+          <div className="flex flex-col gap-1">
+            <Link
+              href="/"
+              className="text-[10px] font-black uppercase opacity-60 hover:opacity-100 transition-opacity flex items-center gap-1 group"
+            >
+              <span className="group-hover:-translate-x-1 transition-transform inline-block">
+                ←
+              </span>{" "}
+              INDEX
+            </Link>
+            <h1 className="text-2xl md:text-3xl font-black uppercase font-serif tracking-widest dark:text-primary-invert">
+              Compress Images
+            </h1>
+          </div>
           <ColorSchemeToggle />
         </div>
       </header>
@@ -175,32 +209,62 @@ export default function CompressApp() {
               </h2>
 
               <div className="space-y-6">
-                <div>
-                  <label className="block font-black uppercase mb-2">
-                    Format
-                  </label>
-                  <div className="grid grid-cols-2 gap-2">
+                <div className="flex items-center justify-between">
+                  <label className="font-black uppercase text-sm">Format</label>
+                  <div className="flex border-2 border-black dark:border-white overflow-hidden shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)]">
                     <button
                       onClick={() => setFormat("image/jpeg")}
-                      className={`p-3 border-4 border-black dark:border-white font-black uppercase transition-all ${
+                      className={`px-3 py-1 text-[10px] font-black uppercase transition-all ${
                         format === "image/jpeg"
-                          ? "bg-[#ffeb3b] dark:bg-primary-invert dark:text-black shadow-none translate-x-1 translate-y-1"
-                          : "bg-white dark:bg-zinc-700 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] hover:bg-gray-50 dark:hover:bg-zinc-600"
+                          ? "bg-[#ffeb3b] dark:bg-primary-invert text-black"
+                          : "bg-white dark:bg-zinc-800 text-gray-400 hover:text-black dark:hover:text-white"
                       }`}
                     >
                       JPG
                     </button>
                     <button
                       onClick={() => setFormat("image/webp")}
-                      className={`p-3 border-4 border-black dark:border-white font-black uppercase transition-all ${
+                      className={`px-3 py-1 text-[10px] font-black uppercase transition-all border-l-2 border-black dark:border-white ${
                         format === "image/webp"
-                          ? "bg-[#ffeb3b] dark:bg-primary-invert dark:text-black shadow-none translate-x-1 translate-y-1"
-                          : "bg-white dark:bg-zinc-700 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] hover:bg-gray-50 dark:hover:bg-zinc-600"
+                          ? "bg-[#ffeb3b] dark:bg-primary-invert text-black"
+                          : "bg-white dark:bg-zinc-800 text-gray-400 hover:text-black dark:hover:text-white"
                       }`}
                     >
                       WebP
                     </button>
                   </div>
+                </div>
+
+                <div>
+                  <div
+                    onClick={() => setAutoCompress(!autoCompress)}
+                    className="flex items-center justify-between cursor-pointer group"
+                  >
+                    <span className="font-black uppercase text-sm group-hover:text-[#8b5cf6] dark:group-hover:text-primary-invert transition-colors">
+                      Auto-Compress
+                    </span>
+                    <div
+                      className={`w-10 h-5 border-2 border-black dark:border-white relative transition-all duration-300 ease-in-out ${
+                        autoCompress
+                          ? "bg-[#ffeb3b] dark:bg-primary-invert"
+                          : "bg-white dark:bg-zinc-800"
+                      }`}
+                    >
+                      <div
+                        className={`absolute top-0.5 left-0.5 bottom-0.5 w-4 border-2 border-black dark:border-white transition-transform duration-300 ease-in-out bg-black dark:bg-white ${
+                          autoCompress ? "translate-x-4.5" : "translate-x-0"
+                        }`}
+                        style={{
+                          transform: autoCompress
+                            ? "translateX(20px)"
+                            : "translateX(0)",
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <p className="text-[10px] font-bold mt-2 text-gray-500 uppercase">
+                    Process files immediately after upload
+                  </p>
                 </div>
 
                 <div className="pt-4 border-t-4 border-black dark:border-white">
@@ -261,7 +325,17 @@ export default function CompressApp() {
             {images.length > 0 && (
               <div className="space-y-4">
                 <h3 className="text-xl font-black uppercase border-b-4 border-black dark:border-white pb-2 flex justify-between items-center">
-                  <span>Queue ({images.length})</span>
+                  <div className="flex items-center gap-4">
+                    <span>Queue ({images.length})</span>
+                    {images.some((img) => img.status === "completed") && (
+                      <button
+                        onClick={handleDownloadAll}
+                        className="text-xs bg-[#ffeb3b] dark:bg-primary-invert text-black px-3 py-1 border-2 border-black dark:border-zinc-100 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5 transition-all flex items-center gap-1 uppercase"
+                      >
+                        <Download className="w-3 h-3" /> Download All
+                      </button>
+                    )}
+                  </div>
                   {images.every((img) => img.status === "completed") && (
                     <span className="text-sm bg-green-500 text-white px-2 py-1 border-2 border-black dark:border-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)]">
                       ALL DONE!
