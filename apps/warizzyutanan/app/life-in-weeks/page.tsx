@@ -60,7 +60,7 @@ const LifeInWeeksPage = async () => {
     gridData.push({ year, weeks: yearWeeks });
   }
 
-  return <LifeInWeeksClient gridData={gridData} events={events} />;
+  return <LifeInWeeksClient gridData={gridData} />;
 };
 
 export default LifeInWeeksPage;
