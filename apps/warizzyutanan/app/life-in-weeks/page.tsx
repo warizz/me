@@ -1,104 +1,66 @@
-import clsx from "clsx";
+import { isSameWeek, addWeeks } from "date-fns";
 import React from "react";
 
-import weeks from "./data.json";
+import rawData from "./data.json";
+import LifeInWeeksClient from "./LifeInWeeksClient";
+import { LifeEvent, WeekData } from "./types";
+import {
+  BIRTH_DATE,
+  TOTAL_YEARS,
+  WEEKS_PER_YEAR,
+  isEventInWeek,
+} from "./utils";
 
-const startDate = new Date("1984-08-08");
-const endDate = new Date("2084-08-08");
-const today = new Date();
+const LifeInWeeksPage = async () => {
+  const today = new Date();
+  const todayStr = today.toISOString().split("T")[0];
 
-const getWeeksBetween = (start: Date, end: Date) => {
-  const diffInMs = end.getTime() - start.getTime();
-  return Math.floor(diffInMs / (7 * 24 * 60 * 60 * 1000));
+  // Map raw data to LifeEvent objects (Server Side)
+  const events: LifeEvent[] = rawData
+    .map((item: any) => {
+      const rawEnd = item.ended_at || item.end_date || item.date;
+      const finalEnd = rawEnd === "current" ? todayStr : rawEnd;
+
+      return {
+        id: item.id,
+        title: item.title,
+        description: item.detail || "",
+        started_at: item.date,
+        ended_at: finalEnd,
+        color: item.color,
+        is_private: item.is_private === "true" || item.is_private === true,
+      };
+    })
+    .filter((e) => !e.is_private);
+
+  // Pre-calculate all weeks data (Server Side)
+  const birthYear = BIRTH_DATE.getFullYear();
+  const gridData = [];
+
+  for (let year = 0; year < TOTAL_YEARS; year++) {
+    const yearWeeks: WeekData[] = [];
+    const currentYearValue = birthYear + year;
+    const yearStart = new Date(currentYearValue, 0, 1); // January 1st
+
+    for (let weekOfYear = 0; weekOfYear < WEEKS_PER_YEAR; weekOfYear++) {
+      const globalWeekIndex = year * WEEKS_PER_YEAR + weekOfYear;
+      const weekDate = addWeeks(yearStart, weekOfYear);
+
+      const weekEvents = events.filter((event) =>
+        isEventInWeek(event, weekDate),
+      );
+
+      yearWeeks.push({
+        index: globalWeekIndex,
+        date: weekDate,
+        events: weekEvents,
+        isCurrentWeek: isSameWeek(weekDate, today, { weekStartsOn: 0 }),
+      });
+    }
+    gridData.push({ year, weeks: yearWeeks });
+  }
+
+  return <LifeInWeeksClient gridData={gridData} />;
 };
 
-const colorConfig = [
-  {
-    start: new Date("1984-08-08"),
-    end: new Date("1994-08-08"),
-    color: "bg-red-100 border-red-300",
-  },
-  {
-    start: new Date("2023-04-01"),
-    end: new Date(),
-    color: "bg-[#f7ba86] border-[#f58220]",
-  },
-];
-
-const getColorForWeek = (weekDate: Date) => {
-  const config = colorConfig.find(
-    (c) => weekDate >= c.start && weekDate <= c.end,
-  );
-  return config ? config.color : "bg-gray-200";
-};
-
-const weeksCount = getWeeksBetween(startDate, endDate) + 1;
-const currentWeek = getWeeksBetween(startDate, today);
-
-const remainingYearsStartDate = new Date(startDate);
-remainingYearsStartDate.setDate(startDate.getDate() + currentWeek * 7);
-
-const WeeklyTimeline = () => {
-  return (
-    <div>
-      <h1>My Life In Weeks.</h1>
-      <p>
-        💡 Inspired by{" "}
-        <a href="https://weeks.ginatrapani.org/">
-          https://weeks.ginatrapani.org/
-        </a>
-      </p>
-      <div className="w-full bg-gray-200 rounded h-5 mb-4 relative">
-        <div
-          className="bg-blue-500 h-5 rounded flex items-center justify-end px-1"
-          style={{ width: `${(currentWeek / weeksCount) * 100}%` }}
-        >
-          <span className="text-white text-xs font-sans">
-            {((currentWeek / weeksCount) * 100).toFixed(2)}%
-          </span>
-        </div>
-      </div>
-      <div className="flex flex-wrap justify-evenly gap-1 font-sans text-sm">
-        {[...Array(weeksCount)].map((_, i) => {
-          const weekDate = new Date(startDate);
-          weekDate.setDate(startDate.getDate() + i * 7);
-
-          const event = weeks.find((w) => {
-            const eventDate = new Date(w.date);
-            const eventWeek = getWeeksBetween(startDate, eventDate);
-            return eventWeek === i;
-          });
-          const isHighlighted = event && !event.is_private;
-          const isCurrentWeek = i === currentWeek;
-
-          return (
-            <div
-              key={i}
-              title={weekDate.toDateString()}
-              content={isHighlighted ? (event?.detail ?? "") : ""}
-              data-testid="week"
-              className={clsx(
-                "h-5 rounded border flex items-center justify-center px-2",
-                {
-                  "bg-blue-500 border-blue-700 text-white min-w-auto flex-grow":
-                    isHighlighted,
-                  "bg-green-500 border-green-700 text-white min-w-auto flex-grow relative":
-                    isCurrentWeek,
-                  [getColorForWeek(weekDate)]: !isHighlighted && !isCurrentWeek,
-                },
-              )}
-            >
-              {isCurrentWeek ? (
-                <div className="rounded absolute w-full h-full bg-green-500 border-green-700 text-white min-w-auto flex-grow animate-ping"></div>
-              ) : null}
-              {isHighlighted ? event.title : ""}
-            </div>
-          );
-        })}
-        <div className=" grow"></div>
-      </div>
-    </div>
-  );
-};
-
-export default WeeklyTimeline;
+export default LifeInWeeksPage;

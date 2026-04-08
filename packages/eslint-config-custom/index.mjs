@@ -3,7 +3,7 @@ import nextPlugin from "@next/eslint-plugin-next";
 import turboPlugin from "eslint-plugin-turbo";
 import prettierConfig from "eslint-config-prettier";
 import prettierPlugin from "eslint-plugin-prettier";
-import importPlugin from "eslint-plugin-import";
+import importPlugin from "eslint-plugin-import-x";
 import reactPlugin from "eslint-plugin-react";
 import tsParser from "@typescript-eslint/parser";
 import tsPlugin from "@typescript-eslint/eslint-plugin";
