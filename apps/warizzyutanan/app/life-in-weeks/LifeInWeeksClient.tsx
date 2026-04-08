@@ -9,7 +9,7 @@ import ColorSchemeToggle from "../../components/ColorSchemeToggle/ColorSchemeTog
 
 import { YearRow } from "./components";
 import { LifeEvent, WeekData } from "./types";
-import { BIRTH_DATE } from "./utils";
+import { BIRTH_DATE, getColorForEvent } from "./utils";
 
 interface LifeInWeeksClientProps {
   gridData: { year: number; weeks: WeekData[] }[];
@@ -128,7 +128,7 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
                 <div
                   key={event.id}
                   className="border-l-2 pl-2"
-                  style={{ borderColor: event.color || "gray" }}
+                  style={{ borderColor: getColorForEvent(event) }}
                 >
                   <div className="text-sm font-semibold">{event.title}</div>
                   {event.description && (
@@ -164,7 +164,7 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
               <div className="flex justify-between items-start mb-4">
                 <div
                   className="h-2 w-12 rounded-full mb-2"
-                  style={{ backgroundColor: selectedEvent.color || "gray" }}
+                  style={{ backgroundColor: getColorForEvent(selectedEvent) }}
                 />
                 <button
                   onClick={() => {
