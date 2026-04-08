@@ -1,104 +1,189 @@
+"use client";
+
+import React, { useState, useMemo, useEffect } from "react";
+import { format, isSameWeek, addWeeks } from "date-fns";
+import { YearRow } from "./components";
+import { LifeEvent, WeekData } from "./types";
+import { 
+  BIRTH_DATE, 
+  TOTAL_YEARS, 
+  WEEKS_PER_YEAR, 
+  getWeekDate, 
+  isEventInWeek 
+} from "./utils";
+import rawData from "./data.json";
+import { ChevronRight, Info, Calendar, MapPin, X } from "lucide-react";
 import clsx from "clsx";
-import React from "react";
 
-import weeks from "./data.json";
+const LifeInWeeksPage = () => {
+  const [hoveredWeek, setHoveredWeek] = useState<WeekData | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<LifeEvent | null>(null);
+  const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
+  const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
 
-const startDate = new Date("1984-08-08");
-const endDate = new Date("2084-08-08");
-const today = new Date();
+  // Map raw data to LifeEvent objects
+  const events = useMemo(() => {
+    return rawData.map((item: any) => ({
+      id: item.id,
+      title: item.title,
+      description: item.detail || "",
+      started_at: item.date,
+      ended_at: item.ended_at || item.end_date || item.date,
+      color: item.color,
+      is_private: item.is_private === "true" || item.is_private === true,
+    })).filter(e => !e.is_private);
+  }, []);
 
-const getWeeksBetween = (start: Date, end: Date) => {
-  const diffInMs = end.getTime() - start.getTime();
-  return Math.floor(diffInMs / (7 * 24 * 60 * 60 * 1000));
-};
+  // Pre-calculate all weeks data
+  const gridData = useMemo(() => {
+    const today = new Date();
+    const rows = [];
+    const birthYear = BIRTH_DATE.getFullYear();
+    
+    for (let year = 0; year < TOTAL_YEARS; year++) {
+      const yearWeeks: WeekData[] = [];
+      const currentYearValue = birthYear + year;
+      const yearStart = new Date(currentYearValue, 0, 1); // January 1st
+      
+      for (let weekOfYear = 0; weekOfYear < WEEKS_PER_YEAR; weekOfYear++) {
+        const globalWeekIndex = year * WEEKS_PER_YEAR + weekOfYear;
+        const weekDate = addWeeks(yearStart, weekOfYear);
+        
+        const weekEvents = events.filter(event => isEventInWeek(event, weekDate));
+        
+        yearWeeks.push({
+          index: globalWeekIndex,
+          date: weekDate,
+          events: weekEvents,
+          isCurrentWeek: isSameWeek(weekDate, today, { weekStartsOn: 0 }),
+        });
+      }
+      rows.push({ year, weeks: yearWeeks });
+    }
+    return rows;
+  }, [events]);
 
-const colorConfig = [
-  {
-    start: new Date("1984-08-08"),
-    end: new Date("1994-08-08"),
-    color: "bg-red-100 border-red-300",
-  },
-  {
-    start: new Date("2023-04-01"),
-    end: new Date(),
-    color: "bg-[#f7ba86] border-[#f58220]",
-  },
-];
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (hoveredWeek) {
+      setTooltipPos({ x: e.clientX, y: e.clientY });
+    }
+  };
 
-const getColorForWeek = (weekDate: Date) => {
-  const config = colorConfig.find(
-    (c) => weekDate >= c.start && weekDate <= c.end,
-  );
-  return config ? config.color : "bg-gray-200";
-};
+  const handleEventClick = (event: LifeEvent) => {
+    if (selectedEventId === event.id) {
+      setSelectedEventId(null);
+      setSelectedEvent(null);
+    } else {
+      setSelectedEventId(event.id);
+      setSelectedEvent(event);
+    }
+  };
 
-const weeksCount = getWeeksBetween(startDate, endDate) + 1;
-const currentWeek = getWeeksBetween(startDate, today);
-
-const remainingYearsStartDate = new Date(startDate);
-remainingYearsStartDate.setDate(startDate.getDate() + currentWeek * 7);
-
-const WeeklyTimeline = () => {
   return (
-    <div>
-      <h1>My Life In Weeks.</h1>
-      <p>
-        💡 Inspired by{" "}
-        <a href="https://weeks.ginatrapani.org/">
-          https://weeks.ginatrapani.org/
-        </a>
-      </p>
-      <div className="w-full bg-gray-200 rounded h-5 mb-4 relative">
-        <div
-          className="bg-blue-500 h-5 rounded flex items-center justify-end px-1"
-          style={{ width: `${(currentWeek / weeksCount) * 100}%` }}
-        >
-          <span className="text-white text-xs font-sans">
-            {((currentWeek / weeksCount) * 100).toFixed(2)}%
-          </span>
+    <div className="min-h-screen bg-white dark:bg-gray-950 font-sans text-gray-900 dark:text-gray-100 p-4 md:p-8" onMouseMove={handleMouseMove}>
+      <header className="max-w-6xl mx-auto mb-12">
+        <h1 className="text-4xl font-bold tracking-tight mb-2">Life in Weeks</h1>
+        <p className="text-gray-500 dark:text-gray-400 max-w-2xl">
+          A visualization of my life, one week at a time. Each cell represents seven days. 
+          The full grid spans 100 years. Empty squares are neutral, while colored segments mark significant life events.
+        </p>
+      </header>
+
+      <main className="max-w-[1400px] mx-auto overflow-x-auto pb-20">
+        <div className="flex flex-col gap-[2px] min-w-[1000px]">
+          {gridData.map((row) => (
+            <YearRow
+              key={row.year}
+              year={row.year}
+              weeks={row.weeks}
+              selectedEventId={selectedEventId}
+              hoveredWeekIndex={hoveredWeek?.index ?? null}
+              onHover={setHoveredWeek}
+              onEventClick={handleEventClick}
+            />
+          ))}
         </div>
-      </div>
-      <div className="flex flex-wrap justify-evenly gap-1 font-sans text-sm">
-        {[...Array(weeksCount)].map((_, i) => {
-          const weekDate = new Date(startDate);
-          weekDate.setDate(startDate.getDate() + i * 7);
+      </main>
 
-          const event = weeks.find((w) => {
-            const eventDate = new Date(w.date);
-            const eventWeek = getWeeksBetween(startDate, eventDate);
-            return eventWeek === i;
-          });
-          const isHighlighted = event && !event.is_private;
-          const isCurrentWeek = i === currentWeek;
-
-          return (
-            <div
-              key={i}
-              title={weekDate.toDateString()}
-              content={isHighlighted ? (event?.detail ?? "") : ""}
-              data-testid="week"
-              className={clsx(
-                "h-5 rounded border flex items-center justify-center px-2",
-                {
-                  "bg-blue-500 border-blue-700 text-white min-w-auto flex-grow":
-                    isHighlighted,
-                  "bg-green-500 border-green-700 text-white min-w-auto flex-grow relative":
-                    isCurrentWeek,
-                  [getColorForWeek(weekDate)]: !isHighlighted && !isCurrentWeek,
-                },
-              )}
-            >
-              {isCurrentWeek ? (
-                <div className="rounded absolute w-full h-full bg-green-500 border-green-700 text-white min-w-auto flex-grow animate-ping"></div>
-              ) : null}
-              {isHighlighted ? event.title : ""}
+      {/* Tooltip */}
+      {hoveredWeek && (
+        <div 
+          className="fixed z-50 pointer-events-none bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border border-gray-200 dark:border-gray-800 shadow-xl rounded-lg p-3 max-w-xs transition-opacity duration-200"
+          style={{ 
+            left: `${tooltipPos.x + 15}px`, 
+            top: `${tooltipPos.y + 15}px` 
+          }}
+        >
+          <div className="text-[10px] uppercase tracking-wider text-gray-400 mb-1">
+            Week of {format(hoveredWeek.date, "MMM d, yyyy")}
+          </div>
+          {hoveredWeek.events.length > 0 ? (
+            <div className="space-y-2">
+              {hoveredWeek.events.map(event => (
+                <div key={event.id} className="border-l-2 pl-2" style={{ borderColor: event.color || 'gray' }}>
+                  <div className="text-sm font-semibold">{event.title}</div>
+                  {event.description && (
+                    <div className="text-xs text-gray-500 line-clamp-2">{event.description}</div>
+                  )}
+                </div>
+              ))}
             </div>
-          );
-        })}
-        <div className=" grow"></div>
+          ) : (
+            <div className="text-xs text-gray-400">No events this week</div>
+          )}
+        </div>
+      )}
+
+      {/* Detail Panel */}
+      <div className={clsx(
+        "fixed bottom-8 right-8 z-40 w-full max-w-md transform transition-all duration-300 ease-in-out",
+        selectedEvent ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0 pointer-events-none"
+      )}>
+        {selectedEvent && (
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-2xl rounded-2xl overflow-hidden">
+            <div className="p-6">
+              <div className="flex justify-between items-start mb-4">
+                <div className="h-2 w-12 rounded-full mb-2" style={{ backgroundColor: selectedEvent.color || 'gray' }} />
+                <button 
+                  onClick={() => { setSelectedEvent(null); setSelectedEventId(null); }}
+                  className="p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+                >
+                  <X size={20} />
+                </button>
+              </div>
+              <h2 className="text-2xl font-bold mb-2">{selectedEvent.title}</h2>
+              <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
+                <div className="flex items-center gap-1">
+                  <Calendar size={14} />
+                  <span>{format(new Date(selectedEvent.started_at), "MMM d, yyyy")}</span>
+                  {selectedEvent.ended_at && selectedEvent.ended_at !== selectedEvent.started_at && (
+                    <>
+                      <span>—</span>
+                      <span>{format(new Date(selectedEvent.ended_at), "MMM d, yyyy")}</span>
+                    </>
+                  )}
+                </div>
+              </div>
+              <div className="prose prose-sm dark:prose-invert">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {selectedEvent.description || "No further details available for this event."}
+                </p>
+              </div>
+            </div>
+            <div className="px-6 py-4 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
+              <span className="text-xs text-gray-400">Event #{selectedEvent.id}</span>
+              <button 
+                onClick={() => { setSelectedEvent(null); setSelectedEventId(null); }}
+                className="text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors"
+              >
+                Close details
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default WeeklyTimeline;
+export default LifeInWeeksPage;
