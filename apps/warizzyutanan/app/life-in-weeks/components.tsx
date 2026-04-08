@@ -14,14 +14,14 @@ interface WeekCellProps {
   selectedEventId: string | null;
 }
 
-export const WeekCell: React.FC<WeekCellProps> = ({
+export const WeekCell = React.memo(({
   week,
   isSelected,
   isDimmed,
   onHover,
   onClick,
   selectedEventId,
-}) => {
+}: WeekCellProps) => {
   const events = week.events;
   const hasEvents = events.length > 0;
 
@@ -31,7 +31,7 @@ export const WeekCell: React.FC<WeekCellProps> = ({
       const isEventSelected = selectedEventId === event.id;
       return (
         <div
-          className={clsx("w-full h-full transition-colors duration-200", {
+          className={clsx("w-full h-full", {
             "ring-2 ring-black z-10": isEventSelected,
           })}
           style={{ backgroundColor: getColorForEvent(event) }}
@@ -49,7 +49,7 @@ export const WeekCell: React.FC<WeekCellProps> = ({
           {events.map((event) => (
              <div
               key={event.id}
-              className={clsx("w-1/2 h-full border-r last:border-r-0 border-white/20 transition-colors duration-200", {
+              className={clsx("w-1/2 h-full border-r last:border-r-0 border-white/20", {
                 "ring-2 ring-inset ring-black z-10": selectedEventId === event.id,
               })}
               style={{ backgroundColor: getColorForEvent(event) }}
@@ -72,7 +72,7 @@ export const WeekCell: React.FC<WeekCellProps> = ({
           {displayEvents.map((event, i) => (
             <div
               key={event.id}
-              className={clsx("border-r border-b border-white/20 transition-colors duration-200", {
+              className={clsx("border-r border-b border-white/20", {
                 "ring-1 ring-inset ring-black z-10": selectedEventId === event.id,
                 "border-r-0": i === 1 || i === 3,
                 "border-b-0": i === 2 || i === 3,
@@ -101,13 +101,13 @@ export const WeekCell: React.FC<WeekCellProps> = ({
   return (
     <div
       className={clsx(
-        "aspect-square w-full min-w-[14px] border border-gray-100 dark:border-gray-800 rounded-sm relative overflow-hidden transition-all duration-300",
+        "aspect-square w-full min-w-[14px] border border-gray-100 dark:border-gray-600 rounded-sm relative overflow-hidden",
         {
           "bg-[#E5E7EB] dark:bg-gray-800/50": !hasEvents,
           "ring-2 ring-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)] z-10": week.isCurrentWeek,
           "opacity-20 grayscale-[0.5]": isDimmed && !isSelected,
           "scale-125 z-20 shadow-lg border-gray-400 dark:border-gray-500": isSelected,
-          "hover:border-gray-400 dark:hover:border-gray-500 hover:scale-150 hover:z-30 cursor-pointer shadow-sm": hasEvents || !hasEvents,
+          "hover:border-gray-400 dark:hover:border-gray-500 hover:scale-150 hover:z-30 cursor-pointer shadow-sm transition-transform duration-200": true,
         }
       )}
       onMouseEnter={() => onHover(week)}
@@ -119,10 +119,13 @@ export const WeekCell: React.FC<WeekCellProps> = ({
       )}
     </div>
   );
-};
+});
+
+WeekCell.displayName = "WeekCell";
 
 interface YearRowProps {
   year: number;
+  calendarYear: number;
   weeks: WeekData[];
   selectedEventId: string | null;
   hoveredWeekIndex: number | null;
@@ -130,20 +133,21 @@ interface YearRowProps {
   onEventClick: (event: LifeEvent) => void;
 }
 
-export const YearRow: React.FC<YearRowProps> = ({
+export const YearRow = React.memo(({
   year,
+  calendarYear,
   weeks,
   selectedEventId,
   hoveredWeekIndex,
   onHover,
   onEventClick,
-}) => {
+}: YearRowProps) => {
   return (
-    <div className="flex items-center gap-2 group">
-      <div className="w-8 text-[10px] text-gray-400 font-mono text-right flex-shrink-0 group-hover:text-gray-900 transition-colors">
+    <div className="flex items-start gap-2 group py-1 md:py-[1px]">
+      <div className="w-8 pt-[2px] text-[10px] text-gray-400 font-mono text-right flex-shrink-0 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors lowercase">
         {year === 0 ? `Age ${year}` : year}
       </div>
-      <div className="grid grid-cols-[repeat(52,minmax(0,1fr))] gap-[2px] flex-grow">
+      <div className="grid grid-cols-[repeat(13,minmax(0,1fr))] sm:grid-cols-[repeat(26,minmax(0,1fr))] md:grid-cols-[repeat(52,minmax(0,1fr))] gap-[2px] flex-grow">
         {weeks.map((week) => {
           const isSelected = selectedEventId ? week.events.some(e => e.id === selectedEventId) : false;
           const isDimmed = selectedEventId ? !isSelected : false;
@@ -161,6 +165,11 @@ export const YearRow: React.FC<YearRowProps> = ({
           );
         })}
       </div>
+      <div className="w-10 pt-[2px] text-[10px] text-gray-400 font-mono text-left flex-shrink-0 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors lowercase">
+        {calendarYear}
+      </div>
     </div>
   );
-};
+});
+
+YearRow.displayName = "YearRow";

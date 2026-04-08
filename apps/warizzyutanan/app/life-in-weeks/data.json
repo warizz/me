@@ -229,6 +229,7 @@
     "title": "Savvy Business Solution",
     "detail": "",
     "date": "2013-03-11",
+    "ended_at": "2014-01-08",
     "is_private": ""
   },
   {
@@ -243,6 +244,7 @@
     "title": "Indigy Co., Ltd.",
     "detail": "",
     "date": "2014-01-09",
+    "ended_at": "2015-09-30",
     "is_private": ""
   },
   {
@@ -271,6 +273,7 @@
     "title": "Emerio (Thailand) Ltd.",
     "detail": "",
     "date": "2015-10-01",
+    "ended_at": "2016-04-01",
     "is_private": ""
   },
   {
@@ -285,6 +288,7 @@
     "title": "Kobkiat Global Co.,Ltd.",
     "detail": "",
     "date": "2016-05-02",
+    "ended_at": "2017-06-30",
     "is_private": ""
   },
   {
@@ -313,6 +317,7 @@
     "title": "Bluestone PIM",
     "detail": "",
     "date": "2017-07-01",
+    "ended_at": "2018-02-28",
     "is_private": ""
   },
   {
@@ -341,6 +346,7 @@
     "title": "The Asia",
     "detail": "",
     "date": "2018-03-01",
+    "ended_at": "2019-01-31",
     "is_private": ""
   },
   {
@@ -362,6 +368,7 @@
     "title": "Kaidee",
     "detail": "",
     "date": "2019-02-01",
+    "ended_at": "2023-02-24",
     "is_private": ""
   },
   {
@@ -446,6 +453,7 @@
     "title": "Ascend Wealth",
     "detail": "",
     "date": "2023-04-01",
+    "ended_at": "current",
     "is_private": ""
   },
   {
