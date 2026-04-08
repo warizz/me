@@ -28,15 +28,19 @@ export const WeekCell = React.memo(
     const hasEvents = events.length > 0;
 
     const renderSegments = () => {
+      const getSegmentColor = (event: LifeEvent) => {
+        if (!selectedEventId || event.id === selectedEventId) {
+          return getColorForEvent(event);
+        }
+        return "rgb(156 163 175 / 0.5)"; // Tailwind gray-400 with opacity
+      };
+
       if (events.length === 1) {
         const event = events[0];
-        const isEventSelected = selectedEventId === event.id;
         return (
           <div
-            className={clsx("w-full h-full", {
-              "ring-2 ring-black z-10": isEventSelected,
-            })}
-            style={{ backgroundColor: getColorForEvent(event) }}
+            className="w-full h-full"
+            style={{ backgroundColor: getSegmentColor(event) }}
             onClick={(e) => {
               e.stopPropagation();
               onClick(event, e);
@@ -51,14 +55,8 @@ export const WeekCell = React.memo(
             {events.map((event) => (
               <div
                 key={event.id}
-                className={clsx(
-                  "w-1/2 h-full border-r last:border-r-0 border-white/20",
-                  {
-                    "ring-2 ring-inset ring-black z-10":
-                      selectedEventId === event.id,
-                  },
-                )}
-                style={{ backgroundColor: getColorForEvent(event) }}
+                className="w-1/2 h-full border-r last:border-r-0 border-white/20"
+                style={{ backgroundColor: getSegmentColor(event) }}
                 onClick={(e) => {
                   e.stopPropagation();
                   onClick(event, e);
@@ -79,12 +77,10 @@ export const WeekCell = React.memo(
               <div
                 key={event.id}
                 className={clsx("border-r border-b border-white/20", {
-                  "ring-1 ring-inset ring-black z-10":
-                    selectedEventId === event.id,
                   "border-r-0": i === 1 || i === 3,
                   "border-b-0": i === 2 || i === 3,
                 })}
-                style={{ backgroundColor: getColorForEvent(event) }}
+                style={{ backgroundColor: getSegmentColor(event) }}
                 onClick={(e) => {
                   e.stopPropagation();
                   onClick(event, e);
@@ -115,8 +111,7 @@ export const WeekCell = React.memo(
             "ring-2 ring-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)] z-10":
               week.isCurrentWeek,
             "opacity-20 grayscale-[0.5]": isDimmed && !isSelected,
-            "scale-125 z-20 shadow-lg border-gray-400 dark:border-gray-500":
-              isSelected,
+            "z-20 border-gray-400 dark:border-gray-500": isSelected,
             "hover:border-gray-400 dark:hover:border-gray-500 hover:scale-150 hover:z-30 cursor-pointer shadow-sm transition-transform duration-200": true,
           },
         )}
