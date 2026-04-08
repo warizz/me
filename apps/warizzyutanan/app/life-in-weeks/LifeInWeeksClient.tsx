@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { format } from "date-fns";
 import { YearRow } from "./components";
 import { LifeEvent, WeekData } from "./types";
@@ -21,13 +21,38 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData, events 
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
 
+  useEffect(() => {
+    let frameId: number;
+    
+    const scrollToCurrentWeek = () => {
+      const currentWeekEl = document.getElementById("current-week");
+      if (currentWeekEl) {
+        currentWeekEl.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        // Try again in the next frame if not ready
+        frameId = requestAnimationFrame(scrollToCurrentWeek);
+      }
+    };
+
+    frameId = requestAnimationFrame(scrollToCurrentWeek);
+    return () => {
+      if (frameId) cancelAnimationFrame(frameId);
+    };
+  }, []);
+
   const handleMouseMove = useCallback((e: React.MouseEvent) => {
     if (hoveredWeek) {
       setTooltipPos({ x: e.clientX, y: e.clientY });
     }
   }, [hoveredWeek]);
 
-  const handleEventClick = useCallback((event: LifeEvent) => {
+  const handleEventClick = useCallback((event: LifeEvent, e: React.MouseEvent) => {
+    // Scroll the clicked cell to center
+    (e.currentTarget as HTMLElement).scrollIntoView({ 
+      behavior: "smooth", 
+      block: "center" 
+    });
+
     if (selectedEventId === event.id) {
       setSelectedEventId(null);
       setSelectedEvent(null);

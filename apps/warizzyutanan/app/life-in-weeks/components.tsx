@@ -10,7 +10,7 @@ interface WeekCellProps {
   isSelected: boolean;
   isDimmed: boolean;
   onHover: (week: WeekData | null) => void;
-  onClick: (event: LifeEvent) => void;
+  onClick: (event: LifeEvent, e: React.MouseEvent) => void;
   selectedEventId: string | null;
 }
 
@@ -37,7 +37,7 @@ export const WeekCell = React.memo(({
           style={{ backgroundColor: getColorForEvent(event) }}
           onClick={(e) => {
             e.stopPropagation();
-            onClick(event);
+            onClick(event, e);
           }}
         />
       );
@@ -55,7 +55,7 @@ export const WeekCell = React.memo(({
               style={{ backgroundColor: getColorForEvent(event) }}
               onClick={(e) => {
                 e.stopPropagation();
-                onClick(event);
+                onClick(event, e);
               }}
             />
           ))}
@@ -80,7 +80,7 @@ export const WeekCell = React.memo(({
               style={{ backgroundColor: getColorForEvent(event) }}
               onClick={(e) => {
                 e.stopPropagation();
-                onClick(event);
+                onClick(event, e);
               }}
             />
           ))}
@@ -100,6 +100,7 @@ export const WeekCell = React.memo(({
 
   return (
     <div
+      id={week.isCurrentWeek ? "current-week" : undefined}
       className={clsx(
         "aspect-square w-full min-w-[14px] border border-gray-100 dark:border-gray-600 rounded-sm relative overflow-hidden",
         {
@@ -130,7 +131,7 @@ interface YearRowProps {
   selectedEventId: string | null;
   hoveredWeekIndex: number | null;
   onHover: (week: WeekData | null) => void;
-  onEventClick: (event: LifeEvent) => void;
+  onEventClick: (event: LifeEvent, e: React.MouseEvent) => void;
 }
 
 export const YearRow = React.memo(({
