@@ -9,21 +9,13 @@ import { getColorForEvent } from "./utils";
 interface WeekCellProps {
   week: WeekData;
   isSelected: boolean;
-  isDimmed: boolean;
   onHover: (week: WeekData | null) => void;
   onClick: (event: LifeEvent, e: React.MouseEvent) => void;
   selectedEventId: string | null;
 }
 
 export const WeekCell = React.memo(
-  ({
-    week,
-    isSelected,
-    isDimmed,
-    onHover,
-    onClick,
-    selectedEventId,
-  }: WeekCellProps) => {
+  ({ week, isSelected, onHover, onClick, selectedEventId }: WeekCellProps) => {
     const events = week.events;
     const hasEvents = events.length > 0;
 
@@ -105,13 +97,12 @@ export const WeekCell = React.memo(
       <div
         id={week.isCurrentWeek ? "current-week" : undefined}
         className={clsx(
-          "aspect-square w-full min-w-[14px] border border-gray-100 dark:border-gray-600 rounded-sm relative overflow-hidden",
+          "week-cell aspect-square w-full min-w-[14px] border border-gray-100 dark:border-gray-600 rounded-sm relative overflow-hidden",
           {
             "bg-[#E5E7EB] dark:bg-gray-800/50": !hasEvents,
             "ring-2 ring-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)] z-10":
               week.isCurrentWeek,
-            "opacity-20 grayscale-[0.5]": isDimmed && !isSelected,
-            "z-20 border-gray-400 dark:border-gray-500": isSelected,
+            "is-selected z-20 border-gray-400 dark:border-gray-500": isSelected,
             "hover:border-gray-400 dark:hover:border-gray-500 hover:scale-150 hover:z-30 cursor-pointer shadow-sm transition-transform duration-200": true,
           },
         )}
@@ -123,6 +114,23 @@ export const WeekCell = React.memo(
           <div className="absolute inset-0 border-2 border-blue-400 rounded-sm animate-pulse pointer-events-none" />
         )}
       </div>
+    );
+  },
+  (prevProps, nextProps) => {
+    // Only re-render if selection status changes for THIS week
+    if (prevProps.isSelected !== nextProps.isSelected) return false;
+
+    // Only re-render if it IS part of the selection and the selection itself changed
+    if (
+      nextProps.isSelected &&
+      prevProps.selectedEventId !== nextProps.selectedEventId
+    )
+      return false;
+
+    return (
+      prevProps.week.index === nextProps.week.index &&
+      prevProps.onHover === nextProps.onHover &&
+      prevProps.onClick === nextProps.onClick
     );
   },
 );
@@ -157,14 +165,12 @@ export const YearRow = React.memo(
             const isSelected = selectedEventId
               ? week.events.some((e) => e.id === selectedEventId)
               : false;
-            const isDimmed = selectedEventId ? !isSelected : false;
 
             return (
               <WeekCell
                 key={week.index}
                 week={week}
                 isSelected={isSelected}
-                isDimmed={isDimmed}
                 onHover={onHover}
                 onClick={onEventClick}
                 selectedEventId={selectedEventId}
