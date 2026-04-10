@@ -22,6 +22,22 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
   const [selectedEventId, setSelectedEventId] = useState<string | null>(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
 
+  const lifeStats = React.useMemo(() => {
+    let currentWeek = 0;
+    let totalWeeks = 0;
+    gridData.forEach((year) => {
+      year.weeks.forEach((week) => {
+        totalWeeks++;
+        if (week.isCurrentWeek) currentWeek = totalWeeks;
+      });
+    });
+    return {
+      currentWeek,
+      totalWeeks,
+      percentage: (currentWeek / totalWeeks) * 100,
+    };
+  }, [gridData]);
+
   useEffect(() => {
     let frameId: number;
 
@@ -30,7 +46,6 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
       if (currentWeekEl) {
         currentWeekEl.scrollIntoView({ behavior: "smooth", block: "center" });
       } else {
-        // Try again in the next frame if not ready
         frameId = requestAnimationFrame(scrollToCurrentWeek);
       }
     };
@@ -52,7 +67,6 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
 
   const handleEventClick = useCallback(
     (event: LifeEvent, e: React.MouseEvent) => {
-      // Scroll the clicked cell to center
       (e.currentTarget as HTMLElement).scrollIntoView({
         behavior: "smooth",
         block: "center",
@@ -75,7 +89,10 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
 
   return (
     <div
-      className="min-h-screen bg-white dark:bg-gray-950 font-sans text-gray-900 dark:text-gray-100 p-4 md:p-8"
+      className={clsx(
+        "min-h-screen bg-white dark:bg-gray-950 font-sans text-gray-900 dark:text-gray-100 p-4 md:p-8",
+        selectedEventId && "has-selected-event",
+      )}
       onMouseMove={handleMouseMove}
     >
       <header className="max-w-6xl mx-auto mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -95,6 +112,57 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
       </header>
 
       <main className="max-w-[1400px] mx-auto pb-20 px-2 md:px-0">
+        {/* Minimal Sticky Progress Navigation Line */}
+        <div className="sticky top-0 z-30 flex items-start gap-2 pt-8 pb-4 mb-4 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-100/50 dark:border-white/5">
+          <div className="w-8 text-[10px] text-gray-400 font-mono text-right flex-shrink-0 lowercase leading-tight pt-1">
+            <span className="text-blue-500 font-bold block">
+              {lifeStats.currentWeek}
+            </span>
+            passed
+          </div>
+
+          <div className="grid grid-cols-[repeat(13,minmax(0,1fr))] sm:grid-cols-[repeat(26,minmax(0,1fr))] md:grid-cols-[repeat(52,minmax(0,1fr))] gap-[2px] flex-grow">
+            {Array.from({ length: 52 }).map((_, i) => {
+              const segmentIndex = i;
+              const totalSegments = 52;
+              const isPassed =
+                segmentIndex <
+                Math.floor((lifeStats.percentage / 100) * totalSegments);
+              const isCurrent =
+                segmentIndex ===
+                Math.floor((lifeStats.percentage / 100) * totalSegments);
+
+              return (
+                <div key={i} className="relative">
+                  {isCurrent && (
+                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 whitespace-nowrap text-[10px] font-bold text-blue-500 animate-in fade-in slide-in-from-bottom-1 duration-300">
+                      {lifeStats.percentage.toFixed(1)}%
+                      <div className="w-px h-1 bg-blue-500 mx-auto mt-0.5" />
+                    </div>
+                  )}
+                  <div
+                    className={clsx(
+                      "aspect-square w-full min-w-[4px] rounded-[1px] border transition-all duration-500",
+                      isPassed
+                        ? "bg-blue-500 border-blue-600 dark:bg-blue-500 dark:border-blue-400"
+                        : isCurrent
+                          ? "bg-white dark:bg-gray-900 border-blue-500 ring-2 ring-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)] z-10"
+                          : "bg-[#E5E7EB] dark:bg-gray-800/50 border-gray-200 dark:border-gray-700/50",
+                    )}
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="w-10 text-[10px] text-gray-400 font-mono text-left flex-shrink-0 lowercase leading-tight pt-1">
+            <span className="text-gray-900 dark:text-gray-100 font-bold block">
+              {lifeStats.totalWeeks - lifeStats.currentWeek}
+            </span>
+            left
+          </div>
+        </div>
+
         <div className="flex flex-col gap-[4px] md:gap-[2px]">
           {gridData.map((row) => (
             <YearRow
@@ -113,7 +181,7 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
       {/* Tooltip */}
       {hoveredWeek && (
         <div
-          className="fixed z-50 pointer-events-none bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border border-gray-200 dark:border-gray-800 shadow-xl rounded-lg p-3 max-w-[calc(100vw-32px)] md:max-w-xs transition-opacity duration-200"
+          className="fixed z-50 pointer-events-none hidden md:block bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border border-gray-200 dark:border-gray-800 shadow-xl rounded-lg p-3 max-w-[calc(100vw-32px)] md:max-w-xs transition-opacity duration-200"
           style={{
             left: `${tooltipPos.x + 15}px`,
             top: `${tooltipPos.y + 15}px`,
