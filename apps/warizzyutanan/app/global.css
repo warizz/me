@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .raw-heading {
+    font-family: 'Inter', sans-serif;
+    @apply text-primary dark:text-primary-invert uppercase font-black tracking-[-0.05em] leading-[0.8];
+  }
+  .raw-mono {
+    @apply font-mono text-[11px] leading-none tracking-tight;
+  }
+}
+
+
 /* Grid Performance Optimization: Selective Dimming */
 .has-selected-event .week-cell {
   opacity: 0.2;
