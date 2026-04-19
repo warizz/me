@@ -16,6 +16,7 @@ module.exports = {
         primary: colors.red["800"],
         "primary-invert": colors.amber["500"],
       },
+      boxShadow: {},
       typography: {
         DEFAULT: {
           css: {

@@ -1,9 +1,16 @@
 import "./global.css";
 
+import { Inter } from "next/font/google";
 import Script from "next/script";
 import { ReactNode } from "react";
 
 import { GA_ID } from "../app.config";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+  display: "swap",
+});
 
 interface Props {
   children: ReactNode;
@@ -11,7 +18,7 @@ interface Props {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={inter.className}>
       {!process.env.NEXT_PUBLIC_IS_DISABLED_GA ? (
         <>
           <Script

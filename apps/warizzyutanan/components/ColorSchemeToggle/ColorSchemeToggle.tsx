@@ -1,3 +1,5 @@
+"use client";
+
 import clsx from "clsx";
 
 import usePreferredColorScheme from "./usePreferredColorScheme";
@@ -13,15 +15,14 @@ export default function ColorSchemeToggle({ className }: Props) {
     <button
       data-testid="color-scheme-toggle"
       onClick={() => toggleColorScheme()}
+      aria-label={`Current theme: ${preferredColorScheme}. Click to toggle.`}
       className={clsx(
-        "border px-2 py-0 prose-sm rounded-md border-black dark:border-white",
+        "raw-mono font-black uppercase text-xs md:text-sm hover:text-primary dark:hover:text-primary-invert transition-colors",
+        "focus:outline-none focus:ring-2 focus:ring-primary dark:focus:ring-primary-invert",
         className,
       )}
     >
-      <span className="font-sans">{"color: "}</span>
-      <strong className="dark:text-primary-invert text-primary">
-        <i>{preferredColorScheme}</i>
-      </strong>
+      [ {preferredColorScheme} ]
     </button>
   );
 }
