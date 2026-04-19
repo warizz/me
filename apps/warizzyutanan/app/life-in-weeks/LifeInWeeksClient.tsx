@@ -113,7 +113,11 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
 
       <main className="max-w-[1400px] mx-auto pb-20 px-2 md:px-0">
         {/* Minimal Sticky Progress Navigation Line */}
-        <div className="sticky top-0 z-30 flex items-start gap-2 pt-8 pb-4 mb-4 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-100/50 dark:border-white/5">
+        <div className="sticky top-0 z-30 flex items-start gap-2 pt-10 pb-4 mb-4 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-100/50 dark:border-white/5">
+          {/* Mobile Centered Progress Percent */}
+          <div className="sm:hidden absolute top-3 left-1/2 -translate-x-1/2 text-xs font-black text-blue-600 dark:text-blue-400 drop-shadow-sm whitespace-nowrap animate-in fade-in slide-in-from-top-1 duration-500">
+            {lifeStats.percentage.toFixed(1)}%
+          </div>
           <div className="w-8 text-[10px] text-gray-400 font-mono text-right flex-shrink-0 lowercase leading-tight pt-1">
             <span className="text-blue-500 font-bold block">
               {lifeStats.currentWeek}
@@ -135,9 +139,9 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
               return (
                 <div key={i} className="relative">
                   {isCurrent && (
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 whitespace-nowrap text-[10px] font-bold text-blue-500 animate-in fade-in slide-in-from-bottom-1 duration-300">
+                    <div className="hidden sm:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 whitespace-nowrap text-xs font-black text-blue-600 dark:text-blue-400 drop-shadow-sm animate-in fade-in slide-in-from-bottom-1 duration-300">
                       {lifeStats.percentage.toFixed(1)}%
-                      <div className="w-px h-1 bg-blue-500 mx-auto mt-0.5" />
+                      <div className="w-px h-1.5 bg-blue-600 dark:bg-blue-400 mx-auto mt-0.5" />
                     </div>
                   )}
                   <div
