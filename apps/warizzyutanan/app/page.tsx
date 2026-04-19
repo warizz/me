@@ -27,7 +27,7 @@ const TOOLS = [
 
 export default function Home() {
   return (
-    <main className="h-screen bg-white dark:bg-black text-black dark:text-white selection:bg-primary/30 transition-colors duration-300 overflow-hidden flex flex-col justify-between">
+    <main className="h-screen bg-white dark:bg-black text-black dark:text-white selection:bg-primary/20 selection:text-white transition-colors duration-300 overflow-hidden flex flex-col justify-between">
       {/* Skip to Content */}
       <a 
         href="#main-content" 
@@ -50,7 +50,7 @@ export default function Home() {
             Archive
           </h1>
           <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-baseline">
-            <p className="raw-mono max-w-sm opacity-50 text-[9px] md:text-[11px]">
+            <p className="raw-mono max-w-sm opacity-90 text-[9px] md:text-[11px]">
               --
               <br />
               I don’t tip because society says I have to. I tip when somebody deserves a tip. — Mr. Pink, Reservoir Dogs (1992)
@@ -105,7 +105,7 @@ export default function Home() {
           </section>
         </div>
 
-        <footer className="mt-8 border-t border-black dark:border-white pt-2 flex justify-between items-baseline raw-mono uppercase opacity-30">
+        <footer className="mt-8 border-t border-black dark:border-white pt-2 flex justify-between items-baseline raw-mono uppercase opacity-60">
           <div className="text-[9px]">{homeConfig.description}</div>
           <div className="text-[9px]">{new Date().getFullYear()}</div>
         </footer>
