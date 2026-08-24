@@ -11,6 +11,8 @@ import {
   isEventInWeek,
 } from "./utils";
 
+export const dynamic = "force-dynamic";
+
 const LifeInWeeksPage = async () => {
   const today = new Date();
   const todayStr = today.toISOString().split("T")[0];

@@ -31,6 +31,7 @@ export const WeekCell = React.memo(
         const event = events[0];
         return (
           <div
+            data-event-id={event.id}
             className="w-full h-full"
             style={{ backgroundColor: getSegmentColor(event) }}
             onClick={(e) => {
@@ -47,6 +48,7 @@ export const WeekCell = React.memo(
             {events.map((event) => (
               <div
                 key={event.id}
+                data-event-id={event.id}
                 className="w-1/2 h-full border-r last:border-r-0 border-white/20"
                 style={{ backgroundColor: getSegmentColor(event) }}
                 onClick={(e) => {
@@ -68,6 +70,7 @@ export const WeekCell = React.memo(
             {displayEvents.map((event, i) => (
               <div
                 key={event.id}
+                data-event-id={event.id}
                 className={clsx("border-r border-b border-white/20", {
                   "border-r-0": i === 1 || i === 3,
                   "border-b-0": i === 2 || i === 3,
