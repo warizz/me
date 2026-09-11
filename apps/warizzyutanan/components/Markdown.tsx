@@ -37,6 +37,18 @@ export default function Markdown({ children }: Props) {
             </Prism>
           );
         },
+        iframe({ width, height, ...props }) {
+          const _props = omit(props, "node");
+          const w = Number(width);
+          const h = Number(height);
+          return (
+            <iframe
+              {..._props}
+              className="w-full max-w-[560px] h-auto"
+              style={{ aspectRatio: w && h ? `${w} / ${h}` : "16 / 9" }}
+            />
+          );
+        },
         img({ ...props }) {
           const _props = omit(props, "node");
           return (
