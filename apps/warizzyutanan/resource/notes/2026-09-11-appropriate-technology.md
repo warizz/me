@@ -8,6 +8,10 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 referrerpolicy="strict-origin-when-cross-origin"
 allowfullscreen></iframe>
 
+## My takes
+
+What I like about this discussion is the concept of **appropriate technology**: the best technology is not necessarily the most advanced technology. It is the technology that fits the actual context, constraints, demand, and behavior of its users.
+
 ## Summary
 
 - The discussion asks **why electric rail or dedicated-right-of-way public transportation systems are difficult to establish in provincial cities**.
@@ -55,7 +59,3 @@ allowfullscreen></iframe>
 - **BRT:** A possible option for sufficiently large cities that are not suitable for full rail investment.
 - **Real demand vs. stated demand:** People may say they want rail, but actual usage depends on price, frequency, convenience, and travel behavior.
 - **Local context:** A system that works in Bangkok does not necessarily work in every provincial city.
-
-## My notes
-
-What I like about this discussion is the concept of **appropriate technology**: the best technology is not necessarily the most advanced technology. It is the technology that fits the actual context, constraints, demand, and behavior of its users.
