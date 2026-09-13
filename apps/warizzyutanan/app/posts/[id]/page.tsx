@@ -42,7 +42,7 @@ export default async function PostPage({ params }: Props) {
         { text: "posts", href: "/posts" },
         { text: "current", href: "/posts" },
       ]}
-      h1={<h1 className="!mb-0">{post.title}</h1>}
+      h1={<h1 className="mb-0!">{post.title}</h1>}
       date={new Date(post.date)}
     >
       <Markdown>{post.markdownString}</Markdown>

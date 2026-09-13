@@ -106,7 +106,7 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
             neutral, while colored segments mark significant life events.
           </p>
         </div>
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <ColorSchemeToggle />
         </div>
       </header>
@@ -115,17 +115,17 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
         {/* Minimal Sticky Progress Navigation Line */}
         <div className="sticky top-0 z-30 flex items-start gap-2 pt-10 pb-4 mb-4 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-100/50 dark:border-white/5">
           {/* Mobile Centered Progress Percent */}
-          <div className="sm:hidden absolute top-3 left-1/2 -translate-x-1/2 text-xs font-black text-blue-600 dark:text-blue-400 drop-shadow-sm whitespace-nowrap animate-in fade-in slide-in-from-top-1 duration-500">
+          <div className="sm:hidden absolute top-3 left-1/2 -translate-x-1/2 text-xs font-black text-blue-600 dark:text-blue-400 drop-shadow-xs whitespace-nowrap animate-in fade-in slide-in-from-top-1 duration-500">
             {lifeStats.percentage.toFixed(1)}%
           </div>
-          <div className="w-8 text-[10px] text-gray-400 font-mono text-right flex-shrink-0 lowercase leading-tight pt-1">
+          <div className="w-8 text-[10px] text-gray-400 font-mono text-right shrink-0 lowercase leading-tight pt-1">
             <span className="text-blue-500 font-bold block">
               {lifeStats.currentWeek}
             </span>
             passed
           </div>
 
-          <div className="grid grid-cols-[repeat(13,minmax(0,1fr))] sm:grid-cols-[repeat(26,minmax(0,1fr))] md:grid-cols-[repeat(52,minmax(0,1fr))] gap-[2px] flex-grow">
+          <div className="grid grid-cols-13 sm:grid-cols-26 md:grid-cols-52 gap-[2px] grow">
             {Array.from({ length: 52 }).map((_, i) => {
               const segmentIndex = i;
               const totalSegments = 52;
@@ -139,7 +139,7 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
               return (
                 <div key={i} className="relative">
                   {isCurrent && (
-                    <div className="hidden sm:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 whitespace-nowrap text-xs font-black text-blue-600 dark:text-blue-400 drop-shadow-sm animate-in fade-in slide-in-from-bottom-1 duration-300">
+                    <div className="hidden sm:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 whitespace-nowrap text-xs font-black text-blue-600 dark:text-blue-400 drop-shadow-xs animate-in fade-in slide-in-from-bottom-1 duration-300">
                       {lifeStats.percentage.toFixed(1)}%
                       <div className="w-px h-1.5 bg-blue-600 dark:bg-blue-400 mx-auto mt-0.5" />
                     </div>
@@ -159,7 +159,7 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
             })}
           </div>
 
-          <div className="w-10 text-[10px] text-gray-400 font-mono text-left flex-shrink-0 lowercase leading-tight pt-1">
+          <div className="w-10 text-[10px] text-gray-400 font-mono text-left shrink-0 lowercase leading-tight pt-1">
             <span className="text-gray-900 dark:text-gray-100 font-bold block">
               {lifeStats.totalWeeks - lifeStats.currentWeek}
             </span>
@@ -185,7 +185,7 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
       {/* Tooltip */}
       {hoveredWeek && (
         <div
-          className="fixed z-50 pointer-events-none hidden md:block bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border border-gray-200 dark:border-gray-800 shadow-xl rounded-lg p-3 max-w-[calc(100vw-32px)] md:max-w-xs transition-opacity duration-200"
+          className="fixed z-50 pointer-events-none hidden md:block bg-white/95 dark:bg-gray-900/95 backdrop-blur-xs border border-gray-200 dark:border-gray-800 shadow-xl rounded-lg p-3 max-w-[calc(100vw-32px)] md:max-w-xs transition-opacity duration-200"
           style={{
             left: `${tooltipPos.x + 15}px`,
             top: `${tooltipPos.y + 15}px`,

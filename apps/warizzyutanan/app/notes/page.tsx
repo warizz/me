@@ -149,12 +149,12 @@ export default async function Page({ searchParams }: PageProps) {
                           href={`/notes/${noteId}`}
                           className="text-primary font-bold dark:text-primary-invert no-underline hover:underline"
                         >
-                          <h2 className="!mt-0 !mb-1 prose-lg">
+                          <h2 className="mt-0! mb-1! prose-lg">
                             {note.heading}
                           </h2>
                         </Link>
                         {note.topic && note.heading !== note.topic && (
-                          <p className="text-sm text-gray-500 dark:text-gray-400 !m-0">
+                          <p className="text-sm text-gray-500 dark:text-gray-400 m-0!">
                             {note.topic}
                           </p>
                         )}
@@ -259,7 +259,7 @@ export default async function Page({ searchParams }: PageProps) {
                             <Link
                               key={pageNum}
                               href={`/notes?page=${pageNum}&limit=${pageSize}`}
-                              className={`px-3 py-2 min-w-[2.5rem] text-center transition-colors cursor-pointer no-underline ${
+                              className={`px-3 py-2 min-w-10 text-center transition-colors cursor-pointer no-underline ${
                                 isActive
                                   ? "bg-primary text-white dark:bg-primary-invert dark:text-black font-bold"
                                   : "hover:bg-gray-100 dark:hover:bg-gray-800 text-primary dark:text-primary-invert"

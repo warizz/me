@@ -54,7 +54,7 @@ export default function Markdown({ children }: Props) {
           return (
             <img
               {..._props}
-              className="w-full lg:w-auto lg:max-h-[300px] border-2 lg:border-1 border-black dark:border-0"
+              className="w-full lg:w-auto lg:max-h-[300px] border-2 lg:border border-black dark:border-0"
             />
           );
         },

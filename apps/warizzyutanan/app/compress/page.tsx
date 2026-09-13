@@ -348,7 +348,7 @@ export default function CompressApp() {
                       key={img.id}
                       className="border-4 border-black dark:border-white bg-white dark:bg-zinc-800 p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] flex items-center gap-4 relative"
                     >
-                      <div className="w-20 h-20 border-2 border-black dark:border-white bg-gray-100 dark:bg-zinc-700 flex-shrink-0 relative overflow-hidden">
+                      <div className="w-20 h-20 border-2 border-black dark:border-white bg-gray-100 dark:bg-zinc-700 shrink-0 relative overflow-hidden">
                         {img.compressedUrl ? (
                           <Image
                             src={img.compressedUrl}
