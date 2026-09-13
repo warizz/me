@@ -13,6 +13,8 @@ Ask the user for anything missing among these three, before doing anything:
 
 Rules:
 
+- Always create a new branch from `main` (the default branch) before doing
+  anything (e.g. `git checkout main && git pull && git checkout -b notes/<topic>`).
 - Repo: ~/works/me, app: apps/warizzyutanan. Notes live in
   `apps/warizzyutanan/resource/notes/`. Read one recent note first to confirm
   conventions.
