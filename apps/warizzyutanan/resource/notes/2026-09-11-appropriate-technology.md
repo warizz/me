@@ -1,3 +1,7 @@
+---
+tldr: The best technology isn't the most advanced — it's what fits the context, constraints, and behavior of its users.
+---
+
 # Provincial Rail Transit: Why Is It Difficult to Build, and What Transportation System Fits? by alien เอเลี่ยน
 
 <iframe width="560" height="315"

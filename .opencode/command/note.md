@@ -21,10 +21,20 @@ Rules:
 - Filename: `YYYY-MM-DD-<short-kebab-topic>.md`. Date = conversation date if
   stated in the content, else today (Asia/Bangkok).
 - Content (all English):
-  1. `# Title` (h1 is stripped at render; the layout re-renders it)
-  2. Bold `**Conversation date: ...**` line ONLY if it differs from the
+  1. Frontmatter with `tldr` (shown as the subtitle on the notes index — one
+     short line summarizing "My takes", a lot shorter than the section
+     itself; a fragment is fine, e.g. `tldr: A list worth rereading`):
+
+     ```
+     ---
+     tldr: <short summary of My takes>
+     ---
+     ```
+
+  2. `# Title` (h1 is stripped at render; the layout re-renders it)
+  3. Bold `**Conversation date: ...**` line ONLY if it differs from the
      filename date (layout already shows the filename date)
-  3. YouTube iframe — extract the video ID and `si` param from the URL:
+  4. YouTube iframe — extract the video ID and `si` param from the URL:
 
      ```
      <iframe width="560" height="315"
@@ -34,7 +44,7 @@ Rules:
      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
      ```
 
-   4. `## My takes` (plain text, no blockquote), `## Summary`, `## Key ideas`
+   5. `## My takes` (plain text, no blockquote), `## Summary`, `## Key ideas`
 - No code changes needed: routing, index, and sitemap derive from the
   directory listing. Do not update them.
 - Verify: `pnpm --filter warizzyutanan lint && pnpm --filter warizzyutanan tsc && pnpm --filter warizzyutanan build`.
