@@ -232,13 +232,13 @@ export default function WatermarkApp() {
                   type="text"
                   value={watermarkText}
                   onChange={(e) => setWatermarkText(e.target.value)}
-                  className="w-full border-4 border-black p-3 font-bold bg-white focus:outline-none focus:bg-[#ffeb3b] transition-colors"
+                  className="w-full border-4 border-black p-3 font-bold bg-white focus:outline-hidden focus:bg-[#ffeb3b] transition-colors"
                 />
               </div>
 
               <button
                 onClick={() => setShowAdvancedSettings(!showAdvancedSettings)}
-                className="w-full mt-4 p-3 border-4 border-black font-black uppercase bg-white text-black hover:bg-gray-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-1 active:translate-y-1 transition-all flex flex-col items-center justify-center focus:outline-none"
+                className="w-full mt-4 p-3 border-4 border-black font-black uppercase bg-white text-black hover:bg-gray-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-1 active:translate-y-1 transition-all flex flex-col items-center justify-center focus:outline-hidden"
               >
                 <div className="flex items-center gap-2">
                   <Settings2 className="w-5 h-5" />
@@ -339,7 +339,7 @@ export default function WatermarkApp() {
                       type="number"
                       value={fontSize}
                       onChange={(e) => setFontSize(Number(e.target.value))}
-                      className="w-full border-4 border-black h-12 px-3 font-bold focus:outline-none focus:bg-[#ffeb3b]"
+                      className="w-full border-4 border-black h-12 px-3 font-bold focus:outline-hidden focus:bg-[#ffeb3b]"
                     />
                   </div>
 
@@ -352,7 +352,7 @@ export default function WatermarkApp() {
                         type="number"
                         value={gapX}
                         onChange={(e) => setGapX(Number(e.target.value))}
-                        className="w-full border-4 border-black h-12 px-3 font-bold focus:outline-none focus:bg-[#ffeb3b]"
+                        className="w-full border-4 border-black h-12 px-3 font-bold focus:outline-hidden focus:bg-[#ffeb3b]"
                       />
                     </div>
                     <div className="flex-1">
@@ -363,7 +363,7 @@ export default function WatermarkApp() {
                         type="number"
                         value={gapY}
                         onChange={(e) => setGapY(Number(e.target.value))}
-                        className="w-full border-4 border-black h-12 px-3 font-bold focus:outline-none focus:bg-[#ffeb3b]"
+                        className="w-full border-4 border-black h-12 px-3 font-bold focus:outline-hidden focus:bg-[#ffeb3b]"
                       />
                     </div>
                   </div>

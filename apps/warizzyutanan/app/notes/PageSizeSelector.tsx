@@ -26,7 +26,7 @@ export default function PageSizeSelector({
       </label>
       <select
         id="pageSize"
-        className="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded bg-white dark:bg-black text-primary dark:text-primary-invert font-sans"
+        className="px-3 py-1 border border-gray-300 dark:border-gray-600 rounded-sm bg-white dark:bg-black text-primary dark:text-primary-invert font-sans"
         value={currentLimit}
         onChange={handleChange}
       >

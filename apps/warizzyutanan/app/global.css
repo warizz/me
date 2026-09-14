@@ -1,17 +1,64 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer utilities {
-  .raw-heading {
-    font-family: 'Inter', sans-serif;
-    @apply text-primary dark:text-primary-invert uppercase font-black tracking-[-0.05em] leading-[0.8];
-  }
-  .raw-mono {
-    @apply font-mono text-[11px] leading-none tracking-tight;
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #991b1b; /* red-800 */
+  --color-primary-invert: #f59e0b; /* amber-500 */
+}
+
+.prose {
+  --tw-prose-headings: #991b1b;
+  --tw-prose-bullets: #991b1b;
+  --tw-prose-links: #991b1b;
+  --tw-prose-invert-headings: #f59e0b;
+  --tw-prose-invert-bullets: #f59e0b;
+  --tw-prose-invert-body: #e5e7eb; /* gray-200 */
+  --tw-prose-invert-pre-code: #374151; /* gray-700 */
+  --tw-prose-invert-pre-bg: #fef3c7; /* amber-100 */
+  --tw-prose-invert-links: #f59e0b;
+}
+
+/* re-map vars in dark mode: unlayered overrides above would otherwise beat the
+   plugin's layered `.dark:prose-invert` remapping */
+.dark .prose-invert,
+.dark .dark\:prose-invert {
+  --tw-prose-headings: var(--tw-prose-invert-headings);
+  --tw-prose-bullets: var(--tw-prose-invert-bullets);
+  --tw-prose-links: var(--tw-prose-invert-links);
+  --tw-prose-body: var(--tw-prose-invert-body);
+  --tw-prose-pre-code: var(--tw-prose-invert-pre-code);
+  --tw-prose-pre-bg: var(--tw-prose-invert-pre-bg);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
   }
 }
 
+@utility raw-heading {
+  font-family: 'Inter', sans-serif;
+  @apply text-primary dark:text-primary-invert uppercase font-black tracking-tighter leading-[0.8];
+}
+
+@utility raw-mono {
+  @apply font-mono text-[11px] leading-none tracking-tight;
+}
 
 /* Grid Performance Optimization: Selective Dimming */
 .has-selected-event .week-cell {
