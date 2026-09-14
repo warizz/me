@@ -1,4 +1,4 @@
-# Emotion Regulation and Emotional Intelligence with Dr. Mark Brackett
+# Emotion Regulation and Emotional Intelligence with Dr. Mark Brackett by Andrew Huberman
 
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/FBgM7jndkLQ?si=Zbwhe-M21IAIBfzd"
