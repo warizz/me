@@ -47,7 +47,7 @@ async function PostsPage() {
                     {post.title}
                   </Link>
                 </div>
-                <p className="!m-0 prose-base italic">{post.tldr}</p>
+                <p className="m-0! prose-base italic">{post.tldr}</p>
                 <div className="prose-sm font-sans flex gap-2 items-center flex-wrap">
                   <PostDate value={new Date(post.date)} />
                 </div>

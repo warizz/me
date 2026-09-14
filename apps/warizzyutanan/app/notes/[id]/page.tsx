@@ -128,12 +128,12 @@ export default async function NotePage({ params }: Props) {
         { text: "notes", href: "/notes" },
         { text: "current", href: `/notes/${id}` },
       ]}
-      h1={<h1 className="!mb-0">{note.heading}</h1>}
+      h1={<h1 className="mb-0!">{note.heading}</h1>}
       date={note.date}
     >
       {/* h1 already rendered above; strip it from content to avoid duplication */}
       <Markdown>{note.content.replace(/^#\s+[^\n]*\n?/, "")}</Markdown>
-      <hr className="!my-8" />
+      <hr className="my-8!" />
       <div className="flex items-center gap-4">
         <Link
           href="/notes"

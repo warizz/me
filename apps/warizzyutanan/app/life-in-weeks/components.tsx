@@ -84,7 +84,7 @@ export const WeekCell = React.memo(
             ))}
             {hasMore && (
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <span className="text-[8px] font-bold text-white bg-black/40 px-0.5 rounded shadow-sm">
+                <span className="text-[8px] font-bold text-white bg-black/40 px-0.5 rounded-sm shadow-xs">
                   +{events.length - 4}
                 </span>
               </div>
@@ -100,13 +100,13 @@ export const WeekCell = React.memo(
       <div
         id={week.isCurrentWeek ? "current-week" : undefined}
         className={clsx(
-          "week-cell aspect-square w-full min-w-[14px] border border-gray-100 dark:border-gray-600 rounded-sm relative overflow-hidden",
+          "week-cell aspect-square w-full min-w-[14px] border border-gray-100 dark:border-gray-600 rounded-xs relative overflow-hidden",
           {
             "bg-[#E5E7EB] dark:bg-gray-800/50": !hasEvents,
             "ring-2 ring-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)] z-10":
               week.isCurrentWeek,
             "is-selected z-20 border-gray-400 dark:border-gray-500": isSelected,
-            "hover:border-gray-400 dark:hover:border-gray-500 hover:scale-150 hover:z-30 cursor-pointer shadow-sm transition-transform duration-200": true,
+            "hover:border-gray-400 dark:hover:border-gray-500 hover:scale-150 hover:z-30 cursor-pointer shadow-xs transition-transform duration-200": true,
           },
         )}
         onMouseEnter={() => onHover(week)}
@@ -114,7 +114,7 @@ export const WeekCell = React.memo(
       >
         {renderSegments()}
         {!hasEvents && week.isCurrentWeek && (
-          <div className="absolute inset-0 border-2 border-blue-400 rounded-sm animate-pulse pointer-events-none" />
+          <div className="absolute inset-0 border-2 border-blue-400 rounded-xs animate-pulse pointer-events-none" />
         )}
       </div>
     );
@@ -159,11 +159,11 @@ export const YearRow = React.memo(
     onEventClick,
   }: YearRowProps) => {
     return (
-      <div className="flex items-start gap-2 group py-1 md:py-[1px]">
-        <div className="w-8 pt-[2px] text-[10px] text-gray-400 font-mono text-right flex-shrink-0 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors lowercase">
+      <div className="flex items-start gap-2 group py-1 md:py-px">
+        <div className="w-8 pt-[2px] text-[10px] text-gray-400 font-mono text-right shrink-0 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors lowercase">
           {year === 0 ? `Age ${year}` : year}
         </div>
-        <div className="grid grid-cols-[repeat(13,minmax(0,1fr))] sm:grid-cols-[repeat(26,minmax(0,1fr))] md:grid-cols-[repeat(52,minmax(0,1fr))] gap-[2px] flex-grow">
+        <div className="grid grid-cols-13 sm:grid-cols-26 md:grid-cols-52 gap-[2px] grow">
           {weeks.map((week) => {
             const isSelected = selectedEventId
               ? week.events.some((e) => e.id === selectedEventId)
@@ -181,7 +181,7 @@ export const YearRow = React.memo(
             );
           })}
         </div>
-        <div className="w-10 pt-[2px] text-[10px] text-gray-400 font-mono text-left flex-shrink-0 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors lowercase">
+        <div className="w-10 pt-[2px] text-[10px] text-gray-400 font-mono text-left shrink-0 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors lowercase">
           {calendarYear}
         </div>
       </div>
