@@ -17,6 +17,7 @@ const LOGS = [
   { url: "/trips", title: "trips" },
   { url: "/notes", title: "notes" },
   { url: "/movies", title: "movies" },
+  { url: "/timecapsule", title: "timecapsule" },
 ];
 
 const TOOLS = [
