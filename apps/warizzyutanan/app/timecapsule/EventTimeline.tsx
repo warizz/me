@@ -43,7 +43,7 @@ function withPhotoStamps(body: string) {
       const fileName = src.split("/").pop() ?? src;
       const id = fileName.replace(/\.[^.]+$/, "");
       const label = stamp ? `${id} · ${stamp}` : id;
-      return `<span class="tc-photo">![${alt}](${src})<span class="tc-photo-id">${label}</span></span>`;
+      return `<span class="tc-photo"><img src="${src}" alt="${alt}" loading="lazy" /><span class="tc-photo-id">${label}</span></span>`;
     },
   );
 }
