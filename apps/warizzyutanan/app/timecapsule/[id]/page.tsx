@@ -1,22 +1,16 @@
-import { readdirSync } from "fs";
-
 import Link from "next/link";
 
 import EventTimeline from "../EventTimeline";
 import getTimecapsuleData, {
   formatDateRange,
-  timecapsuleDirectory,
+  getEventFileNames,
 } from "../getTimecapsuleData";
 
 export function generateStaticParams() {
-  const fileNames = readdirSync(timecapsuleDirectory);
-
-  return fileNames
-    .filter((fileName) => fileName.endsWith(".md"))
-    .map((fileName) => {
-      const id = fileName.replace(/\.md$/, "");
-      return { id };
-    });
+  return getEventFileNames().map((fileName) => {
+    const id = fileName.replace(/\.md$/, "");
+    return { id };
+  });
 }
 
 interface Props {
