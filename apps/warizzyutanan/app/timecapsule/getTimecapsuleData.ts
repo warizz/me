@@ -56,10 +56,14 @@ export function formatDateRange(startDate: string, endDate?: string | null) {
   return `${fmt(start)} → ${fmt(end)}`;
 }
 
-export function getTimecapsuleItems() {
+export function getEventFileNames() {
   return fs
     .readdirSync(timecapsuleDirectory)
-    .filter((file) => file.endsWith(".md"))
+    .filter((file) => file.endsWith(".md") && file !== "INSTRUCTIONS.md");
+}
+
+export function getTimecapsuleItems() {
+  return getEventFileNames()
     .map((file) => getTimecapsuleData(file))
     .filter((item) => item.isPublished);
 }
