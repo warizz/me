@@ -1,4 +1,40 @@
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
+
+async function goDark(page: Page) {
+  await page.addInitScript(() =>
+    localStorage.setItem("preferredColorScheme", "dark"),
+  );
+}
+
+async function settleLazyImages(page: Page) {
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+    await new Promise<void>((resolve) => {
+      let y = 0;
+      const total = document.body.scrollHeight;
+      const step = window.innerHeight;
+      const timer = setInterval(() => {
+        y += step;
+        window.scrollTo(0, y);
+        if (y >= total) {
+          clearInterval(timer);
+          resolve();
+        }
+      }, 100);
+    });
+    await Promise.all(
+      Array.from(document.images).map((img) =>
+        img.complete
+          ? undefined
+          : new Promise((done) => {
+              img.onload = () => done(null);
+              img.onerror = () => done(null);
+            }),
+      ),
+    );
+    window.scrollTo(0, 0);
+  });
+}
 
 test.describe("timecapsule index", () => {
   test("renders header, disclaimer and timeline", async ({ page }) => {
@@ -107,37 +143,47 @@ test.describe("timecapsule event", () => {
     await page.goto("/timecapsule/2026-0926-bangkok-flood");
     await expect(page.locator("h1")).toBeVisible();
     await page.waitForLoadState("networkidle");
-
-    // Trigger every lazy image before the full-page screenshot
-    await page.evaluate(async () => {
-      await document.fonts.ready;
-      await new Promise<void>((resolve) => {
-        let y = 0;
-        const total = document.body.scrollHeight;
-        const step = window.innerHeight;
-        const timer = setInterval(() => {
-          y += step;
-          window.scrollTo(0, y);
-          if (y >= total) {
-            clearInterval(timer);
-            resolve();
-          }
-        }, 100);
-      });
-      await Promise.all(
-        Array.from(document.images).map((img) =>
-          img.complete
-            ? undefined
-            : new Promise((done) => {
-                img.onload = () => done(null);
-                img.onerror = () => done(null);
-              }),
-        ),
-      );
-      window.scrollTo(0, 0);
-    });
-
+    await settleLazyImages(page);
     await expect(page).toHaveScreenshot("timecapsule-event.png", {
+      fullPage: true,
+    });
+  });
+
+  test("renders both pages in dark mode", async ({ page }) => {
+    await goDark(page);
+
+    await page.goto("/timecapsule");
+    await expect(page.locator("html")).toHaveClass(/dark/);
+    await expect(page.locator("h1")).toHaveText("Moments worth remembering");
+
+    await page.goto("/timecapsule/2026-0926-bangkok-flood");
+    await expect(page.locator("html")).toHaveClass(/dark/);
+    await expect(page.locator("h3").first()).toBeVisible();
+  });
+
+  test("matches the dark visual baseline", async ({ page }) => {
+    // ponytail: darwin baselines won't match linux CI rendering (fonts/antialias) — local-only visual regression
+    test.skip(!!process.env.CI, "visual baselines are local-only");
+    await goDark(page);
+    await page.goto("/timecapsule");
+    await expect(page.locator("html")).toHaveClass(/dark/);
+    await expect(page.locator("h1")).toBeVisible();
+    await page.waitForLoadState("networkidle");
+    await expect(page).toHaveScreenshot("timecapsule-index-dark.png", {
+      fullPage: true,
+    });
+  });
+
+  test("matches the dark event visual baseline", async ({ page }) => {
+    // ponytail: darwin baselines won't match linux CI rendering (fonts/antialias) — local-only visual regression
+    test.skip(!!process.env.CI, "visual baselines are local-only");
+    await goDark(page);
+    await page.goto("/timecapsule/2026-0926-bangkok-flood");
+    await expect(page.locator("html")).toHaveClass(/dark/);
+    await expect(page.locator("h1")).toBeVisible();
+    await page.waitForLoadState("networkidle");
+    await settleLazyImages(page);
+    await expect(page).toHaveScreenshot("timecapsule-event-dark.png", {
       fullPage: true,
     });
   });
