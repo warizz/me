@@ -9,6 +9,8 @@ node_modules
 .nyc_output
 coverage
 videos
+packages/test-playwright/test-results/
+packages/test-playwright/playwright-report/
 
 # next.js
 .next/
