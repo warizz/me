@@ -40,14 +40,19 @@ Persistent rain starts over Bangkok and keeps going. A low-pressure area settles
 
 Nearly 300mm accumulated in Min Buri, Klong Sam Wa and Saphan Sung by morning. Governor Chadchart Sittipunt's morning briefing:
 
-- **All 50 districts declared disaster zones** to accelerate the flood response
+- **All 50 districts declared disaster zones** — retroactive to Sep 25 — unlocking emergency powers and flood-victim compensation payments
 - All eastern canals full — pumping can't keep up; people near canals at risk
 - Floodwater flowing into the capital from Nonthaburi and Pathum Thani
 - 15 main roads heavily inundated; waist-deep water at Bang Kapi intersection near Saen Saep canal
+- **Chaeng Watthana Road under 50–60cm** of water; 37 flooded points reported along canal-side roads citywide
 - **Cell broadcast alert at 9:22am** — DDPM warning: canal water levels critical and rising, especially canal-side and low-lying areas; move belongings and valuables up, avoid travel
 - **Phetchaburi Road (Makkasan–Asok)** — Saen Saep canal water overflowed onto the roadway on top of the rain; floodwater submerged car wheels, leaving cars and motorcycles stalled mid-road for officials to push clear; motorcyclists rode the sidewalks to get through
-- **CAAT warned** travellers to Don Mueang and Suvarnabhumi to allow extra time — flooded roads and poor weather disrupting travel and delaying some flights
-- Shoppers stock up as flooding empties convenience-store shelves; Commerce Ministry orders supply and price checks in flood-hit areas
+- **Rail disrupted** — SRT temporarily closed the flood-hit Eastern Line (8 trains cancelled or re-routed) and both Red Line commuter routes suspended services for safety checks
+- **Airports** — Don Mueang taxiway flooded but flights unaffected; both airports stayed open as the Transport Ministry set up a flood war room (CAAT advised extra travel time)
+- **PM Anutin**, from London, ordered all agencies to respond as one unified team, prioritising rapid warnings and assistance
+- **10,000 troops deployed** to flood-hit provinces; Interior and Defence ministries mobilised machinery and personnel to back up the BMA
+- Shoppers stock up as flooding empties convenience-store shelves; Tops opened a 24-hour flood response centre (some branches closed or shortened hours); Commerce Ministry ordered supply and price checks
+- **Public health** — 3,000+ hygiene kits (black bags, quicklime) distributed and "paper toilet" guidance issued to limit disease spread in flood zones
 - Bedridden people in flooded areas to be moved to hospitals; shelters open at BMA schools
 - Sandbags available at district offices; if rain stops, water should recede within ~6 hours
 
@@ -75,6 +80,12 @@ Nearly 300mm accumulated in Min Buri, Klong Sam Wa and Saphan Sung by morning. G
 ![Phetchaburi Road flood scene](/timecapsule/bangkok-flood-2026/12-phetchaburi-scene.jpg "2026-09-26")
 *Phetchaburi Road during the floods. Photo: [Thanis Sutto / THE STANDARD](https://thestandard.co/phetchaburi-road-flood-bangkok-rain/)*
 
+![Bang Kapi community under floodwater](/timecapsule/bangkok-flood-2026/13-bangkapi-community.jpg "2026-09-26")
+*Residents wading through the flooded Bang Kapi community. Photo: [Sawita Poonsatien / THE STANDARD](https://thestandard.co/bangkapi-flood-life-impact/)*
+
+![Life amid the flood in Bang Kapi](/timecapsule/bangkok-flood-2026/14-bangkapi-high-ground.jpg "2026-09-26")
+*Homes and roads submerged in Bang Kapi. Photo: [Sawita Poonsatien / THE STANDARD](https://thestandard.co/bangkapi-flood-life-impact/)*
+
 ### Sun 27 Sep — risk lingers
 
 The low-pressure system is expected to shift gradually westwards and away, with conditions likely easing after Sep 27. Until then the flood-risk warning for eastern Bangkok stands — residents near canals should keep valuables and vehicles on higher ground. BMA coordination continues with Samut Prakan and Chachoengsao, both also dealing with severe flooding; water cannot simply be pushed from Khlong Prawet east into Chachoengsao because irrigation canals and farmland stand in the way (Royal Irrigation Department controls that flow).
@@ -92,5 +103,13 @@ The low-pressure system is expected to shift gradually westwards and away, with 
 - [TMD forecasts rain across 80% of central and eastern Thailand — The Nation](https://www.nationthailand.com/news/general/40071496)
 - [Pathum Thani faces critical flood warning as Rangsit canal rises — The Nation](https://www.nationthailand.com/news/general/40071487)
 - [Khao Yai closes for two days as heavy rain raises landslide risk — The Nation](https://www.nationthailand.com/news/general/40071502)
+- [BMA expands disaster zones to all 50 districts, retroactive to Sep 25, with compensation criteria — The Standard](https://thestandard.co/bma-flood-relief-50-districts/)
+- [SRT closes Eastern Line as tracks flood — The Standard](https://thestandard.co/srt-closes-eastern-railway-flood/) · [SRT cancels trains, Red Line suspended — The Nation](https://www.nationthailand.com/news/general/40071530)
+- [Bangkok airports remain open, Transport Ministry sets up flood war room — The Nation](https://www.nationthailand.com/news/general/40071532)
+- [Anutin orders unified flood response from London — The Nation](https://www.nationthailand.com/news/general/40071534)
+- [10,000 troops sent to flood-hit provinces — Bangkok Post](https://www.bangkokpost.com/thailand/general/3326675/10000-troops-sent-to-floodhit-provinces) · [Interior and Defence mobilise for Bangkok — The Standard](https://thestandard.co/interior-defense-bangkok-flood-aid/)
+- [Chaeng Watthana under 50–60cm as 37 canal-side points flood — The Standard](https://thestandard.co/chaeng-watthana-heavy-rain-flood/)
+- [Tops establishes 24-hour flood response centre — The Nation](https://www.nationthailand.com/news/general/40071539)
+- [Public health: 3,000+ hygiene kits, paper-toilet guidance — The Standard](https://thestandard.co/public-health-flood-hygiene-paper-toilet/)
 
-*Photos: Bangkok Post, The Nation, THE STANDARD. Last researched 26 Sep 2026.*
+*Photos: Bangkok Post, The Nation, THE STANDARD. Last researched 27 Sep 2026.*
