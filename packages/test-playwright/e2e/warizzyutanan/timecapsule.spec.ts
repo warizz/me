@@ -34,6 +34,9 @@ test.describe("timecapsule index", () => {
     // ponytail: darwin baselines won't match linux CI rendering (fonts/antialias) — local-only visual regression
     test.skip(!!process.env.CI, "visual baselines are local-only");
     await page.goto("/timecapsule");
+    await expect(page.locator("h1")).toBeVisible();
+    await page.waitForLoadState("networkidle");
+    await page.evaluate(() => document.fonts.ready);
     await expect(page).toHaveScreenshot("timecapsule-index.png", {
       fullPage: true,
     });
@@ -102,9 +105,12 @@ test.describe("timecapsule event", () => {
     // ponytail: darwin baselines won't match linux CI rendering (fonts/antialias) — local-only visual regression
     test.skip(!!process.env.CI, "visual baselines are local-only");
     await page.goto("/timecapsule/2026-0926-bangkok-flood");
+    await expect(page.locator("h1")).toBeVisible();
+    await page.waitForLoadState("networkidle");
 
     // Trigger every lazy image before the full-page screenshot
     await page.evaluate(async () => {
+      await document.fonts.ready;
       await new Promise<void>((resolve) => {
         let y = 0;
         const total = document.body.scrollHeight;
