@@ -19,20 +19,20 @@ jobs:
           cache: 'pnpm'
           cache-dependency-path: ./pnpm-lock.yaml
 
-      - name: Set up Cypress binary cache
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/Cypress
-          key: cypress-${{ runner.os }}-cypress-${{ hashFiles('pnpm-lock.yaml') }}
-
       - name: Install dependencies
         run: |
           pnpm i --frozen-lockfile
 
-      - name: Cypress test
-        uses: cypress-io/github-action@v6
+      - name: Install Playwright browsers
+        run: pnpm --filter test-playwright exec playwright install --with-deps chromium
+
+      - name: Run Playwright tests
+        run: pnpm --filter test-playwright test
+
+      - name: Upload test report
+        if: failure()
+        uses: actions/upload-artifact@v4
         with:
-          install: false
-          start: pnpm start
-          command: pnpm test
-          wait-on: 'http://localhost:3000'
+          name: playwright-report
+          path: packages/test-playwright/playwright-report/
+          retention-days: 7
