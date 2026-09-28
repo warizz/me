@@ -90,15 +90,16 @@ test.describe("timecapsule event", () => {
     await expect(page.getByText("AI-generated summary")).toBeVisible();
   });
 
-  test("renders all four timeline nodes", async ({ page }) => {
+  test("renders all five timeline nodes", async ({ page }) => {
     await page.goto("/timecapsule/2026-0926-bangkok-flood");
 
     const headings = page.locator("h3");
-    await expect(headings).toHaveCount(4);
+    await expect(headings).toHaveCount(5);
     await expect(page.getByRole("heading", { name: "the rain begins", level: 3 })).toBeVisible();
     await expect(page.getByRole("heading", { name: "warnings stack up", level: 3 })).toBeVisible();
     await expect(page.getByRole("heading", { name: "eastern Bangkok under water", level: 3 })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "risk lingers", level: 3 })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "flooding persists", level: 3 })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "slow recovery", level: 3 })).toBeVisible();
   });
 
   test("lazy-loads every photo with a datestamped badge", async ({ page }) => {
