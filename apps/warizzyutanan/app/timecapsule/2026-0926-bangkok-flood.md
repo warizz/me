@@ -56,39 +56,66 @@ Nearly 300mm total in Min Buri, Klong Sam Wa and Saphan Sung. Morning briefing f
 - Shelters at BMA schools; sandbags at district offices
 - If rain stops: water gone in ~6 hours
 
-![Flood hits Prachaniwet 1 market in Chatuchak district](/timecapsule/bangkok-flood-2026/01-prachaniwet-market.jpg "2026-09-26")
+![Flood hits Prachaniwet 1 market in Chatuchak district](/timecapsule/bangkok-flood-2026/01-prachaniwet-market.webp "2026-09-26")
 *Prachaniwet 1 market, Chatuchak. Photo: [Ananya Moonphen / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)*
 
-![Nawamin Road near Bang Kapi intersection](/timecapsule/bangkok-flood-2026/02-nawamin-road.jpg "2026-09-26")
+![Nawamin Road near Bang Kapi intersection](/timecapsule/bangkok-flood-2026/02-nawamin-road.webp "2026-09-26")
 *Nawamin Rd, Bang Kapi. Photo: [Lat Phrao police / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)*
 
-![Phahon Yothin Road at Ratchayothin intersection](/timecapsule/bangkok-flood-2026/03-phahon-yothin.jpg "2026-09-26")
+![Phahon Yothin Road at Ratchayothin intersection](/timecapsule/bangkok-flood-2026/03-phahon-yothin.webp "2026-09-26")
 *Phahon Yothin at Ratchayothin. Photo: [Nareerat Wiriyapong / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)*
 
-![Floodwater waist-deep at Bang Kapi intersection](/timecapsule/bangkok-flood-2026/04-bang-kapi-intersection.jpg "2026-09-26")
+![Floodwater waist-deep at Bang Kapi intersection](/timecapsule/bangkok-flood-2026/04-bang-kapi-intersection.webp "2026-09-26")
 *Bang Kapi intersection, waist-deep. Photo: [Lat Phrao police / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)*
 
-![Lat Phrao 41 Road flooded](/timecapsule/bangkok-flood-2026/05-lat-phrao-41.jpg "2026-09-26")
+![Lat Phrao 41 Road flooded](/timecapsule/bangkok-flood-2026/05-lat-phrao-41.webp "2026-09-26")
 *Lat Phrao 41, Chatuchak. Photo: [Charoen Kittikanya / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)*
 
-![Phetchaburi Road under floodwater](/timecapsule/bangkok-flood-2026/09-phetchaburi-aerial.jpg "2026-09-26")
+![Phetchaburi Road under floodwater](/timecapsule/bangkok-flood-2026/09-phetchaburi-aerial.webp "2026-09-26")
 *Phetchaburi Rd near Makkasan–Asok. Photo: [Thanis Sutto / THE STANDARD](https://thestandard.co/phetchaburi-road-flood-bangkok-rain/)*
 
-![Residents wading through floodwater](/timecapsule/bangkok-flood-2026/11-phetchaburi-wading.jpg "2026-09-26")
+![Residents wading through floodwater](/timecapsule/bangkok-flood-2026/11-phetchaburi-wading.webp "2026-09-26")
 *Wading out for supplies. Photo: [Thanis Sutto / THE STANDARD](https://thestandard.co/phetchaburi-road-flood-bangkok-rain/)*
 
-![Phetchaburi Road flood scene](/timecapsule/bangkok-flood-2026/12-phetchaburi-scene.jpg "2026-09-26")
+![Phetchaburi Road flood scene](/timecapsule/bangkok-flood-2026/12-phetchaburi-scene.webp "2026-09-26")
 *Phetchaburi Rd, day 2. Photo: [Thanis Sutto / THE STANDARD](https://thestandard.co/phetchaburi-road-flood-bangkok-rain/)*
 
-![Bang Kapi community under floodwater](/timecapsule/bangkok-flood-2026/13-bangkapi-community.jpg "2026-09-26")
+![Bang Kapi community under floodwater](/timecapsule/bangkok-flood-2026/13-bangkapi-community.webp "2026-09-26")
 *Bang Kapi community. Photo: [Sawita Poonsatien / THE STANDARD](https://thestandard.co/bangkapi-flood-life-impact/)*
 
-![Life amid the flood in Bang Kapi](/timecapsule/bangkok-flood-2026/14-bangkapi-high-ground.jpg "2026-09-26")
+![Life amid the flood in Bang Kapi](/timecapsule/bangkok-flood-2026/14-bangkapi-high-ground.webp "2026-09-26")
 *Bang Kapi homes under water. Photo: [Sawita Poonsatien / THE STANDARD](https://thestandard.co/bangkapi-flood-life-impact/)*
 
-### Sun 27 Sep — risk lingers
+### Sun 27 Sep — flooding persists
 
-The system should move away after Sep 27. Until then: canal-side homes keep valuables high. Samut Prakan and Chachoengsao are also badly flooded — and water can't simply be pushed east to them (irrigation canals in the way).
+- 4 canals still full — pumps failing on Saen Saep; Lat Krabang worst hit: 30,000+ victims
+- Deep water on streets: 59cm Soi Senanikhom, 54cm Lat Phrao 122, 46.6cm Pattanakan
+- 5 canals critical; BMA: needs 2–3 rain-free days to drain; city schools closed Mon 28
+- BMA fights back: mobile pumps at Phetchaburi–Ekkamai, pusher boats on Khlong Lat Phrao
+- PM Anutin by boat at Klong Chan flats (6:30pm, 1.5m water) — orders mid-year budget relief, one nationwide standard
+- GISTDA: rain easing from Sep 28
+- Regional: Nakhon Nayok 274mm; ONWR flash-flood warning through Sep 30
+
+![PM Anutin by boat at Klong Chan](/timecapsule/bangkok-flood-2026/16-pm-boat-relief.webp "2026-09-27")
+*PM Anutin hands out relief bags by boat, Klong Chan. Photo: [THE STANDARD](https://thestandard.co/pm-klong-chan-flood-relief/)*
+
+### Mon 28 Sep — holidays, toll, slow recovery
+
+- Cabinet declares Sep 28–29 holidays (Bangkok, Pathum Thani, Nonthaburi, Samut Prakan); SET trades on
+- DDPM toll: 8 dead, 174,803 households hit in 25 provinces + 52,000 more in Bangkok
+- Muang Thong Thani critical — 60cm+, boats in the streets; Nonthaburi declares 4 disaster districts
+- Samut Prakan: 6 districts disaster zones (rain + high tides)
+- Recovery uneven: Vibhavadi improving, Bang Kapi still blocks small cars
+- TMD final warning: system moving away — 1 more day of heavy rain possible
+- Suvarnabhumi strain: stranded luggage, military called in; THAI waives change fees, full refunds
+- Toll-free M7/M9/Don Muang Tollway extended to Sep 29 midnight
+- Food supplies "still secure"; national disaster insurance starts Oct 1
+
+![Muang Thong Thani under floodwater](/timecapsule/bangkok-flood-2026/15-muang-thong-thani.webp "2026-09-28")
+*Muang Thong Thani, Nonthaburi — cars submerged, boats out. Photo: [THE STANDARD](https://thestandard.co/flood-levels-in-muang-thong-thani-are-critical/)*
+
+![Daily life amid the flood](/timecapsule/bangkok-flood-2026/17-market-wading.webp "2026-09-27")
+*Wading through the market, Klong Chan to Lat Phrao. Photo: [THE STANDARD](https://thestandard.co/klong-chan-ladprao-flood-daily-life/)*
 
 ## Sources
 
@@ -111,5 +138,20 @@ The system should move away after Sep 27. Until then: canal-side homes keep valu
 - [Chaeng Watthana 50–60cm — The Standard](https://thestandard.co/chaeng-watthana-heavy-rain-flood/)
 - [Tops 24h centre — The Nation](https://www.nationthailand.com/news/general/40071539)
 - [Hygiene kits — The Standard](https://thestandard.co/public-health-flood-hygiene-paper-toilet/)
+- [Flooding persists in eastern Bangkok — Bangkok Post](https://www.bangkokpost.com/thailand/general/3326980/heavy-flooding-remains-in-eastern-bangkok)
+- [5 canals critical, schools close Sep 28 — The Nation](https://www.nationthailand.com/news/general/40071528)
+- [Rain easing from Sep 28 (GISTDA) — The Nation](https://www.nationthailand.com/news/general/40071542)
+- [Nakhon Nayok 274mm, warning to Sep 30 — The Nation](https://www.nationthailand.com/news/general/40071544)
+- [BMA pumps and pusher boats — The Standard](https://thestandard.co/bma-flood-drainage-phetchaburi-ekkamai/)
+- [PM by boat at Klong Chan — The Standard](https://thestandard.co/pm-klong-chan-flood-relief/)
+- [Sep 28–29 flood holidays — Bangkok Post](https://www.bangkokpost.com/thailand/general/3327053/cabinet-declares-sept-2829-official-government-holidays-in-light-of-flooding)
+- [8 dead, 226k households — The Nation](https://www.nationthailand.com/news/general/40071563)
+- [Muang Thong Thani critical — The Standard](https://thestandard.co/flood-levels-in-muang-thong-thani-are-critical/)
+- [Samut Prakan disaster zones — The Nation](https://www.nationthailand.com/news/general/40071566)
+- [Bang Kapi still blocked, Vibhavadi improves — The Nation](https://www.nationthailand.com/news/general/40071576)
+- [TMD: 70% rain on Sep 28 — The Nation](https://www.nationthailand.com/news/general/40071574)
+- [Military moves stranded luggage — The Standard](https://thestandard.co/military-help-suvarnabhumi-luggage-flood/) · [THAI refunds — The Standard](https://thestandard.co/thai-airways-flood-compensation/)
+- [Toll-free motorways extended — The Nation](https://www.nationthailand.com/news/general/40071567)
+- [Food supplies secure — Bangkok Post](https://www.bangkokpost.com/thailand/general/3327135/food-supplies-still-secure)
 
-*Photos: Bangkok Post, The Nation, THE STANDARD. Updated 27 Sep 2026.*
+*Photos: Bangkok Post, The Nation, THE STANDARD. Updated 28 Sep 2026.*
