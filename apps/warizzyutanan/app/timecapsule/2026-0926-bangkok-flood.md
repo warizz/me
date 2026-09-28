@@ -19,12 +19,12 @@ Rain starts and does not stop. A low-pressure system parks over the east of the 
 
 ### Fri 25 Sep — warnings stack up
 
-- 133mm of rain overnight, 30mm more through the day (Khlong Sam Wa, Sai Mai, Min Buri, Lat Krabang)
-- TMD: heavy rain over 80% of the area through Sep 27; small boats stay ashore
-- Pathum Thani: red alert — Rangsit canal critical, 28 million m³ of water upstream
-- Khao Yai park closed Sep 26–27 (landslide risk)
-- Governor Chadchart: canal-side homes — move belongings up now
-- BMA pumps at full power: 1,200 m³/s pushed towards the Chao Phraya
+- 133mm of rain overnight, 30mm more through the day (Khlong Sam Wa, Sai Mai, Min Buri, Lat Krabang) — [The Nation](https://www.nationthailand.com/news/general/40071486)
+- TMD: heavy rain over 80% of the area through Sep 27; small boats stay ashore — [The Nation](https://www.nationthailand.com/news/general/40071496)
+- Pathum Thani: red alert — Rangsit canal critical, 28 million m³ of water upstream — [The Nation](https://www.nationthailand.com/news/general/40071487)
+- Khao Yai park closed Sep 26–27 (landslide risk) — [The Nation](https://www.nationthailand.com/news/general/40071502)
+- Governor Chadchart: canal-side homes — move belongings up now — [The Nation](https://www.nationthailand.com/news/general/40071486)
+- BMA pumps at full power: 1,200 m³/s pushed towards the Chao Phraya — [The Nation](https://www.nationthailand.com/news/general/40071486)
 - 24-hour health watch ordered in flood areas
 
 ![Flood conditions in Bangkok](/timecapsule/bangkok-flood-2026/08-hero.webp "2026-09-25")
@@ -40,21 +40,21 @@ Rain starts and does not stop. A low-pressure system parks over the east of the 
 
 Nearly 300mm total in Min Buri, Klong Sam Wa and Saphan Sung. Morning briefing from Governor Chadchart:
 
-- All 50 districts disaster zones (backdated to Sep 25) — aid and compensation unlocked
-- All eastern canals full; pumps can't keep up
-- Water still flowing in from Nonthaburi and Pathum Thani
-- 15 main roads flooded; waist-deep at Bang Kapi
-- Chaeng Watthana Rd: 50–60cm; 37 flooded canal-side points citywide
-- 9:22am cell broadcast: canal levels critical — move things up, avoid travel
-- Phetchaburi Rd: canal overflowed onto the road — cars stalled, motorcycles on sidewalks
-- Rail: Eastern Line closed (8 trains hit); both Red Lines down
-- Airports: Don Mueang taxiway flooded, flights fine; ministry war room set up
-- PM Anutin (from London): respond as one team
-- 10,000 troops sent to flood-hit provinces; Interior + Defence back up the BMA
-- Shops: shelves emptied; Tops opens 24h flood centre; price checks ordered
-- Health: 3,000+ hygiene kits; "paper toilet" advice for flood zones
-- Shelters at BMA schools; sandbags at district offices
-- If rain stops: water gone in ~6 hours
+- All 50 districts disaster zones (backdated to Sep 25) — aid and compensation unlocked — [The Standard](https://thestandard.co/bma-flood-relief-50-districts/)
+- All eastern canals full; pumps can't keep up — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)
+- Water still flowing in from Nonthaburi and Pathum Thani — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)
+- 15 main roads flooded; waist-deep at Bang Kapi — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)
+- Chaeng Watthana Rd: 50–60cm; 37 flooded canal-side points citywide — [The Standard](https://thestandard.co/chaeng-watthana-heavy-rain-flood/)
+- 9:22am cell broadcast: canal levels critical — move things up, avoid travel — [The Nation](https://www.nationthailand.com/thailand/bangkok/40071510)
+- Phetchaburi Rd: canal overflowed onto the road — cars stalled, motorcycles on sidewalks — [The Standard](https://thestandard.co/phetchaburi-road-flood-bangkok-rain/)
+- Rail: Eastern Line closed (8 trains hit); both Red Lines down — [The Standard](https://thestandard.co/srt-closes-eastern-railway-flood/) · [The Nation](https://www.nationthailand.com/news/general/40071530)
+- Airports: Don Mueang taxiway flooded, flights fine; ministry war room set up — [The Nation](https://www.nationthailand.com/news/general/40071532)
+- PM Anutin (from London): respond as one team — [The Nation](https://www.nationthailand.com/news/general/40071534)
+- 10,000 troops sent to flood-hit provinces; Interior + Defence back up the BMA — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326675/10000-troops-sent-to-floodhit-provinces)
+- Shops: shelves emptied; Tops opens 24h flood centre; price checks ordered — [The Nation](https://www.nationthailand.com/news/general/40071539) · [The Nation](https://www.nationthailand.com/thailand/bangkok/40071513)
+- Health: 3,000+ hygiene kits; "paper toilet" advice for flood zones — [The Standard](https://thestandard.co/public-health-flood-hygiene-paper-toilet/)
+- Shelters at BMA schools; sandbags at district offices — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)
+- If rain stops: water gone in ~6 hours — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)
 
 ![Flood hits Prachaniwet 1 market in Chatuchak district](/timecapsule/bangkok-flood-2026/01-prachaniwet-market.webp "2026-09-26")
 *Prachaniwet 1 market, Chatuchak. Photo: [Ananya Moonphen / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)*
@@ -88,28 +88,28 @@ Nearly 300mm total in Min Buri, Klong Sam Wa and Saphan Sung. Morning briefing f
 
 ### Sun 27 Sep — flooding persists
 
-- 4 canals still full — pumps failing on Saen Saep; Lat Krabang worst hit: 30,000+ victims
-- Deep water on streets: 59cm Soi Senanikhom, 54cm Lat Phrao 122, 46.6cm Pattanakan
-- 5 canals critical; BMA: needs 2–3 rain-free days to drain; city schools closed Mon 28
-- BMA fights back: mobile pumps at Phetchaburi–Ekkamai, pusher boats on Khlong Lat Phrao
-- PM Anutin by boat at Klong Chan flats (6:30pm, 1.5m water) — orders mid-year budget relief, one nationwide standard
-- GISTDA: rain easing from Sep 28
-- Regional: Nakhon Nayok 274mm; ONWR flash-flood warning through Sep 30
+- 4 canals still full — pumps failing on Saen Saep; Lat Krabang worst hit: 30,000+ victims — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326980/heavy-flooding-remains-in-eastern-bangkok)
+- Deep water on streets: 59cm Soi Senanikhom, 54cm Lat Phrao 122, 46.6cm Pattanakan — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326980/heavy-flooding-remains-in-eastern-bangkok)
+- 5 canals critical; BMA: needs 2–3 rain-free days to drain; city schools closed Mon 28 — [The Nation](https://www.nationthailand.com/news/general/40071528)
+- BMA fights back: mobile pumps at Phetchaburi–Ekkamai, pusher boats on Khlong Lat Phrao — [The Standard](https://thestandard.co/bma-flood-drainage-phetchaburi-ekkamai/)
+- PM Anutin by boat at Klong Chan flats (6:30pm, 1.5m water) — orders mid-year budget relief, one nationwide standard — [The Standard](https://thestandard.co/pm-klong-chan-flood-relief/)
+- GISTDA: rain easing from Sep 28 — [The Nation](https://www.nationthailand.com/news/general/40071542)
+- Regional: Nakhon Nayok 274mm; ONWR flash-flood warning through Sep 30 — [The Nation](https://www.nationthailand.com/news/general/40071544)
 
 ![PM Anutin by boat at Klong Chan](/timecapsule/bangkok-flood-2026/16-pm-boat-relief.webp "2026-09-27")
 *PM Anutin hands out relief bags by boat, Klong Chan. Photo: [THE STANDARD](https://thestandard.co/pm-klong-chan-flood-relief/)*
 
 ### Mon 28 Sep — holidays, toll, slow recovery
 
-- Cabinet declares Sep 28–29 holidays (Bangkok, Pathum Thani, Nonthaburi, Samut Prakan); SET trades on
-- DDPM toll: 8 dead, 174,803 households hit in 25 provinces + 52,000 more in Bangkok
-- Muang Thong Thani critical — 60cm+, boats in the streets; Nonthaburi declares 4 disaster districts
-- Samut Prakan: 6 districts disaster zones (rain + high tides)
-- Recovery uneven: Vibhavadi improving, Bang Kapi still blocks small cars
-- TMD final warning: system moving away — 1 more day of heavy rain possible
-- Suvarnabhumi strain: stranded luggage, military called in; THAI waives change fees, full refunds
-- Toll-free M7/M9/Don Muang Tollway extended to Sep 29 midnight
-- Food supplies "still secure"; national disaster insurance starts Oct 1
+- Cabinet declares Sep 28–29 holidays (Bangkok, Pathum Thani, Nonthaburi, Samut Prakan); SET trades on — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3327053/cabinet-declares-sept-2829-official-government-holidays-in-light-of-flooding) · [The Nation](https://www.nationthailand.com/news/general/40071564)
+- DDPM toll: 8 dead, 174,803 households hit in 25 provinces + 52,000 more in Bangkok — [The Nation](https://www.nationthailand.com/news/general/40071563)
+- Muang Thong Thani critical — 60cm+, boats in the streets; Nonthaburi declares 4 disaster districts — [The Standard](https://thestandard.co/flood-levels-in-muang-thong-thani-are-critical/)
+- Samut Prakan: 6 districts disaster zones (rain + high tides) — [The Nation](https://www.nationthailand.com/news/general/40071566)
+- Recovery uneven: Vibhavadi improving, Bang Kapi still blocks small cars — [The Nation](https://www.nationthailand.com/news/general/40071576)
+- TMD final warning: system moving away — 1 more day of heavy rain possible — [The Nation](https://www.nationthailand.com/news/general/40071574)
+- Suvarnabhumi strain: stranded luggage, military called in; THAI waives change fees, full refunds — [The Standard](https://thestandard.co/military-help-suvarnabhumi-luggage-flood/) · [The Standard](https://thestandard.co/thai-airways-flood-compensation/)
+- Toll-free M7/M9/Don Muang Tollway extended to Sep 29 midnight — [The Nation](https://www.nationthailand.com/news/general/40071567)
+- Food supplies "still secure"; national disaster insurance starts Oct 1 — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3327135/food-supplies-still-secure) · [The Nation](https://www.nationthailand.com/news/general/40071565)
 
 ![Muang Thong Thani under floodwater](/timecapsule/bangkok-flood-2026/15-muang-thong-thani.webp "2026-09-28")
 *Muang Thong Thani, Nonthaburi — cars submerged, boats out. Photo: [THE STANDARD](https://thestandard.co/flood-levels-in-muang-thong-thani-are-critical/)*
