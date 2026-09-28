@@ -33,6 +33,7 @@ No `endDate` → the badge renders "→ ongoing". Add it once the event resolves
 
 - Store as WebP (q80) — convert before committing:
   `for f in *.jpg; do cwebp -q 80 -quiet "$f" -o "${f%.jpg}.webp" && rm "$f"; done`
+- Then run `pnpm gen-photos` — creates `.640w/.960w` variants + regenerates `photo-meta.ts` (srcset + dimensions)
 - Markdown: `![alt](/timecapsule/<slug>/file.webp "YYYY-MM-DD")`
   - The title attribute = source publish date → badge shows `filename · date`
   - Omit the title and the badge falls back to filename only

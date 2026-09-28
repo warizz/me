@@ -50,11 +50,11 @@ export default function Markdown({ children }: Props) {
           );
         },
         img({ ...props }) {
-          const _props = omit(props, "node");
+          const _props = omit(props, ["node"]);
           return (
             <img
               {..._props}
-              className="w-full lg:w-auto lg:max-h-[300px] border-2 lg:border border-black dark:border-0"
+              className="w-full h-auto lg:w-auto lg:max-h-[300px] border-2 lg:border border-black dark:border-0"
             />
           );
         },

@@ -1,5 +1,7 @@
 import Markdown from "../../components/Markdown";
 
+import photoMeta from "./photo-meta";
+
 type Block =
   | { kind: "lead"; body: string }
   | { kind: "section"; heading: string; body: string }
@@ -36,6 +38,8 @@ function parseBlocks(markdownString: string): Block[] {
 
 const bodyClass = "prose prose-sm dark:prose-invert font-sans max-w-none";
 
+const PHOTO_SIZES = "(min-width: 1024px) 480px, calc(100vw - 40px)";
+
 function withPhotoStamps(body: string) {
   return body.replace(
     /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]+)")?\)/g,
@@ -43,7 +47,11 @@ function withPhotoStamps(body: string) {
       const fileName = src.split("/").pop() ?? src;
       const id = fileName.replace(/\.[^.]+$/, "");
       const label = stamp ? `${id} · ${stamp}` : id;
-      return `<span class="tc-photo"><img src="${src}" alt="${alt}" loading="lazy" /><span class="tc-photo-id">${label}</span></span>`;
+      const meta = photoMeta[src];
+      const imgAttrs = meta
+        ? ` width="${meta.w}" height="${meta.h}" srcset="${meta.srcset}" sizes="${PHOTO_SIZES}"`
+        : "";
+      return `<span class="tc-photo"><img src="${src}" alt="${alt}" loading="lazy"${imgAttrs} /><span class="tc-photo-id">${label}</span></span>`;
     },
   );
 }
@@ -106,14 +114,14 @@ export default function EventTimeline({
                   >
                     {when}
                   </span>
-                  <h3 className="text-lg font-bold tracking-tight m-0!">
+                  <h2 className="text-lg font-bold tracking-tight m-0!">
                     {what}
-                  </h3>
+                  </h2>
                 </div>
               ) : (
-                <h3 className="text-lg font-bold tracking-tight mb-2 m-0!">
+                <h2 className="text-lg font-bold tracking-tight mb-2 m-0!">
                   {block.heading}
-                </h3>
+                </h2>
               )}
               <div className={bodyClass}>
                 <Markdown>{withPhotoStamps(block.body)}</Markdown>

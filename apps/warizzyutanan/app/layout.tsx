@@ -23,10 +23,10 @@ export default function RootLayout({ children }: Props) {
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             data-testid="ga_lib"
           />
-          <Script id="ga_datalayer" strategy="afterInteractive">
+          <Script id="ga_datalayer" strategy="lazyOnload">
             {`function gtag(){window.dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","${GA_ID}");`}
           </Script>
         </>

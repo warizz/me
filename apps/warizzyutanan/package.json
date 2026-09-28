@@ -8,6 +8,7 @@
     "lint": "eslint app components",
     "start": "next start -p 3000",
     "gen-sitemap": "ts-node -O '{\"module\": \"commonjs\"}' gen-sitemap.ts",
+    "gen-photos": "ts-node -O '{\"module\": \"commonjs\"}' gen-photo-variants.ts",
     "tsc": "tsc"
   },
   "dependencies": {
