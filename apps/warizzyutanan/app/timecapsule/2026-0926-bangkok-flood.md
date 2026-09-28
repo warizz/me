@@ -1,5 +1,5 @@
 ---
-title: "Eastern Bangkok Under Water"
+title: "Bangkok Under Water"
 startDate: "2026-09-25"
 publish: true
 tags:

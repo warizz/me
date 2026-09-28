@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props) {
   const item = getTimecapsuleData(`${id}.md`);
   return {
     title: `${item.title} - Warizz Yutanan`,
-    description: item.description,
+    description: item.description || item.tldr || undefined,
     robots: item.isPublished ? "index, follow" : "noindex, nofollow",
   };
 }
