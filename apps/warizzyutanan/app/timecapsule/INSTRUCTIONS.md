@@ -45,7 +45,7 @@ No `endDate` → the badge renders "→ ongoing". Add it once the event resolves
 1. Fetch candidate sources (news sites) — check dates, avoid old/unrelated events
 2. Propose every candidate link AND photo to the moderator — nothing is added without approval
 3. Photos: give direct image URLs for review first; watch for duplicates/duplicate crops
-4. Sources section at the bottom: short label + link per source
+4. Sourcing: inline link at the end of every bullet (`— [Outlet](url)`); no separate Sources section; photo credits link their article
 
 ## Verify
 
