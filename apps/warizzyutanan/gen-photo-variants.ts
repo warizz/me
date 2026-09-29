@@ -5,7 +5,8 @@ import path from "path";
 import prettier from "prettier";
 
 const WIDTHS = [640, 960];
-const QUALITY = 78;
+const QUALITY = 55;
+const MAX_BASE_WIDTH = 1280; // ponytail: 3x phones pick the base file; cap it so they don't fetch 1500w
 const PUBLIC_DIR = path.join(process.cwd(), "public", "timecapsule");
 const OUT_FILE = path.join(process.cwd(), "app", "timecapsule", "photo-meta.ts");
 
@@ -28,6 +29,12 @@ async function main() {
     for (const file of fs.readdirSync(folder)) {
       if (!file.endsWith(".webp") || /\.\d+w\.webp$/.test(file)) continue;
       const full = path.join(folder, file);
+      const { w: origW } = imageDims(full);
+      const tmp = `${full}.tmp.webp`;
+      execSync(
+        `cwebp -q ${QUALITY} -resize ${Math.min(origW, MAX_BASE_WIDTH)} 0 -quiet ${JSON.stringify(full)} -o ${JSON.stringify(tmp)}`,
+      );
+      fs.renameSync(tmp, full);
       const { w, h } = imageDims(full);
       const src = `/timecapsule/${dir.name}/${file}`;
       const candidates: string[] = [];
