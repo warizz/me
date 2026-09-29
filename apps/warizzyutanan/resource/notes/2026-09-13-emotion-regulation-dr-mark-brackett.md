@@ -1,3 +1,7 @@
+---
+tldr: Regulation isn't removing emotions — it's changing how you respond to them. Practical ideas worth practicing.
+---
+
 # Emotion Regulation and Emotional Intelligence with Dr. Mark Brackett by Andrew Huberman
 
 <iframe width="560" height="315"

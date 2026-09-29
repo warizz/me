@@ -1,3 +1,7 @@
+---
+tldr: A list worth rereading
+---
+
 # 42 Life Lessons I Learned the Hard Way by Mark Manson
 
 <iframe width="560" height="315"
