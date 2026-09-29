@@ -51,8 +51,6 @@ function splitNote(body: string) {
 
 const bodyClass = "prose prose-sm dark:prose-invert font-sans max-w-none";
 
-const PHOTO_SIZES = "(min-width: 1024px) 480px, calc(100vw - 40px)";
-
 function withPhotoStamps(body: string) {
   return body.replace(
     /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]+)")?\)/g,
@@ -62,7 +60,7 @@ function withPhotoStamps(body: string) {
       const label = stamp ? `${id} · ${stamp}` : id;
       const meta = photoMeta[src];
       const imgAttrs = meta
-        ? ` width="${meta.w}" height="${meta.h}" srcset="${meta.srcset}" sizes="${PHOTO_SIZES}"`
+        ? ` width="${meta.w}" height="${meta.h}" srcset="${meta.srcset}" sizes="${meta.sizes}"`
         : "";
       const media = /\.(mp4|webm|mov|m4v)$/i.test(src)
         ? `<video src="${src}" controls playsinline muted preload="metadata"></video>`
