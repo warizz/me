@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 
-import Markdown from "../../components/Markdown";
+// Deferred: react-markdown stack (~103 KiB) fetches on first expand, not page load
+const Markdown = lazy(() => import("../../components/Markdown"));
 
 export default function NoteCollapse({ body }: { body: string }) {
   const [open, setOpen] = useState(false);
@@ -25,7 +26,9 @@ export default function NoteCollapse({ body }: { body: string }) {
           className="border-t border-dashed border-emerald-500/40 dark:border-emerald-400/40 px-3.5 py-2.5"
         >
           <div className="prose prose-sm dark:prose-invert font-sans max-w-none">
-            <Markdown>{body}</Markdown>
+            <Suspense fallback={null}>
+              <Markdown>{body}</Markdown>
+            </Suspense>
           </div>
         </div>
       ) : null}
