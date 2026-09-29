@@ -1,9 +1,10 @@
 import omit from "lodash/omit";
+import dynamic from "next/dynamic";
 import ReactMarkdown from "react-markdown";
-import { Prism } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
+
+const CodeBlock = dynamic(() => import("./CodeBlock"));
 
 interface Props {
   children: string;
@@ -28,13 +29,9 @@ export default function Markdown({ children }: Props) {
             );
           }
           return (
-            <Prism
-              language={match?.[1] ?? undefined}
-              style={oneDark}
-              {...(_props as any)}
-            >
+            <CodeBlock language={match?.[1] ?? undefined} {...(_props as any)}>
               {String(children).replace(/\n$/, "")}
-            </Prism>
+            </CodeBlock>
           );
         },
         iframe({ width, height, ...props }) {
