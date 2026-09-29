@@ -1,11 +1,11 @@
 # Timecapsule — Instructions
 
-Archive of news moments worth remembering. One `.md` file per event, colocated with the code.
+Archive of news moments worth remembering. One `.md` file per event, stored in <code>resource/content/</code> with the other content.
 
 ## Adding an event
 
-1. Create `YYYY-MMDD-slug.md` in this folder
-2. Drop photos in `public/timecapsule/<slug>/`
+1. Create `YYYY-MMDD-slug.md` in `resource/content/`
+2. Drop photos in `public/posts/`, named `<entry-id>-<nn>-<caption>.webp`
 3. Done — the index and the event route generate automatically at build
 
 ## Frontmatter
@@ -65,5 +65,5 @@ pnpm lint && pnpm build
 
 ## Notes
 
-- This file is not an event — the loader skips `INSTRUCTIONS.md` by name
+- Events are identified by the `timecapsule` tag in frontmatter (all content lives in `resource/content/`)
 - UI chrome (layout, disclaimer, badges) lives in `layout.tsx`, `page.tsx`, `[id]/page.tsx`, `EventTimeline.tsx`, `photo-id.css` — all scoped to this folder, nothing shared outside

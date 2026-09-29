@@ -1,21 +1,13 @@
-import { readdirSync } from "fs";
-import path from "path";
-
 import BlogLayout from "../../../components/BlogLayout";
+import { getContentFileNames } from "../../../components/lib/getContent";
 import getPostData from "../../../components/lib/getPostData";
 import Markdown from "../../../components/Markdown";
 import Tag from "../../../components/Tag";
 
 export async function generateStaticParams() {
-  const postsDirectory = path.join(process.cwd(), "posts");
-  const fileNames = readdirSync(postsDirectory);
-
-  return fileNames
-    .filter((fileName) => fileName.includes(".md"))
-    .map((fileName) => {
-      const id = path.parse(fileName).name;
-      return { id };
-    });
+  return getContentFileNames("post").map((fileName) => ({
+    id: fileName.replace(/\.md$/, ""),
+  }));
 }
 
 interface Props {

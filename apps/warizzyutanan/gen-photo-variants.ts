@@ -2,13 +2,29 @@ import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
 
+import matter from "gray-matter";
 import prettier from "prettier";
 
 const WIDTHS = [640, 960];
 const QUALITY = 55;
 const MAX_BASE_WIDTH = 1280; // ponytail: 3x phones pick the base file; cap it so they don't fetch 1500w
-const PUBLIC_DIR = path.join(process.cwd(), "public", "timecapsule");
+const CONTENT_DIR = path.join(process.cwd(), "resource", "content");
+const PUBLIC_DIR = path.join(process.cwd(), "public", "posts");
 const OUT_FILE = path.join(process.cwd(), "app", "timecapsule", "photo-meta.ts");
+
+// Only photos of timecapsule-tagged entries get variants; posts render plain <img>
+function timecapsulePrefixes() {
+  return fs
+    .readdirSync(CONTENT_DIR)
+    .filter((file) => {
+      if (!file.endsWith(".md")) return false;
+      const { data } = matter(
+        fs.readFileSync(path.join(CONTENT_DIR, file), "utf8"),
+      );
+      return Array.isArray(data.tags) && data.tags.includes("timecapsule");
+    })
+    .map((file) => `${file.replace(/\.md$/, "")}-`);
+}
 
 function imageDims(file: string) {
   const out = execSync(
@@ -23,35 +39,33 @@ function imageDims(file: string) {
 const meta: Record<string, { w: number; h: number; srcset: string }> = {};
 
 async function main() {
-  for (const dir of fs.readdirSync(PUBLIC_DIR, { withFileTypes: true })) {
-    if (!dir.isDirectory()) continue;
-    const folder = path.join(PUBLIC_DIR, dir.name);
-    for (const file of fs.readdirSync(folder)) {
-      if (!file.endsWith(".webp") || /\.\d+w\.webp$/.test(file)) continue;
-      const full = path.join(folder, file);
-      const { w: origW } = imageDims(full);
-      const tmp = `${full}.tmp.webp`;
-      execSync(
-        `cwebp -q ${QUALITY} -resize ${Math.min(origW, MAX_BASE_WIDTH)} 0 -quiet ${JSON.stringify(full)} -o ${JSON.stringify(tmp)}`,
+  const prefixes = timecapsulePrefixes();
+  for (const file of fs.readdirSync(PUBLIC_DIR)) {
+    if (!file.endsWith(".webp") || /\.\d+w\.webp$/.test(file)) continue;
+    if (!prefixes.some((prefix) => file.startsWith(prefix))) continue;
+    const full = path.join(PUBLIC_DIR, file);
+    const { w: origW } = imageDims(full);
+    const tmp = `${full}.tmp.webp`;
+    execSync(
+      `cwebp -q ${QUALITY} -resize ${Math.min(origW, MAX_BASE_WIDTH)} 0 -quiet ${JSON.stringify(full)} -o ${JSON.stringify(tmp)}`,
+    );
+    fs.renameSync(tmp, full);
+    const { w, h } = imageDims(full);
+    const src = `/posts/${file}`;
+    const candidates: string[] = [];
+    for (const width of WIDTHS) {
+      if (w <= width) continue;
+      const variantFile = path.join(
+        PUBLIC_DIR,
+        `${file.replace(/\.webp$/, "")}.${width}w.webp`,
       );
-      fs.renameSync(tmp, full);
-      const { w, h } = imageDims(full);
-      const src = `/timecapsule/${dir.name}/${file}`;
-      const candidates: string[] = [];
-      for (const width of WIDTHS) {
-        if (w <= width) continue;
-        const variantFile = path.join(
-          folder,
-          `${file.replace(/\.webp$/, "")}.${width}w.webp`,
-        );
-        execSync(
-          `cwebp -q ${QUALITY} -resize ${width} 0 -quiet ${JSON.stringify(full)} -o ${JSON.stringify(variantFile)}`,
-        );
-        candidates.push(`${src.replace(/\.webp$/, "")}.${width}w.webp ${width}w`);
-      }
-      candidates.push(`${src} ${w}w`);
-      meta[src] = { w, h, srcset: candidates.join(", ") };
+      execSync(
+        `cwebp -q ${QUALITY} -resize ${width} 0 -quiet ${JSON.stringify(full)} -o ${JSON.stringify(variantFile)}`,
+      );
+      candidates.push(`${src.replace(/\.webp$/, "")}.${width}w.webp ${width}w`);
     }
+    candidates.push(`${src} ${w}w`);
+    meta[src] = { w, h, srcset: candidates.join(", ") };
   }
 
   const source =

@@ -1,14 +1,12 @@
-import { readdirSync, readFileSync } from "fs";
-import path from "path";
-
-import matter from "gray-matter";
 import { Metadata } from "next";
 import Link from "next/link";
 
 import BlogLayout from "../../../components/BlogLayout";
+import {
+  getContent,
+  getContentFileNames,
+} from "../../../components/lib/getContent";
 import Markdown from "../../../components/Markdown";
-
-const notesDirectory = path.join(process.cwd(), "resource", "notes");
 
 interface NoteData {
   fileName: string;
@@ -32,15 +30,13 @@ function extractHeading(content: string): string {
 function getNoteById(id: string): NoteData | null {
   try {
     const fileName = `${id}.md`;
-    const fullPath = path.join(notesDirectory, fileName);
-    const fileContents = readFileSync(fullPath, "utf8");
-    const meta = matter(fileContents);
+    const { data, markdownString } = getContent(fileName);
 
     // Parse date from filename (format: 2024-01-01-topicxxx.md)
     const dateMatch = fileName.match(/^(\d{4}-\d{2}-\d{2})-/);
     const date = dateMatch
       ? new Date(dateMatch[1])
-      : new Date(meta.data.date || Date.now());
+      : new Date(String(data.date || Date.now()));
 
     // Extract topic from filename
     const topic = fileName
@@ -49,12 +45,15 @@ function getNoteById(id: string): NoteData | null {
 
     // Extract heading from content
     const heading =
-      meta.data.title || extractHeading(meta.content) || topic || "Untitled";
+      String(data.title || "") ||
+      extractHeading(markdownString) ||
+      topic ||
+      "Untitled";
 
     return {
       fileName,
       date,
-      content: meta.content,
+      content: markdownString,
       heading,
       topic,
     };
@@ -66,13 +65,9 @@ function getNoteById(id: string): NoteData | null {
 
 export async function generateStaticParams() {
   try {
-    const fileNames = readdirSync(notesDirectory);
-    return fileNames
-      .filter((fileName) => fileName.endsWith(".md"))
-      .map((fileName) => {
-        const id = path.parse(fileName).name;
-        return { id };
-      });
+    return getContentFileNames("note").map((fileName) => ({
+      id: fileName.replace(/\.md$/, ""),
+    }));
   } catch (error) {
     console.error("Error generating static params:", error);
     return [];
