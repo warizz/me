@@ -4,6 +4,8 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
+import photoMeta from "../app/timecapsule/photo-meta";
+
 const CodeBlock = dynamic(() => import("./CodeBlock"));
 
 interface Props {
@@ -48,9 +50,22 @@ export default function Markdown({ children }: Props) {
         },
         img({ ...props }) {
           const _props = omit(props, ["node"]);
+          const meta =
+            !_props.srcSet && typeof _props.src === "string"
+              ? photoMeta[_props.src]
+              : undefined;
           return (
             <img
               {..._props}
+              {...(meta
+                ? {
+                    width: meta.w,
+                    height: meta.h,
+                    srcSet: meta.srcset,
+                    sizes: meta.sizes,
+                  }
+                : {})}
+              loading={_props.loading ?? (meta ? "lazy" : undefined)}
               className="w-full h-auto lg:w-auto lg:max-h-[300px] border-2 lg:border border-black dark:border-0"
             />
           );
