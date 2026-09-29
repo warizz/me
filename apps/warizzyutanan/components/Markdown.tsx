@@ -58,6 +58,15 @@ export default function Markdown({ children }: Props) {
             />
           );
         },
+        video({ ...props }) {
+          const _props = omit(props, ["node"]);
+          return (
+            <video
+              {..._props}
+              className="w-full h-auto lg:max-h-[300px] border-2 lg:border border-black dark:border-0"
+            />
+          );
+        },
         pre({ children }) {
           return <>{children}</>;
         },

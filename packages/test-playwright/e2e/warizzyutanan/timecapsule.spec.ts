@@ -114,8 +114,42 @@ test.describe("timecapsule event", () => {
     }
 
     const badges = page.locator(".tc-photo-id");
-    await expect(badges).toHaveCount(count);
+    await expect(badges).toHaveCount(
+      await page.locator("article img, article video").count(),
+    );
     await expect(badges.first()).toContainText("08-hero");
+  });
+
+  test("shows each day's note at the bottom of its card, collapsed by default", async ({
+    page,
+  }) => {
+    await page.goto("/timecapsule/2026-0926-bangkok-flood");
+
+    const toggles = page.getByTestId("tc-note-toggle");
+    await expect(toggles).toHaveCount(2); // Thu demo note + Fri condo note
+
+    // collapsed: no note content in the DOM, so no note media is fetched
+    await expect(page.getByTestId("tc-note")).toHaveCount(0);
+    await expect(page.locator("article video")).toHaveCount(0);
+
+    const cardOf = (heading: string) =>
+      page
+        .getByRole("heading", { name: heading })
+        .locator("xpath=ancestor::div[contains(@class,'rounded-lg')][1]");
+
+    // each toggle sits in its own day's card
+    await expect(cardOf("the rain begins").getByTestId("tc-note-toggle")).toBeVisible();
+    await expect(cardOf("warnings stack up").getByTestId("tc-note-toggle")).toBeVisible();
+
+    // expanding the Thu note mounts its media lazily
+    await cardOf("the rain begins").getByTestId("tc-note-toggle").click();
+    await expect(page.locator("article video")).toHaveCount(1);
+
+    // expanding the Fri note shows the text note
+    await cardOf("warnings stack up").getByTestId("tc-note-toggle").click();
+    await expect(
+      page.getByTestId("tc-note").filter({ hasText: "condo" }),
+    ).toHaveCount(1);
   });
 
   test("links at least 10 external sources with no markdown leakage", async ({

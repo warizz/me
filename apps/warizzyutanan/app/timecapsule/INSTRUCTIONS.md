@@ -28,6 +28,10 @@ No `endDate` → the badge renders "→ ongoing". Add it once the event resolves
 - `## Section name` = card section (e.g. Sources)
 - Facts only. Short bullets, simple words, easy to skim
 - Node needing attribution: `*Sources: [Name](url)*` line at the end of the node
+- Personal side note: `> ...` lines inside a node body — a collapsed-by-default
+  "✎ me" disclosure with a thick dashed border sits at the bottom of that
+  day's card; content mounts only when opened, so photos/videos inside load
+  lazily.
 
 ## Photos
 
@@ -40,6 +44,9 @@ No `endDate` → the badge renders "→ ongoing". Add it once the event resolves
 - Every photo gets a caption line with a linked credit:
   `*Short caption. Photo: [Photographer / Outlet](article-url)*`
 - Download photos locally — never hotlink (files must survive source-site churn)
+- Videos: same `![alt](/timecapsule/<slug>/clip.mp4 "YYYY-MM-DD")` syntax — the
+  extension switches the renderer to `<video controls muted playsinline>`. Keep
+  clips short (~<5MB); they don't get srcset variants (own footage, not news media)
 
 ## Research workflow
 

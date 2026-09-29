@@ -17,6 +17,16 @@ Rain starts and does not stop. A low-pressure system parks over the east of the 
 
 *Sources: [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water) · [The Nation](https://www.nationthailand.com/news/general/40071486)*
 
+> Demo — what media inside a note looks like. This photo is a placeholder reusing a news image:
+>
+> ![Flood conditions in Bangkok](/timecapsule/bangkok-flood-2026/08-hero.webp "2026-09-24")
+>
+> And a short video clip (CC0 placeholder until I drop in my own footage):
+>
+> ![Demo clip](/timecapsule/bangkok-flood-2026/demo-note-clip.mp4 "2026-09-24")
+>
+> …plus a few closing lines so this note ends up noticeably taller than its short host card — the overflow case worth eyeballing on a wide screen.
+
 ### Fri 25 Sep — warnings stack up
 
 - 133mm of rain overnight, 30mm more through the day (Khlong Sam Wa, Sai Mai, Min Buri, Lat Krabang) — [The Nation](https://www.nationthailand.com/news/general/40071486)
@@ -30,11 +40,10 @@ Rain starts and does not stop. A low-pressure system parks over the east of the 
 ![Flood conditions in Bangkok](/timecapsule/bangkok-flood-2026/08-hero.webp "2026-09-25")
 *Bangkok, day 1. Photo: [The Nation](https://www.nationthailand.com/news/general/40071486)*
 
-![Eastern canals under pressure](/timecapsule/bangkok-flood-2026/06-canal-pressure.webp "2026-09-25")
-*Canals near capacity. Photo: [The Nation](https://www.nationthailand.com/news/general/40071486)*
+![Rain over central and eastern Thailand](/timecapsule/bangkok-flood-2026/18-tmd-forecast.webp "2026-09-25")
+*TMD forecast, issued 11pm Fri: rain over 80% of the area through Sep 27. Photo: [The Nation](https://www.nationthailand.com/news/general/40071496)*
 
-![BMA drainage operations](/timecapsule/bangkok-flood-2026/07-bma-drainage.webp "2026-09-25")
-*BMA drainage ops. Photo: [The Nation](https://www.nationthailand.com/news/general/40071486)*
+> Went to the office as usual that day — by the evening, the area around my condo was flooded.
 
 ### Sat 26 Sep — eastern Bangkok under water
 
