@@ -30,18 +30,6 @@ const photoMeta: Record<string, { w: number; h: number; srcset: string }> = {
     srcset:
       "/timecapsule/bangkok-flood-2026/05-lat-phrao-41.640w.webp 640w, /timecapsule/bangkok-flood-2026/05-lat-phrao-41.960w.webp 960w, /timecapsule/bangkok-flood-2026/05-lat-phrao-41.webp 1500w",
   },
-  "/timecapsule/bangkok-flood-2026/06-canal-pressure.webp": {
-    w: 1300,
-    h: 731,
-    srcset:
-      "/timecapsule/bangkok-flood-2026/06-canal-pressure.640w.webp 640w, /timecapsule/bangkok-flood-2026/06-canal-pressure.960w.webp 960w, /timecapsule/bangkok-flood-2026/06-canal-pressure.webp 1300w",
-  },
-  "/timecapsule/bangkok-flood-2026/07-bma-drainage.webp": {
-    w: 1300,
-    h: 731,
-    srcset:
-      "/timecapsule/bangkok-flood-2026/07-bma-drainage.640w.webp 640w, /timecapsule/bangkok-flood-2026/07-bma-drainage.960w.webp 960w, /timecapsule/bangkok-flood-2026/07-bma-drainage.webp 1300w",
-  },
   "/timecapsule/bangkok-flood-2026/08-hero.webp": {
     w: 1300,
     h: 731,
@@ -95,6 +83,12 @@ const photoMeta: Record<string, { w: number; h: number; srcset: string }> = {
     h: 628,
     srcset:
       "/timecapsule/bangkok-flood-2026/17-market-wading.640w.webp 640w, /timecapsule/bangkok-flood-2026/17-market-wading.960w.webp 960w, /timecapsule/bangkok-flood-2026/17-market-wading.webp 1200w",
+  },
+  "/timecapsule/bangkok-flood-2026/18-tmd-forecast.webp": {
+    w: 1440,
+    h: 810,
+    srcset:
+      "/timecapsule/bangkok-flood-2026/18-tmd-forecast.640w.webp 640w, /timecapsule/bangkok-flood-2026/18-tmd-forecast.960w.webp 960w, /timecapsule/bangkok-flood-2026/18-tmd-forecast.webp 1440w",
   },
 };
 

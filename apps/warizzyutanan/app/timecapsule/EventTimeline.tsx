@@ -1,5 +1,6 @@
 import Markdown from "../../components/Markdown";
 
+import NoteCollapse from "./NoteCollapse";
 import photoMeta from "./photo-meta";
 
 type Block =
@@ -36,6 +37,18 @@ function parseBlocks(markdownString: string): Block[] {
   return blocks;
 }
 
+/** pull `> note` lines out of a block body — they render as the card's "✎ me" band */
+function splitNote(body: string) {
+  const noteLines: string[] = [];
+  const rest: string[] = [];
+  for (const line of body.split("\n")) {
+    const note = line.match(/^> ?(.*)$/);
+    if (note) noteLines.push(note[1]);
+    else rest.push(line);
+  }
+  return { body: rest.join("\n"), note: noteLines.join("\n").trim() };
+}
+
 const bodyClass = "prose prose-sm dark:prose-invert font-sans max-w-none";
 
 const PHOTO_SIZES = "(min-width: 1024px) 480px, calc(100vw - 40px)";
@@ -51,7 +64,10 @@ function withPhotoStamps(body: string) {
       const imgAttrs = meta
         ? ` width="${meta.w}" height="${meta.h}" srcset="${meta.srcset}" sizes="${PHOTO_SIZES}"`
         : "";
-      return `<span class="tc-photo"><img src="${src}" alt="${alt}" loading="lazy"${imgAttrs} /><span class="tc-photo-id">${label}</span></span>`;
+      const media = /\.(mp4|webm|mov|m4v)$/i.test(src)
+        ? `<video src="${src}" controls playsinline muted preload="metadata"></video>`
+        : `<img src="${src}" alt="${alt}" loading="lazy"${imgAttrs} />`;
+      return `<span class="tc-photo">${media}<span class="tc-photo-id">${label}</span></span>`;
     },
   );
 }
@@ -81,6 +97,7 @@ export default function EventTimeline({
         }
 
         if (block.kind === "section") {
+          const { body, note } = splitNote(block.body);
           return (
             <section key={index} className={`${cardClass} p-4 md:p-5`}>
               <h2
@@ -89,12 +106,14 @@ export default function EventTimeline({
                 {block.heading}
               </h2>
               <div className={bodyClass}>
-                <Markdown>{withPhotoStamps(block.body)}</Markdown>
+                <Markdown>{withPhotoStamps(body)}</Markdown>
               </div>
+              {note ? <NoteCollapse body={withPhotoStamps(note)} /> : null}
             </section>
           );
         }
 
+        const { body, note } = splitNote(block.body);
         const [when, what] = block.heading.split(/\s+—\s+/);
         return (
           <div
@@ -124,8 +143,9 @@ export default function EventTimeline({
                 </h2>
               )}
               <div className={bodyClass}>
-                <Markdown>{withPhotoStamps(block.body)}</Markdown>
+                <Markdown>{withPhotoStamps(body)}</Markdown>
               </div>
+              {note ? <NoteCollapse body={withPhotoStamps(note)} /> : null}
             </div>
           </div>
         );
