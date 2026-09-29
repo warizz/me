@@ -6,21 +6,243 @@
      <url>
        <loc>https://www.warizzyutanan.com/posts/</loc>
      </url>
+     <url>
+       <loc>https://www.warizzyutanan.com/watermark/</loc>
+     </url>
+     <url>
+       <loc>https://www.warizzyutanan.com/compress/</loc>
+     </url>
+     <url>
+       <loc>https://www.warizzyutanan.com/life-in-weeks/</loc>
+     </url>
      
             <url>
-                <loc>https://www.warizzyutanan.com/posts/1st-pr-to-famous-repo</loc>
+                <loc>https://www.warizzyutanan.com/posts/2021-1012-debounce-in-function-component</loc>
             </url>
             <url>
-                <loc>https://www.warizzyutanan.com/posts/2022-in-review</loc>
+                <loc>https://www.warizzyutanan.com/posts/2022-0607-add-suffix-to-files</loc>
             </url>
             <url>
-                <loc>https://www.warizzyutanan.com/posts/add-suffix-to-files</loc>
+                <loc>https://www.warizzyutanan.com/posts/2022-1220-db-index-pros-cons</loc>
             </url>
             <url>
-                <loc>https://www.warizzyutanan.com/posts/db-index-pros-cons</loc>
+                <loc>https://www.warizzyutanan.com/posts/2023-0109-2022-in-review</loc>
             </url>
             <url>
-                <loc>https://www.warizzyutanan.com/posts/debounce-in-function-component</loc>
+                <loc>https://www.warizzyutanan.com/posts/2023-0110-1st-pr-to-famous-repo</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2024-1102-tender-is-the-flesh</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2024-1110-dont-come-home</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2024-1110-theres-no-such-thing-as-an-easy-job</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2024-1118-website-hacking-penetration-testing</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2024-1124-kill-for-me-kill-for-you</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2024-1211-brave-new-world</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2024-1214-metaphor-refantazio</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2024-1221-dan-da-dan</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2024-1222-tmr-and-i</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0106-kaiju-no-8-s1</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0110-squid-game-2</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0111-boy-kills-world</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0113-carry-on</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0115-greatest-hits-herald-classics</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0117-knock-at-the-cabin</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0118-ready-or-not</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0121-late-night-with-the-devil</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0123-the-substance</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0124-phu-kradeung</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0128-the-paradise-of-thorns</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0130-perfect-days</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0202-how-not-to-say-the-wrong-thing</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0203-how-uber-tests-payments-in-production</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0204-predictably-irrational</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0208-granblue-fantasy-relink</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0209-docker-and-kubernetes-the-complete-guide</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0209-the-selfish-gene</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0214-doubt</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0215-handling-customer-support-complaints-and-fraud-in-a-side-project</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0222-the-better-angels-of-our-nature</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0222-the-wedding-people</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0223-udemy-github-copilot</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0225-eastern-promises</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0305-gi-bad</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0307-his-three-daughters</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0311-dont-move</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0311-zzz</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0313-spaceman</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0317-udemy-drawing-and-painting-on-the-ipad-with-procreate</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0319-the-autopsy-of-jane-doe</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0321-in-youth-we-trust</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0321-nanglen-thee-boy</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0328-adolescence</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0402-solo-leveling-s2</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0404-the-hot-spot</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0412-udemy-rest-api-design-development-management</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0414-mh-wilds</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0415-black-mirror-7</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0418-project-hail-mary</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0419-jules</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0423-the-natural-cat</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0427-you-5</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0505-the-art-of-procrastination</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0531-mad-unicorn</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0614-earthlings</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0701-squid-game-3</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0709-oppenheimer</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0729-the-northman</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0802-the-stone</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0810-weapons</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0813-death-stranding-2</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0816-bring-her-back</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0817-murder-mindfully</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0824-a-quiet-place-day-one</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0830-final-destnation-bloodlines</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0907-clair-obscur-expedition-33</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0919-past-lives</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0920-sideways</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-0928-until-dawn</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-1018-sinners</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/2025-1109-casino</loc>
             </url>
             <url>
                 <loc>https://www.warizzyutanan.com/posts/delete-files-by-extension</loc>
@@ -38,7 +260,16 @@
                 <loc>https://www.warizzyutanan.com/posts/git-recover-deleted-branch</loc>
             </url>
             <url>
+                <loc>https://www.warizzyutanan.com/posts/how-to-live-like-your-cat</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/japan-2024</loc>
+            </url>
+            <url>
                 <loc>https://www.warizzyutanan.com/posts/js-heap-out-of-memory</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/legacy-to-monorepo</loc>
             </url>
             <url>
                 <loc>https://www.warizzyutanan.com/posts/revert-yarn3-to-yarn1</loc>
@@ -51,6 +282,9 @@
             </url>
             <url>
                 <loc>https://www.warizzyutanan.com/posts/turborepo-linux-amd-64</loc>
+            </url>
+            <url>
+                <loc>https://www.warizzyutanan.com/posts/vite-legacy-material-ui-pickers</loc>
             </url>
             <url>
                 <loc>https://www.warizzyutanan.com/posts/vscode-eslint-slow</loc>

@@ -1,10 +1,9 @@
-import fs from "fs";
-import path from "path";
-
-import matter from "gray-matter";
 import { z } from "zod";
 
-export const timecapsuleDirectory = path.join(process.cwd(), "app/timecapsule");
+import {
+  getContent,
+  getContentFileNames,
+} from "../../components/lib/getContent";
 
 export const TimecapsuleItem = z.object({
   description: z.string(),
@@ -21,21 +20,18 @@ export const TimecapsuleItem = z.object({
 export type ITimecapsuleItem = z.infer<typeof TimecapsuleItem>;
 
 export default function getTimecapsuleData(fileName: string) {
-  const fullPath = path.join(timecapsuleDirectory, fileName);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const meta = matter(fileContents);
-  const [id] = fileName.split(".");
+  const { data, markdownString, id } = getContent(fileName);
 
   return TimecapsuleItem.parse({
-    description: meta.data.description ?? "",
-    endDate: meta.data.endDate ?? null,
+    description: data.description ?? "",
+    endDate: data.endDate ?? null,
     id,
-    isPublished: !!meta.data.publish,
-    markdownString: meta.content,
-    startDate: meta.data.startDate,
-    tags: meta.data.tags ?? [],
-    title: meta.data.title,
-    tldr: meta.data.tldr,
+    isPublished: !!data.publish,
+    markdownString,
+    startDate: data.startDate,
+    tags: data.tags ?? [],
+    title: data.title,
+    tldr: data.tldr,
   });
 }
 
@@ -57,9 +53,7 @@ export function formatDateRange(startDate: string, endDate?: string | null) {
 }
 
 export function getEventFileNames() {
-  return fs
-    .readdirSync(timecapsuleDirectory)
-    .filter((file) => file.endsWith(".md") && file !== "INSTRUCTIONS.md");
+  return getContentFileNames("timecapsule");
 }
 
 export function getTimecapsuleItems() {

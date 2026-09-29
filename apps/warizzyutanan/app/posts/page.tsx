@@ -1,14 +1,12 @@
-import { readdirSync } from "fs";
-
 import Link from "next/link";
 
 import BlogLayout from "../../components/BlogLayout";
-import getPostData, { postsDirectory } from "../../components/lib/getPostData";
+import { getContentFileNames } from "../../components/lib/getContent";
+import getPostData from "../../components/lib/getPostData";
 import PostDate from "../../components/PostDate";
 
 function getPosts() {
-  return readdirSync(postsDirectory)
-    .filter((file) => file.endsWith(".md"))
+  return getContentFileNames("post")
     .map(getPostData)
     .filter((post) => post.isPublished);
 }

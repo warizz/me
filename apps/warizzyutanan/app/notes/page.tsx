@@ -1,14 +1,12 @@
-import { readdirSync, readFileSync } from "fs";
-import path from "path";
-
-import matter from "gray-matter";
 import { Metadata } from "next";
 import Link from "next/link";
 
 import BlogLayout from "../../components/BlogLayout";
+import {
+  getContent,
+  getContentFileNames,
+} from "../../components/lib/getContent";
 import PostDate from "../../components/PostDate";
-
-const notesDirectory = path.join(process.cwd(), "resource", "notes");
 
 interface Note {
   fileName: string;
@@ -30,29 +28,26 @@ function extractHeading(content: string): string {
 
 function getNotes(): Note[] {
   try {
-    const fileNames = readdirSync(notesDirectory);
+    const fileNames = getContentFileNames("note");
 
     return fileNames
-      .filter((fileName) => fileName.endsWith(".md"))
       .map((fileName) => {
-        const fullPath = path.join(notesDirectory, fileName);
-        const fileContents = readFileSync(fullPath, "utf8");
-        const meta = matter(fileContents);
+        const { data, markdownString } = getContent(fileName);
 
         // Parse date from filename (format: 2024-01-01-topicxxx.md)
         const dateMatch = fileName.match(/^(\d{4}-\d{2}-\d{2})-/);
         const date = dateMatch
           ? new Date(dateMatch[1])
-          : new Date(meta.data.date || Date.now());
+          : new Date(String(data.date || Date.now()));
 
         // Extract heading from content
         const heading =
-          meta.data.title ||
-          extractHeading(meta.content) ||
+          String(data.title || "") ||
+          extractHeading(markdownString) ||
           fileName.replace(/\.md$/, "") ||
           "Untitled";
 
-        const tldr = String(meta.data.tldr || "");
+        const tldr = String(data.tldr || "");
 
         return { fileName, date, heading, tldr };
       })
@@ -86,8 +81,8 @@ export default async function Page() {
     >
       {notes.length === 0 ? (
         <p className="italic">
-          No notes yet. Start adding your notes in <code>resource/notes/</code>{" "}
-          directory.
+          No notes yet. Start adding your notes in{" "}
+          <code>resource/content/</code> directory.
         </p>
       ) : (
         <div data-testid="notes">
@@ -95,7 +90,7 @@ export default async function Page() {
             {notes.length} {notes.length === 1 ? "note" : "notes"}
           </p>
           {notes.map((note) => {
-            const noteId = path.parse(note.fileName).name;
+            const noteId = note.fileName.replace(/\.md$/, "");
             return (
               <div
                 key={note.fileName}

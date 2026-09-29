@@ -1,10 +1,6 @@
-import fs from "fs";
-import path from "path";
-
-import matter from "gray-matter";
 import { z } from "zod";
 
-export const postsDirectory = path.join(process.cwd(), "posts");
+import { getContent } from "./getContent";
 
 export const Post = z.object({
   date: z.string(),
@@ -21,20 +17,17 @@ export type IPost = z.infer<typeof Post>;
 
 export default function getPostData(fileName: string) {
   try {
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const meta = matter(fileContents);
-    const [id] = fileName.split(".");
+    const { data, markdownString, id } = getContent(fileName);
 
     return Post.parse({
-      date: meta.data.date,
-      description: meta.data.description ?? "",
+      date: data.date,
+      description: data.description ?? "",
       id,
-      isPublished: !!meta.data.publish,
-      markdownString: meta.content,
-      tags: meta.data.tags ?? [],
-      title: meta.data.title,
-      tldr: meta.data.tldr,
+      isPublished: !!data.publish,
+      markdownString,
+      tags: data.tags ?? [],
+      title: data.title,
+      tldr: data.tldr,
     });
   } catch (error) {
     console.error(`::error::getPostData::${fileName}`, error);

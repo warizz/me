@@ -1,7 +1,8 @@
-import { readdirSync, writeFileSync } from "fs";
+import { writeFileSync } from "fs";
 import path from "path";
 
-import getPostData, { postsDirectory } from "./getPostData";
+import { getContentFileNames } from "./getContent";
+import getPostData from "./getPostData";
 import parseToSitemap from "./parseToSitemap";
 
 function _info(...args: unknown[]) {
@@ -15,7 +16,7 @@ export default function updateSitemap(domain: string) {
   _info("started ...");
   _info(`publicDir "${publicDir}"`);
 
-  const posts = readdirSync(postsDirectory)
+  const posts = getContentFileNames("post")
     .map(getPostData)
     .filter((post) => post.isPublished);
 
