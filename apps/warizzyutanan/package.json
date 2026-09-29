@@ -22,7 +22,7 @@
     "@types/lodash": "4.17.25",
     "browser-image-compression": "2.0.2",
     "clsx": "2.1.1",
-    "csv-parse": "7.0.2",
+    "csv-parse": "7.0.3",
     "date-fns": "4.1.0",
     "gray-matter": "4.0.3",
     "lodash": "4.18.1",
