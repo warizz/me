@@ -7,34 +7,34 @@ const photoMeta: Record<string, { w: number; h: number; srcset: string }> = {
       "/timecapsule/bangkok-flood-2026/01-prachaniwet-market.640w.webp 640w, /timecapsule/bangkok-flood-2026/01-prachaniwet-market.webp 800w",
   },
   "/timecapsule/bangkok-flood-2026/02-nawamin-road.webp": {
-    w: 1500,
-    h: 1000,
+    w: 1280,
+    h: 854,
     srcset:
-      "/timecapsule/bangkok-flood-2026/02-nawamin-road.640w.webp 640w, /timecapsule/bangkok-flood-2026/02-nawamin-road.960w.webp 960w, /timecapsule/bangkok-flood-2026/02-nawamin-road.webp 1500w",
+      "/timecapsule/bangkok-flood-2026/02-nawamin-road.640w.webp 640w, /timecapsule/bangkok-flood-2026/02-nawamin-road.960w.webp 960w, /timecapsule/bangkok-flood-2026/02-nawamin-road.webp 1280w",
   },
   "/timecapsule/bangkok-flood-2026/03-phahon-yothin.webp": {
-    w: 1500,
-    h: 1000,
+    w: 1280,
+    h: 854,
     srcset:
-      "/timecapsule/bangkok-flood-2026/03-phahon-yothin.640w.webp 640w, /timecapsule/bangkok-flood-2026/03-phahon-yothin.960w.webp 960w, /timecapsule/bangkok-flood-2026/03-phahon-yothin.webp 1500w",
+      "/timecapsule/bangkok-flood-2026/03-phahon-yothin.640w.webp 640w, /timecapsule/bangkok-flood-2026/03-phahon-yothin.960w.webp 960w, /timecapsule/bangkok-flood-2026/03-phahon-yothin.webp 1280w",
   },
   "/timecapsule/bangkok-flood-2026/04-bang-kapi-intersection.webp": {
-    w: 1500,
-    h: 1125,
+    w: 1280,
+    h: 960,
     srcset:
-      "/timecapsule/bangkok-flood-2026/04-bang-kapi-intersection.640w.webp 640w, /timecapsule/bangkok-flood-2026/04-bang-kapi-intersection.960w.webp 960w, /timecapsule/bangkok-flood-2026/04-bang-kapi-intersection.webp 1500w",
+      "/timecapsule/bangkok-flood-2026/04-bang-kapi-intersection.640w.webp 640w, /timecapsule/bangkok-flood-2026/04-bang-kapi-intersection.960w.webp 960w, /timecapsule/bangkok-flood-2026/04-bang-kapi-intersection.webp 1280w",
   },
   "/timecapsule/bangkok-flood-2026/05-lat-phrao-41.webp": {
-    w: 1500,
-    h: 2000,
+    w: 1280,
+    h: 1707,
     srcset:
-      "/timecapsule/bangkok-flood-2026/05-lat-phrao-41.640w.webp 640w, /timecapsule/bangkok-flood-2026/05-lat-phrao-41.960w.webp 960w, /timecapsule/bangkok-flood-2026/05-lat-phrao-41.webp 1500w",
+      "/timecapsule/bangkok-flood-2026/05-lat-phrao-41.640w.webp 640w, /timecapsule/bangkok-flood-2026/05-lat-phrao-41.960w.webp 960w, /timecapsule/bangkok-flood-2026/05-lat-phrao-41.webp 1280w",
   },
   "/timecapsule/bangkok-flood-2026/08-hero.webp": {
-    w: 1300,
-    h: 731,
+    w: 1280,
+    h: 720,
     srcset:
-      "/timecapsule/bangkok-flood-2026/08-hero.640w.webp 640w, /timecapsule/bangkok-flood-2026/08-hero.960w.webp 960w, /timecapsule/bangkok-flood-2026/08-hero.webp 1300w",
+      "/timecapsule/bangkok-flood-2026/08-hero.640w.webp 640w, /timecapsule/bangkok-flood-2026/08-hero.960w.webp 960w, /timecapsule/bangkok-flood-2026/08-hero.webp 1280w",
   },
   "/timecapsule/bangkok-flood-2026/09-phetchaburi-aerial.webp": {
     w: 1200,
@@ -85,10 +85,10 @@ const photoMeta: Record<string, { w: number; h: number; srcset: string }> = {
       "/timecapsule/bangkok-flood-2026/17-market-wading.640w.webp 640w, /timecapsule/bangkok-flood-2026/17-market-wading.960w.webp 960w, /timecapsule/bangkok-flood-2026/17-market-wading.webp 1200w",
   },
   "/timecapsule/bangkok-flood-2026/18-tmd-forecast.webp": {
-    w: 1440,
-    h: 810,
+    w: 1280,
+    h: 720,
     srcset:
-      "/timecapsule/bangkok-flood-2026/18-tmd-forecast.640w.webp 640w, /timecapsule/bangkok-flood-2026/18-tmd-forecast.960w.webp 960w, /timecapsule/bangkok-flood-2026/18-tmd-forecast.webp 1440w",
+      "/timecapsule/bangkok-flood-2026/18-tmd-forecast.640w.webp 640w, /timecapsule/bangkok-flood-2026/18-tmd-forecast.960w.webp 960w, /timecapsule/bangkok-flood-2026/18-tmd-forecast.webp 1280w",
   },
 };
 
