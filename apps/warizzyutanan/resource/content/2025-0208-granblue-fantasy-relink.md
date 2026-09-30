@@ -2,6 +2,7 @@
 title: "Granblue Fantasy: Relink"
 date: "2025-02-08"
 tldr: "An addictive game with excellent gameplay, UI, and satisfying grinding, though the story is weak."
+platinum: true
 publish: true
 tags:
   - game

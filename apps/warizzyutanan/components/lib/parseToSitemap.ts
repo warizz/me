@@ -10,6 +10,9 @@ export default function parseToSitemap(DOMAIN: string, posts: IPost[]) {
        <loc>https://www.${DOMAIN}/posts/</loc>
      </url>
      <url>
+       <loc>https://www.${DOMAIN}/games/</loc>
+     </url>
+     <url>
        <loc>https://www.${DOMAIN}/watermark/</loc>
      </url>
      <url>
