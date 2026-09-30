@@ -90,16 +90,18 @@ test.describe("timecapsule event", () => {
     await expect(page.getByText("AI-generated summary")).toBeVisible();
   });
 
-  test("renders all five timeline nodes", async ({ page }) => {
+  test("renders all seven timeline nodes", async ({ page }) => {
     await page.goto("/timecapsule/2026-0926-bangkok-flood");
 
     const headings = page.locator("h2");
-    await expect(headings).toHaveCount(5);
+    await expect(headings).toHaveCount(7);
     await expect(page.getByRole("heading", { name: "the rain begins" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "warnings stack up" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "eastern Bangkok under water" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "flooding persists" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "slow recovery" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "slow drain, airports in chaos" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "22 dead, recriminations begin" })).toBeVisible();;
   });
 
   test("lazy-loads every photo with a datestamped badge", async ({ page }) => {
@@ -126,7 +128,7 @@ test.describe("timecapsule event", () => {
     await page.goto("/timecapsule/2026-0926-bangkok-flood");
 
     const toggles = page.getByTestId("tc-note-toggle");
-    await expect(toggles).toHaveCount(2); // Thu demo note + Fri condo note
+    await expect(toggles).toHaveCount(3); // Thu demo note + Fri condo note + Tue run note
 
     // collapsed: no note content in the DOM, so no note media is fetched
     await expect(page.getByTestId("tc-note")).toHaveCount(0);

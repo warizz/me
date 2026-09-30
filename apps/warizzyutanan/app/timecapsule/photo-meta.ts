@@ -635,6 +635,30 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-0926-bangkok-flood-19-suvarnabhumi-luggage.webp": {
+    w: 800,
+    h: 533,
+    srcset:
+      "/posts/2026-0926-bangkok-flood-19-suvarnabhumi-luggage.640w.webp 640w, /posts/2026-0926-bangkok-flood-19-suvarnabhumi-luggage.webp 800w",
+    sizes:
+      "(min-width: 1024px) 450px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-0926-bangkok-flood-20-khlong-chan-aid.webp": {
+    w: 800,
+    h: 533,
+    srcset:
+      "/posts/2026-0926-bangkok-flood-20-khlong-chan-aid.640w.webp 640w, /posts/2026-0926-bangkok-flood-20-khlong-chan-aid.webp 800w",
+    sizes:
+      "(min-width: 1024px) 450px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-0926-bangkok-flood-21-bangkapi-market.webp": {
+    w: 1280,
+    h: 854,
+    srcset:
+      "/posts/2026-0926-bangkok-flood-21-bangkapi-market.640w.webp 640w, /posts/2026-0926-bangkok-flood-21-bangkapi-market.960w.webp 960w, /posts/2026-0926-bangkok-flood-21-bangkapi-market.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 450px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
     h: 871,
