@@ -24,11 +24,11 @@ tags:
 
 - Facial expressions
 - Very easy mode, so an easy playthrough
-- OP devil arms
+- OP devil's arms
 - Easy platinum
 
 ## The not so good
 
 - Very old-fashioned RPG vibes — I get it, it's an old game, but it did not age well
 - Boring story (skits are ok)
-- Boring fighting, and once the OP devil arms kick in there's too little content left to play
+- Boring fighting, and once the OP devil's arms kick in there's too little content left to play

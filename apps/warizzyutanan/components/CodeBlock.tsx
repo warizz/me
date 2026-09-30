@@ -25,8 +25,10 @@ export default function CodeBlock({
   [key: string]: unknown;
 }) {
   return (
-    <PrismLight language={language} style={oneDark} {...(props as any)}>
-      {children}
-    </PrismLight>
+    <div className="my-6 overflow-x-auto">
+      <PrismLight language={language} style={oneDark} {...(props as any)}>
+        {children}
+      </PrismLight>
+    </div>
   );
 }
