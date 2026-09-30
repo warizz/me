@@ -13,6 +13,7 @@ export async function generateMetadata() {
 
 const LOGS = [
   { url: "/posts", title: "blogs" },
+  { url: "/games", title: "games" },
   { url: "/logs", title: "logs" },
   { url: "/trips", title: "trips" },
   { url: "/notes", title: "notes" },
