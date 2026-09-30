@@ -14,6 +14,12 @@ tags:
 
 ![Tales of Arise key art.](/posts/2026-0927-tales-of-arise.webp)
 
+![Party menu, everyone at lvl 100 with 910 CP.](/posts/2026-0927-tales-of-arise-menu-lvl-100.webp)
+
+![Alphen's stats, devil's arms at 1652 ATK.](/posts/2026-0927-tales-of-arise-alphen-stats.webp)
+
+![Stats screen, playtime at the top — 41h.](/posts/2026-0927-tales-of-arise-playtime.webp)
+
 ## The good
 
 - Facial expressions
