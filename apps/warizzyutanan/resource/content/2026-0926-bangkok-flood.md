@@ -7,7 +7,7 @@ tags:
   - bangkok
   - flood
   - timecapsule
-tldr: "Two days of heavy rain flooded eastern Bangkok — all canals full, 15 main roads under water, all 50 districts declared disaster zones. Risk until Sep 27."
+tldr: "Two days of heavy rain flooded eastern Bangkok and 29 provinces — 2.6 million affected, 22 dead. Water receding slowly; some communities under water into October."
 ---
 
 Rain started Thursday 4pm and barely stopped for two days. By Saturday morning, eastern Bangkok was under water — every canal full, 15 main roads flooded, all 50 districts declared disaster zones. More water kept flowing in from Nonthaburi and Pathum Thani. West Bangkok stayed dry.
@@ -117,7 +117,9 @@ Nearly 300mm total in Min Buri, Klong Sam Wa and Saphan Sung. Morning briefing f
 - Samut Prakan: 6 districts disaster zones (rain + high tides) — [The Nation](https://www.nationthailand.com/news/general/40071566)
 - Recovery uneven: Vibhavadi improving, Bang Kapi still blocks small cars — [The Nation](https://www.nationthailand.com/news/general/40071576)
 - TMD final warning: system moving away — 1 more day of heavy rain possible — [The Nation](https://www.nationthailand.com/news/general/40071574)
-- Suvarnabhumi strain: stranded luggage, military called in; THAI waives change fees, full refunds — [The Standard](https://thestandard.co/military-help-suvarnabhumi-luggage-flood/) · [The Standard](https://thestandard.co/thai-airways-flood-compensation/)
+- Suvarnabhumi strain: THAI waives change fees, offers full refunds — [The Standard](https://thestandard.co/military-help-suvarnabhumi-luggage-flood/) · [The Standard](https://thestandard.co/thai-airways-flood-compensation/)
+- Baggage crisis takes hold: flood-stranded ground staff unable to reach the airport since Sep 26 — THAI also handles bags for partner airlines, so delays spread; 34 flights delayed, 69 air force officers deployed on luggage — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328140/thai-airways-cancels-8-more-flights-amid-luggage-chaos)
+- TG619, the night from hell: Chengdu passengers pushed to 11pm, parked in a hotel with no updates, airborne 4.50am — then 25 minutes stuck at the gate (no staff to open the door) and 2 hours at the carousel — [The Nation](https://www.nationthailand.com/news/general/40071648)
 - Toll-free M7/M9/Don Muang Tollway extended to Sep 29 midnight — [The Nation](https://www.nationthailand.com/news/general/40071567)
 - Food supplies "still secure"; national disaster insurance starts Oct 1 — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3327135/food-supplies-still-secure) · [The Nation](https://www.nationthailand.com/news/general/40071565)
 
@@ -127,4 +129,37 @@ Nearly 300mm total in Min Buri, Klong Sam Wa and Saphan Sung. Morning briefing f
 ![Daily life amid the flood](/posts/2026-0926-bangkok-flood-17-market-wading.webp "2026-09-27")
 *Wading through the market, Klong Chan to Lat Phrao. Photo: [THE STANDARD](https://thestandard.co/klong-chan-ladprao-flood-daily-life/)*
 
-*Photos: Bangkok Post, The Nation, THE STANDARD. Updated 28 Sep 2026.*
+### Tue 29 Sep — slow drain, airports in chaos
+
+- Government: floods drain "in a few more days" if no rain returns; city pumping at full 51 million m³/day — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328174/bangkok-flood-will-drain-off-in-a-few-days)
+- 6 roads still impassable to small cars: Ramkhamhaeng 24, Srinagarindra, Nawamin, Lat Phrao 101–Bang Kapi, Suwinthawong, Pattanakan 53 — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328174/bangkok-flood-will-drain-off-in-a-few-days)
+- Deepest water: 1–1.5m at Kheha Khlong Chan (Bang Kapi) and Kheha Romklao (Lat Krabang); ~50,000 victims; garbage polluting stagnant water — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328174/bangkok-flood-will-drain-off-in-a-few-days)
+- Chadchart: 90% of main roads dry in 2 days, low-lying communities up to a week — Lat Krabang and Sai Mai of most concern — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328174/bangkok-flood-will-drain-off-in-a-few-days) · [The Nation](https://www.nationthailand.com/news/40071645)
+- 155 schools shut pending damage survey — closures in 15 critical districts run Sep 30–Oct 2 — [The Nation](https://www.nationthailand.com/news/general/40071659) · [THE STANDARD](https://thestandard.co/bangkok-schools-flood-closure/)
+- Restaurants: sales down as much as 80%; wholesale vegetable prices doubled — [The Nation](https://www.nationthailand.com/business/economy/40071661)
+- THAI CEO Chai Eamsiri, live: "no excuses" — under 3% of flights on time in two days; Bangkok departures cut 30–40%; 72 hours to clear 5,600 stranded bags; load masters the bottleneck (20 of 45 needed) — [The Nation](https://www.nationthailand.com/business/corporate/40071646)
+- Evening: 37 more flights scrapped through Thu (London, Frankfurt, Paris, Sydney…) — 59 cancelled and 330 stalled since Sep 26; waiting passengers "looked like zombies" — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328378/thai-airways-cancels-37-more-flights) · [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328200/5600-delayed-bags-330-stalled-flights-prompt-thai-apology)
+- Tourism minister: THAI chief should resign if "unwilling" to fix the baggage delays — [The Nation](https://www.nationthailand.com/news/40071644)
+- Cabinet approves THB165bn Chai Nat–Pa Sak flood-diversion canal, plus THB4bn relief — [The Nation](https://www.nationthailand.com/news/politics/40071654)
+- DDPM orders evacuations in 7 Ratchaburi districts as the Mae Klong River rises; high-tide warning for 8 provinces through Oct 4 — [The Nation](https://www.nationthailand.com/news/40071649) · [The Nation](https://www.nationthailand.com/news/general/40071635)
+
+![Luggage piles up at Suvarnabhumi airport](/posts/2026-0926-bangkok-flood-19-suvarnabhumi-luggage.webp "2026-09-29")
+*Baggage overflows the belts on Suvarnabhumi's second floor. Photo: [Nutthawut Wichienbut / Bangkok Post](https://www.bangkokpost.com/thailand/general/3328378/thai-airways-cancels-37-more-flights)*
+
+![Aid distribution at Kheha Khlong Chan flats](/posts/2026-0926-bangkok-flood-20-khlong-chan-aid.webp "2026-09-29")
+*Aid reaches Kheha Khlong Chan flats, Bang Kapi. Photo: [Friends in Need Volunteers Foundation, Thai Red Cross / Bangkok Post](https://www.bangkokpost.com/thailand/general/3328174/bangkok-flood-will-drain-off-in-a-few-days)*
+
+![Bang Kapi wet market on Lat Phrao Road](/posts/2026-0926-bangkok-flood-21-bangkapi-market.webp "2026-09-29")
+*Bang Kapi wet market still trading. Photo: [Nutthawat Wicheanbut / Bangkok Post](https://www.bangkokpost.com/thailand/general/3328174/bangkok-flood-will-drain-off-in-a-few-days)*
+
+> After work that evening I went for a run at Rama IX Park — the sun was out, the road was dry, my life was back to normal. Quite the opposite of some areas of Bangkok.
+
+### Wed 30 Sep — 22 dead, recriminations begin
+
+- DDPM: 22 dead, 2.6 million affected, 940,000+ households across 29 provinces and Bangkok — Bangkok alone 329,000 households, 4 deaths — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328440/floods-affect-26m-with-22-deaths) · [The Nation](https://www.nationthailand.com/news/general/40071641)
+- Water still rising in Pathum Thani, Chon Buri and Ayutthaya; Mae Klong riverside residents told to move belongings up — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328440/floods-affect-26m-with-22-deaths)
+- RID holds back Phetchaburi water (reservoir ~94%); Mae Klong Dam discharge to lift downstream levels 80cm+ in Ratchaburi, Kanchanaburi, Samut Songkhram, Samut Sakhon — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328440/floods-affect-26m-with-22-deaths)
+- PM Anutin under fire: Klong Chan flats cut off without power, food or aid — residents shouted criticism from balconies on his return; experts say the BMA underestimated the rain and many pumps were out of order — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328675/anutin-under-fire-over-flooding)
+- THAI suspends Suvarnabhumi cargo intake for 7 days — overflowing freight was blocking baggage equipment — [The Nation](https://www.nationthailand.com/business/corporate/40071676)
+
+*Photos: Bangkok Post, The Nation, THE STANDARD. Updated 30 Sep 2026.*
