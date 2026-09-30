@@ -176,8 +176,8 @@ importers:
         specifier: 10.1.8
         version: 10.1.8(eslint@10.3.0(jiti@2.7.0))
       eslint-config-turbo:
-        specifier: 2.9.6
-        version: 2.9.6(eslint@10.3.0(jiti@2.7.0))(turbo@2.11.4)
+        specifier: 2.11.4
+        version: 2.11.4(eslint@10.3.0(jiti@2.7.0))(turbo@2.11.4)
       eslint-plugin-import-x:
         specifier: 4.17.1
         version: 4.17.1(@typescript-eslint/utils@8.70.1(eslint@10.3.0(jiti@2.7.0))(typescript@5.8.2))(eslint-import-resolver-node@0.3.10)(eslint@10.3.0(jiti@2.7.0))
@@ -1578,8 +1578,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-config-turbo@2.9.6:
-    resolution: {integrity: sha512-yCZ2YcUKU2KtAO7fjqBQLI7bIc/cIH4lF/yk4ntSRDfsQiRpAtWaGTxqqMPVLZj5JpFfSZGceuM6YFHufJD5iA==}
+  eslint-config-turbo@2.11.4:
+    resolution: {integrity: sha512-LnpLrdosAtipbO8v4PS8JFAGT8wQCiJwGonS6jeMJkc9qRh5cPN4tbx3EV27UX6yFVmQpY2M+bCU+S3oe1e3/w==}
     peerDependencies:
       eslint: '>6.6.0'
       turbo: '>2.0.0'
@@ -1684,6 +1684,12 @@ packages:
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
+
+  eslint-plugin-turbo@2.11.4:
+    resolution: {integrity: sha512-1Aq8JjnnzatTpQbK0a4iI1teaJuwH+dBGSp8ok3aHT8HbCn0EGUbQfIVPcUHRm1RXPINEUuyQaj2HvgG5oXcXA==}
+    peerDependencies:
+      eslint: '>6.6.0'
+      turbo: '>2.0.0'
 
   eslint-plugin-turbo@2.9.6:
     resolution: {integrity: sha512-mntEkRe71izva2mJHZGxH2ccOdySqXiNJf5tdzRabaxhudLCeonPUdTE6aNGOhgVeL1lclxg5/ibp3C/cpe+kQ==}
@@ -4546,10 +4552,10 @@ snapshots:
     dependencies:
       eslint: 10.3.0(jiti@2.7.0)
 
-  eslint-config-turbo@2.9.6(eslint@10.3.0(jiti@2.7.0))(turbo@2.11.4):
+  eslint-config-turbo@2.11.4(eslint@10.3.0(jiti@2.7.0))(turbo@2.11.4):
     dependencies:
       eslint: 10.3.0(jiti@2.7.0)
-      eslint-plugin-turbo: 2.9.6(eslint@10.3.0(jiti@2.7.0))(turbo@2.11.4)
+      eslint-plugin-turbo: 2.11.4(eslint@10.3.0(jiti@2.7.0))(turbo@2.11.4)
       turbo: 2.11.4
 
   eslint-import-context@0.1.9(unrs-resolver@1.12.2):
@@ -4777,6 +4783,12 @@ snapshots:
       semver: 6.3.1
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
+
+  eslint-plugin-turbo@2.11.4(eslint@10.3.0(jiti@2.7.0))(turbo@2.11.4):
+    dependencies:
+      dotenv: 16.0.3
+      eslint: 10.3.0(jiti@2.7.0)
+      turbo: 2.11.4
 
   eslint-plugin-turbo@2.9.6(eslint@10.3.0(jiti@2.7.0))(turbo@2.11.4):
     dependencies:
