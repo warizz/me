@@ -659,6 +659,30 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 450px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-0927-tales-of-arise-alphen-stats.webp": {
+    w: 1280,
+    h: 960,
+    srcset:
+      "/posts/2026-0927-tales-of-arise-alphen-stats.640w.webp 640w, /posts/2026-0927-tales-of-arise-alphen-stats.960w.webp 960w, /posts/2026-0927-tales-of-arise-alphen-stats.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 400px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-0927-tales-of-arise-menu-lvl-100.webp": {
+    w: 1280,
+    h: 960,
+    srcset:
+      "/posts/2026-0927-tales-of-arise-menu-lvl-100.640w.webp 640w, /posts/2026-0927-tales-of-arise-menu-lvl-100.960w.webp 960w, /posts/2026-0927-tales-of-arise-menu-lvl-100.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 400px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-0927-tales-of-arise-playtime.webp": {
+    w: 1280,
+    h: 960,
+    srcset:
+      "/posts/2026-0927-tales-of-arise-playtime.640w.webp 640w, /posts/2026-0927-tales-of-arise-playtime.960w.webp 960w, /posts/2026-0927-tales-of-arise-playtime.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 400px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/2026-0927-tales-of-arise.webp": {
     w: 1280,
     h: 675,
