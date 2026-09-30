@@ -19,8 +19,13 @@ export default function Breadcrumbs({ list }: Props) {
         if (index + 1 !== list.length) {
           return (
             <Fragment key={index}>
-              <Link href={item.href}>{item.text}</Link>
-              <span>/</span>
+              <Link
+                href={item.href}
+                className="text-primary dark:text-primary-invert hover:underline"
+              >
+                {item.text}
+              </Link>
+              <span className="text-gray-400 dark:text-gray-500">/</span>
             </Fragment>
           );
         }
