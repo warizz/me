@@ -659,6 +659,14 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 450px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-0927-tales-of-arise.webp": {
+    w: 1280,
+    h: 675,
+    srcset:
+      "/posts/2026-0927-tales-of-arise.640w.webp 640w, /posts/2026-0927-tales-of-arise.960w.webp 960w, /posts/2026-0927-tales-of-arise.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 569px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
     h: 871,
