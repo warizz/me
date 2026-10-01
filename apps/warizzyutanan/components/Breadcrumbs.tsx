@@ -14,14 +14,14 @@ interface Props {
 
 export default function Breadcrumbs({ list }: Props) {
   return (
-    <nav className="flex gap-2 prose-sm font-sans flex-wrap">
+    <nav className="prose-sm flex flex-wrap gap-2 font-sans">
       {list.map((item, index) => {
         if (index + 1 !== list.length) {
           return (
             <Fragment key={index}>
               <Link
                 href={item.href}
-                className="text-primary dark:text-primary-invert hover:underline"
+                className="text-primary hover:underline dark:text-primary-invert"
               >
                 {item.text}
               </Link>
@@ -30,7 +30,7 @@ export default function Breadcrumbs({ list }: Props) {
           );
         }
         return (
-          <span key={index} className="dark:text-white text-black">
+          <span key={index} className="text-black dark:text-white">
             {item.text}
           </span>
         );

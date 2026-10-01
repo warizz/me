@@ -17,8 +17,8 @@ export default function ColorSchemeToggle({ className }: Props) {
       onClick={() => toggleColorScheme()}
       aria-label={`Current theme: ${preferredColorScheme}. Click to toggle.`}
       className={clsx(
-        "raw-mono font-black uppercase text-xs md:text-sm hover:text-primary dark:hover:text-primary-invert transition-colors",
-        "focus:outline-hidden focus:ring-2 focus:ring-primary dark:focus:ring-primary-invert",
+        "raw-mono text-xs font-black uppercase transition-colors hover:text-primary md:text-sm dark:hover:text-primary-invert",
+        "focus:ring-2 focus:ring-primary focus:outline-hidden dark:focus:ring-primary-invert",
         className,
       )}
     >

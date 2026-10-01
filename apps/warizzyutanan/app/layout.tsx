@@ -1,5 +1,4 @@
 import "./global.css";
-
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import { ReactNode } from "react";
@@ -33,7 +32,7 @@ export default function RootLayout({ children }: Props) {
       ) : null}
 
       <body suppressHydrationWarning>
-        <div className="bg-white dark:bg-black min-h-screen ease-in duration-100">
+        <div className="min-h-screen bg-white duration-100 ease-in dark:bg-black">
           {children}
         </div>
       </body>

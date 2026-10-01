@@ -41,7 +41,9 @@ test.describe("timecapsule index", () => {
     await page.goto("/timecapsule");
 
     await expect(page.locator("h1")).toHaveText("Moments worth remembering");
-    await expect(page.locator("header p", { hasText: "timecapsule" })).toBeVisible();
+    await expect(
+      page.locator("header p", { hasText: "timecapsule" }),
+    ).toBeVisible();
     await expect(page.getByText("AI-generated summaries")).toBeVisible();
 
     const items = page.locator("ol > li");
@@ -60,9 +62,7 @@ test.describe("timecapsule index", () => {
 
   test("navigates to the event page", async ({ page }) => {
     await page.goto("/timecapsule");
-    await page
-      .getByRole("link", { name: "Bangkok Under Water" })
-      .click();
+    await page.getByRole("link", { name: "Bangkok Under Water" }).click();
     await expect(page).toHaveURL(/\/timecapsule\/2026-0926-bangkok-flood$/);
   });
 
@@ -95,13 +95,27 @@ test.describe("timecapsule event", () => {
 
     const headings = page.locator("h2");
     await expect(headings).toHaveCount(7);
-    await expect(page.getByRole("heading", { name: "the rain begins" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "warnings stack up" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "eastern Bangkok under water" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "flooding persists" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "slow recovery" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "slow drain, airports in chaos" })).toBeVisible();
-    await expect(page.getByRole("heading", { name: "22 dead, recriminations begin" })).toBeVisible();;
+    await expect(
+      page.getByRole("heading", { name: "the rain begins" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "warnings stack up" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "eastern Bangkok under water" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "flooding persists" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "slow recovery" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "slow drain, airports in chaos" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "22 dead, recriminations begin" }),
+    ).toBeVisible();
   });
 
   test("lazy-loads every photo with a datestamped badge", async ({ page }) => {
@@ -140,8 +154,12 @@ test.describe("timecapsule event", () => {
         .locator("xpath=ancestor::div[contains(@class,'rounded-lg')][1]");
 
     // each toggle sits in its own day's card
-    await expect(cardOf("the rain begins").getByTestId("tc-note-toggle")).toBeVisible();
-    await expect(cardOf("warnings stack up").getByTestId("tc-note-toggle")).toBeVisible();
+    await expect(
+      cardOf("the rain begins").getByTestId("tc-note-toggle"),
+    ).toBeVisible();
+    await expect(
+      cardOf("warnings stack up").getByTestId("tc-note-toggle"),
+    ).toBeVisible();
 
     // expanding the Thu note mounts its media lazily
     await cardOf("the rain begins").getByTestId("tc-note-toggle").click();

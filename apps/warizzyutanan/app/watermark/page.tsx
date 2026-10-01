@@ -207,41 +207,41 @@ export default function WatermarkApp() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa] text-[#111] font-mono">
+    <div className="min-h-screen bg-[#fafafa] font-mono text-[#111]">
       {/* Header - Retro/Brutalist style */}
       <header className="border-b-4 border-black bg-[#ffeb3b] p-6 lg:p-8">
-        <h1 className="text-2xl md:text-3xl font-black uppercase font-serif tracking-widest">
+        <h1 className="font-serif text-2xl font-black tracking-widest uppercase md:text-3xl">
           Watermark Image
         </h1>
       </header>
 
-      <main className="max-w-7xl mx-auto p-4 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <main className="mx-auto grid max-w-7xl grid-cols-1 gap-8 p-4 md:p-8 lg:grid-cols-12">
         {/* Settings Sidebar */}
-        <div className="lg:col-span-4 flex flex-col gap-6">
+        <div className="flex flex-col gap-6 lg:col-span-4">
           <div className="border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-            <h2 className="text-2xl font-black mb-6 uppercase flex items-center gap-2 border-b-4 border-black pb-2">
-              <Settings2 className="w-6 h-6" strokeWidth={3} /> Settings
+            <h2 className="mb-6 flex items-center gap-2 border-b-4 border-black pb-2 text-2xl font-black uppercase">
+              <Settings2 className="h-6 w-6" strokeWidth={3} /> Settings
             </h2>
 
             <div className="space-y-5">
               <div>
-                <label className="block font-black uppercase mb-1">
+                <label className="mb-1 block font-black uppercase">
                   Watermark Text
                 </label>
                 <input
                   type="text"
                   value={watermarkText}
                   onChange={(e) => setWatermarkText(e.target.value)}
-                  className="w-full border-4 border-black p-3 font-bold bg-white focus:outline-hidden focus:bg-[#ffeb3b] transition-colors"
+                  className="w-full border-4 border-black bg-white p-3 font-bold transition-colors focus:bg-[#ffeb3b] focus:outline-hidden"
                 />
               </div>
 
               <button
                 onClick={() => setShowAdvancedSettings(!showAdvancedSettings)}
-                className="w-full mt-4 p-3 border-4 border-black font-black uppercase bg-white text-black hover:bg-gray-100 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-1 active:translate-y-1 transition-all flex flex-col items-center justify-center focus:outline-hidden"
+                className="mt-4 flex w-full flex-col items-center justify-center border-4 border-black bg-white p-3 font-black text-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:bg-gray-100 focus:outline-hidden active:translate-x-1 active:translate-y-1 active:shadow-none"
               >
                 <div className="flex items-center gap-2">
-                  <Settings2 className="w-5 h-5" />
+                  <Settings2 className="h-5 w-5" />
                   <span>
                     {showAdvancedSettings
                       ? "Hide Advanced Settings"
@@ -251,9 +251,9 @@ export default function WatermarkApp() {
               </button>
 
               {showAdvancedSettings && (
-                <div className="space-y-5 pt-2 border-t-4 border-black mt-4">
+                <div className="mt-4 space-y-5 border-t-4 border-black pt-2">
                   <div>
-                    <label className="block font-black uppercase mb-1 flex justify-between">
+                    <label className="mb-1 block flex justify-between font-black uppercase">
                       <span>Angle</span>
                       <span>{angle}°</span>
                     </label>
@@ -263,13 +263,13 @@ export default function WatermarkApp() {
                       max="180"
                       value={angle}
                       onChange={(e) => setAngle(Number(e.target.value))}
-                      className="w-full accent-black h-4 cursor-pointer"
+                      className="h-4 w-full cursor-pointer accent-black"
                     />
                   </div>
 
                   <div className="flex gap-4">
                     <div className="flex-1">
-                      <label className="block font-black uppercase mb-1 flex justify-between">
+                      <label className="mb-1 block flex justify-between font-black uppercase">
                         <span>Text Opacity</span>
                         <span>{Math.round(textOpacity * 100)}%</span>
                       </label>
@@ -280,19 +280,19 @@ export default function WatermarkApp() {
                         step="0.05"
                         value={textOpacity}
                         onChange={(e) => setTextOpacity(Number(e.target.value))}
-                        className="w-full accent-black h-4 cursor-pointer"
+                        className="h-4 w-full cursor-pointer accent-black"
                       />
                     </div>
                     <div className="flex-1">
-                      <label className="block font-black uppercase mb-1">
+                      <label className="mb-1 block font-black uppercase">
                         Text Color
                       </label>
-                      <div className="relative border-4 border-black h-12 cursor-pointer w-full overflow-hidden">
+                      <div className="relative h-12 w-full cursor-pointer overflow-hidden border-4 border-black">
                         <input
                           type="color"
                           value={textColor}
                           onChange={(e) => setTextColor(e.target.value)}
-                          className="absolute -top-2 -left-2 w-[150%] h-[150%] cursor-pointer"
+                          className="absolute -top-2 -left-2 h-[150%] w-[150%] cursor-pointer"
                         />
                       </div>
                     </div>
@@ -300,7 +300,7 @@ export default function WatermarkApp() {
 
                   <div className="flex gap-4">
                     <div className="flex-1">
-                      <label className="block font-black uppercase mb-1 flex justify-between">
+                      <label className="mb-1 block flex justify-between font-black uppercase">
                         <span>Overlay Opacity</span>
                         <span>{Math.round(overlayOpacity * 100)}%</span>
                       </label>
@@ -313,57 +313,57 @@ export default function WatermarkApp() {
                         onChange={(e) =>
                           setOverlayOpacity(Number(e.target.value))
                         }
-                        className="w-full accent-black h-4 cursor-pointer"
+                        className="h-4 w-full cursor-pointer accent-black"
                       />
                     </div>
                     <div className="flex-1">
-                      <label className="block font-black uppercase mb-1">
+                      <label className="mb-1 block font-black uppercase">
                         Overlay Color
                       </label>
-                      <div className="relative border-4 border-black h-12 cursor-pointer w-full overflow-hidden">
+                      <div className="relative h-12 w-full cursor-pointer overflow-hidden border-4 border-black">
                         <input
                           type="color"
                           value={overlayColor}
                           onChange={(e) => setOverlayColor(e.target.value)}
-                          className="absolute -top-2 -left-2 w-[150%] h-[150%] cursor-pointer"
+                          className="absolute -top-2 -left-2 h-[150%] w-[150%] cursor-pointer"
                         />
                       </div>
                     </div>
                   </div>
 
                   <div>
-                    <label className="block font-black uppercase mb-1">
+                    <label className="mb-1 block font-black uppercase">
                       Font Size
                     </label>
                     <input
                       type="number"
                       value={fontSize}
                       onChange={(e) => setFontSize(Number(e.target.value))}
-                      className="w-full border-4 border-black h-12 px-3 font-bold focus:outline-hidden focus:bg-[#ffeb3b]"
+                      className="h-12 w-full border-4 border-black px-3 font-bold focus:bg-[#ffeb3b] focus:outline-hidden"
                     />
                   </div>
 
                   <div className="flex gap-4">
                     <div className="flex-1">
-                      <label className="block font-black uppercase mb-1">
+                      <label className="mb-1 block font-black uppercase">
                         X Spacing
                       </label>
                       <input
                         type="number"
                         value={gapX}
                         onChange={(e) => setGapX(Number(e.target.value))}
-                        className="w-full border-4 border-black h-12 px-3 font-bold focus:outline-hidden focus:bg-[#ffeb3b]"
+                        className="h-12 w-full border-4 border-black px-3 font-bold focus:bg-[#ffeb3b] focus:outline-hidden"
                       />
                     </div>
                     <div className="flex-1">
-                      <label className="block font-black uppercase mb-1">
+                      <label className="mb-1 block font-black uppercase">
                         Y Spacing
                       </label>
                       <input
                         type="number"
                         value={gapY}
                         onChange={(e) => setGapY(Number(e.target.value))}
-                        className="w-full border-4 border-black h-12 px-3 font-bold focus:outline-hidden focus:bg-[#ffeb3b]"
+                        className="h-12 w-full border-4 border-black px-3 font-bold focus:bg-[#ffeb3b] focus:outline-hidden"
                       />
                     </div>
                   </div>
@@ -375,11 +375,11 @@ export default function WatermarkApp() {
 
         {/* Preview Area */}
         <div className="lg:col-span-8">
-          <div className="border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] flex flex-col h-full min-h-[600px] overflow-hidden relative">
+          <div className="relative flex h-full min-h-[600px] flex-col overflow-hidden border-4 border-black bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
             {/* Window controls styling (fake) */}
-            <div className="border-b-4 border-black bg-gray-100 p-3 flex justify-between items-center">
-              <div className="font-bold flex-1 text-center font-mono text-sm tracking-wider uppercase flex items-center justify-center gap-2">
-                <ImageIcon className="w-4 h-4" /> Preview
+            <div className="flex items-center justify-between border-b-4 border-black bg-gray-100 p-3">
+              <div className="flex flex-1 items-center justify-center gap-2 text-center font-mono text-sm font-bold tracking-wider uppercase">
+                <ImageIcon className="h-4 w-4" /> Preview
               </div>
             </div>
 
@@ -403,7 +403,7 @@ export default function WatermarkApp() {
 
                 return (
                   <div
-                    className={`${bgColor} border-b-4 border-black p-2 flex justify-between items-center text-xs md:text-sm font-bold ${textColor} uppercase tracking-wider transition-colors`}
+                    className={`${bgColor} flex items-center justify-between border-b-4 border-black p-2 text-xs font-bold md:text-sm ${textColor} tracking-wider uppercase transition-colors`}
                   >
                     <span>
                       {formatBytes(originalSize)} &rarr;{" "}
@@ -414,26 +414,26 @@ export default function WatermarkApp() {
                 );
               })()}
 
-            <div className="flex-1 bg-[#111] p-4 flex items-center justify-center relative overflow-hidden group">
+            <div className="group relative flex flex-1 items-center justify-center overflow-hidden bg-[#111] p-4">
               {!originalImage ? (
-                <div className="text-gray-500 font-bold flex flex-col items-center justify-center w-full h-full border-4 border-dashed border-gray-700 hover:border-gray-500 transition-colors relative">
+                <div className="relative flex h-full w-full flex-col items-center justify-center border-4 border-dashed border-gray-700 font-bold text-gray-500 transition-colors hover:border-gray-500">
                   <input
                     type="file"
                     accept="image/*"
-                    onChange={handleImageUpload}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                    onChange={(e) => void handleImageUpload(e)}
+                    className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
                   />
                   {isProcessing ? (
-                    <RefreshCw className="w-16 h-16 animate-spin mb-4 text-gray-400" />
+                    <RefreshCw className="mb-4 h-16 w-16 animate-spin text-gray-400" />
                   ) : (
-                    <Upload className="w-16 h-16 mb-4 text-gray-400 group-hover:text-gray-300 transition-colors" />
+                    <Upload className="mb-4 h-16 w-16 text-gray-400 transition-colors group-hover:text-gray-300" />
                   )}
-                  <p className="text-2xl text-center text-gray-400 group-hover:text-gray-300 transition-colors">
+                  <p className="text-center text-2xl text-gray-400 transition-colors group-hover:text-gray-300">
                     {isProcessing
                       ? "Compressing Image..."
                       : "Click or drag to upload"}
                   </p>
-                  <p className="text-sm text-center font-semibold text-gray-600 mt-2">
+                  <p className="mt-2 text-center text-sm font-semibold text-gray-600">
                     JPEG, PNG, WebP supported
                   </p>
                 </div>
@@ -447,25 +447,25 @@ export default function WatermarkApp() {
                     <img
                       src={watermarkedUrl}
                       alt="Watermarked Preview"
-                      className="max-w-full max-h-[800px] object-contain border-4 border-white shadow-2xl"
+                      className="max-h-[800px] max-w-full border-4 border-white object-contain shadow-2xl"
                     />
                   )}
 
                   {/* Always visible overlay buttons */}
-                  <div className="absolute top-0 left-0 flex flex-col md:flex-row items-stretch md:items-start justify-start gap-4 p-4 z-20 pointer-events-none w-full">
+                  <div className="pointer-events-none absolute top-0 left-0 z-20 flex w-full flex-col items-stretch justify-start gap-4 p-4 md:flex-row md:items-start">
                     <button
                       onClick={handleReset}
-                      className="pointer-events-auto font-black text-sm uppercase border-4 border-black px-4 py-3 bg-[#ffeb3b] text-black hover:bg-white flex items-center justify-center gap-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-1 active:translate-y-1 transition-all md:w-auto w-full"
+                      className="pointer-events-auto flex w-full items-center justify-center gap-2 border-4 border-black bg-[#ffeb3b] px-4 py-3 text-sm font-black text-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:bg-white active:translate-x-1 active:translate-y-1 active:shadow-none md:w-auto"
                     >
-                      <RotateCcw className="w-4 h-4 shrink-0" strokeWidth={3} />{" "}
+                      <RotateCcw className="h-4 w-4 shrink-0" strokeWidth={3} />{" "}
                       Choose Another Image
                     </button>
                     <button
                       onClick={handleDownload}
                       disabled={!watermarkedUrl}
-                      className="pointer-events-auto font-black text-sm uppercase border-4 border-black px-4 py-3 bg-[#8b5cf6] text-white hover:bg-[#7c3aed] disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] disabled:shadow-[4px_4px_0px_0px_rgba(156,163,175,1)] active:shadow-none active:translate-x-1 active:translate-y-1 transition-all disabled:translate-x-0 disabled:translate-y-0 md:w-auto w-full"
+                      className="pointer-events-auto flex w-full items-center justify-center gap-2 border-4 border-black bg-[#8b5cf6] px-4 py-3 text-sm font-black text-white uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:bg-[#7c3aed] active:translate-x-1 active:translate-y-1 active:shadow-none disabled:translate-x-0 disabled:translate-y-0 disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500 disabled:shadow-[4px_4px_0px_0px_rgba(156,163,175,1)] md:w-auto"
                     >
-                      <Download className="w-4 h-4 shrink-0" strokeWidth={3} />{" "}
+                      <Download className="h-4 w-4 shrink-0" strokeWidth={3} />{" "}
                       Download Result
                     </button>
                   </div>

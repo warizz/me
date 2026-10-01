@@ -9,7 +9,8 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "oxfmt \"**/*.{ts,tsx,md}\"",
+    "format:check": "oxfmt --check \"**/*.{ts,tsx,md}\"",
     "gen-sitemap": "turbo run gen-sitemap",
     "lint": "turbo run lint",
     "start": "turbo run start",
@@ -17,8 +18,9 @@
     "tsc": "turbo run tsc"
   },
   "devDependencies": {
-    "eslint-config-custom": "workspace:*",
-    "prettier": "3.8.3",
+    "oxfmt": "0.71.0",
+    "oxlint": "1.86.0",
+    "oxlint-tsgolint": "7.0.2003",
     "turbo": "2.11.4"
   },
   "engines": {
@@ -34,11 +36,6 @@
     "onlyBuiltDependencies": [
       "cypress"
     ],
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "eslint": "10"
-      }
-    },
     "overrides": {
       "diff@>=4.0.0 <4.0.4": "4.0.4",
       "js-yaml@<3.15.2": "3.15.2",

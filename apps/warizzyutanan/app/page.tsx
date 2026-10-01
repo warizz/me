@@ -29,49 +29,49 @@ const TOOLS = [
 
 export default function Home() {
   return (
-    <main className="h-screen bg-white dark:bg-black text-black dark:text-white selection:bg-primary/20 selection:text-white transition-colors duration-300 overflow-hidden flex flex-col justify-between">
+    <main className="flex h-screen flex-col justify-between overflow-hidden bg-white text-black transition-colors duration-300 selection:bg-primary/20 selection:text-white dark:bg-black dark:text-white">
       {/* Skip to Content */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:font-black"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:px-4 focus:py-2 focus:font-black focus:text-white"
       >
         Skip To Content
       </a>
 
       <div
         id="main-content"
-        className="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-8 w-full flex flex-col justify-between h-full"
+        className="mx-auto flex h-full w-full max-w-7xl flex-col justify-between px-4 py-4 md:px-8 md:py-8"
       >
         {/* Color Scheme Toggle - Floating Raw */}
-        <div className="flex justify-end mb-4">
-          <ColorSchemeToggle className="hover:text-primary dark:hover:text-primary-invert transition-colors" />
+        <div className="mb-4 flex justify-end">
+          <ColorSchemeToggle className="transition-colors hover:text-primary dark:hover:text-primary-invert" />
         </div>
 
         {/* Mega Headline */}
         <div className="mb-8 md:mb-12">
-          <h1 className="raw-heading text-[11vw] md:text-[9vw] mb-4">
+          <h1 className="mb-4 raw-heading text-[11vw] md:text-[9vw]">
             {homeConfig.h1.split("'")[0]}
             <br />
             Archive
           </h1>
-          <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-baseline">
-            <p className="raw-mono max-w-sm opacity-90 text-[9px] md:text-[11px]">
+          <div className="flex flex-col items-baseline gap-4 md:flex-row md:gap-8">
+            <p className="max-w-sm raw-mono text-[9px] opacity-90 md:text-[11px]">
               --
               <br />I don’t tip because society says I have to. I tip when
               somebody deserves a tip. — Mr. Pink, Reservoir Dogs (1992)
             </p>
-            <div className="raw-mono font-black uppercase text-primary dark:text-primary-invert">
+            <div className="raw-mono font-black text-primary uppercase dark:text-primary-invert">
               Est. 2026 / {new Date().toLocaleDateString()}
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-16">
           {/* Logs Section */}
           <section aria-labelledby="logs-heading" className="min-h-0">
             <h2
               id="logs-heading"
-              className="raw-mono font-black uppercase mb-2 text-primary dark:text-primary-invert"
+              className="mb-2 raw-mono font-black text-primary uppercase dark:text-primary-invert"
             >
               [ 01 / LOGS ]
             </h2>
@@ -84,7 +84,7 @@ export default function Home() {
                   >
                     <Link
                       href={item.url}
-                      className="raw-heading text-2xl md:text-3xl hover:bg-primary hover:text-white dark:hover:bg-primary-invert transition-all block px-1"
+                      className="block px-1 raw-heading text-2xl transition-all hover:bg-primary hover:text-white md:text-3xl dark:hover:bg-primary-invert"
                     >
                       {item.title}
                     </Link>
@@ -98,7 +98,7 @@ export default function Home() {
           <section aria-labelledby="tools-heading" className="min-h-0">
             <h2
               id="tools-heading"
-              className="raw-mono font-black uppercase mb-2 text-primary dark:text-primary-invert"
+              className="mb-2 raw-mono font-black text-primary uppercase dark:text-primary-invert"
             >
               [ 02 / TOOLS ]
             </h2>
@@ -111,7 +111,7 @@ export default function Home() {
                   >
                     <Link
                       href={item.url}
-                      className="raw-heading text-2xl md:text-3xl hover:bg-primary hover:text-white dark:hover:bg-primary-invert transition-all block px-1"
+                      className="block px-1 raw-heading text-2xl transition-all hover:bg-primary hover:text-white md:text-3xl dark:hover:bg-primary-invert"
                     >
                       {item.title}
                     </Link>
@@ -122,7 +122,7 @@ export default function Home() {
           </section>
         </div>
 
-        <footer className="mt-8 border-t border-black dark:border-white pt-2 flex justify-between items-baseline raw-mono uppercase opacity-60">
+        <footer className="mt-8 flex items-baseline justify-between border-t border-black pt-2 raw-mono uppercase opacity-60 dark:border-white">
           <div className="text-[9px]">{homeConfig.description}</div>
           <div className="text-[9px]">{new Date().getFullYear()}</div>
         </footer>

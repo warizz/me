@@ -1,5 +1,4 @@
 import Markdown from "../../components/Markdown";
-
 import NoteCollapse from "./NoteCollapse";
 import photoMeta from "./photo-meta";
 
@@ -99,7 +98,7 @@ export default function EventTimeline({
           return (
             <section key={index} className={`${cardClass} p-4 md:p-5`}>
               <h2
-                className={`font-mono uppercase text-[11px] font-bold tracking-widest ${accentText} mb-3`}
+                className={`font-mono text-[11px] font-bold tracking-widest uppercase ${accentText} mb-3`}
               >
                 {block.heading}
               </h2>
@@ -116,27 +115,27 @@ export default function EventTimeline({
         return (
           <div
             key={index}
-            className={`relative ml-1 pl-6 pb-2 ${
+            className={`relative ml-1 pb-2 pl-6 ${
               index === lastNodeIndex
                 ? ""
-                : "border-l border-rose-500/25 dark:border-amber-400/25 pb-8"
+                : "border-l border-rose-500/25 pb-8 dark:border-amber-400/25"
             }`}
           >
-            <span className="absolute -left-[5px] top-[7px] w-[9px] h-[9px] rounded-full bg-gradient-to-r from-rose-500 to-orange-400 dark:from-amber-400 dark:to-orange-500" />
+            <span className="absolute top-[7px] -left-[5px] h-[9px] w-[9px] rounded-full bg-gradient-to-r from-rose-500 to-orange-400 dark:from-amber-400 dark:to-orange-500" />
             <div className={`${cardClass} p-4 md:p-5`}>
               {what ? (
                 <div className="mb-2">
                   <span
-                    className={`font-mono uppercase text-[11px] tracking-widest ${accentText}`}
+                    className={`font-mono text-[11px] tracking-widest uppercase ${accentText}`}
                   >
                     {when}
                   </span>
-                  <h2 className="text-lg font-bold tracking-tight m-0!">
+                  <h2 className="m-0! text-lg font-bold tracking-tight">
                     {what}
                   </h2>
                 </div>
               ) : (
-                <h2 className="text-lg font-bold tracking-tight mb-2 m-0!">
+                <h2 className="m-0! mb-2 text-lg font-bold tracking-tight">
                   {block.heading}
                 </h2>
               )}

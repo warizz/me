@@ -5,6 +5,17 @@ import matter from "gray-matter";
 
 export const contentDirectory = path.join(process.cwd(), "resource", "content");
 
+// Frontmatter values come from YAML untyped — coerce to string without
+// risking "[object Object]" (objects fall back to "" so downstream
+// fallback chains like extractHeading can kick in).
+export function fmString(value: unknown): string {
+  if (typeof value === "string") return value;
+  if (typeof value === "number" || typeof value === "boolean")
+    return String(value);
+  if (value instanceof Date) return value.toISOString();
+  return "";
+}
+
 export interface RawContent {
   fileName: string;
   id: string;

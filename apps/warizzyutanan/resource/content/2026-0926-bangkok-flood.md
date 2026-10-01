@@ -16,7 +16,7 @@ Rain started Thursday 4pm and barely stopped for two days. By Saturday morning, 
 
 Rain starts and does not stop. A low-pressure system parks over the east of the city and keeps feeding more.
 
-*Sources: [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water) · [The Nation](https://www.nationthailand.com/news/general/40071486)*
+_Sources: [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water) · [The Nation](https://www.nationthailand.com/news/general/40071486)_
 
 > Demo — what media inside a note looks like. This photo is a placeholder reusing a news image:
 >
@@ -39,10 +39,10 @@ Rain starts and does not stop. A low-pressure system parks over the east of the 
 - 24-hour health watch ordered in flood areas
 
 ![Flood conditions in Bangkok](/posts/2026-0926-bangkok-flood-08-hero.webp "2026-09-25")
-*Bangkok, day 1. Photo: [The Nation](https://www.nationthailand.com/news/general/40071486)*
+_Bangkok, day 1. Photo: [The Nation](https://www.nationthailand.com/news/general/40071486)_
 
 ![Rain over central and eastern Thailand](/posts/2026-0926-bangkok-flood-18-tmd-forecast.webp "2026-09-25")
-*TMD forecast, issued 11pm Fri: rain over 80% of the area through Sep 27. Photo: [The Nation](https://www.nationthailand.com/news/general/40071496)*
+_TMD forecast, issued 11pm Fri: rain over 80% of the area through Sep 27. Photo: [The Nation](https://www.nationthailand.com/news/general/40071496)_
 
 > Went to the office as usual that day — by the evening, the area around my condo was flooded.
 
@@ -67,34 +67,34 @@ Nearly 300mm total in Min Buri, Klong Sam Wa and Saphan Sung. Morning briefing f
 - If rain stops: water gone in ~6 hours — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)
 
 ![Flood hits Prachaniwet 1 market in Chatuchak district](/posts/2026-0926-bangkok-flood-01-prachaniwet-market.webp "2026-09-26")
-*Prachaniwet 1 market, Chatuchak. Photo: [Ananya Moonphen / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)*
+_Prachaniwet 1 market, Chatuchak. Photo: [Ananya Moonphen / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)_
 
 ![Nawamin Road near Bang Kapi intersection](/posts/2026-0926-bangkok-flood-02-nawamin-road.webp "2026-09-26")
-*Nawamin Rd, Bang Kapi. Photo: [Lat Phrao police / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)*
+_Nawamin Rd, Bang Kapi. Photo: [Lat Phrao police / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)_
 
 ![Phahon Yothin Road at Ratchayothin intersection](/posts/2026-0926-bangkok-flood-03-phahon-yothin.webp "2026-09-26")
-*Phahon Yothin at Ratchayothin. Photo: [Nareerat Wiriyapong / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)*
+_Phahon Yothin at Ratchayothin. Photo: [Nareerat Wiriyapong / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)_
 
 ![Floodwater waist-deep at Bang Kapi intersection](/posts/2026-0926-bangkok-flood-04-bang-kapi-intersection.webp "2026-09-26")
-*Bang Kapi intersection, waist-deep. Photo: [Lat Phrao police / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)*
+_Bang Kapi intersection, waist-deep. Photo: [Lat Phrao police / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)_
 
 ![Lat Phrao 41 Road flooded](/posts/2026-0926-bangkok-flood-05-lat-phrao-41.webp "2026-09-26")
-*Lat Phrao 41, Chatuchak. Photo: [Charoen Kittikanya / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)*
+_Lat Phrao 41, Chatuchak. Photo: [Charoen Kittikanya / Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water)_
 
 ![Phetchaburi Road under floodwater](/posts/2026-0926-bangkok-flood-09-phetchaburi-aerial.webp "2026-09-26")
-*Phetchaburi Rd near Makkasan–Asok. Photo: [Thanis Sutto / THE STANDARD](https://thestandard.co/phetchaburi-road-flood-bangkok-rain/)*
+_Phetchaburi Rd near Makkasan–Asok. Photo: [Thanis Sutto / THE STANDARD](https://thestandard.co/phetchaburi-road-flood-bangkok-rain/)_
 
 ![Residents wading through floodwater](/posts/2026-0926-bangkok-flood-11-phetchaburi-wading.webp "2026-09-26")
-*Wading out for supplies. Photo: [Thanis Sutto / THE STANDARD](https://thestandard.co/phetchaburi-road-flood-bangkok-rain/)*
+_Wading out for supplies. Photo: [Thanis Sutto / THE STANDARD](https://thestandard.co/phetchaburi-road-flood-bangkok-rain/)_
 
 ![Phetchaburi Road flood scene](/posts/2026-0926-bangkok-flood-12-phetchaburi-scene.webp "2026-09-26")
-*Phetchaburi Rd, day 2. Photo: [Thanis Sutto / THE STANDARD](https://thestandard.co/phetchaburi-road-flood-bangkok-rain/)*
+_Phetchaburi Rd, day 2. Photo: [Thanis Sutto / THE STANDARD](https://thestandard.co/phetchaburi-road-flood-bangkok-rain/)_
 
 ![Bang Kapi community under floodwater](/posts/2026-0926-bangkok-flood-13-bangkapi-community.webp "2026-09-26")
-*Bang Kapi community. Photo: [Sawita Poonsatien / THE STANDARD](https://thestandard.co/bangkapi-flood-life-impact/)*
+_Bang Kapi community. Photo: [Sawita Poonsatien / THE STANDARD](https://thestandard.co/bangkapi-flood-life-impact/)_
 
 ![Life amid the flood in Bang Kapi](/posts/2026-0926-bangkok-flood-14-bangkapi-high-ground.webp "2026-09-26")
-*Bang Kapi homes under water. Photo: [Sawita Poonsatien / THE STANDARD](https://thestandard.co/bangkapi-flood-life-impact/)*
+_Bang Kapi homes under water. Photo: [Sawita Poonsatien / THE STANDARD](https://thestandard.co/bangkapi-flood-life-impact/)_
 
 ### Sun 27 Sep — flooding persists
 
@@ -107,7 +107,7 @@ Nearly 300mm total in Min Buri, Klong Sam Wa and Saphan Sung. Morning briefing f
 - Regional: Nakhon Nayok 274mm; ONWR flash-flood warning through Sep 30 — [The Nation](https://www.nationthailand.com/news/general/40071544)
 
 ![PM Anutin by boat at Klong Chan](/posts/2026-0926-bangkok-flood-16-pm-boat-relief.webp "2026-09-27")
-*PM Anutin hands out relief bags by boat, Klong Chan. Photo: [THE STANDARD](https://thestandard.co/pm-klong-chan-flood-relief/)*
+_PM Anutin hands out relief bags by boat, Klong Chan. Photo: [THE STANDARD](https://thestandard.co/pm-klong-chan-flood-relief/)_
 
 ### Mon 28 Sep — holidays, toll, slow recovery
 
@@ -124,10 +124,10 @@ Nearly 300mm total in Min Buri, Klong Sam Wa and Saphan Sung. Morning briefing f
 - Food supplies "still secure"; national disaster insurance starts Oct 1 — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3327135/food-supplies-still-secure) · [The Nation](https://www.nationthailand.com/news/general/40071565)
 
 ![Muang Thong Thani under floodwater](/posts/2026-0926-bangkok-flood-15-muang-thong-thani.webp "2026-09-28")
-*Muang Thong Thani, Nonthaburi — cars submerged, boats out. Photo: [THE STANDARD](https://thestandard.co/flood-levels-in-muang-thong-thani-are-critical/)*
+_Muang Thong Thani, Nonthaburi — cars submerged, boats out. Photo: [THE STANDARD](https://thestandard.co/flood-levels-in-muang-thong-thani-are-critical/)_
 
 ![Daily life amid the flood](/posts/2026-0926-bangkok-flood-17-market-wading.webp "2026-09-27")
-*Wading through the market, Klong Chan to Lat Phrao. Photo: [THE STANDARD](https://thestandard.co/klong-chan-ladprao-flood-daily-life/)*
+_Wading through the market, Klong Chan to Lat Phrao. Photo: [THE STANDARD](https://thestandard.co/klong-chan-ladprao-flood-daily-life/)_
 
 ### Tue 29 Sep — slow drain, airports in chaos
 
@@ -144,13 +144,13 @@ Nearly 300mm total in Min Buri, Klong Sam Wa and Saphan Sung. Morning briefing f
 - DDPM orders evacuations in 7 Ratchaburi districts as the Mae Klong River rises; high-tide warning for 8 provinces through Oct 4 — [The Nation](https://www.nationthailand.com/news/40071649) · [The Nation](https://www.nationthailand.com/news/general/40071635)
 
 ![Luggage piles up at Suvarnabhumi airport](/posts/2026-0926-bangkok-flood-19-suvarnabhumi-luggage.webp "2026-09-29")
-*Baggage overflows the belts on Suvarnabhumi's second floor. Photo: [Nutthawut Wichienbut / Bangkok Post](https://www.bangkokpost.com/thailand/general/3328378/thai-airways-cancels-37-more-flights)*
+_Baggage overflows the belts on Suvarnabhumi's second floor. Photo: [Nutthawut Wichienbut / Bangkok Post](https://www.bangkokpost.com/thailand/general/3328378/thai-airways-cancels-37-more-flights)_
 
 ![Aid distribution at Kheha Khlong Chan flats](/posts/2026-0926-bangkok-flood-20-khlong-chan-aid.webp "2026-09-29")
-*Aid reaches Kheha Khlong Chan flats, Bang Kapi. Photo: [Friends in Need Volunteers Foundation, Thai Red Cross / Bangkok Post](https://www.bangkokpost.com/thailand/general/3328174/bangkok-flood-will-drain-off-in-a-few-days)*
+_Aid reaches Kheha Khlong Chan flats, Bang Kapi. Photo: [Friends in Need Volunteers Foundation, Thai Red Cross / Bangkok Post](https://www.bangkokpost.com/thailand/general/3328174/bangkok-flood-will-drain-off-in-a-few-days)_
 
 ![Bang Kapi wet market on Lat Phrao Road](/posts/2026-0926-bangkok-flood-21-bangkapi-market.webp "2026-09-29")
-*Bang Kapi wet market still trading. Photo: [Nutthawat Wicheanbut / Bangkok Post](https://www.bangkokpost.com/thailand/general/3328174/bangkok-flood-will-drain-off-in-a-few-days)*
+_Bang Kapi wet market still trading. Photo: [Nutthawat Wicheanbut / Bangkok Post](https://www.bangkokpost.com/thailand/general/3328174/bangkok-flood-will-drain-off-in-a-few-days)_
 
 > After work that evening I went for a run at Rama IX Park — the sun was out, the road was dry, my life was back to normal. Quite the opposite of some areas of Bangkok.
 
@@ -162,4 +162,4 @@ Nearly 300mm total in Min Buri, Klong Sam Wa and Saphan Sung. Morning briefing f
 - PM Anutin under fire: Klong Chan flats cut off without power, food or aid — residents shouted criticism from balconies on his return; experts say the BMA underestimated the rain and many pumps were out of order — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328675/anutin-under-fire-over-flooding)
 - THAI suspends Suvarnabhumi cargo intake for 7 days — overflowing freight was blocking baggage equipment — [The Nation](https://www.nationthailand.com/business/corporate/40071676)
 
-*Photos: Bangkok Post, The Nation, THE STANDARD. Updated 30 Sep 2026.*
+_Photos: Bangkok Post, The Nation, THE STANDARD. Updated 30 Sep 2026._

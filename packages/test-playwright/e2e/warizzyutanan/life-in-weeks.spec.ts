@@ -21,9 +21,15 @@ test.describe("life in weeks", () => {
   });
 
   test("renders life events from data.json", async ({ page }) => {
-    expect(await page.locator('[data-event-id="week-0001"]').count()).toBeGreaterThan(0);
-    expect(await page.locator('[data-event-id="week-0131"]').count()).toBeGreaterThan(0);
-    expect(await page.locator('[data-event-id="week-0132"]').count()).toBeGreaterThan(0);
+    expect(
+      await page.locator('[data-event-id="week-0001"]').count(),
+    ).toBeGreaterThan(0);
+    expect(
+      await page.locator('[data-event-id="week-0131"]').count(),
+    ).toBeGreaterThan(0);
+    expect(
+      await page.locator('[data-event-id="week-0132"]').count(),
+    ).toBeGreaterThan(0);
   });
 
   test("opens and closes the event detail panel", async ({ page }) => {

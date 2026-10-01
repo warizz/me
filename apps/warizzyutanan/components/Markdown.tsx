@@ -33,7 +33,13 @@ export default function Markdown({ children }: Props) {
           }
           return (
             <CodeBlock language={match?.[1] ?? undefined} {...(_props as any)}>
-              {String(children).replace(/\n$/, "")}
+              {[children]
+                .flat()
+                .map((c) =>
+                  typeof c === "string" || typeof c === "number" ? c : "",
+                )
+                .join("")
+                .replace(/\n$/, "")}
             </CodeBlock>
           );
         },
@@ -44,7 +50,7 @@ export default function Markdown({ children }: Props) {
           return (
             <iframe
               {..._props}
-              className="w-full max-w-[560px] h-auto"
+              className="h-auto w-full max-w-[560px]"
               style={{ aspectRatio: w && h ? `${w} / ${h}` : "16 / 9" }}
             />
           );
@@ -73,7 +79,7 @@ export default function Markdown({ children }: Props) {
                   : (_props.loading ?? (meta ? "lazy" : undefined))
               }
               fetchPriority={isLcp ? "high" : undefined}
-              className="w-full h-auto lg:w-auto lg:max-h-[300px] border-2 lg:border border-black dark:border-0"
+              className="h-auto w-full border-2 border-black lg:max-h-[300px] lg:w-auto lg:border dark:border-0"
             />
           );
         },
@@ -82,7 +88,7 @@ export default function Markdown({ children }: Props) {
           return (
             <video
               {..._props}
-              className="w-full h-auto lg:max-h-[300px] border-2 lg:border border-black dark:border-0"
+              className="h-auto w-full border-2 border-black lg:max-h-[300px] lg:border dark:border-0"
             />
           );
         },

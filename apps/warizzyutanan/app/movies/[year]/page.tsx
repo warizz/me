@@ -3,7 +3,6 @@ import { Metadata } from "next";
 
 import ToolsBar from "../../../components/ToolsBar";
 import { getMoviesYears } from "../getMoviesYears";
-
 import { Movie, parseMoviesCsv } from "./parseMoviesCsv";
 
 function mapRating(rating: Movie["rating"]) {

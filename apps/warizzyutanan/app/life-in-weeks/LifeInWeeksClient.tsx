@@ -6,7 +6,6 @@ import { X, Calendar } from "lucide-react";
 import React, { useState, useCallback, useEffect } from "react";
 
 import ColorSchemeToggle from "../../components/ColorSchemeToggle/ColorSchemeToggle";
-
 import { YearRow } from "./components";
 import { LifeEvent, WeekData } from "./types";
 import { BIRTH_DATE, getColorForEvent } from "./utils";
@@ -90,17 +89,17 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
   return (
     <div
       className={clsx(
-        "min-h-screen bg-white dark:bg-gray-950 font-sans text-gray-900 dark:text-gray-100 p-4 md:p-8",
+        "min-h-screen bg-white p-4 font-sans text-gray-900 md:p-8 dark:bg-gray-950 dark:text-gray-100",
         selectedEventId && "has-selected-event",
       )}
       onMouseMove={handleMouseMove}
     >
-      <header className="max-w-6xl mx-auto mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <header className="mx-auto mb-12 flex max-w-6xl flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
-          <h1 className="text-4xl font-bold tracking-tight mb-2">
+          <h1 className="mb-2 text-4xl font-bold tracking-tight">
             Life in Weeks
           </h1>
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl">
+          <p className="max-w-2xl text-gray-500 dark:text-gray-400">
             A visualization of my life, one week at a time. Each cell represents
             seven days. The full grid spans 100 years. Empty squares are
             neutral, while colored segments mark significant life events.
@@ -111,21 +110,21 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
         </div>
       </header>
 
-      <main className="max-w-[1400px] mx-auto pb-20 px-2 md:px-0">
+      <main className="mx-auto max-w-[1400px] px-2 pb-20 md:px-0">
         {/* Minimal Sticky Progress Navigation Line */}
-        <div className="sticky top-0 z-30 flex items-start gap-2 pt-10 pb-4 mb-4 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-100/50 dark:border-white/5">
+        <div className="sticky top-0 z-30 mb-4 flex items-start gap-2 border-b border-gray-100/50 bg-white/80 pt-10 pb-4 backdrop-blur-md dark:border-white/5 dark:bg-gray-950/80">
           {/* Mobile Centered Progress Percent */}
-          <div className="sm:hidden absolute top-3 left-1/2 -translate-x-1/2 text-xs font-black text-blue-600 dark:text-blue-400 drop-shadow-xs whitespace-nowrap animate-in fade-in slide-in-from-top-1 duration-500">
+          <div className="animate-in fade-in slide-in-from-top-1 absolute top-3 left-1/2 -translate-x-1/2 text-xs font-black whitespace-nowrap text-blue-600 drop-shadow-xs duration-500 sm:hidden dark:text-blue-400">
             {lifeStats.percentage.toFixed(1)}%
           </div>
-          <div className="w-8 text-[10px] text-gray-400 font-mono text-right shrink-0 lowercase leading-tight pt-1">
-            <span className="text-blue-500 font-bold block">
+          <div className="w-8 shrink-0 pt-1 text-right font-mono text-[10px] leading-tight text-gray-400 lowercase">
+            <span className="block font-bold text-blue-500">
               {lifeStats.currentWeek}
             </span>
             passed
           </div>
 
-          <div className="grid grid-cols-13 sm:grid-cols-26 md:grid-cols-52 gap-[2px] grow">
+          <div className="grid grow grid-cols-13 gap-[2px] sm:grid-cols-26 md:grid-cols-52">
             {Array.from({ length: 52 }).map((_, i) => {
               const segmentIndex = i;
               const totalSegments = 52;
@@ -139,19 +138,19 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
               return (
                 <div key={i} className="relative">
                   {isCurrent && (
-                    <div className="hidden sm:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2 whitespace-nowrap text-xs font-black text-blue-600 dark:text-blue-400 drop-shadow-xs animate-in fade-in slide-in-from-bottom-1 duration-300">
+                    <div className="animate-in fade-in slide-in-from-bottom-1 absolute bottom-full left-1/2 mb-2 hidden -translate-x-1/2 text-xs font-black whitespace-nowrap text-blue-600 drop-shadow-xs duration-300 sm:block dark:text-blue-400">
                       {lifeStats.percentage.toFixed(1)}%
-                      <div className="w-px h-1.5 bg-blue-600 dark:bg-blue-400 mx-auto mt-0.5" />
+                      <div className="mx-auto mt-0.5 h-1.5 w-px bg-blue-600 dark:bg-blue-400" />
                     </div>
                   )}
                   <div
                     className={clsx(
                       "aspect-square w-full min-w-[4px] rounded-[1px] border transition-all duration-500",
                       isPassed
-                        ? "bg-blue-500 border-blue-600 dark:bg-blue-500 dark:border-blue-400"
+                        ? "border-blue-600 bg-blue-500 dark:border-blue-400 dark:bg-blue-500"
                         : isCurrent
-                          ? "bg-white dark:bg-gray-900 border-blue-500 ring-2 ring-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)] z-10"
-                          : "bg-[#E5E7EB] dark:bg-gray-800/50 border-gray-200 dark:border-gray-700/50",
+                          ? "z-10 border-blue-500 bg-white shadow-[0_0_8px_rgba(59,130,246,0.6)] ring-2 ring-blue-500 dark:bg-gray-900"
+                          : "border-gray-200 bg-[#E5E7EB] dark:border-gray-700/50 dark:bg-gray-800/50",
                     )}
                   />
                 </div>
@@ -159,8 +158,8 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
             })}
           </div>
 
-          <div className="w-10 text-[10px] text-gray-400 font-mono text-left shrink-0 lowercase leading-tight pt-1">
-            <span className="text-gray-900 dark:text-gray-100 font-bold block">
+          <div className="w-10 shrink-0 pt-1 text-left font-mono text-[10px] leading-tight text-gray-400 lowercase">
+            <span className="block font-bold text-gray-900 dark:text-gray-100">
               {lifeStats.totalWeeks - lifeStats.currentWeek}
             </span>
             left
@@ -185,13 +184,13 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
       {/* Tooltip */}
       {hoveredWeek && (
         <div
-          className="fixed z-50 pointer-events-none hidden md:block bg-white/95 dark:bg-gray-900/95 backdrop-blur-xs border border-gray-200 dark:border-gray-800 shadow-xl rounded-lg p-3 max-w-[calc(100vw-32px)] md:max-w-xs transition-opacity duration-200"
+          className="pointer-events-none fixed z-50 hidden max-w-[calc(100vw-32px)] rounded-lg border border-gray-200 bg-white/95 p-3 shadow-xl backdrop-blur-xs transition-opacity duration-200 md:block md:max-w-xs dark:border-gray-800 dark:bg-gray-900/95"
           style={{
             left: `${tooltipPos.x + 15}px`,
             top: `${tooltipPos.y + 15}px`,
           }}
         >
-          <div className="text-[10px] uppercase tracking-wider text-gray-400 mb-1">
+          <div className="mb-1 text-[10px] tracking-wider text-gray-400 uppercase">
             Week of {format(hoveredWeek.date, "MMM d, yyyy")}
           </div>
           {hoveredWeek.events.length > 0 ? (
@@ -204,7 +203,7 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
                 >
                   <div className="text-sm font-semibold">{event.title}</div>
                   {event.description && (
-                    <div className="text-xs text-gray-500 line-clamp-2">
+                    <div className="line-clamp-2 text-xs text-gray-500">
                       {event.description}
                     </div>
                   )}
@@ -222,20 +221,20 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
         className={clsx(
           "fixed z-40 transition-all duration-300 ease-in-out",
           // Mobile: full width at bottom
-          "bottom-0 left-0 right-0 w-full p-4 md:p-0",
+          "right-0 bottom-0 left-0 w-full p-4 md:p-0",
           // Desktop: docked at bottom-right
-          "md:bottom-8 md:right-8 md:left-auto md:w-full md:max-w-md",
+          "md:right-8 md:bottom-8 md:left-auto md:w-full md:max-w-md",
           selectedEvent
             ? "translate-y-0 opacity-100"
-            : "translate-y-12 opacity-0 pointer-events-none",
+            : "pointer-events-none translate-y-12 opacity-0",
         )}
       >
         {selectedEvent && (
-          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-2xl rounded-2xl md:rounded-2xl overflow-hidden max-h-[80vh] overflow-y-auto">
+          <div className="max-h-[80vh] overflow-hidden overflow-y-auto rounded-2xl border border-gray-200 bg-white shadow-2xl md:rounded-2xl dark:border-gray-800 dark:bg-gray-900">
             <div className="p-5 md:p-6">
-              <div className="flex justify-between items-start mb-4">
+              <div className="mb-4 flex items-start justify-between">
                 <div
-                  className="h-2 w-12 rounded-full mb-2"
+                  className="mb-2 h-2 w-12 rounded-full"
                   style={{ backgroundColor: getColorForEvent(selectedEvent) }}
                 />
                 <button
@@ -243,13 +242,13 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
                     setSelectedEvent(null);
                     setSelectedEventId(null);
                   }}
-                  className="p-1 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
+                  className="rounded-full p-1 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
                 >
                   <X size={20} />
                 </button>
               </div>
-              <h2 className="text-2xl font-bold mb-2">{selectedEvent.title}</h2>
-              <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
+              <h2 className="mb-2 text-2xl font-bold">{selectedEvent.title}</h2>
+              <div className="mb-6 flex items-center gap-4 text-sm text-gray-500">
                 <div className="flex items-center gap-1">
                   <Calendar size={14} />
                   <span>
@@ -270,13 +269,13 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
                 </div>
               </div>
               <div className="prose prose-sm dark:prose-invert">
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="leading-relaxed text-gray-600 dark:text-gray-300">
                   {selectedEvent.description ||
                     "No further details available for this event."}
                 </p>
               </div>
             </div>
-            <div className="px-6 py-4 bg-gray-50 dark:bg-gray-800/50 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
+            <div className="flex items-center justify-between border-t border-gray-100 bg-gray-50 px-6 py-4 dark:border-gray-800 dark:bg-gray-800/50">
               <span className="text-xs text-gray-400">
                 Event #{selectedEvent.id}
               </span>
@@ -285,7 +284,7 @@ const LifeInWeeksClient: React.FC<LifeInWeeksClientProps> = ({ gridData }) => {
                   setSelectedEvent(null);
                   setSelectedEventId(null);
                 }}
-                className="text-sm font-medium text-blue-600 hover:text-blue-500 transition-colors"
+                className="text-sm font-medium text-blue-600 transition-colors hover:text-blue-500"
               >
                 Close details
               </button>

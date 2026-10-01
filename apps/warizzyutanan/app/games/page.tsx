@@ -39,29 +39,29 @@ async function GamesPage() {
       h1={<h1 className="dark:text-white">Games</h1>}
     >
       <div data-testid="games" className="not-prose font-sans">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {games.map((game) => {
             const image = firstImage(game.markdownString);
             return (
               <Link
                 key={game.id}
                 href={`/posts/${game.id}`}
-                className="no-underline block border border-black/10 dark:border-white/10 hover:border-primary dark:hover:border-primary-invert transition-colors"
+                className="block border border-black/10 no-underline transition-colors hover:border-primary dark:border-white/10 dark:hover:border-primary-invert"
               >
                 <div className="relative">
                   {image ? (
                     <img
                       src={image}
                       alt={game.title}
-                      className="w-full aspect-video object-cover"
+                      className="aspect-video w-full object-cover"
                     />
                   ) : null}
-                  <span className="absolute top-2 right-2 bg-black/70 rounded-full p-1.5 text-yellow-300">
+                  <span className="absolute top-2 right-2 rounded-full bg-black/70 p-1.5 text-yellow-300">
                     <Trophy size={18} aria-label="Platinum trophy" />
                   </span>
                 </div>
                 <div className="p-2">
-                  <div className="text-primary dark:text-primary-invert font-bold">
+                  <div className="font-bold text-primary dark:text-primary-invert">
                     {game.title}
                   </div>
                   <div className="prose-sm text-black/60 dark:text-white/60">
