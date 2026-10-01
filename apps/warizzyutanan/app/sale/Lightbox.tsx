@@ -25,10 +25,13 @@ export default function Lightbox({ photos, title, compact }: Props) {
     return () => window.removeEventListener("keydown", onKey);
   }, [open, photos.length]);
 
+  useEffect(() => {
+    if (open) ref.current?.showModal();
+  }, [open]);
+
   function showAt(i: number) {
     setIndex(i);
     setOpen(true);
-    ref.current?.showModal();
   }
 
   return (
