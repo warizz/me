@@ -23,7 +23,9 @@ interface Props {
 
 async function PostsPage({ searchParams }: Props) {
   const { tag } = await searchParams;
-  const activeTag = Array.isArray(tag) ? (tag[0] ?? null) : (tag ?? null);
+  const activeTags = Array.from(
+    new Set((Array.isArray(tag) ? tag : tag ? [tag] : []).filter(Boolean)),
+  );
 
   const posts = getPosts().map(({ date, id, tags, title, tldr }) => ({
     date,
@@ -38,7 +40,7 @@ async function PostsPage({ searchParams }: Props) {
       breadcrumbs={[{ text: "posts", href: "/posts" }]}
       h1={<h1 className="text-primary dark:text-primary-invert">Posts</h1>}
     >
-      <PostsList activeTag={activeTag} posts={posts} />
+      <PostsList activeTags={activeTags} posts={posts} />
     </BlogLayout>
   );
 }
