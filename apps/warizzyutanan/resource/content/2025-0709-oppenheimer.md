@@ -18,7 +18,7 @@ tags:
 - The movie is dialogue-heavy but never boring, even at 3 hours.
 - Einstein has a mysterious, wise presence.
 - Almost every role is played by a familiar face—huge cast.
-- Robert Downey Jr. (RDJ) stands out as Lewis Strauss. He looks much older than in *Iron Man*, likely due to makeup.
+- Robert Downey Jr. (RDJ) stands out as Lewis Strauss. He looks much older than in _Iron Man_, likely due to makeup.
 - Strauss’s deep grudge against Oppenheimer becomes a major plotline, which is both strange and interesting.
 - The final stretch of the bomb-building segment is especially exciting.
 

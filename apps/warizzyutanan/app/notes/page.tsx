@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import BlogLayout from "../../components/BlogLayout";
 import {
+  fmString,
   getContent,
   getContentFileNames,
 } from "../../components/lib/getContent";
@@ -38,16 +39,16 @@ function getNotes(): Note[] {
         const dateMatch = fileName.match(/^(\d{4}-\d{2}-\d{2})-/);
         const date = dateMatch
           ? new Date(dateMatch[1])
-          : new Date(String(data.date || Date.now()));
+          : new Date(fmString(data.date) || Date.now());
 
         // Extract heading from content
         const heading =
-          String(data.title || "") ||
+          fmString(data.title) ||
           extractHeading(markdownString) ||
           fileName.replace(/\.md$/, "") ||
           "Untitled";
 
-        const tldr = String(data.tldr || "");
+        const tldr = fmString(data.tldr);
 
         return { fileName, date, heading, tldr };
       })
@@ -94,11 +95,11 @@ export default async function Page() {
             return (
               <div
                 key={note.fileName}
-                className="py-4 border-b border-gray-100 dark:border-gray-800"
+                className="border-b border-gray-100 py-4 dark:border-gray-800"
               >
                 <Link
                   href={`/notes/${noteId}`}
-                  className="text-primary font-bold dark:text-primary-invert no-underline hover:underline"
+                  className="font-bold text-primary no-underline hover:underline dark:text-primary-invert"
                 >
                   {note.heading}
                 </Link>

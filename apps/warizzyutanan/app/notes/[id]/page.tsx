@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import BlogLayout from "../../../components/BlogLayout";
 import {
+  fmString,
   getContent,
   getContentFileNames,
 } from "../../../components/lib/getContent";
@@ -36,7 +37,7 @@ function getNoteById(id: string): NoteData | null {
     const dateMatch = fileName.match(/^(\d{4}-\d{2}-\d{2})-/);
     const date = dateMatch
       ? new Date(dateMatch[1])
-      : new Date(String(data.date || Date.now()));
+      : new Date(fmString(data.date) || Date.now());
 
     // Extract topic from filename
     const topic = fileName
@@ -45,7 +46,7 @@ function getNoteById(id: string): NoteData | null {
 
     // Extract heading from content
     const heading =
-      String(data.title || "") ||
+      fmString(data.title) ||
       extractHeading(markdownString) ||
       topic ||
       "Untitled";
@@ -132,7 +133,7 @@ export default async function NotePage({ params }: Props) {
       <div className="flex items-center gap-4">
         <Link
           href="/notes"
-          className="text-primary dark:text-primary-invert hover:underline"
+          className="text-primary hover:underline dark:text-primary-invert"
         >
           ← Back to Notes
         </Link>

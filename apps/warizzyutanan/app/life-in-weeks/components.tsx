@@ -32,7 +32,7 @@ export const WeekCell = React.memo(
         return (
           <div
             data-event-id={event.id}
-            className="w-full h-full"
+            className="h-full w-full"
             style={{ backgroundColor: getSegmentColor(event) }}
             onClick={(e) => {
               e.stopPropagation();
@@ -44,12 +44,12 @@ export const WeekCell = React.memo(
 
       if (events.length === 2) {
         return (
-          <div className="flex w-full h-full">
+          <div className="flex h-full w-full">
             {events.map((event) => (
               <div
                 key={event.id}
                 data-event-id={event.id}
-                className="w-1/2 h-full border-r last:border-r-0 border-white/20"
+                className="h-full w-1/2 border-r border-white/20 last:border-r-0"
                 style={{ backgroundColor: getSegmentColor(event) }}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -66,7 +66,7 @@ export const WeekCell = React.memo(
         const hasMore = events.length > 4;
 
         return (
-          <div className="grid grid-cols-2 grid-rows-2 w-full h-full relative">
+          <div className="relative grid h-full w-full grid-cols-2 grid-rows-2">
             {displayEvents.map((event, i) => (
               <div
                 key={event.id}
@@ -83,8 +83,8 @@ export const WeekCell = React.memo(
               />
             ))}
             {hasMore && (
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <span className="text-[8px] font-bold text-white bg-black/40 px-0.5 rounded-sm shadow-xs">
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                <span className="rounded-sm bg-black/40 px-0.5 text-[8px] font-bold text-white shadow-xs">
                   +{events.length - 4}
                 </span>
               </div>
@@ -100,13 +100,13 @@ export const WeekCell = React.memo(
       <div
         id={week.isCurrentWeek ? "current-week" : undefined}
         className={clsx(
-          "week-cell aspect-square w-full min-w-[14px] border border-gray-100 dark:border-gray-600 rounded-xs relative overflow-hidden",
+          "week-cell relative aspect-square w-full min-w-[14px] overflow-hidden rounded-xs border border-gray-100 dark:border-gray-600",
           {
             "bg-[#E5E7EB] dark:bg-gray-800/50": !hasEvents,
-            "ring-2 ring-blue-500 shadow-[0_0_12px_rgba(59,130,246,0.8)] z-10":
+            "z-10 shadow-[0_0_12px_rgba(59,130,246,0.8)] ring-2 ring-blue-500":
               week.isCurrentWeek,
             "is-selected z-20 border-gray-400 dark:border-gray-500": isSelected,
-            "hover:border-gray-400 dark:hover:border-gray-500 hover:scale-150 hover:z-30 cursor-pointer shadow-xs transition-transform duration-200": true,
+            "cursor-pointer shadow-xs transition-transform duration-200 hover:z-30 hover:scale-150 hover:border-gray-400 dark:hover:border-gray-500": true,
           },
         )}
         onMouseEnter={() => onHover(week)}
@@ -114,7 +114,7 @@ export const WeekCell = React.memo(
       >
         {renderSegments()}
         {!hasEvents && week.isCurrentWeek && (
-          <div className="absolute inset-0 border-2 border-blue-400 rounded-xs animate-pulse pointer-events-none" />
+          <div className="pointer-events-none absolute inset-0 animate-pulse rounded-xs border-2 border-blue-400" />
         )}
       </div>
     );
@@ -159,11 +159,11 @@ export const YearRow = React.memo(
     onEventClick,
   }: YearRowProps) => {
     return (
-      <div className="flex items-start gap-2 group py-1 md:py-px">
-        <div className="w-8 pt-[2px] text-[10px] text-gray-400 font-mono text-right shrink-0 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors lowercase">
+      <div className="group flex items-start gap-2 py-1 md:py-px">
+        <div className="w-8 shrink-0 pt-[2px] text-right font-mono text-[10px] text-gray-400 lowercase transition-colors group-hover:text-gray-900 dark:group-hover:text-gray-100">
           {year === 0 ? `Age ${year}` : year}
         </div>
-        <div className="grid grid-cols-13 sm:grid-cols-26 md:grid-cols-52 gap-[2px] grow">
+        <div className="grid grow grid-cols-13 gap-[2px] sm:grid-cols-26 md:grid-cols-52">
           {weeks.map((week) => {
             const isSelected = selectedEventId
               ? week.events.some((e) => e.id === selectedEventId)
@@ -181,7 +181,7 @@ export const YearRow = React.memo(
             );
           })}
         </div>
-        <div className="w-10 pt-[2px] text-[10px] text-gray-400 font-mono text-left shrink-0 group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors lowercase">
+        <div className="w-10 shrink-0 pt-[2px] text-left font-mono text-[10px] text-gray-400 lowercase transition-colors group-hover:text-gray-900 dark:group-hover:text-gray-100">
           {calendarYear}
         </div>
       </div>

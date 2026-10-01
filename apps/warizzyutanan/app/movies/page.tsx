@@ -3,7 +3,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import ToolsBar from "../../components/ToolsBar";
-
 import { getMoviesYears } from "./getMoviesYears";
 
 export async function generateMetadata(): Promise<Metadata> {

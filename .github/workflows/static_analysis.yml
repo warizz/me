@@ -16,7 +16,9 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Lint
         run: pnpm run lint
-  tsc:
+      - name: Format check
+        run: pnpm run format:check
+    tsc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

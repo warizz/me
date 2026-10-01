@@ -21,7 +21,7 @@ const nextConfig = {
   },
 };
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires, import/order
+// oxlint-disable-next-line typescript/no-var-requires
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });

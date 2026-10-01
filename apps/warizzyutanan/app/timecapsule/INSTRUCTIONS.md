@@ -12,8 +12,8 @@ Archive of news moments worth remembering. One `.md` file per event, stored in <
 
 ```yaml
 title: "Event Title"
-startDate: "YYYY-MM-DD"   # required
-endDate: "YYYY-MM-DD"     # optional — omit while the event is still unfolding
+startDate: "YYYY-MM-DD" # required
+endDate: "YYYY-MM-DD" # optional — omit while the event is still unfolding
 publish: true
 tags: [weather, bangkok]
 tldr: "One-line summary for the index card."

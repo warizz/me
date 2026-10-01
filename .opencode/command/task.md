@@ -27,6 +27,7 @@ Workflow:
    ```
 
    (shared across worktrees; prevents /pr's `git add -A` from committing it)
+
 5. All coding happens in `../me-<topic>` — never touch the main checkout.
    Follow AGENTS.md conventions; apps live under `apps/`. If the worktree
    lacks `node_modules`, run `pnpm install` there first.

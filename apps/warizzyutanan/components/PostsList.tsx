@@ -36,14 +36,14 @@ export default function PostsList({ activeTags, posts }: Props) {
     <div data-testid="posts" className="not-prose font-sans">
       {tags.length > 0 ? (
         <details className="mb-12" open={activeTags.length > 0 || undefined}>
-          <summary className="cursor-pointer select-none text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+          <summary className="cursor-pointer text-sm text-gray-500 select-none hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
             {activeTags.length
               ? `🏷️ Filtering: ${activeTags.map((t) => `#${t}`).join(", ")}`
               : `🏷️ Tags (${tags.length})`}
           </summary>
           <nav
             aria-label="Filter posts by tag"
-            className="flex flex-wrap gap-2 mt-3"
+            className="mt-3 flex flex-wrap gap-2"
           >
             {tags.map((tag) => {
               const active = activeTags.includes(tag);
@@ -62,7 +62,7 @@ export default function PostsList({ activeTags, posts }: Props) {
                   aria-current={active ? "page" : "false"}
                   className={`rounded-full border px-3 py-0.5 text-sm no-underline transition-colors ${
                     active
-                      ? "bg-primary border-primary text-white dark:bg-primary-invert dark:border-primary-invert dark:text-black"
+                      ? "border-primary bg-primary text-white dark:border-primary-invert dark:bg-primary-invert dark:text-black"
                       : "border-gray-300 text-gray-600 hover:border-gray-400 dark:border-gray-700 dark:text-gray-400 dark:hover:border-gray-500"
                   }`}
                 >
@@ -74,7 +74,7 @@ export default function PostsList({ activeTags, posts }: Props) {
         </details>
       ) : null}
       {visible.length === 0 ? (
-        <p className="italic text-gray-500 dark:text-gray-400">
+        <p className="text-gray-500 italic dark:text-gray-400">
           Nothing tagged {activeTags.map((t) => `#${t}`).join(", ")} —{" "}
           <Link href="/posts" scroll={false} className="underline">
             clear the filter
@@ -85,20 +85,20 @@ export default function PostsList({ activeTags, posts }: Props) {
         <div>
           {years.map(([year, yearPosts]) => (
             <section key={year} className="mb-10 lg:mb-14">
-              <h2 className="text-sm font-semibold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-3 pb-2 border-b border-gray-200 dark:border-gray-800">
+              <h2 className="mb-3 border-b border-gray-200 pb-2 text-sm font-semibold tracking-widest text-gray-400 uppercase dark:border-gray-800 dark:text-gray-500">
                 {year}
               </h2>
-              <ul className="list-none p-0 m-0">
+              <ul className="m-0 list-none p-0">
                 {yearPosts.map((post) => (
                   <li
                     key={post.id}
                     data-tags={post.tags.join(",")}
                     className="mb-5 lg:mb-7"
                   >
-                    <div className="flex items-baseline gap-4 flex-wrap">
+                    <div className="flex flex-wrap items-baseline gap-4">
                       <time
                         dateTime={post.date}
-                        className="shrink-0 text-sm tabular-nums text-gray-400 dark:text-gray-500"
+                        className="shrink-0 text-sm text-gray-400 tabular-nums dark:text-gray-500"
                       >
                         {new Intl.DateTimeFormat("default", {
                           day: "numeric",
@@ -107,13 +107,13 @@ export default function PostsList({ activeTags, posts }: Props) {
                       </time>
                       <Link
                         href={`/posts/${post.id}`}
-                        className="font-serif font-bold text-primary text-lg no-underline hover:underline dark:text-primary-invert"
+                        className="font-serif text-lg font-bold text-primary no-underline hover:underline dark:text-primary-invert"
                       >
                         {post.title}
                       </Link>
                     </div>
                     {post.tldr ? (
-                      <p className="m-0 mt-1 text-sm italic text-gray-500 dark:text-gray-400">
+                      <p className="m-0 mt-1 text-sm text-gray-500 italic dark:text-gray-400">
                         {post.tldr}
                       </p>
                     ) : null}

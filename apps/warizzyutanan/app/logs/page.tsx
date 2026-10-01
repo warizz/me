@@ -5,7 +5,6 @@ import map from "lodash/map";
 import { Metadata } from "next";
 
 import ToolsBar from "../../components/ToolsBar";
-
 import { parseLogsCsv } from "./parseLogsCsv";
 
 const csvPath = `/app/logs/logs.csv`;

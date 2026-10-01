@@ -10,8 +10,8 @@ interface Props {
 
 export default function TimecapsuleLayout({ children }: Props) {
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-black dark:text-white font-sans antialiased">
-      <div className="max-w-3xl mx-auto px-5 py-8 md:py-12">
+    <main className="min-h-screen bg-white font-sans text-black antialiased dark:bg-black dark:text-white">
+      <div className="mx-auto max-w-3xl px-5 py-8 md:py-12">
         <ToolsBar
           breadcrumbs={[
             { text: "home", href: "/" },

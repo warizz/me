@@ -1,0 +1,8 @@
+{
+  "printWidth": 80,
+  "sortImports": true,
+  "sortTailwindcss": {
+    "stylesheet": "./apps/warizzyutanan/app/global.css",
+    "functions": ["clsx"]
+  }
+}

@@ -6,6 +6,7 @@ You are adding a note page to the warizzyutanan site.
 
 Input: $ARGUMENTS.
 Ask the user for anything missing among these three, before doing anything:
+
 1. Source URL (YouTube share URL; videos cannot be watched — the user must supply content)
 2. Content (summary / key ideas)
 3. My takes (personal note; always rewrite into natural English — the user is
@@ -44,7 +45,7 @@ Rules:
      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
      ```
 
-   5. `## My takes` (plain text, no blockquote), `## Summary`, `## Key ideas`
+  5. `## My takes` (plain text, no blockquote), `## Summary`, `## Key ideas`
 - No code changes needed: routing, index, and sitemap derive from the
   directory listing. Do not update them.
 - Verify: `pnpm --filter warizzyutanan lint && pnpm --filter warizzyutanan tsc && pnpm --filter warizzyutanan build`.

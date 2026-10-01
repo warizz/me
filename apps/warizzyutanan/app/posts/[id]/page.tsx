@@ -36,7 +36,7 @@ export default async function PostPage({ params }: Props) {
         { text: "current", href: "/posts" },
       ]}
       h1={
-        <h1 className="text-3xl lg:text-4xl font-black tracking-tight text-primary dark:text-primary-invert">
+        <h1 className="text-3xl font-black tracking-tight text-primary lg:text-4xl dark:text-primary-invert">
           {post.title}
         </h1>
       }
@@ -45,7 +45,7 @@ export default async function PostPage({ params }: Props) {
       <div className="post-body">
         <Markdown>{post.markdownString}</Markdown>
       </div>
-      <footer className="font-sans mt-12 pt-6 border-t border-gray-200 dark:border-gray-800 flex flex-wrap gap-x-3 gap-y-2 items-baseline text-sm text-gray-500 dark:text-gray-400">
+      <footer className="mt-12 flex flex-wrap items-baseline gap-x-3 gap-y-2 border-t border-gray-200 pt-6 font-sans text-sm text-gray-500 dark:border-gray-800 dark:text-gray-400">
         🏷️
         {post.tags
           .filter((tag) => tag !== "post")

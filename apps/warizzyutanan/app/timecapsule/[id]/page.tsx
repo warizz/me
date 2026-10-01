@@ -37,21 +37,21 @@ export default async function TimecapsuleItemPage({ params }: Props) {
         <time
           dateTime={item.startDate}
           suppressHydrationWarning
-          className="inline-block font-mono uppercase text-[11px] tracking-widest text-white bg-gradient-to-r from-rose-600 to-orange-500 rounded-full px-3 py-1 mb-3"
+          className="mb-3 inline-block rounded-full bg-gradient-to-r from-rose-600 to-orange-500 px-3 py-1 font-mono text-[11px] tracking-widest text-white uppercase"
         >
           {formatDateRange(item.startDate, item.endDate)}
         </time>
-        <h1 className="text-3xl md:text-4xl font-black tracking-tighter m-0 bg-gradient-to-r from-rose-600 via-orange-500 to-amber-500 dark:from-rose-500 dark:via-orange-400 dark:to-amber-400 bg-clip-text text-transparent">
+        <h1 className="m-0 bg-gradient-to-r from-rose-600 via-orange-500 to-amber-500 bg-clip-text text-3xl font-black tracking-tighter text-transparent md:text-4xl dark:from-rose-500 dark:via-orange-400 dark:to-amber-400">
           {item.title}
         </h1>
         {item.tldr ? (
-          <p className="text-sm opacity-80 m-0 mt-3">{item.tldr}</p>
+          <p className="m-0 mt-3 text-sm opacity-80">{item.tldr}</p>
         ) : null}
-        <div className="flex gap-2 flex-wrap mt-3">
+        <div className="mt-3 flex flex-wrap gap-2">
           {item.tags.map((tag) => (
             <span
               key={tag}
-              className="font-mono text-[10px] uppercase tracking-wider bg-rose-500/10 dark:bg-amber-400/10 text-rose-600 dark:text-amber-400 border border-rose-500/20 dark:border-amber-400/20 rounded-full px-2 py-0.5"
+              className="rounded-full border border-rose-500/20 bg-rose-500/10 px-2 py-0.5 font-mono text-[10px] tracking-wider text-rose-600 uppercase dark:border-amber-400/20 dark:bg-amber-400/10 dark:text-amber-400"
             >
               #{tag}
             </span>
@@ -59,18 +59,18 @@ export default async function TimecapsuleItemPage({ params }: Props) {
         </div>
       </header>
       <div className="mb-8 flex items-start gap-3 rounded-lg border border-amber-500/50 bg-amber-400/10 px-4 py-3">
-        <span className="text-amber-500 leading-none mt-0.5">⚠︎</span>
-        <p className="font-mono text-[10px] leading-relaxed text-amber-700 dark:text-amber-300 m-0">
+        <span className="mt-0.5 leading-none text-amber-500">⚠︎</span>
+        <p className="m-0 font-mono text-[10px] leading-relaxed text-amber-700 dark:text-amber-300">
           AI-generated summary of publicly reported news, human-moderated.
           Non-commercial personal archive — photos remain the property of their
           respective publishers.
         </p>
       </div>
       <EventTimeline markdownString={item.markdownString} />
-      <footer className="mt-10 pt-4 border-t border-rose-500/25 dark:border-amber-400/25">
+      <footer className="mt-10 border-t border-rose-500/25 pt-4 dark:border-amber-400/25">
         <Link
           href="/timecapsule"
-          className="font-mono uppercase text-[11px] tracking-widest text-rose-600 dark:text-amber-400 no-underline hover:underline"
+          className="font-mono text-[11px] tracking-widest text-rose-600 uppercase no-underline hover:underline dark:text-amber-400"
         >
           ← all moments
         </Link>

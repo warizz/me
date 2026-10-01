@@ -21,40 +21,40 @@ async function TimecapsulePage() {
   return (
     <div data-testid="timecapsule">
       <header className="mb-10">
-        <p className="inline-block font-mono uppercase text-[11px] tracking-widest text-white bg-gradient-to-r from-rose-600 to-orange-500 rounded-full px-3 py-1 m-0 mb-3">
+        <p className="m-0 mb-3 inline-block rounded-full bg-gradient-to-r from-rose-600 to-orange-500 px-3 py-1 font-mono text-[11px] tracking-widest text-white uppercase">
           timecapsule
         </p>
-        <h1 className="text-3xl md:text-4xl font-black tracking-tighter m-0 bg-gradient-to-r from-rose-600 via-orange-500 to-amber-500 dark:from-rose-500 dark:via-orange-400 dark:to-amber-400 bg-clip-text text-transparent">
+        <h1 className="m-0 bg-gradient-to-r from-rose-600 via-orange-500 to-amber-500 bg-clip-text text-3xl font-black tracking-tighter text-transparent md:text-4xl dark:from-rose-500 dark:via-orange-400 dark:to-amber-400">
           Moments worth remembering
         </h1>
-        <p className="text-sm opacity-60 m-0 mt-2">
+        <p className="m-0 mt-2 text-sm opacity-60">
           News and events that left a mark — sealed and dated.
         </p>
       </header>
       <div className="mb-10 flex items-start gap-3 rounded-lg border border-amber-500/50 bg-amber-400/10 px-4 py-3">
-        <span className="text-amber-500 leading-none mt-0.5">⚠︎</span>
-        <p className="font-mono text-[10px] leading-relaxed text-amber-700 dark:text-amber-300 m-0">
+        <span className="mt-0.5 leading-none text-amber-500">⚠︎</span>
+        <p className="m-0 font-mono text-[10px] leading-relaxed text-amber-700 dark:text-amber-300">
           AI-generated summaries of publicly reported news, human-moderated.
           Non-commercial personal archive.
         </p>
       </div>
-      <ol className="list-none m-0 p-0">
+      <ol className="m-0 list-none p-0">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
           return (
             <li
               key={item.id}
-              className={`relative pl-7 ml-1 ${
+              className={`relative ml-1 pl-7 ${
                 isLast
                   ? "pb-2"
-                  : "pb-9 border-l border-rose-500/25 dark:border-amber-400/25"
+                  : "border-l border-rose-500/25 pb-9 dark:border-amber-400/25"
               }`}
             >
-              <span className="absolute -left-[5px] top-[9px] w-[9px] h-[9px] rounded-full bg-gradient-to-r from-rose-500 to-orange-400 dark:from-amber-400 dark:to-orange-500" />
+              <span className="absolute top-[9px] -left-[5px] h-[9px] w-[9px] rounded-full bg-gradient-to-r from-rose-500 to-orange-400 dark:from-amber-400 dark:to-orange-500" />
               <time
                 dateTime={item.startDate}
                 suppressHydrationWarning
-                className="block font-mono uppercase text-[11px] tracking-widest text-rose-600 dark:text-amber-400 mb-1"
+                className="mb-1 block font-mono text-[11px] tracking-widest text-rose-600 uppercase dark:text-amber-400"
               >
                 {formatDateRange(item.startDate, item.endDate)}
               </time>
@@ -65,13 +65,13 @@ async function TimecapsulePage() {
                 {item.title}
               </Link>
               {item.tldr ? (
-                <p className="text-sm opacity-70 m-0 mt-1">{item.tldr}</p>
+                <p className="m-0 mt-1 text-sm opacity-70">{item.tldr}</p>
               ) : null}
-              <div className="flex gap-2 flex-wrap mt-2">
+              <div className="mt-2 flex flex-wrap gap-2">
                 {item.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-[10px] uppercase tracking-wider bg-rose-500/10 dark:bg-amber-400/10 text-rose-600 dark:text-amber-400 border border-rose-500/20 dark:border-amber-400/20 rounded-full px-2 py-0.5"
+                    className="rounded-full border border-rose-500/20 bg-rose-500/10 px-2 py-0.5 font-mono text-[10px] tracking-wider text-rose-600 uppercase dark:border-amber-400/20 dark:bg-amber-400/10 dark:text-amber-400"
                   >
                     #{tag}
                   </span>
