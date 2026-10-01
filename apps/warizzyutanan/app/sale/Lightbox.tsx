@@ -84,7 +84,7 @@ export default function Lightbox({ photos, title, compact }: Props) {
                   onClick={() =>
                     setIndex((i) => (i - 1 + photos.length) % photos.length)
                   }
-                  className="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-r cursor-pointer"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-black/70 text-white rounded-r cursor-pointer"
                 >
                   &larr;
                 </button>
@@ -92,7 +92,7 @@ export default function Lightbox({ photos, title, compact }: Props) {
                   type="button"
                   aria-label="next photo"
                   onClick={() => setIndex((i) => (i + 1) % photos.length)}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-l cursor-pointer"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-black/70 text-white rounded-l cursor-pointer"
                 >
                   &rarr;
                 </button>
@@ -102,11 +102,11 @@ export default function Lightbox({ photos, title, compact }: Props) {
               type="button"
               aria-label="close"
               onClick={() => ref.current?.close()}
-              className="absolute right-2 top-2 p-2 bg-black/50 text-white rounded cursor-pointer"
+              className="absolute right-2 top-2 p-2 bg-black/70 text-white rounded cursor-pointer"
             >
               &times;
             </button>
-            <span className="absolute bottom-2 right-2 px-2 py-0.5 bg-black/50 text-white text-xs rounded">
+            <span className="absolute bottom-2 right-2 px-2 py-0.5 bg-black/70 text-white text-xs rounded">
               {index + 1}/{photos.length}
             </span>
           </div>
