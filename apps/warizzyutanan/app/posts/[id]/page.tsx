@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props) {
   const post = getPostData(`${id}.md`);
   return {
     title: `${post.title} - Warizz Yutanan`,
-    description: post.description,
+    description: post.description || post.tldr || undefined,
     robots: post.isPublished ? "index, follow" : "noindex, nofollow",
   };
 }
