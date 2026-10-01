@@ -8,11 +8,11 @@ export type PostSummary = Pick<
 >;
 
 interface Props {
-  activeTag: string | null;
+  activeTags: string[];
   posts: PostSummary[];
 }
 
-export default function PostsList({ activeTag, posts }: Props) {
+export default function PostsList({ activeTags, posts }: Props) {
   const sorted = [...posts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
@@ -21,8 +21,8 @@ export default function PostsList({ activeTag, posts }: Props) {
     .filter((tag) => tag !== "post")
     .sort();
 
-  const visible = activeTag
-    ? sorted.filter((post) => post.tags.includes(activeTag))
+  const visible = activeTags.length
+    ? sorted.filter((post) => activeTags.some((t) => post.tags.includes(t)))
     : sorted;
 
   const byYear = new Map<number, PostSummary[]>();
@@ -35,35 +35,47 @@ export default function PostsList({ activeTag, posts }: Props) {
   return (
     <div data-testid="posts" className="not-prose font-sans">
       {tags.length > 0 ? (
-        <nav
-          aria-label="Filter posts by tag"
-          className="flex flex-wrap gap-2 mb-12"
-        >
-          {tags.map((tag) => {
-            const active = tag === activeTag;
-            return (
-              <Link
-                key={tag}
-                href={
-                  active ? "/posts" : `/posts?tag=${encodeURIComponent(tag)}`
-                }
-                scroll={false}
-                aria-current={active ? "page" : "false"}
-                className={`rounded-full border px-3 py-0.5 text-sm no-underline transition-colors ${
-                  active
-                    ? "bg-primary border-primary text-white dark:bg-primary-invert dark:border-primary-invert dark:text-black"
-                    : "border-gray-300 text-gray-600 hover:border-gray-400 dark:border-gray-700 dark:text-gray-400 dark:hover:border-gray-500"
-                }`}
-              >
-                #{tag}
-              </Link>
-            );
-          })}
-        </nav>
+        <details className="mb-12" open={activeTags.length > 0 || undefined}>
+          <summary className="cursor-pointer select-none text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+            {activeTags.length
+              ? `🏷️ Filtering: ${activeTags.map((t) => `#${t}`).join(", ")}`
+              : `🏷️ Tags (${tags.length})`}
+          </summary>
+          <nav
+            aria-label="Filter posts by tag"
+            className="flex flex-wrap gap-2 mt-3"
+          >
+            {tags.map((tag) => {
+              const active = activeTags.includes(tag);
+              const next = active
+                ? activeTags.filter((t) => t !== tag)
+                : [...activeTags, tag];
+              return (
+                <Link
+                  key={tag}
+                  href={
+                    next.length
+                      ? `/posts?${next.map((t) => `tag=${encodeURIComponent(t)}`).join("&")}`
+                      : "/posts"
+                  }
+                  scroll={false}
+                  aria-current={active ? "page" : "false"}
+                  className={`rounded-full border px-3 py-0.5 text-sm no-underline transition-colors ${
+                    active
+                      ? "bg-primary border-primary text-white dark:bg-primary-invert dark:border-primary-invert dark:text-black"
+                      : "border-gray-300 text-gray-600 hover:border-gray-400 dark:border-gray-700 dark:text-gray-400 dark:hover:border-gray-500"
+                  }`}
+                >
+                  #{tag}
+                </Link>
+              );
+            })}
+          </nav>
+        </details>
       ) : null}
       {visible.length === 0 ? (
         <p className="italic text-gray-500 dark:text-gray-400">
-          Nothing tagged {activeTag} —{" "}
+          Nothing tagged {activeTags.map((t) => `#${t}`).join(", ")} —{" "}
           <Link href="/posts" scroll={false} className="underline">
             clear the filter
           </Link>
