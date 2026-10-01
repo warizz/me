@@ -13,6 +13,7 @@ interface Props {
 }
 
 export default function Markdown({ children }: Props) {
+  const firstImgSrc = children.match(/!\[[^\]]*\]\(([^)\s]+)[^)]*\)/)?.[1];
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
@@ -54,6 +55,7 @@ export default function Markdown({ children }: Props) {
             !_props.srcSet && typeof _props.src === "string"
               ? photoMeta[_props.src]
               : undefined;
+          const isLcp = firstImgSrc != null && _props.src === firstImgSrc;
           return (
             <img
               {..._props}
@@ -65,7 +67,12 @@ export default function Markdown({ children }: Props) {
                     sizes: meta.sizes,
                   }
                 : {})}
-              loading={_props.loading ?? (meta ? "lazy" : undefined)}
+              loading={
+                isLcp
+                  ? "eager"
+                  : (_props.loading ?? (meta ? "lazy" : undefined))
+              }
+              fetchPriority={isLcp ? "high" : undefined}
               className="w-full h-auto lg:w-auto lg:max-h-[300px] border-2 lg:border border-black dark:border-0"
             />
           );

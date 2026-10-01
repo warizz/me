@@ -20,7 +20,7 @@ export default function BlogLayout({
   date,
 }: Props) {
   return (
-    <div className="bg-white lg:pt-20 dark:bg-black min-h-screen ease-in duration-100">
+    <main className="bg-white lg:pt-20 dark:bg-black min-h-screen ease-in duration-100">
       <article
         className={
           bare
@@ -46,6 +46,6 @@ export default function BlogLayout({
         ) : null}
         {children}
       </article>
-    </div>
+    </main>
   );
 }
