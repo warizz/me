@@ -1,0 +1,20 @@
+- id: four-thousand-weeks
+  title: หนังสือ ชีวิตเรามีแค่สี่พันสัปดาห์
+  description: อ่านจบแล้ว
+  originalPrice: 265
+  salePrice: 130
+  status: available
+  addedAt: 2026-09-30
+  photos:
+    - /photos/sale/four-thousand-weeks-1.webp
+    - /photos/sale/four-thousand-weeks-2.webp
+- id: alone-in-condo
+  title: หนังสือ คนเดียวในคอนโด
+  description: อ่านไม่จบ ไม่ชอบ
+  originalPrice: 220
+  salePrice: 110
+  status: available
+  addedAt: 2026-09-28
+  photos:
+    - /photos/sale/alone-in-condo-1.webp
+    - /photos/sale/alone-in-condo-2.webp

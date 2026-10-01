@@ -19,6 +19,7 @@ const LOGS = [
   { url: "/notes", title: "notes" },
   { url: "/movies", title: "movies" },
   { url: "/timecapsule", title: "timecapsule" },
+  { url: "/sale", title: "garage sale" },
 ];
 
 const TOOLS = [
