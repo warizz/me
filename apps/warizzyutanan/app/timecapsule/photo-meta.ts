@@ -659,6 +659,22 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 450px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-0926-bangkok-flood-22-hail-chatuchak.webp": {
+    w: 800,
+    h: 533,
+    srcset:
+      "/posts/2026-0926-bangkok-flood-22-hail-chatuchak.640w.webp 640w, /posts/2026-0926-bangkok-flood-22-hail-chatuchak.webp 800w",
+    sizes:
+      "(min-width: 1024px) 450px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-0926-bangkok-flood-23-hail-storm.webp": {
+    w: 1280,
+    h: 776,
+    srcset:
+      "/posts/2026-0926-bangkok-flood-23-hail-storm.640w.webp 640w, /posts/2026-0926-bangkok-flood-23-hail-storm.960w.webp 960w, /posts/2026-0926-bangkok-flood-23-hail-storm.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 495px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/2026-0927-tales-of-arise-alphen-stats.webp": {
     w: 1280,
     h: 960,

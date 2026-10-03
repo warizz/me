@@ -90,11 +90,11 @@ test.describe("timecapsule event", () => {
     await expect(page.getByText("AI-generated summary")).toBeVisible();
   });
 
-  test("renders all seven timeline nodes", async ({ page }) => {
+  test("renders all ten timeline nodes", async ({ page }) => {
     await page.goto("/timecapsule/2026-0926-bangkok-flood");
 
     const headings = page.locator("h2");
-    await expect(headings).toHaveCount(7);
+    await expect(headings).toHaveCount(10);
     await expect(
       page.getByRole("heading", { name: "the rain begins" }),
     ).toBeVisible();
@@ -115,6 +115,15 @@ test.describe("timecapsule event", () => {
     ).toBeVisible();
     await expect(
       page.getByRole("heading", { name: "22 dead, recriminations begin" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "toll climbs, hail returns" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "THAI CEO sacked" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "drying out, more rain ahead" }),
     ).toBeVisible();
   });
 
@@ -142,9 +151,9 @@ test.describe("timecapsule event", () => {
     await page.goto("/timecapsule/2026-0926-bangkok-flood");
 
     const toggles = page.getByTestId("tc-note-toggle");
-    await expect(toggles).toHaveCount(3); // Thu demo note + Fri condo note + Tue run note
+    await expect(toggles).toHaveCount(2); // Fri condo note + Tue run note
 
-    // collapsed: no note content in the DOM, so no note media is fetched
+    // collapsed: no note content in the DOM
     await expect(page.getByTestId("tc-note")).toHaveCount(0);
     await expect(page.locator("article video")).toHaveCount(0);
 
@@ -155,15 +164,11 @@ test.describe("timecapsule event", () => {
 
     // each toggle sits in its own day's card
     await expect(
-      cardOf("the rain begins").getByTestId("tc-note-toggle"),
-    ).toBeVisible();
-    await expect(
       cardOf("warnings stack up").getByTestId("tc-note-toggle"),
     ).toBeVisible();
-
-    // expanding the Thu note mounts its media lazily
-    await cardOf("the rain begins").getByTestId("tc-note-toggle").click();
-    await expect(page.locator("article video")).toHaveCount(1);
+    await expect(
+      cardOf("slow drain, airports in chaos").getByTestId("tc-note-toggle"),
+    ).toBeVisible();
 
     // expanding the Fri note shows the text note
     await cardOf("warnings stack up").getByTestId("tc-note-toggle").click();
