@@ -515,6 +515,35 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 553px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-0910-mickey-17.webp": {
+    w: 255,
+    h: 378,
+    srcset: "/posts/2026-0910-mickey-17.webp 255w",
+    sizes:
+      "(min-width: 1024px) 202px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-0911-the-last-house.webp": {
+    w: 283,
+    h: 354,
+    srcset: "/posts/2026-0911-the-last-house.webp 283w",
+    sizes:
+      "(min-width: 1024px) 240px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-0916-dungeon-crawler-carl.webp": {
+    w: 313,
+    h: 500,
+    srcset: "/posts/2026-0916-dungeon-crawler-carl.webp 313w",
+    sizes:
+      "(min-width: 1024px) 188px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-0917-four-thousand-weeks.webp": {
+    w: 960,
+    h: 1280,
+    srcset:
+      "/posts/2026-0917-four-thousand-weeks.640w.webp 640w, /posts/2026-0917-four-thousand-weeks.webp 960w",
+    sizes:
+      "(min-width: 1024px) 225px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/2026-0926-bangkok-flood-01-prachaniwet-market.webp": {
     w: 800,
     h: 533,
