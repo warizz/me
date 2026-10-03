@@ -7,7 +7,7 @@ tags:
   - bangkok
   - flood
   - timecapsule
-tldr: "Two days of heavy rain flooded eastern Bangkok and 29 provinces — 2.6 million affected, 22 dead. Water receding slowly; some communities under water into October."
+tldr: "Two days of heavy rain flooded eastern Bangkok and 30 provinces — 3.35 million affected, 24 dead. Water receding slowly; more rain forecast Oct 5–8 and 11–14."
 ---
 
 Rain started Thursday 4pm and barely stopped for two days. By Saturday morning, eastern Bangkok was under water — every canal full, 15 main roads flooded, all 50 districts declared disaster zones. More water kept flowing in from Nonthaburi and Pathum Thani. West Bangkok stayed dry.
@@ -17,16 +17,6 @@ Rain started Thursday 4pm and barely stopped for two days. By Saturday morning, 
 Rain starts and does not stop. A low-pressure system parks over the east of the city and keeps feeding more.
 
 _Sources: [Bangkok Post](https://www.bangkokpost.com/thailand/general/3326513/eastern-bangkok-under-water) · [The Nation](https://www.nationthailand.com/news/general/40071486)_
-
-> Demo — what media inside a note looks like. This photo is a placeholder reusing a news image:
->
-> ![Flood conditions in Bangkok](/posts/2026-0926-bangkok-flood-08-hero.webp "2026-09-24")
->
-> And a short video clip (CC0 placeholder until I drop in my own footage):
->
-> ![Demo clip](/posts/2026-0926-bangkok-flood-demo-note-clip.mp4 "2026-09-24")
->
-> …plus a few closing lines so this note ends up noticeably taller than its short host card — the overflow case worth eyeballing on a wide screen.
 
 ### Fri 25 Sep — warnings stack up
 
@@ -162,4 +152,37 @@ _Bang Kapi wet market still trading. Photo: [Nutthawat Wicheanbut / Bangkok Post
 - PM Anutin under fire: Klong Chan flats cut off without power, food or aid — residents shouted criticism from balconies on his return; experts say the BMA underestimated the rain and many pumps were out of order — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3328675/anutin-under-fire-over-flooding)
 - THAI suspends Suvarnabhumi cargo intake for 7 days — overflowing freight was blocking baggage equipment — [The Nation](https://www.nationthailand.com/business/corporate/40071676)
 
-_Photos: Bangkok Post, The Nation, THE STANDARD. Updated 30 Sep 2026._
+### Thu 1 Oct — toll climbs, hail returns
+
+- DDPM (6am): 24 dead, 3.35 million affected — 1.17 million households across 30 provinces and Bangkok; water still rising in much of central and eastern Thailand, Bangkok stable at 329,000 households — [The Nation](https://www.nationthailand.com/news/40071744)
+- Water down to 5–40cm on the remaining flooded roads in northern and eastern Bangkok — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3329529/bangkok-road-flooding-update)
+- Afternoon: TMD radar spots storm cells at 2.40pm; by 4pm rain is falling in 14 districts — Phasi Charoen logs the day's max, 49mm — [THE STANDARD](https://thestandard.co/bangkok-heavy-rain-hail-travel/)
+- Hail on Ratchadaphisek, Lat Phrao and Chok Chai 4 around 4pm; a big rain band sits over central Bangkok through 9pm and wrecks the evening commute — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3329638/hail-falls-as-heavy-rain-hits-parts-of-bangkok) · [THE STANDARD](https://thestandard.co/bangkok-rain-hail-latphrao-wanghin-travel/)
+- Blame game: People's Party leader says warnings came too late and the response failed; PM defends handing out cash in Sai Mai after his Facebook live sparks debate — [Bangkok Post](https://www.bangkokpost.com/thailand/politics/3329319/blame-game-for-floods-steps-up) · [Bangkok Post](https://www.bangkokpost.com/thailand/learning/easy/3329519/pm-defends-handing-out-cash-to-flood-victims)
+- FTI: at least ฿1 billion in flood damage to industries — [Bangkok Post](https://www.bangkokpost.com/business/general/3329609/at-least-b1-billion-in-flood-damage-to-industries-expected)
+- Expert Seree Supratid: no heavy rain for ~10 days, but the Chao Phraya basin must brace for northern runoff — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3329580/northern-water-runoff-the-next-challenge)
+
+![Hail on the pavement in Chatuchak](/posts/2026-0926-bangkok-flood-22-hail-chatuchak.webp "2026-10-01")
+_Hail on the pavement, Chatuchak. Photo: [Puriward Sinthopnumchai / Bangkok Post](https://www.bangkokpost.com/thailand/general/3329638/hail-falls-as-heavy-rain-hits-parts-of-bangkok)_
+
+![Heavy rain and hail over Bangkok](/posts/2026-0926-bangkok-flood-23-hail-storm.webp "2026-10-01")
+_The storm at full tilt. Photo: [Puriward Sinthopnumchai / Bangkok Post](https://www.bangkokpost.com/thailand/general/3329638/hail-falls-as-heavy-rain-hits-parts-of-bangkok)_
+
+### Fri 2 Oct — THAI CEO sacked
+
+- THAI board fires CEO Chai Eamsiri over the flight and baggage chaos — plus a separate probe into 860,000 bottles of wine (฿800M+) bought from a single vendor; Samrit Samniang steps in as acting CEO — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3330240/thai-airways-ceo-ousted-over-flood-mishaps) · [The Nation](https://www.nationthailand.com/business/corporate/40071796)
+- THAI scraps 24 more flights Oct 1–2 to clear 10,000+ delayed bags; normal schedules resume Sat Oct 3, with baggage claims moved to a new building — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3330160/thai-airways-to-resume-normal-flight-schedules-from-saturday) · [Bangkok Post](https://www.bangkokpost.com/thailand/general/3330214/baggage-claims-to-be-moved-to-new-location-thai-compensation-pledged)
+- Transport ministry pledges compensation for delayed flights and bags under the air-carriage law — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3330214/baggage-claims-to-be-moved-to-new-location-thai-compensation-pledged)
+- Chai Nat: sandbag embankment collapses overnight — 500+ homes flooded in Sapphaya, water up to 1.6m in a single night — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3330209/embankment-collapses-inundating-more-than-500-homes-in-chai-nat)
+- DDPM warns Bangkok and 10 provinces: Chao Phraya Dam releases of 2,200–2,500 m³/s will lift riverside levels 40–70cm outside flood barriers — [The Nation](https://www.nationthailand.com/news/general/40071788)
+
+### Sat 3 Oct — drying out, more rain ahead
+
+- Water in all four main canals finally falling — Khlong Lat Phrao up slightly after Pathum Thani discharged into it; Phraya Suree sluice gates opened from 10 to 20cm to speed drainage — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3330405/city-steps-up-drainage-before-rains)
+- BMA races to drain Saphan Sung and Lat Krabang before rain returns Oct 5–8 — extra pumps and a 100m flood barrier at Kheha Romklao — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3330405/city-steps-up-drainage-before-rains)
+- 13 Bangkok districts at heavy-rain risk Oct 3–4; PM tells 76 provinces to prepare for Oct 4–5 rain — [The Nation](https://www.nationthailand.com/news/general/40071792) · [The Nation](https://www.nationthailand.com/news/40071783)
+- Central Plains and Chao Phraya riverside warned: heavy rain Oct 11–14, up to 100mm before it moves south — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3330390/more-rain-coming-from-oct-1114)
+- Expert: no repeat of 2011 — Nakhon Sawan runoff totals 4.3bn m³ this year — [The Nation](https://www.nationthailand.com/news/general/40071810)
+- Food prices climb: vegetables up ฿10–15/kg, eggs up ฿6–10 a tray as floods hit farms and transport — [The Nation](https://www.nationthailand.com/business/economy/40071794)
+
+_Photos: Bangkok Post, The Nation, THE STANDARD. Updated 3 Oct 2026._
