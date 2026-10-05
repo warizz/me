@@ -3,6 +3,12 @@
  **/
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    // inline the page's CSS into the HTML at build time; removes the
+    // render-blocking stylesheet requests (Lighthouse "Eliminate render-blocking
+    // resources"). Next 16 app-router replacement for the old optimizeCss/critters.
+    inlineCss: true,
+  },
   async headers() {
     return [
       {
