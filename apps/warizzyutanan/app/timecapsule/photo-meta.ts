@@ -736,6 +736,14 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 569px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-1005-monster-the-lizzie-borden-story.webp": {
+    w: 1126,
+    h: 1688,
+    srcset:
+      "/posts/2026-1005-monster-the-lizzie-borden-story.640w.webp 640w, /posts/2026-1005-monster-the-lizzie-borden-story.960w.webp 960w, /posts/2026-1005-monster-the-lizzie-borden-story.webp 1126w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
     h: 871,
