@@ -12,6 +12,9 @@ export default function Lightbox({ photos, title, compact }: Props) {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
   const ref = useRef<HTMLDialogElement>(null);
+  // compact thumbs render at ~96x64 CSS px; serve the 480w variant (repo's
+  // <file>.<w>w.webp convention) instead of the full-size photo
+  const thumbSrc = photos[0]?.replace(/\.webp$/, ".480w.webp");
 
   useEffect(() => {
     if (!open) return;
@@ -44,8 +47,18 @@ export default function Lightbox({ photos, title, compact }: Props) {
         >
           {}
           <img
-            src={photos[0]}
+            src={compact ? thumbSrc : photos[0]}
             alt={title}
+            loading={compact ? "lazy" : undefined}
+            onError={
+              compact
+                ? (e) => {
+                    // variant missing -> fall back to the full-size photo
+                    if (e.currentTarget.src !== photos[0])
+                      e.currentTarget.src = photos[0];
+                  }
+                : undefined
+            }
             className={
               compact
                 ? "h-16 w-24 object-cover rounded border border-black/10 dark:border-white/20"
