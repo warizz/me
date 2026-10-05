@@ -18,3 +18,33 @@
   photos:
     - /photos/sale/alone-in-condo-1.webp
     - /photos/sale/alone-in-condo-2.webp
+- id: "1984"
+  title: หนังสือ 1984
+  description: อ่านจบแล้ว
+  originalPrice: 270
+  salePrice: 135
+  status: available
+  addedAt: 2026-10-05
+  photos:
+    - /photos/sale/1984-1.webp
+    - /photos/sale/1984-2.webp
+- id: dueay-rak-lae-phu-phang
+  title: หนังสือ ด้วยรักและผุพัง
+  description: อ่านจบแล้ว
+  originalPrice: 330
+  salePrice: 165
+  status: available
+  addedAt: 2026-10-05
+  photos:
+    - /photos/sale/dueay-rak-lae-phu-phang-1.webp
+    - /photos/sale/dueay-rak-lae-phu-phang-2.webp
+- id: rueang-lae-jak-at-sun-tha-ya
+  title: หนังสือ เรื่องเล่าจากอาศรมสนธยา
+  description: อ่านจบแล้ว
+  originalPrice: 675
+  salePrice: 200
+  status: available
+  addedAt: 2026-10-05
+  photos:
+    - /photos/sale/rueang-lae-jak-at-sun-tha-ya-1.webp
+    - /photos/sale/rueang-lae-jak-at-sun-tha-ya-2.webp

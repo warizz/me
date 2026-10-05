@@ -1,4 +1,24 @@
 import { expect, test } from "@playwright/test";
+import { existsSync, readFileSync } from "fs";
+import path from "path";
+
+// derive expected counts from items.yaml so the spec survives item additions
+function itemCounts() {
+  // walk up from cwd to the pnpm workspace root, then into the app
+  let dir = process.cwd();
+  const yamlPath = path.join(
+    "apps/warizzyutanan/resource/sale/items.yaml",
+  );
+  while (!existsSync(path.join(dir, yamlPath))) {
+    const parent = path.dirname(dir);
+    if (parent === dir) throw new Error(`items.yaml not found above ${process.cwd()}`);
+    dir = parent;
+  }
+  const yaml = readFileSync(path.join(dir, yamlPath), "utf8");
+  const ids = yaml.match(/^- id:/gm)?.length ?? 0;
+  const available = yaml.match(/^  status: available$/gm)?.length ?? 0;
+  return { total: ids, available };
+}
 
 test.describe("sale", () => {
   test.beforeEach(async ({ page }) => {
@@ -15,42 +35,46 @@ test.describe("sale", () => {
   test("renders items from items.yaml as a table on desktop", async ({
     page,
   }) => {
+    const { available } = itemCounts();
     await expect(page.locator("table")).toBeVisible();
     const rows = page.locator("tbody tr");
-    expect(await rows.count()).toBe(2);
+    expect(await rows.count()).toBe(available);
     const table = page.locator("table");
     await expect(
       table.getByText("หนังสือ ชีวิตเรามีแค่สี่พันสัปดาห์"),
     ).toBeVisible();
     await expect(table.getByText("-51%")).toBeVisible(); // 130 from 265
-    await expect(table.getByText("-50%")).toBeVisible(); // 110 from 220
-    await expect(table.getByText("● ยังไม่ขาย")).toHaveCount(2);
+    await expect(table.getByText("-50%").first()).toBeVisible(); // 110 from 220
+    await expect(table.getByText("● ยังไม่ขาย")).toHaveCount(available);
   });
 
   test("switches to stacked cards on mobile", async ({ page }) => {
+    const { available } = itemCounts();
     await page.setViewportSize({ width: 375, height: 720 });
     await expect(page.locator("table")).toBeHidden();
-    await expect(page.locator("ul.md\\:hidden > li")).toHaveCount(2);
+    await expect(page.locator("ul.md\\:hidden > li")).toHaveCount(available);
   });
 
   test("filters by status, default all", async ({ page }) => {
+    const { total } = itemCounts();
     const filters = page.getByTestId("sale-filters");
     const rows = page.locator("tbody tr");
-    await expect(rows).toHaveCount(2); // default ทั้งหมด
+    await expect(rows).toHaveCount(total); // default ทั้งหมด
 
     await filters.getByRole("button", { name: "ยังไม่ขาย" }).click();
-    await expect(rows).toHaveCount(2);
+    await expect(rows).toHaveCount(total);
 
     await filters.getByRole("button", { name: "ขายแล้ว" }).click();
     await expect(rows).toHaveCount(0);
 
     await filters.getByRole("button", { name: "ทั้งหมด" }).click();
-    await expect(rows).toHaveCount(2);
+    await expect(rows).toHaveCount(total);
   });
 
   test("opens the lightbox and navigates photos", async ({ page }) => {
-    const thumb = page.locator("tbody tr").first().locator("button");
-    await thumb.click();
+    // newest item first (sorted by addedAt desc) — target the 1984 book
+    const row = page.locator("tbody tr").filter({ hasText: "1984" });
+    await row.locator("button").first().click();
 
     const dialog = page.locator("dialog");
     await expect(dialog).toBeVisible();
@@ -62,7 +86,7 @@ test.describe("sale", () => {
       await expect(dialog.getByText("2/2")).toBeVisible();
       await expect(dialog.locator("img")).toHaveAttribute(
         "src",
-        /four-thousand-weeks-2\.webp/,
+        /1984-2\.webp/,
       );
     }
 
