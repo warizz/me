@@ -1,10 +1,12 @@
 import omit from "lodash/omit";
 import dynamic from "next/dynamic";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { type Components } from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
 import photoMeta from "../app/timecapsule/photo-meta";
+
+import TripJournal from "./TripJournal";
 
 const CodeBlock = dynamic(() => import("./CodeBlock"));
 
@@ -83,6 +85,9 @@ export default function Markdown({ children }: Props) {
             />
           );
         },
+        "trip-journal"() {
+          return <TripJournal />;
+        },
         video({ ...props }) {
           const _props = omit(props, ["node"]);
           return (
@@ -95,7 +100,7 @@ export default function Markdown({ children }: Props) {
         pre({ children }) {
           return <>{children}</>;
         },
-      }}
+      } as Components}
     >
       {children}
     </ReactMarkdown>

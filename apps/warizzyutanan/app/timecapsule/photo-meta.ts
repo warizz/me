@@ -529,6 +529,14 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 240px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-0912-fjallraven-classic-sweden-2026.webp": {
+    w: 1280,
+    h: 960,
+    srcset:
+      "/posts/2026-0912-fjallraven-classic-sweden-2026.640w.webp 640w, /posts/2026-0912-fjallraven-classic-sweden-2026.960w.webp 960w, /posts/2026-0912-fjallraven-classic-sweden-2026.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 400px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/2026-0916-dungeon-crawler-carl.webp": {
     w: 313,
     h: 500,
