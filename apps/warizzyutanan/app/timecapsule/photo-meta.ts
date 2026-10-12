@@ -752,6 +752,70 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-1011-sso-board-election-01-phanat-ballot.webp": {
+    w: 1200,
+    h: 628,
+    srcset:
+      "/posts/2026-1011-sso-board-election-01-phanat-ballot.640w.webp 640w, /posts/2026-1011-sso-board-election-01-phanat-ballot.960w.webp 960w, /posts/2026-1011-sso-board-election-01-phanat-ballot.webp 1200w",
+    sizes:
+      "(min-width: 1024px) 573px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1011-sso-board-election-02-thaweekiat-portrait.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-1011-sso-board-election-02-thaweekiat-portrait.640w.webp 640w, /posts/2026-1011-sso-board-election-02-thaweekiat-portrait.960w.webp 960w, /posts/2026-1011-sso-board-election-02-thaweekiat-portrait.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1011-sso-board-election-03-progressive-team-candidates.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-1011-sso-board-election-03-progressive-team-candidates.640w.webp 640w, /posts/2026-1011-sso-board-election-03-progressive-team-candidates.960w.webp 960w, /posts/2026-1011-sso-board-election-03-progressive-team-candidates.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1011-sso-board-election-04-sso-press-conference.webp": {
+    w: 1280,
+    h: 721,
+    srcset:
+      "/posts/2026-1011-sso-board-election-04-sso-press-conference.640w.webp 640w, /posts/2026-1011-sso-board-election-04-sso-press-conference.960w.webp 960w, /posts/2026-1011-sso-board-election-04-sso-press-conference.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1011-sso-board-election-05-progressive-victory.webp": {
+    w: 1280,
+    h: 721,
+    srcset:
+      "/posts/2026-1011-sso-board-election-05-progressive-victory.640w.webp 640w, /posts/2026-1011-sso-board-election-05-progressive-victory.960w.webp 960w, /posts/2026-1011-sso-board-election-05-progressive-victory.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1011-sso-board-election-06-samut-prakan-queue.webp": {
+    w: 850,
+    h: 567,
+    srcset:
+      "/posts/2026-1011-sso-board-election-06-samut-prakan-queue.640w.webp 640w, /posts/2026-1011-sso-board-election-06-samut-prakan-queue.webp 850w",
+    sizes:
+      "(min-width: 1024px) 450px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1011-sso-board-election-07-worker-casts-ballot.webp": {
+    w: 850,
+    h: 567,
+    srcset:
+      "/posts/2026-1011-sso-board-election-07-worker-casts-ballot.640w.webp 640w, /posts/2026-1011-sso-board-election-07-worker-casts-ballot.webp 850w",
+    sizes:
+      "(min-width: 1024px) 450px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1011-sso-board-election-08-silom-last-minute.webp": {
+    w: 850,
+    h: 550,
+    srcset:
+      "/posts/2026-1011-sso-board-election-08-silom-last-minute.640w.webp 640w, /posts/2026-1011-sso-board-election-08-silom-last-minute.webp 850w",
+    sizes:
+      "(min-width: 1024px) 464px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
     h: 871,
