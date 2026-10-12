@@ -50,13 +50,15 @@ test.describe("timecapsule index", () => {
     expect(await items.count()).toBeGreaterThan(0);
   });
 
-  test("shows the bangkok flood event as ongoing", async ({ page }) => {
+  test("shows the bangkok flood event as closed", async ({ page }) => {
     await page.goto("/timecapsule");
 
     const item = page.locator("ol > li", {
       has: page.getByRole("link", { name: "Bangkok Under Water" }),
     });
-    await expect(item.locator("time")).toContainText("ongoing");
+    await expect(item.locator("time")).toContainText("Sep");
+    await expect(item.locator("time")).toContainText("Oct");
+    await expect(item.locator("time")).not.toContainText("ongoing");
     await expect(item.getByText("#weather")).toBeVisible();
   });
 
@@ -85,16 +87,20 @@ test.describe("timecapsule event", () => {
 
     await expect(page.locator("h1")).toHaveText("Bangkok Under Water");
     await expect(page.locator("article > header time")).toContainText(
+      "25 Sep",
+    );
+    await expect(page.locator("article > header time")).toContainText("Oct");
+    await expect(page.locator("article > header time")).not.toContainText(
       "ongoing",
     );
     await expect(page.getByText("AI-generated summary")).toBeVisible();
   });
 
-  test("renders all ten timeline nodes", async ({ page }) => {
+  test("renders all fourteen timeline nodes", async ({ page }) => {
     await page.goto("/timecapsule/2026-0926-bangkok-flood");
 
     const headings = page.locator("h2");
-    await expect(headings).toHaveCount(10);
+    await expect(headings).toHaveCount(14);
     await expect(
       page.getByRole("heading", { name: "the rain begins" }),
     ).toBeVisible();

@@ -7,7 +7,8 @@ tags:
   - bangkok
   - flood
   - timecapsule
-tldr: "Two days of heavy rain flooded eastern Bangkok and 30 provinces — 3.35 million affected, 24 dead. Water receding slowly; more rain forecast Oct 5–8 and 11–14."
+tldr: "Bangkok's worst flooding in 15 years — two days of rain drowned the city's east. 3.3M+ affected nationwide, 60+ dead. Disaster declaration lifted in 42 of 50 districts on Oct 9; eight eastern districts still draining as the entry closes."
+endDate: "2026-10-12"
 ---
 
 Rain started Thursday 4pm and barely stopped for two days. By Saturday morning, eastern Bangkok was under water — every canal full, 15 main roads flooded, all 50 districts declared disaster zones. More water kept flowing in from Nonthaburi and Pathum Thani. West Bangkok stayed dry.
@@ -185,4 +186,31 @@ _The storm at full tilt. Photo: [Puriward Sinthopnumchai / Bangkok Post](https:/
 - Expert: no repeat of 2011 — Nakhon Sawan runoff totals 4.3bn m³ this year — [The Nation](https://www.nationthailand.com/news/general/40071810)
 - Food prices climb: vegetables up ฿10–15/kg, eggs up ฿6–10 a tray as floods hit farms and transport — [The Nation](https://www.nationthailand.com/business/economy/40071794)
 
-_Photos: Bangkok Post, The Nation, THE STANDARD. Updated 3 Oct 2026._
+### Mon 5 – Tue 6 Oct — rain returns, canals hold
+
+- Overnight rain 1–3am: ~50mm average, almost 100mm in Sai Mai — but the main canals (Saen Saep, Prawet Burirom, Prem Prachakorn) fall to near-normal — [The Nation](https://www.nationthailand.com/news/general/40071920)
+- RID keeps Chao Phraya Dam releases at 2,500 m³/s, says city embankments will hold; riverside areas outside barriers still watched — [The Nation](https://www.nationthailand.com/news/general/40071902)
+- Governor Chadchart: recovery phase has begun; ~30mm forecast rain is "not a cause for serious concern" — a repeat of the 300mm three-day event is unlikely — [Thairath](https://en.thairath.co.th/news/local/2964076)
+- Trash piles up where water receded; BMA collects waste with the Ministry of Defence — [Thairath](https://en.thairath.co.th/news/local/2964076)
+
+### Wed 7 Oct — nationwide toll 60, floods "largely receded" in Bangkok
+
+- Nationwide since mid-September: 60 dead, flooding ongoing in 27 of 77 provinces; Bangkok largely receded, 4 dead, citywide cleanup underway — [CNA](https://www.channelnewsasia.com/asia/thailand-floods-death-toll-rain-bangkok-6438936)
+- Prachin Buri hit hardest: 19 dead, 188,000+ affected, 7 districts under water — [CNA](https://www.channelnewsasia.com/asia/thailand-floods-death-toll-rain-bangkok-6438936)
+- Chadchart warns Bangkok still vulnerable — canals and retention areas full, so rain the city could normally absorb (60–70mm) may flood again faster; Oct 10–13 rain ahead — [The Nation](https://www.nationthailand.com/news/general/40071959)
+
+### Fri 9 – Sat 10 Oct — disaster declaration lifted in 42 districts
+
+- BMA ends the disaster declaration in 42 of 50 districts (notice dated Oct 9); eight eastern districts remain: Khlong Sam Wa, Bueng Kum, Prawet, Min Buri, Lat Krabang, Saphan Sung, Sai Mai, Nong Chok — [Thairath](https://en.thairath.co.th/news/local/2965422)
+- Water still in 97 communities across six eastern districts after two rain-free days; more rain 4pm Oct 10 – 4am Oct 11 (40–50mm) — [The Nation](https://www.nationthailand.com/thailand/bangkok/40072100)
+- DDPM nationwide: 3.16M people / 1.14M households affected across 21 provinces + Bangkok, 53 dead (Prachin Buri 23, Samut Prakan 9, Bangkok 4); Bangkok: 329,000 households — [The Nation](https://www.nationthailand.com/news/general/40072090)
+
+### Mon 12 Oct — the city moves on
+
+- Floods still affect 3.14M people in 21 provinces + Bangkok — but Bangkok itself is hosting the IMF / World Bank annual meetings (Oct 12–18, Queen Sirikit National Convention Centre, 15,000+ delegates from ~190 countries) — [The Nation](https://www.nationthailand.com/news/general/40072128) · [The Vibes](https://www.thevibes.com/articles/world/128030/bangkok-boosts-flood-contingency-plans-as-delegates-arrive-for-imf-world-bank-meetings)
+- Finance Ministry, TMD and BMA unveil a joint flood-ready plan for the meetings: four contingency scenarios, drainage crews and mobile pumps around the venue, evacuation plans ready — [Bangkok Post](https://www.bangkokpost.com/thailand/general/3330945/floods-wont-disrupt-imf-meetings-ministry-says) · [The Nation](https://www.nationthailand.com/news/general/40071910)
+- BMA: water remains in 80 communities across 9 eastern districts; pumping continues, and Kheha Ramkhamhaeng is targeted for full recovery in 4–5 days with the Defence Ministry's help — [Thairath](https://www.thairath.co.th/news/politic/2964943) · [Daily News](https://www.dailynews.co.th/news/6258511/)
+- PM Anutin, facing public criticism over the flood response, orders agencies to manage flooding and transport so the meetings run undisrupted — [CNA](https://www.channelnewsasia.com/asia/thailand-floods-death-toll-rain-bangkok-6438936)
+- TMD: heavy rain in parts of the country until Oct 13, then the system moves south — [Press of Asia](https://pressofasia.com/thailand-floods-3-million-affected-53-deaths-bangkok-imf-world-bank-meetings-anutin-evacuation-plans/)
+
+_Photos: Bangkok Post, The Nation, THE STANDARD. Updated 12 Oct 2026 — event closed._
