@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+
 import BlogLayout from "../../components/BlogLayout";
 import { getContentFileNames } from "../../components/lib/getContent";
 import getPostData from "../../components/lib/getPostData";
@@ -17,16 +19,7 @@ export async function generateMetadata() {
   };
 }
 
-interface Props {
-  searchParams: Promise<{ tag?: string | string[] }>;
-}
-
-async function PostsPage({ searchParams }: Props) {
-  const { tag } = await searchParams;
-  const activeTags = Array.from(
-    new Set((Array.isArray(tag) ? tag : tag ? [tag] : []).filter(Boolean)),
-  );
-
+async function PostsPage() {
   const posts = getPosts().map(({ date, id, tags, title, tldr }) => ({
     date,
     id,
@@ -40,7 +33,9 @@ async function PostsPage({ searchParams }: Props) {
       breadcrumbs={[{ text: "posts", href: "/posts" }]}
       h1={<h1 className="text-primary dark:text-primary-invert">Posts</h1>}
     >
-      <PostsList activeTags={activeTags} posts={posts} />
+      <Suspense>
+        <PostsList posts={posts} />
+      </Suspense>
     </BlogLayout>
   );
 }

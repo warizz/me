@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 import type { IPost } from "./lib/getPostData";
 
@@ -8,11 +11,15 @@ export type PostSummary = Pick<
 >;
 
 interface Props {
-  activeTags: string[];
   posts: PostSummary[];
 }
 
-export default function PostsList({ activeTags, posts }: Props) {
+export default function PostsList({ posts }: Props) {
+  // Client-side tag filter keeps the page static (CDN-cacheable); reading
+  // searchParams on the server would force dynamic rendering.
+  const tag = useSearchParams().getAll("tag");
+  const activeTags = Array.from(new Set(tag.filter(Boolean)));
+
   const sorted = [...posts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   );
