@@ -752,6 +752,13 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-1010-dungeon-crawler-carl-2.webp": {
+    w: 333,
+    h: 500,
+    srcset: "/posts/2026-1010-dungeon-crawler-carl-2.webp 333w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/2026-1011-sso-board-election-01-phanat-ballot.webp": {
     w: 1200,
     h: 628,
