@@ -7,7 +7,7 @@
         {
           "type": "header",
           "key": "user-agent",
-          "value": "[Aa]mazonbot"
+          "value": ".*[Aa]mazonbot.*"
         }
       ],
       "mitigate": {
