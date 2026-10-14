@@ -1,0 +1,15 @@
+User-agent: *
+
+# Aggressive SEO/AI crawlers with no value to this site
+Disallow: /
+
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: facebookexternalhit
+User-agent: ClaudeBot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+Disallow:
+
+Sitemap: https://www.warizzyutanan.com/sitemap.xml
