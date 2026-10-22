@@ -40,8 +40,8 @@ importers:
         specifier: 16.4.0
         version: 16.4.0
       '@next/swc-linux-x64-musl':
-        specifier: 16.4.0
-        version: 16.4.0
+        specifier: 16.4.2
+        version: 16.4.2
       turbo-linux-64:
         specifier: 2.8.17
         version: 2.8.17
@@ -414,8 +414,8 @@ packages:
     os: [linux]
     libc: [glibc]
 
-  '@next/swc-linux-x64-musl@16.4.0':
-    resolution: {integrity: sha512-8d5WLS6a9YalqpOgXdlbvonFu+sIgjA+CO6tGzetrpPVcUL56foa7B7664h41rAlbLi5fJwK4vWji3zf4QDy+w==}
+  '@next/swc-linux-x64-musl@16.4.2':
+    resolution: {integrity: sha512-yY2uh1YhX6ufuYy2FCbw1dqblbhI57GLYAJfCkqD9auTv6pLrH67Uccjc3QMKBeCYAG6lkgu08ExmX1bbjejjQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
@@ -2118,7 +2118,7 @@ snapshots:
   '@next/swc-linux-x64-gnu@16.4.2':
     optional: true
 
-  '@next/swc-linux-x64-musl@16.4.0':
+  '@next/swc-linux-x64-musl@16.4.2':
     optional: true
 
   '@next/swc-linux-x64-musl@16.4.2':
