@@ -515,6 +515,14 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 553px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-0822-unicorn-overlord.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-0822-unicorn-overlord.640w.webp 640w, /posts/2026-0822-unicorn-overlord.960w.webp 960w, /posts/2026-0822-unicorn-overlord.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/2026-0910-mickey-17.webp": {
     w: 255,
     h: 378,
