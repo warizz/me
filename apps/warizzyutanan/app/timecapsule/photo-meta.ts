@@ -59,6 +59,13 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 688px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2024-1110-dont-come-home.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2024-1110-dont-come-home.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/2024-1110-theres-no-such-thing-as-an-easy-job.webp": {
     w: 1280,
     h: 1707,
@@ -66,6 +73,90 @@ const photoMeta: Record<
       "/posts/2024-1110-theres-no-such-thing-as-an-easy-job.640w.webp 640w, /posts/2024-1110-theres-no-such-thing-as-an-easy-job.960w.webp 960w, /posts/2024-1110-theres-no-such-thing-as-an-easy-job.webp 1280w",
     sizes:
       "(min-width: 1024px) 225px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2024-1221-dan-da-dan.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2024-1221-dan-da-dan.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2024-1222-tmr-and-i.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2024-1222-tmr-and-i.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0106-kaiju-no-8-s1.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2025-0106-kaiju-no-8-s1.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0110-squid-game-2.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2025-0110-squid-game-2.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0111-boy-kills-world.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2025-0111-boy-kills-world.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0113-carry-on.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2025-0113-carry-on.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0117-knock-at-the-cabin.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2025-0117-knock-at-the-cabin.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0118-ready-or-not.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2025-0118-ready-or-not.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0121-late-night-with-the-devil.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2025-0121-late-night-with-the-devil.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0123-the-substance.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2025-0123-the-substance.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0128-the-paradise-of-thorns.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2025-0128-the-paradise-of-thorns.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0130-perfect-days.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2025-0130-perfect-days.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
   "/posts/2025-0204-predictably-irrational.webp": {
     w: 1179,
@@ -130,6 +221,13 @@ const photoMeta: Record<
       "/posts/2025-0223-udemy-github-copilot.640w.webp 640w, /posts/2025-0223-udemy-github-copilot.webp 658w",
     sizes:
       "(min-width: 1024px) 386px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0225-eastern-promises.webp": {
+    w: 480,
+    h: 720,
+    srcset: "/posts/2025-0225-eastern-promises.webp 480w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
   "/posts/2025-0305-gi-bad.webp": {
     w: 1280,
@@ -515,6 +613,14 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 553px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2025-1109-casino.webp": {
+    w: 1280,
+    h: 695,
+    srcset:
+      "/posts/2025-1109-casino.640w.webp 640w, /posts/2025-1109-casino.960w.webp 960w, /posts/2025-1109-casino.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 553px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/2026-0822-unicorn-overlord.webp": {
     w: 1280,
     h: 720,
@@ -860,6 +966,14 @@ const photoMeta: Record<
     h: 1920,
     srcset:
       "/posts/2026-1023-presence.640w.webp 640w, /posts/2026-1023-presence.960w.webp 960w, /posts/2026-1023-presence.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1025-something-very-bad.webp": {
+    w: 1280,
+    h: 1920,
+    srcset:
+      "/posts/2026-1025-something-very-bad.640w.webp 640w, /posts/2026-1025-something-very-bad.960w.webp 960w, /posts/2026-1025-something-very-bad.webp 1280w",
     sizes:
       "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
