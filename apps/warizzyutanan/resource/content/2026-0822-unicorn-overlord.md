@@ -4,6 +4,7 @@ by: "Vanillaware"
 tldr: "Gorgeous Vanillaware art wasted on counter systems I couldn't be bothered to learn."
 date: "2026-08-22"
 rating: 0
+platinum: true
 publish: true
 tags:
   - game

@@ -4,6 +4,7 @@ by: "Gearbox Software"
 tldr: "The looting carried it — good funny dialogue I mostly couldn't hear over the gunfire."
 date: "2026-11-01"
 rating: 1
+platinum: true
 publish: true
 tags:
   - game

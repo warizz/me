@@ -4,12 +4,15 @@ by: "Sandfall Interactive"
 tldr: "Beautiful old-school JRPG with fun combat."
 date: "2025-09-07"
 rating: 2
+platinum: true
 publish: true
 tags:
   - game
   - RPG
   - post
 ---
+
+![](/posts/2025-0907-clair-obscur-expedition-33-cover.webp)
 
 ![](/posts/2025-0907-clair-obscur-expedition-33.webp)
 

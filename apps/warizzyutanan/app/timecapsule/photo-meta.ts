@@ -74,6 +74,13 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 225px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2024-1214-metaphor-refantazio-cover.webp": {
+    w: 616,
+    h: 353,
+    srcset: "/posts/2024-1214-metaphor-refantazio-cover.webp 616w",
+    sizes:
+      "(min-width: 1024px) 524px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/2024-1221-dan-da-dan.webp": {
     w: 480,
     h: 720,
@@ -165,6 +172,13 @@ const photoMeta: Record<
       "/posts/2025-0204-predictably-irrational.640w.webp 640w, /posts/2025-0204-predictably-irrational.960w.webp 960w, /posts/2025-0204-predictably-irrational.webp 1179w",
     sizes:
       "(min-width: 1024px) 169px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0208-granblue-fantasy-relink-cover.webp": {
+    w: 616,
+    h: 353,
+    srcset: "/posts/2025-0208-granblue-fantasy-relink-cover.webp 616w",
+    sizes:
+      "(min-width: 1024px) 524px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
   "/posts/2025-0208-granblue-fantasy-relink.webp": {
     w: 1280,
@@ -260,6 +274,13 @@ const photoMeta: Record<
       "/posts/2025-0311-zzz-agents.640w.webp 640w, /posts/2025-0311-zzz-agents.960w.webp 960w, /posts/2025-0311-zzz-agents.webp 1280w",
     sizes:
       "(min-width: 1024px) 650px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0311-zzz-cover.webp": {
+    w: 616,
+    h: 353,
+    srcset: "/posts/2025-0311-zzz-cover.webp 616w",
+    sizes:
+      "(min-width: 1024px) 524px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
   "/posts/2025-0311-zzz-dashboard.webp": {
     w: 1280,
@@ -413,6 +434,13 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2025-0414-mh-wilds-cover.webp": {
+    w: 616,
+    h: 353,
+    srcset: "/posts/2025-0414-mh-wilds-cover.webp 616w",
+    sizes:
+      "(min-width: 1024px) 524px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/2025-0415-black-mirror-7.webp": {
     w: 1280,
     h: 641,
@@ -517,6 +545,13 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 688px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2025-0813-death-stranding-2-cover.webp": {
+    w: 616,
+    h: 353,
+    srcset: "/posts/2025-0813-death-stranding-2-cover.webp 616w",
+    sizes:
+      "(min-width: 1024px) 524px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/2025-0813-death-stranding-2.webp": {
     w: 1280,
     h: 527,
@@ -556,6 +591,13 @@ const photoMeta: Record<
       "/posts/2025-0830-final-destnation-bloodlines.640w.webp 640w, /posts/2025-0830-final-destnation-bloodlines.960w.webp 960w, /posts/2025-0830-final-destnation-bloodlines.webp 1280w",
     sizes:
       "(min-width: 1024px) 688px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2025-0907-clair-obscur-expedition-33-cover.webp": {
+    w: 616,
+    h: 353,
+    srcset: "/posts/2025-0907-clair-obscur-expedition-33-cover.webp 616w",
+    sizes:
+      "(min-width: 1024px) 524px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
   "/posts/2025-0907-clair-obscur-expedition-33.webp": {
     w: 1280,
