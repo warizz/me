@@ -985,6 +985,13 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-1101-borderlands-3.webp": {
+    w: 616,
+    h: 353,
+    srcset: "/posts/2026-1101-borderlands-3.webp 616w",
+    sizes:
+      "(min-width: 1024px) 524px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
     h: 871,
