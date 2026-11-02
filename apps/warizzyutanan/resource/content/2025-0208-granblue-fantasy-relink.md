@@ -2,6 +2,7 @@
 title: "Granblue Fantasy: Relink"
 date: "2025-02-08"
 tldr: "An addictive game with excellent gameplay, UI, and satisfying grinding, though the story is weak."
+rating: 1
 platinum: true
 publish: true
 tags:
@@ -9,6 +10,8 @@ tags:
   - action_rpg
   - post
 ---
+
+![](/posts/2025-0208-granblue-fantasy-relink-cover.webp)
 
 ![My main, Yodarha.](/posts/2025-0208-granblue-fantasy-relink.webp)
 

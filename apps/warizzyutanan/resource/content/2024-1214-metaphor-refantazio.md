@@ -1,12 +1,16 @@
 ---
 title: "Metaphor: ReFantazio"
 date: "2024-12-14"
+rating: 1
+platinum: true
 publish: true
 tags:
   - game
   - rpg
   - post
 ---
+
+![](/posts/2024-1214-metaphor-refantazio-cover.webp)
 
 I tried the demo on Oct 3 and pre-ordered the game. The anime cutscenes are poorly done, but the UI is great.
 

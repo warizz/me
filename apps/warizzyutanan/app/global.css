@@ -125,3 +125,49 @@
   filter: none;
   z-index: 20;
 }
+
+/* Games wall: platinum sweep across the cover (style 9) */
+.plat-sweep {
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(242, 246, 250, 0.28) 48%,
+    rgba(242, 246, 250, 0.05) 52%,
+    transparent 70%
+  );
+  background-size: 250% 100%;
+  animation: plat-sweep 3.2s ease-in-out infinite;
+}
+
+@keyframes plat-sweep {
+  0%,
+  55% {
+    background-position: 130% 0;
+  }
+  100% {
+    background-position: -30% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plat-sweep {
+    animation: none;
+  }
+}
+
+/* Games wall: golden rating drift (style G9) */
+@keyframes rating-gold-drift {
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .plat-sweep ~ * {
+    animation: none;
+  }
+}

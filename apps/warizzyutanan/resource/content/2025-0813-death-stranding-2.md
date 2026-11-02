@@ -4,12 +4,15 @@ by: "Hideo Kojima"
 tldr: "Game of the year, beautiful and strange."
 date: "2025-08-12"
 rating: 2
+platinum: true
 publish: true
 tags:
   - game
   - action
   - post
 ---
+
+![](/posts/2025-0813-death-stranding-2-cover.webp)
 
 ![](/posts/2025-0813-death-stranding-2.webp)
 

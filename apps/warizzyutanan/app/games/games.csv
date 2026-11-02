@@ -1,0 +1,35 @@
+id,title,release_year,rating,started_at,finished_at,earned_platinum_trophy,slug
+g-0001,Inscryption,2021,1,,2024-07-01,FALSE,inscryption
+g-0002,Final Fantasy XVI,2023,0,,2024-07-08,TRUE,final-fantasy-xvi
+g-0003,Final Fantasy VII,1997,0,,2024-10-15,TRUE,final-fantasy-vii
+g-0004,Final Fantasy VII Remake,2020,1,,2024-10-12,TRUE,final-fantasy-vii-remake
+g-0005,ARMORED CORE VI FIRES OF RUBICON,2023,2,,2024-10-01,TRUE,armored-core-vi
+g-0006,Diablo IV,2023,2,,,FALSE,
+g-0007,Street Fighter 6,2023,1,,,FALSE,
+g-0008,Stranger of Paradise: Final Fantasy Origin,2022,1,,2024-01-15,TRUE,stranger-of-paradise
+g-0009,Final Fantasy V Pixel Remaster,2021,0,,2024-01-31,TRUE,final-fantasy-v
+g-0010,Final Fantasy VI Pixel Remaster,2021,0,,2024-02-24,TRUE,final-fantasy-vi
+g-0011,Final Fantasy VII Rebirth,2024,1,,2024-06-13,TRUE,final-fantasy-vii-rebirth
+g-0012,Dave the Diver,2022,1,,2024-07-07,TRUE,dave-the-diver
+g-0013,Remnant 2,2023,1,,,FALSE,
+g-0014,Disco Elysium - The Final Cut,2019,1,,2024-09-24,FALSE,disco-elysium
+g-0015,Tunic,2022,1,,2024-10-03,TRUE,tunic
+g-0016,Metaphor: ReFantazio,2024,1,2024-10-11,2024-12-14,TRUE,metaphor-refantazio
+g-0017,Elden Ring: Shadow of the Erdtree,2024,,,,FALSE,
+g-0018,Granblue Fantasy: Relink,2024,1,2024-12-20,2025-02-08,TRUE,granblue-fantasy-relink
+g-0019,ZZZ 1.5,2024,2,2025-02-09,2025-03-11,TRUE,zenless-zone-zero
+g-0020,Monster Hunter Wilds,2025,2,2025-03-02,2025-04-15,TRUE,monster-hunter-wilds
+g-0021,ZZZ 1.6 and so on,2024,2,2025-03-11,,TRUE,zenless-zone-zero
+g-0022,Hades,2020,1,2025-04-17,2025-06-11,TRUE,hades
+g-0023,Death Stranding 2,2025,2,2025-06-27,2025-08-13,TRUE,death-stranding-2
+g-0024,Clair Obscur: Expedition 33,2025,2,2025-05-12,2025-09-07,TRUE,clair-obscur-expedition-33
+g-0025,FINAL FANTASY TACTICS - The Ivalice Chronicles,2025,1,2025-09-30,2026-05-14,TRUE,final-fantasy-tactics-ivalice
+g-0026,SD Gundam G Generation Cross Rays,2019,1,2025-12-21,2026-01-11,TRUE,sd-gundam-cross-rays
+g-0027,Lies of P,2023,1,2026-02-04,2026-03-21,TRUE,lies-of-p
+g-0028,The Exit 8,2023,1,2026-05-16,2026-05-16,TRUE,the-exit-8
+g-0029,The Platform 8,2024,0,2026-05-16,2026-05-16,TRUE,the-platform-8
+g-0030,Unicorn Overlord,2024,0,2026-08-22,2026-08-22,TRUE,unicorn-overlord
+g-0031,Arknights: Endfield,2026,1,2026-05-16,2026-06-28,TRUE,arknights-endfield
+g-0032,Tales of Arise,2021,0,2026-09-27,2026-09-27,TRUE,tales-of-arise
+g-0033,Scarlet Nexus,2021,0,2026-10-10,2026-10-10,TRUE,scarlet-nexus
+g-0034,Borderlands 3,2019,1,2026-11-01,2026-11-01,TRUE,borderlands-3
