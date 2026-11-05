@@ -1034,6 +1034,126 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 524px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-1104-kentucky-route-zero-10.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-10.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-10.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-11.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-11.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-11.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-12.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-12.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-12.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-13.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-13.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-13.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-14.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-14.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-14.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-15.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-15.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-15.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-2.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-2.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-2.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-3.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-3.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-3.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-4.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-4.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-4.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-5.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-5.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-5.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-6.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-6.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-6.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-7.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-7.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-7.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-8.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-8.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-8.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero-9.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero-9.640w.webp 640w, /posts/2026-1104-kentucky-route-zero-9.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1104-kentucky-route-zero.webp": {
+    w: 960,
+    h: 540,
+    srcset:
+      "/posts/2026-1104-kentucky-route-zero.640w.webp 640w, /posts/2026-1104-kentucky-route-zero.webp 960w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
     h: 871,

@@ -17,12 +17,7 @@ function renderedSizes(w: number, h: number) {
   return `(min-width: 1024px) ${desktopW}px, (min-width: 768px) ${DESKTOP_MAX_W}px, calc(100vw - 72px)`;
 }
 const PUBLIC_DIR = path.join(process.cwd(), "public", "posts");
-const OUT_FILE = path.join(
-  process.cwd(),
-  "app",
-  "timecapsule",
-  "photo-meta.ts",
-);
+const OUT_FILE = path.join(process.cwd(), "components", "photo-meta.ts");
 
 function imageDims(file: string) {
   const out = execSync(

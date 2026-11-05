@@ -4,7 +4,7 @@ import ReactMarkdown, { type Components } from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
-import photoMeta from "../app/timecapsule/photo-meta";
+import photoMeta from "./photo-meta";
 
 import TripJournal from "./TripJournal";
 

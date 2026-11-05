@@ -1,6 +1,6 @@
 import Markdown from "../../components/Markdown";
+import photoMeta from "../../components/photo-meta";
 import NoteCollapse from "./NoteCollapse";
-import photoMeta from "./photo-meta";
 
 type Block =
   | { kind: "lead"; body: string }
