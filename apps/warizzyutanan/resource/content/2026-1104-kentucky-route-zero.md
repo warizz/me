@@ -38,6 +38,7 @@ Point-and-click adventure (2013–2020), developed and published by Cardboard Co
 1. The story and dialogue were too abstract for me. Characters answer questions with riddles, nothing gets explained, and major events just happen as imagery.
 2. The visuals were great — flat theatrical staging, bold typography, gorgeous scenes. Worth seeing even if the story doesn't land.
 3. Got the platinum trophy. No missables, 8–12 hours. Honestly, the easy platinum is the only reason I finished — I'm a completionist. The journey itself was painful: boring and slow, with the trophies dragging me through a story I wasn't clicking with.
+4. No voice acting, text only. I might have gotten into the story more if there were voices — reading walls of abstract dialogue made it easier to drift off.
 
 ## Screenshots
 
