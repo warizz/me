@@ -37,8 +37,8 @@ importers:
         version: 2.11.10
     optionalDependencies:
       '@next/swc-linux-x64-gnu':
-        specifier: 16.4.3
-        version: 16.4.3
+        specifier: 16.4.4
+        version: 16.4.4
       '@next/swc-linux-x64-musl':
         specifier: 16.4.3
         version: 16.4.3
