@@ -37,8 +37,8 @@ importers:
         version: 2.11.10
     optionalDependencies:
       '@next/swc-linux-x64-gnu':
-        specifier: 16.4.4
-        version: 16.4.4
+        specifier: 16.4.5
+        version: 16.4.5
       '@next/swc-linux-x64-musl':
         specifier: 16.4.5
         version: 16.4.5
@@ -399,13 +399,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     libc: [musl]
-
-  '@next/swc-linux-x64-gnu@16.4.4':
-    resolution: {integrity: sha512-fg3Wr030Y3BDkCXi6HGsPz0BUPTGZJS8TZSrCO0tS3O/KBsCyx4eP6aeaizCpGmcUKhtb4l7JoMc88QO2qBl2g==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-    libc: [glibc]
 
   '@next/swc-linux-x64-gnu@16.4.5':
     resolution: {integrity: sha512-hPc+Fl+N22DAvqZHq559NmamXboOX5Lu8I5Wl0DezfrhTk1Zz21NQeYoZDmNI/NjTcrdsVxM72Fzn2lI+Q+vAw==}
@@ -2105,9 +2098,6 @@ snapshots:
     optional: true
 
   '@next/swc-linux-arm64-musl@16.4.5':
-    optional: true
-
-  '@next/swc-linux-x64-gnu@16.4.4':
     optional: true
 
   '@next/swc-linux-x64-gnu@16.4.5':
