@@ -18,7 +18,7 @@
     "tsc": "turbo run tsc"
   },
   "devDependencies": {
-    "oxfmt": "0.76.0",
+    "oxfmt": "0.77.0",
     "oxlint": "1.91.0",
     "oxlint-tsgolint": "7.0.2006",
     "turbo": "2.11.10"
