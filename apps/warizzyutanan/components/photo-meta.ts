@@ -1154,6 +1154,14 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-1108-dead-end-job.webp": {
+    w: 1280,
+    h: 1920,
+    srcset:
+      "/posts/2026-1108-dead-end-job.640w.webp 640w, /posts/2026-1108-dead-end-job.960w.webp 960w, /posts/2026-1108-dead-end-job.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
     h: 871,
