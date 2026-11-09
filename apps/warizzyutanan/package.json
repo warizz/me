@@ -51,7 +51,7 @@
     "critters": "0.0.25",
     "oxfmt": "0.76.0",
     "postcss": "8.5.32",
-    "tailwindcss": "4.3.4",
+    "tailwindcss": "4.3.5",
     "tsconfig": "workspace:*",
     "typescript": "5.9.3"
   }
