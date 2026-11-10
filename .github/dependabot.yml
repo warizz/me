@@ -9,4 +9,5 @@ updates:
       time: "06:00"
       timezone: "Asia/Bangkok"
     open-pull-requests-limit: 10
-    minimum-release-age: 7d
+    cooldown:
+      default-days: 7
