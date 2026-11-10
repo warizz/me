@@ -1162,6 +1162,93 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-1110-cairn-1.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-1110-cairn-1.640w.webp 640w, /posts/2026-1110-cairn-1.960w.webp 960w, /posts/2026-1110-cairn-1.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1110-cairn-10.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-1110-cairn-10.640w.webp 640w, /posts/2026-1110-cairn-10.960w.webp 960w, /posts/2026-1110-cairn-10.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1110-cairn-2.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-1110-cairn-2.640w.webp 640w, /posts/2026-1110-cairn-2.960w.webp 960w, /posts/2026-1110-cairn-2.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1110-cairn-3.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-1110-cairn-3.640w.webp 640w, /posts/2026-1110-cairn-3.960w.webp 960w, /posts/2026-1110-cairn-3.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1110-cairn-4.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-1110-cairn-4.640w.webp 640w, /posts/2026-1110-cairn-4.960w.webp 960w, /posts/2026-1110-cairn-4.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1110-cairn-5.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-1110-cairn-5.640w.webp 640w, /posts/2026-1110-cairn-5.960w.webp 960w, /posts/2026-1110-cairn-5.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1110-cairn-6.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-1110-cairn-6.640w.webp 640w, /posts/2026-1110-cairn-6.960w.webp 960w, /posts/2026-1110-cairn-6.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1110-cairn-7.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-1110-cairn-7.640w.webp 640w, /posts/2026-1110-cairn-7.960w.webp 960w, /posts/2026-1110-cairn-7.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1110-cairn-8.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-1110-cairn-8.640w.webp 640w, /posts/2026-1110-cairn-8.960w.webp 960w, /posts/2026-1110-cairn-8.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1110-cairn-9.webp": {
+    w: 1280,
+    h: 720,
+    srcset:
+      "/posts/2026-1110-cairn-9.640w.webp 640w, /posts/2026-1110-cairn-9.960w.webp 960w, /posts/2026-1110-cairn-9.webp 1280w",
+    sizes:
+      "(min-width: 1024px) 533px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1110-cairn.webp": {
+    w: 616,
+    h: 353,
+    srcset: "/posts/2026-1110-cairn.webp 616w",
+    sizes:
+      "(min-width: 1024px) 524px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
     h: 871,
