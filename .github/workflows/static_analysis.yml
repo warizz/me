@@ -4,11 +4,11 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v4.4.0
+      - uses: pnpm/action-setup@v4.3.0
         with:
           run_install: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: 24
           cache: pnpm
@@ -18,14 +18,26 @@ jobs:
         run: pnpm run lint
       - name: Format check
         run: pnpm run format:check
+  # Fails when .github/workflows/actions.lock is out of sync with the
+  # workflows or a locked pin no longer verifies upstream.
+  lockfile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.4.0
+        with:
+          persist-credentials: false
+      - run: gh extension install github/gh-actions-lock --pin v0.4.1
+      - run: gh actions-lock --verify
+        env:
+          GH_TOKEN: ${{ github.token }}
   tsc:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
+      - uses: actions/checkout@v4.4.0
+      - uses: pnpm/action-setup@v4.3.0
         with:
           run_install: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: 24
           cache: pnpm
