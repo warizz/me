@@ -32,8 +32,8 @@ function Row({ item }: { item: SaleItem }) {
         <Lightbox photos={item.photos ?? []} title={item.title} compact />
       </td>
       <td className="py-1.5 pr-3 font-bold whitespace-nowrap">{item.title}</td>
-      <td className="py-1.5 pr-3 max-w-48 truncate">{item.description}</td>
-      <td className="py-1.5 pr-3 max-w-40 truncate text-xs">{item.note}</td>
+      <td className="max-w-48 truncate py-1.5 pr-3">{item.description}</td>
+      <td className="max-w-40 truncate py-1.5 pr-3 text-xs">{item.note}</td>
       <td className="py-1.5 pr-3 text-right font-mono">
         <s className="text-black/60 dark:text-white/60">
           {baht(item.originalPrice)}
@@ -56,7 +56,7 @@ function Row({ item }: { item: SaleItem }) {
           </span>
         )}
       </td>
-      <td className="py-1.5 text-right font-mono text-xs text-black/60 dark:text-white/60 whitespace-nowrap">
+      <td className="py-1.5 text-right font-mono text-xs whitespace-nowrap text-black/60 dark:text-white/60">
         {format(item.addedAt, "d MMM yyyy")}
       </td>
     </tr>
@@ -67,7 +67,7 @@ function MobileCard({ item }: { item: SaleItem }) {
   const sold = item.status === "sold";
   return (
     <li
-      className={`flex gap-3 border-b border-black/10 dark:border-white/20 py-2 ${sold ? "opacity-50" : ""}`}
+      className={`flex gap-3 border-b border-black/10 py-2 dark:border-white/20 ${sold ? "opacity-50" : ""}`}
     >
       <div className="shrink-0">
         <Lightbox photos={item.photos ?? []} title={item.title} compact />
@@ -82,10 +82,10 @@ function MobileCard({ item }: { item: SaleItem }) {
           )}
         </p>
         {item.description && (
-          <p className="text-sm truncate">{item.description}</p>
+          <p className="truncate text-sm">{item.description}</p>
         )}
         {item.note && (
-          <p className="text-xs truncate text-black/60 dark:text-white/60">
+          <p className="truncate text-xs text-black/60 dark:text-white/60">
             note: {item.note}
           </p>
         )}
@@ -98,7 +98,7 @@ function MobileCard({ item }: { item: SaleItem }) {
             -{diffPercent(item)}%
           </span>
         </p>
-        <p className="text-xs text-black/60 dark:text-white/60 font-mono">
+        <p className="font-mono text-xs text-black/60 dark:text-white/60">
           added {format(item.addedAt, "d MMM yyyy")}
         </p>
       </div>
@@ -114,7 +114,10 @@ export default function SaleList({ items }: { items: SaleItem[] }) {
 
   return (
     <>
-      <div className="flex gap-3 mb-3 font-mono text-xs" data-testid="sale-filters">
+      <div
+        className="mb-3 flex gap-3 font-mono text-xs"
+        data-testid="sale-filters"
+      >
         {FILTERS.map(({ value, label }) => (
           <button
             key={value}
@@ -123,17 +126,17 @@ export default function SaleList({ items }: { items: SaleItem[] }) {
             className={`cursor-pointer ${
               filter === value
                 ? "font-black text-primary dark:text-primary-invert"
-                : "text-black/60 dark:text-white/60 hover:text-primary dark:hover:text-primary-invert"
+                : "text-black/60 hover:text-primary dark:text-white/60 dark:hover:text-primary-invert"
             }`}
           >
             {`[ ${label} ]`}
           </button>
         ))}
       </div>
-      <div className="hidden md:block overflow-x-auto">
+      <div className="hidden overflow-x-auto md:block">
         <table className="w-full text-sm">
           <thead>
-            <tr className="border-b-2 border-black/20 dark:border-white/30 text-left text-xs uppercase text-black/60 dark:text-white/60">
+            <tr className="border-b-2 border-black/20 text-left text-xs text-black/60 uppercase dark:border-white/30 dark:text-white/60">
               <th className="py-1.5 pr-3">Photo</th>
               <th className="py-1.5 pr-3">Title</th>
               <th className="py-1.5 pr-3">Description</th>

@@ -23,6 +23,7 @@ The fire that lit the election year:
 
 ![Thaweekiat Rotsawasut portrait interview](/posts/2026-1011-sso-board-election-02-thaweekiat-portrait.webp "2026-01-25")
 _Thaweekiat Rotsawasut, the man the chat pointed to. Photo: [Daily News](https://www.dailynews.co.th/news/5534828/)_
+
 - Jan 27: Thaweekiat denies demanding gratitude, says the quote was a private reply to a reporter, and tells the press to "ask Sassatham" where the leak came from — [Bright TV](https://www.brighttv.co.th/news/drama-line) · [PPTV](https://www.pptvhd36.com/video/news/210312)
 - Feb 2: he releases the full chat, saying the leaks were "cut out of context to mislead", and apologises "for the discomfort" — [CEO Vision](https://ceovision.asia/?p=7510)
 - He ran for re-election in Oct as leader of the SSD team. He lost — [Matichon](https://www.matichon.co.th/local/quality-life/news_5798727)
@@ -78,6 +79,7 @@ _Labour Ministry and SSO brief the press as turnout surges 331%. Photo: [Nation 
 
 ![Progressive Social Security team victory announcement](/posts/2026-1011-sso-board-election-05-progressive-victory.webp "2026-10-11")
 _"ประกันสังคมก้าวหน้า คว้าชัย" — the Progressive team claims victory on election night. Photo: [Nation TV](https://www.nationtv.tv/news/current-issue/378984696)_
+
 - Count complaints: Bang Phli (Samut Prakan) units with missing/zero scores and officials gone home; Ratchaburi recounted after team votes vanished — one candidate went from 1 to 80 votes — [Nation TV](https://www.nationtv.tv/news/current-issue/378984696)
 
 ### Mon 12 Oct — ~88% counted

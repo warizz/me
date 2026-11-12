@@ -7,14 +7,8 @@ const GameSchema = z.object({
   id: z.string(),
   title: z.string(),
   release_year: z.coerce.number(),
-  rating: z
-    .enum(["-1", "0", "1", "2"])
-    .optional()
-    .or(z.literal("")),
-  finished_at: z
-    .string()
-    .optional()
-    .or(z.literal("")),
+  rating: z.enum(["-1", "0", "1", "2"]).optional().or(z.literal("")),
+  finished_at: z.string().optional().or(z.literal("")),
   earned_platinum_trophy: z.enum(["TRUE", "FALSE"]),
   slug: z.string().optional().or(z.literal("")),
 });

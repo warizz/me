@@ -43,45 +43,45 @@ Point-and-click adventure (2013–2020), developed and published by Cardboard Co
 ## Screenshots
 
 ![](/posts/2026-1104-kentucky-route-zero-2.webp)
-*Equus Oils — the game's opening gas station.*
+_Equus Oils — the game's opening gas station._
 
 ![](/posts/2026-1104-kentucky-route-zero-3.webp)
-*Misty forest — tiny travelers under a colossal white eagle.*
+_Misty forest — tiny travelers under a colossal white eagle._
 
 ![](/posts/2026-1104-kentucky-route-zero-4.webp)
-*The Lower Depths — a performer in a glowing teal gown.*
+_The Lower Depths — a performer in a glowing teal gown._
 
 ![](/posts/2026-1104-kentucky-route-zero-5.webp)
-*The night road map — glowing highways on black.*
+_The night road map — glowing highways on black._
 
 ![](/posts/2026-1104-kentucky-route-zero-6.webp)
-*The Rum Colony tiki bar — an amber stage adrift in darkness.*
+_The Rum Colony tiki bar — an amber stage adrift in darkness._
 
 ![](/posts/2026-1104-kentucky-route-zero-7.webp)
-*Cutaway of the Mucky Mammoth tugboat.*
+_Cutaway of the Mucky Mammoth tugboat._
 
 ![](/posts/2026-1104-kentucky-route-zero-8.webp)
-*A fallen tree blocks the road.*
+_A fallen tree blocks the road._
 
 ![](/posts/2026-1104-kentucky-route-zero-9.webp)
-*WEVP-TV public-access studio.*
+_WEVP-TV public-access studio._
 
 ![](/posts/2026-1104-kentucky-route-zero-10.webp)
-*A boat drifts toward a glowing tree.*
+_A boat drifts toward a glowing tree._
 
 ![](/posts/2026-1104-kentucky-route-zero-11.webp)
-*Random Access Self Storage.*
+_Random Access Self Storage._
 
 ![](/posts/2026-1104-kentucky-route-zero-12.webp)
-*The Mucky Mammoth in heavy fog.*
+_The Mucky Mammoth in heavy fog._
 
 ![](/posts/2026-1104-kentucky-route-zero-13.webp)
-*Day and night — apartments and a rooftop gathering.*
+_Day and night — apartments and a rooftop gathering._
 
 ![](/posts/2026-1104-kentucky-route-zero-14.webp)
-*A phone and a handwritten number.*
+_A phone and a handwritten number._
 
 ![](/posts/2026-1104-kentucky-route-zero-15.webp)
-*A string band in the boat hold.*
+_A string band in the boat hold._
 
-*Screenshots via [Steam store page](https://store.steampowered.com/app/231200/Kentucky_Route_Zero/); cover art via [Annapurna Interactive](https://annapurnainteractive.com/games/kentucky-route-zero). © Cardboard Computer.*
+_Screenshots via [Steam store page](https://store.steampowered.com/app/231200/Kentucky_Route_Zero/); cover art via [Annapurna Interactive](https://annapurnainteractive.com/games/kentucky-route-zero). © Cardboard Computer._
