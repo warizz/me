@@ -42,16 +42,19 @@ export default async function Page() {
     new Date(iso).toLocaleDateString("en", { day: "numeric", month: "short" });
 
   // rows: posts (linked) + sheet-only games, one row per game
-  const rowsByYear: Record<string, {
-    key: string;
-    title: string;
-    image: string;
-    href?: string;
-    platinum: boolean;
-    dateLabel: string;
-    rating: unknown;
-    sortDate: string;
-  }[]> = {};
+  const rowsByYear: Record<
+    string,
+    {
+      key: string;
+      title: string;
+      image: string;
+      href?: string;
+      platinum: boolean;
+      dateLabel: string;
+      rating: unknown;
+      sortDate: string;
+    }[]
+  > = {};
   const push = (year: string, row: (typeof rowsByYear)[string][number]) => {
     (rowsByYear[year] ??= []).push(row);
   };

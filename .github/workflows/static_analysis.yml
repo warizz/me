@@ -18,7 +18,7 @@ jobs:
         run: pnpm run lint
       - name: Format check
         run: pnpm run format:check
-    tsc:
+  tsc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

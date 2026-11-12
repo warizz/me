@@ -86,9 +86,7 @@ test.describe("timecapsule event", () => {
     await page.goto("/timecapsule/2026-0926-bangkok-flood");
 
     await expect(page.locator("h1")).toHaveText("Bangkok Under Water");
-    await expect(page.locator("article > header time")).toContainText(
-      "25 Sep",
-    );
+    await expect(page.locator("article > header time")).toContainText("25 Sep");
     await expect(page.locator("article > header time")).toContainText("Oct");
     await expect(page.locator("article > header time")).not.toContainText(
       "ongoing",

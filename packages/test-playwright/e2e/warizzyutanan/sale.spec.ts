@@ -1,17 +1,17 @@
-import { expect, test } from "@playwright/test";
 import { existsSync, readFileSync } from "fs";
 import path from "path";
+
+import { expect, test } from "@playwright/test";
 
 // derive expected counts from items.yaml so the spec survives item additions
 function itemCounts() {
   // walk up from cwd to the pnpm workspace root, then into the app
   let dir = process.cwd();
-  const yamlPath = path.join(
-    "apps/warizzyutanan/resource/sale/items.yaml",
-  );
+  const yamlPath = path.join("apps/warizzyutanan/resource/sale/items.yaml");
   while (!existsSync(path.join(dir, yamlPath))) {
     const parent = path.dirname(dir);
-    if (parent === dir) throw new Error(`items.yaml not found above ${process.cwd()}`);
+    if (parent === dir)
+      throw new Error(`items.yaml not found above ${process.cwd()}`);
     dir = parent;
   }
   const yaml = readFileSync(path.join(dir, yamlPath), "utf8");
@@ -40,9 +40,7 @@ test.describe("sale", () => {
     const rows = page.locator("tbody tr");
     expect(await rows.count()).toBe(available);
     const table = page.locator("table");
-    await expect(
-      table.getByText("หนังสือ ชีวิตเรามีแค่สี่พันสัปดาห์"),
-    ).toBeVisible();
+    await expect(table.getByText("หนังสือ ชีวิตเรามีแค่สี่พันสัปดาห์")).toBeVisible();
     await expect(table.getByText("-51%")).toBeVisible(); // 130 from 265
     await expect(table.getByText("-50%").first()).toBeVisible(); // 110 from 220
     await expect(table.getByText("● ยังไม่ขาย")).toHaveCount(available);
@@ -99,9 +97,9 @@ test.describe("sale", () => {
 
     test("applies dark theme and stays readable", async ({ page }) => {
       await expect(page.locator("html")).toHaveClass(/dark/);
-      const color = await page.locator("h1").evaluate(
-        (el) => getComputedStyle(el).color,
-      );
+      const color = await page
+        .locator("h1")
+        .evaluate((el) => getComputedStyle(el).color);
       expect(color).not.toBe("rgb(0, 0, 0)"); // text must not be black-on-black
     });
 
@@ -155,9 +153,15 @@ test.describe("sale", () => {
           b: fg.b * fg.a + bg.b * (1 - fg.a),
         };
         const ratio =
-          (Math.max(lum(blended.r, blended.g, blended.b), lum(bg.r, bg.g, bg.b)) +
+          (Math.max(
+            lum(blended.r, blended.g, blended.b),
+            lum(bg.r, bg.g, bg.b),
+          ) +
             0.05) /
-          (Math.min(lum(blended.r, blended.g, blended.b), lum(bg.r, bg.g, bg.b)) +
+          (Math.min(
+            lum(blended.r, blended.g, blended.b),
+            lum(bg.r, bg.g, bg.b),
+          ) +
             0.05);
         if (ratio < 4.5) {
           bad.push(

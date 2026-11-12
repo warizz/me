@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { CircleMarker, Map as LeafletMap } from "leaflet";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import "leaflet/dist/leaflet.css";
 
@@ -199,8 +199,7 @@ export default function TripJournal() {
   useEffect(() => {
     if (!ready || !mapElRef.current) return;
     const el = mapElRef.current;
-    const apply = () =>
-      el.classList.toggle("fcs-dark-tiles", isDark());
+    const apply = () => el.classList.toggle("fcs-dark-tiles", isDark());
     apply();
     const target = document.documentElement;
     const obs = new MutationObserver(apply);
@@ -287,7 +286,7 @@ export default function TripJournal() {
 
       <div
         ref={mapElRef}
-        className="h-[420px] w-full overflow-hidden rounded-lg border border-gray-300 dark:border-gray-700 lg:h-[520px]"
+        className="h-[420px] w-full overflow-hidden rounded-lg border border-gray-300 lg:h-[520px] dark:border-gray-700"
       />
 
       <p className="mt-2 font-mono text-xs text-gray-400">
@@ -317,7 +316,7 @@ export default function TripJournal() {
                   loading="lazy"
                   className="h-full w-full object-cover transition group-hover:scale-105"
                 />
-                <span className="absolute bottom-1 right-1 hidden rounded bg-black/60 px-1 font-mono text-[10px] text-white group-hover:block">
+                <span className="absolute right-1 bottom-1 hidden rounded bg-black/60 px-1 font-mono text-[10px] text-white group-hover:block">
                   {photoLabel(p)}
                 </span>
               </button>

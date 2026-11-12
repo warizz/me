@@ -61,8 +61,8 @@ export default function Lightbox({ photos, title, compact }: Props) {
             }
             className={
               compact
-                ? "h-16 w-24 object-cover rounded border border-black/10 dark:border-white/20"
-                : "w-full aspect-video object-cover rounded-lg border border-black/10 dark:border-white/20"
+                ? "h-16 w-24 rounded border border-black/10 object-cover dark:border-white/20"
+                : "aspect-video w-full rounded-lg border border-black/10 object-cover dark:border-white/20"
             }
           />
           {!compact && photos.length > 1 && (
@@ -80,7 +80,7 @@ export default function Lightbox({ photos, title, compact }: Props) {
           onClick={(event) =>
             event.target === ref.current && ref.current.close()
           }
-          className="backdrop:bg-black/80 bg-transparent p-0 max-w-3xl w-full"
+          className="w-full max-w-3xl bg-transparent p-0 backdrop:bg-black/80"
         >
           <div className="relative">
             {}
@@ -97,7 +97,7 @@ export default function Lightbox({ photos, title, compact }: Props) {
                   onClick={() =>
                     setIndex((i) => (i - 1 + photos.length) % photos.length)
                   }
-                  className="absolute left-0 top-1/2 -translate-y-1/2 p-2 bg-black/70 text-white rounded-r cursor-pointer"
+                  className="absolute top-1/2 left-0 -translate-y-1/2 cursor-pointer rounded-r bg-black/70 p-2 text-white"
                 >
                   &larr;
                 </button>
@@ -105,7 +105,7 @@ export default function Lightbox({ photos, title, compact }: Props) {
                   type="button"
                   aria-label="next photo"
                   onClick={() => setIndex((i) => (i + 1) % photos.length)}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 p-2 bg-black/70 text-white rounded-l cursor-pointer"
+                  className="absolute top-1/2 right-0 -translate-y-1/2 cursor-pointer rounded-l bg-black/70 p-2 text-white"
                 >
                   &rarr;
                 </button>
@@ -115,11 +115,11 @@ export default function Lightbox({ photos, title, compact }: Props) {
               type="button"
               aria-label="close"
               onClick={() => ref.current?.close()}
-              className="absolute right-2 top-2 p-2 bg-black/70 text-white rounded cursor-pointer"
+              className="absolute top-2 right-2 cursor-pointer rounded bg-black/70 p-2 text-white"
             >
               &times;
             </button>
-            <span className="absolute bottom-2 right-2 px-2 py-0.5 bg-black/70 text-white text-xs rounded">
+            <span className="absolute right-2 bottom-2 rounded bg-black/70 px-2 py-0.5 text-xs text-white">
               {index + 1}/{photos.length}
             </span>
           </div>
