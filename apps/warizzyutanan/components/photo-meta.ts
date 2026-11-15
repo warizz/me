@@ -1249,6 +1249,14 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 524px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-1114-one-year-to-live-buy-a-man.webp": {
+    w: 900,
+    h: 1350,
+    srcset:
+      "/posts/2026-1114-one-year-to-live-buy-a-man.640w.webp 640w, /posts/2026-1114-one-year-to-live-buy-a-man.webp 900w",
+    sizes:
+      "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
     h: 871,
