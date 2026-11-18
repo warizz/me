@@ -48,6 +48,16 @@ export default function Markdown({ children }: Props) {
               </CodeBlock>
             );
           },
+          details(props) {
+            // Chrome auto-adds `open` when a URL hash targets content inside a
+            // collapsed <details>, which trips a hydration attribute mismatch.
+            const { children, ...rest } = props;
+            return (
+              <details {...omit(rest, "node")} suppressHydrationWarning>
+                {children}
+              </details>
+            );
+          },
           iframe({ width, height, ...props }) {
             const _props = omit(props, "node");
             const w = Number(width);

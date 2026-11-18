@@ -1257,6 +1257,13 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 200px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-1118-dungeon-crawler-carl-3.webp": {
+    w: 331,
+    h: 500,
+    srcset: "/posts/2026-1118-dungeon-crawler-carl-3.webp 331w",
+    sizes:
+      "(min-width: 1024px) 199px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
     h: 871,
