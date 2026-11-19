@@ -1264,6 +1264,13 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 199px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-1119-ball-x-pit.webp": {
+    w: 460,
+    h: 215,
+    srcset: "/posts/2026-1119-ball-x-pit.webp 460w",
+    sizes:
+      "(min-width: 1024px) 642px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
     h: 871,
