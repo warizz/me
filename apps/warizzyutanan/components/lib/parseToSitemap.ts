@@ -22,7 +22,7 @@ export default function parseToSitemap(DOMAIN: string, posts: IPost[]) {
        <loc>https://www.${DOMAIN}/life-in-weeks/</loc>
      </url>
      <url>
-       <loc>https://www.${DOMAIN}/econ/</loc>
+       <loc>https://www.${DOMAIN}/thai-econ/</loc>
      </url>
      ${posts
        .map((post) => {
