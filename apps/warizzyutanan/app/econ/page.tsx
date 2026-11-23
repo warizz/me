@@ -161,14 +161,18 @@ const COLORS = {
 
 export default function EconPage() {
   return (
+    <div
+      style={{
+        background: "#0d0d0d",
+        minHeight: "100vh",
+        color: "#e6e6e6",
+      }}
+    >
     <main
       style={{
         padding: "20px",
         maxWidth: 1200,
         margin: "0 auto",
-        background: "#0d0d0d",
-        color: "#e6e6e6",
-        minHeight: "100vh",
       }}
     >
       <h1 style={{ fontSize: 17, fontWeight: 600 }}>
@@ -315,5 +319,6 @@ export default function EconPage() {
         })}
       </div>
     </main>
+    </div>
   );
 }
