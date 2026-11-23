@@ -26,6 +26,7 @@ const TOOLS = [
   { url: "/life-in-weeks", title: "life in weeks" },
   { url: "/watermark", title: "watermark" },
   { url: "/compress", title: "compress images" },
+  { url: "/econ", title: "thai econ dashboard" },
 ];
 
 export default function Home() {
