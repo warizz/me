@@ -1271,6 +1271,14 @@ const photoMeta: Record<
     sizes:
       "(min-width: 1024px) 642px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
+  "/posts/2026-1122-the-boroughs.webp": {
+    w: 960,
+    h: 439,
+    srcset:
+      "/posts/2026-1122-the-boroughs.640w.webp 640w, /posts/2026-1122-the-boroughs.webp 960w",
+    sizes:
+      "(min-width: 1024px) 656px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
     h: 871,
