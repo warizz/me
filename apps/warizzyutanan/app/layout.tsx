@@ -31,7 +31,7 @@ export default function RootLayout({ children }: Props) {
         </>
       ) : null}
 
-      <body suppressHydrationWarning>
+      <body className="bg-white dark:bg-black" suppressHydrationWarning>
         <div className="min-h-screen bg-white duration-100 ease-in dark:bg-black">
           {children}
         </div>

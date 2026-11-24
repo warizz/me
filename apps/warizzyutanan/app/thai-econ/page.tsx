@@ -180,12 +180,12 @@ export default function EconPage() {
           <ToolsBar
             breadcrumbs={[
               { text: "home", href: "/" },
-              { text: "thai econ", href: "/thai-econ" },
+              { text: "thai economy", href: "/thai-econ" },
             ]}
           />
         </div>
         <h1 style={{ fontSize: 17, fontWeight: 600 }}>
-          Thai Econ Dashboard{" "}
+          Thai Economy Dashboard{" "}
           <span
             style={{
               color: "var(--muted-foreground, #9a9a9a)",
@@ -211,7 +211,8 @@ export default function EconPage() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(460px, 1fr))",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(min(460px, 100%), 1fr))",
             gap: 14,
             marginTop: 16,
           }}
