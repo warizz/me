@@ -56,11 +56,86 @@ function sahm(u: Pt[]): Pt[] {
   return out;
 }
 
+// --- GDP map: IMF WEO real growth (bubble color) + nominal GDP (bubble size) ---
+const IMF = "https://www.imf.org/external/datamapper/api/v1";
+const GROWTH_IND = "NGDP_RPCH"; // real GDP growth, % annual
+const SIZE_IND = "NGDPD"; // nominal GDP, USD billions
+
+const MAP_W = 720, MAP_H = 360;
+const LON: [number, number] = [-170, 190], LAT: [number, number] = [-58, 84];
+
+const px = (p: [number, number]): [number, number] => [
+  ((p[0] - LON[0]) / (LON[1] - LON[0])) * MAP_W,
+  (1 - (p[1] - LAT[0]) / (LAT[1] - LAT[0])) * MAP_H,
+];
+
+function ringPath(ring: number[][]): string {
+  return (
+    ring
+      .map((pt, i) => {
+        const [x, y] = px(pt as [number, number]);
+        return `${i ? "L" : "M"}${x.toFixed(1)},${y.toFixed(1)}`;
+      })
+      .join(" ") + "Z"
+  );
+}
+
+// Polygon (outer + holes) or MultiPolygon -> one SVG d-string
+function featurePath(geom: { type: string; coordinates: any }): string {
+  const polys = geom.type === "Polygon" ? [geom.coordinates] : geom.coordinates;
+  return polys
+    .map((poly: number[][][]) => poly.map(ringPath).join(" "))
+    .join(" ");
+}
+
+// centroid of the largest ring; good enough to place a label dot.
+// ponytail: area-weighted is overkill for bubbles — the biggest ring IS the country.
+function featureCentroid(geom: { type: string; coordinates: any }): [number, number] {
+  const polys = geom.type === "Polygon" ? [geom.coordinates] : geom.coordinates;
+  let best: number[][] = [], bestLen = 0;
+  for (const poly of polys)
+    if (poly[0].length > bestLen) { best = poly[0]; bestLen = poly[0].length; }
+  let sx = 0, sy = 0;
+  for (const p of best) { sx += p[0]; sy += p[1]; }
+  return px([sx / bestLen, sy / bestLen]);
+}
+
+async function fetchImf(ind: string): Promise<Record<string, Record<string, number>>> {
+  // ponytail: node fetch fails TLS here; curl is fine (same as TiDE fetch)
+  const raw = execFileSync("curl", ["-sm", "60", `${IMF}/${ind}`], {
+    encoding: "utf8", maxBuffer: 128 * 1024 * 1024,
+  });
+  return JSON.parse(raw).values[ind];
+}
+
+async function fetchWorld(): Promise<{
+  paths: Record<string, string>;
+  centers: Record<string, [number, number]>;
+}> {
+  const raw = execFileSync(
+    "curl",
+    ["-sm", "60", "-L",
+     "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json"],
+    { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 },
+  );
+  const paths: Record<string, string> = {};
+  const centers: Record<string, [number, number]> = {};
+  for (const f of (JSON.parse(raw).features as { id: string; geometry: any }[])) {
+    if (!f.id || f.id === "ATA" || !f.geometry) continue; // skip Antarctica + null ids
+    paths[f.id] = featurePath(f.geometry);
+    centers[f.id] = featureCentroid(f.geometry);
+  }
+  return { paths, centers };
+}
+
 // --- fetch + compute ---
 const main = async () => {
-  const [cpiIdx, unemp, gdpIdx, fx, rate] = await Promise.all(
-    Object.values(SERIES).map(fetchTiDE),
-  );
+  const [cpiIdx, unemp, gdpIdx, fx, rate, growth, sizes, world] = await Promise.all([
+    ...Object.values(SERIES).map(fetchTiDE),
+    fetchImf(GROWTH_IND),
+    fetchImf(SIZE_IND),
+    fetchWorld(),
+  ]);
 
   const cpiYoy = yoy(cpiIdx.data, 12);
   const gdpYoy = yoy(gdpIdx.data, 4);
@@ -68,6 +143,19 @@ const main = async () => {
   const realRate = cpiYoy
     .filter(([p]) => rateMap.has(p))
     .map(([p, v]) => [p, round(rateMap.get(p)! - v)] as Pt);
+
+  // GDP map: latest year Thailand has a growth value for, capped at the current
+  // year (datamapper returns projections far past it — 2031 today)
+  const nowYear = new Date().getFullYear();
+  const year = [...Object.keys(growth.THA)].reverse().find(
+    (y) => growth.THA[y] != null && Number(y) <= nowYear,
+  )!;
+  const gdpMap: Record<string, { g: number | null; size: number | null }> = {};
+  for (const iso of new Set([...Object.keys(growth), ...Object.keys(sizes)])) {
+    const g = growth[iso]?.[year], size = sizes[iso]?.[year];
+    if (g == null && size == null) continue;
+    gdpMap[iso] = { g: g == null ? null : round(g), size: size == null ? null : round(size) };
+  }
 
   const payload = {
     // ponytail: current account snapshot pasted from IMF WEO (keyless API rate-limits);
@@ -93,6 +181,12 @@ const main = async () => {
     real_rate: realRate,
     sahm: sahm(unemp.data),
     unemp: unemp.data,
+    gdp_map: {
+      year,
+      countries: gdpMap, // iso -> { g: real growth %, size: nominal USD bn }
+      paths: world.paths,
+      centers: world.centers,
+    },
     asof: {
       cpi: cpiYoy.at(-1)![0],
       unemp: unemp.data.at(-1)![0],
