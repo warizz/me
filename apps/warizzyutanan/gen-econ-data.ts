@@ -61,8 +61,10 @@ const IMF = "https://www.imf.org/external/datamapper/api/v1";
 const GROWTH_IND = "NGDP_RPCH"; // real GDP growth, % annual
 const SIZE_IND = "NGDPD"; // nominal GDP, USD billions
 
-const MAP_W = 720, MAP_H = 360;
-const LON: [number, number] = [-170, 190], LAT: [number, number] = [-58, 84];
+const MAP_W = 720,
+  MAP_H = 360;
+const LON: [number, number] = [-170, 190],
+  LAT: [number, number] = [-58, 84];
 
 const px = (p: [number, number]): [number, number] => [
   ((p[0] - LON[0]) / (LON[1] - LON[0])) * MAP_W,
@@ -90,23 +92,114 @@ function featurePath(geom: { type: string; coordinates: any }): string {
 
 // centroid of the largest ring; good enough to place a label dot.
 // ponytail: area-weighted is overkill for bubbles — the biggest ring IS the country.
-function featureCentroid(geom: { type: string; coordinates: any }): [number, number] {
+function featureCentroid(geom: {
+  type: string;
+  coordinates: any;
+}): [number, number] {
   const polys = geom.type === "Polygon" ? [geom.coordinates] : geom.coordinates;
-  let best: number[][] = [], bestLen = 0;
+  let best: number[][] = [],
+    bestLen = 0;
   for (const poly of polys)
-    if (poly[0].length > bestLen) { best = poly[0]; bestLen = poly[0].length; }
-  let sx = 0, sy = 0;
-  for (const p of best) { sx += p[0]; sy += p[1]; }
+    if (poly[0].length > bestLen) {
+      best = poly[0];
+      bestLen = poly[0].length;
+    }
+  let sx = 0,
+    sy = 0;
+  for (const p of best) {
+    sx += p[0];
+    sy += p[1];
+  }
   return px([sx / bestLen, sy / bestLen]);
 }
 
-async function fetchImf(ind: string): Promise<Record<string, Record<string, number>>> {
+async function fetchImf(
+  ind: string,
+): Promise<Record<string, Record<string, number>>> {
   // ponytail: node fetch fails TLS here; curl is fine (same as TiDE fetch)
   const raw = execFileSync("curl", ["-sm", "60", `${IMF}/${ind}`], {
-    encoding: "utf8", maxBuffer: 128 * 1024 * 1024,
+    encoding: "utf8",
+    maxBuffer: 128 * 1024 * 1024,
   });
   return JSON.parse(raw).values[ind];
 }
+
+// IMF datamapper returns aggregates (world, EU, blocs…) alongside countries.
+// They'd poison the size scale (world GDP would shrink every real bubble) and
+// render phantom bubbles — hardcode the ones observed in the NGDP* payloads.
+const AGGREGATES = new Set([
+  "ADVEC",
+  "AFQ",
+  "APQ",
+  "AS5",
+  "AZQ",
+  "BKA",
+  "CBQ",
+  "CMQ",
+  "CAQ",
+  "DA",
+  "EDE",
+  "EMDA",
+  "OEMDC",
+  "EU",
+  "EUQ",
+  "EAQ",
+  "EEQ",
+  "EURO",
+  "MAE",
+  "MEQ",
+  "MECA",
+  "NAQ",
+  "NMQ",
+  "OAE",
+  "PIQ",
+  "PSQ",
+  "SAQ",
+  "SEQ",
+  "SMQ",
+  "SSA",
+  "SSQ",
+  "UVK",
+  "WE",
+  "WEQ",
+  "WHDQ",
+  "WHQ",
+  "WLD",
+  "WEOWORLD",
+]);
+
+// px-centroids for IMF members too small for the 1:110m geojson (SGP is a
+// PEERS member — it must render). ponytail: hand list, add when a bubble is missing.
+const MISSING: Record<string, [number, number]> = {
+  SGP: px([103.8, 1.35]),
+  MAC: px([113.5, 22.2]),
+  HKG: px([114.2, 22.3]),
+  MDV: px([73.5, 3.9]),
+  BRB: px([-59.6, 13.2]),
+  SYC: px([55.5, -4.6]),
+  BHR: px([50.6, 26.2]),
+  MUS: px([57.5, -20.3]),
+  COM: px([43.3, -11.7]),
+  CPV: px([-23.6, 15.1]),
+  STP: px([6.7, 0.3]),
+  DMA: px([-61.4, 15.3]),
+  GRD: px([-61.7, 12.1]),
+  KNA: px([-62.7, 17.3]),
+  LCA: px([-61.0, 13.9]),
+  VCT: px([-61.2, 13.2]),
+  ATG: px([-61.8, 17.1]),
+  NRU: px([166.9, -0.5]),
+  KIR: px([173.0, 1.4]),
+  TON: px([-175.2, -21.2]),
+  TUV: px([179.2, -8.5]),
+  WSM: px([-172.1, -13.6]),
+  MHL: px([171.2, 7.1]),
+  FSM: px([158.2, 6.9]),
+  PLW: px([134.6, 7.5]),
+  AND: px([1.5, 42.5]),
+  LIE: px([9.5, 47.15]),
+  SMR: px([12.5, 43.9]),
+};
 
 async function fetchWorld(): Promise<{
   paths: Record<string, string>;
@@ -114,13 +207,17 @@ async function fetchWorld(): Promise<{
 }> {
   const raw = execFileSync(
     "curl",
-    ["-sm", "60", "-L",
-     "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json"],
+    [
+      "-sm",
+      "60",
+      "-L",
+      "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json",
+    ],
     { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 },
   );
   const paths: Record<string, string> = {};
   const centers: Record<string, [number, number]> = {};
-  for (const f of (JSON.parse(raw).features as { id: string; geometry: any }[])) {
+  for (const f of JSON.parse(raw).features as { id: string; geometry: any }[]) {
     if (!f.id || f.id === "ATA" || !f.geometry) continue; // skip Antarctica + null ids
     paths[f.id] = featurePath(f.geometry);
     centers[f.id] = featureCentroid(f.geometry);
@@ -130,12 +227,25 @@ async function fetchWorld(): Promise<{
 
 // --- fetch + compute ---
 const main = async () => {
-  const [cpiIdx, unemp, gdpIdx, fx, rate, growth, sizes, world] = await Promise.all([
+  const results = await Promise.all([
     ...Object.values(SERIES).map(fetchTiDE),
     fetchImf(GROWTH_IND),
     fetchImf(SIZE_IND),
     fetchWorld(),
   ]);
+  const [cpiIdx, unemp, gdpIdx, fx, rate, growth, sizes, world] = [
+    results[0] as Series,
+    results[1] as Series,
+    results[2] as Series,
+    results[3] as Series,
+    results[4] as Series,
+    results[5] as Record<string, Record<string, number>>,
+    results[6] as Record<string, Record<string, number>>,
+    results[7] as {
+      paths: Record<string, string>;
+      centers: Record<string, [number, number]>;
+    },
+  ];
 
   const cpiYoy = yoy(cpiIdx.data, 12);
   const gdpYoy = yoy(gdpIdx.data, 4);
@@ -147,14 +257,63 @@ const main = async () => {
   // GDP map: latest year Thailand has a growth value for, capped at the current
   // year (datamapper returns projections far past it — 2031 today)
   const nowYear = new Date().getFullYear();
-  const year = [...Object.keys(growth.THA)].reverse().find(
-    (y) => growth.THA[y] != null && Number(y) <= nowYear,
-  )!;
+  const year = [...Object.keys(growth.THA)]
+    .reverse()
+    .find((y) => growth.THA[y] != null && Number(y) <= nowYear)!;
   const gdpMap: Record<string, { g: number | null; size: number | null }> = {};
   for (const iso of new Set([...Object.keys(growth), ...Object.keys(sizes)])) {
-    const g = growth[iso]?.[year], size = sizes[iso]?.[year];
+    // skip IMF aggregates (world, EU, emerging-markets blocs…): only countries get bubbles
+    if (!/^[A-Z]{3}$/.test(iso) || AGGREGATES.has(iso)) continue;
+    const g = growth[iso]?.[year],
+      size = sizes[iso]?.[year];
     if (g == null && size == null) continue;
-    gdpMap[iso] = { g: g == null ? null : round(g), size: size == null ? null : round(size) };
+    gdpMap[iso] = {
+      g: g == null ? null : round(g),
+      size: size == null ? null : round(size),
+    };
+    // microstates missing from the geojson (SGP…) still need a bubble position
+    if (!world.centers[iso]) world.centers[iso] = MISSING[iso];
+  }
+
+  // hm3-matrix (user pick): SEA + peers, growth 1998..year — the full year
+  // series for the heatmap matrix; only the countries the matrix shows.
+  const MATRIX_COUNTRIES = [
+    "USA",
+    "CHN",
+    "JPN",
+    "DEU",
+    "GBR",
+    "KOR",
+    "IND",
+    "SGP",
+    "IDN",
+    "MYS",
+    "VNM",
+    "PHL",
+    "THA",
+  ];
+  const matrixYears: string[] = [];
+  for (let y = 1998; y <= Number(year); y++) matrixYears.push(String(y));
+  const matrix: Record<string, Record<string, number | null>> = {};
+  for (const iso of MATRIX_COUNTRIES) {
+    if (!growth[iso]) continue;
+    matrix[iso] = {};
+    for (const y of matrixYears) matrix[iso][y] = growth[iso][y] ?? null;
+  }
+
+  // map year selector: per-year growth for ALL countries (not just the matrix)
+  const series: Record<string, Record<string, number | null>> = {};
+  for (const [iso, yrs] of Object.entries(growth)) {
+    if (!/^[A-Z]{3}$/.test(iso) || AGGREGATES.has(iso)) continue;
+    series[iso] = {};
+    for (const y of matrixYears) series[iso][y] = yrs[y] ?? null;
+  }
+  // GDP size bars: nominal GDP by year for the matrix countries
+  const sizeMatrix: Record<string, Record<string, number | null>> = {};
+  for (const iso of MATRIX_COUNTRIES) {
+    if (!sizes[iso]) continue;
+    sizeMatrix[iso] = {};
+    for (const y of matrixYears) sizeMatrix[iso][y] = sizes[iso][y] ?? null;
   }
 
   const payload = {
@@ -186,6 +345,9 @@ const main = async () => {
       countries: gdpMap, // iso -> { g: real growth %, size: nominal USD bn }
       paths: world.paths,
       centers: world.centers,
+      matrix, // hm3 matrix: iso -> year -> real growth %
+      series, // year selector: iso -> year -> real growth %
+      sizeMatrix, // GDP bars: iso -> year -> nominal USD bn
     },
     asof: {
       cpi: cpiYoy.at(-1)![0],
