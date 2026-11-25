@@ -204,10 +204,37 @@ export default function EconPage() {
             marginTop: 4,
           }}
         >
-          as of: CPI {D.asof.cpi} · unemployment {D.asof.unemp} · FX {D.asof.fx}{" "}
+          as of: CPI {D.asof.cpi} · unemployment {D.asof.unemp} · FX {D.asof.fx}
           · policy rate {D.asof.policy} (BOT) · GDP {D.asof.gdp} — data: TiDE
           (BOT/PIER); refresh via <code>pnpm gen-econ-data</code>
         </p>
+        <a
+          href="/thai-econ/gdp"
+          style={{
+            display: "block",
+            marginTop: 14,
+            padding: "10px 14px",
+            background: "var(--card, #161616)",
+            border: "1px solid var(--border, #2a2a2a)",
+            borderRadius: 8,
+            color: "#e6e6e6",
+            textDecoration: "none",
+            fontSize: 12.5,
+            fontWeight: 600,
+          }}
+        >
+          GDP world map &amp; Thailand vs peers →
+          <span
+            style={{
+              color: "var(--muted-foreground, #9a9a9a)",
+              fontWeight: 400,
+              fontSize: 11,
+              marginLeft: 8,
+            }}
+          >
+            growth heatmap, GDP size, 1998–today
+          </span>
+        </a>
         <div
           style={{
             display: "grid",

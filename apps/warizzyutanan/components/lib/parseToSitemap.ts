@@ -24,6 +24,9 @@ export default function parseToSitemap(DOMAIN: string, posts: IPost[]) {
      <url>
        <loc>https://www.${DOMAIN}/thai-econ/</loc>
      </url>
+     <url>
+       <loc>https://www.${DOMAIN}/thai-econ/gdp/</loc>
+     </url>
      ${posts
        .map((post) => {
          return `
