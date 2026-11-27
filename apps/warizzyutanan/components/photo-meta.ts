@@ -1273,11 +1273,18 @@ const photoMeta: Record<
   },
   "/posts/2026-1122-the-boroughs.webp": {
     w: 960,
-    h: 439,
+    h: 1423,
     srcset:
       "/posts/2026-1122-the-boroughs.640w.webp 640w, /posts/2026-1122-the-boroughs.webp 960w",
     sizes:
-      "(min-width: 1024px) 656px, (min-width: 768px) 688px, calc(100vw - 72px)",
+      "(min-width: 1024px) 202px, (min-width: 768px) 688px, calc(100vw - 72px)",
+  },
+  "/posts/2026-1126-wo-long-fallen-dynasty.webp": {
+    w: 460,
+    h: 215,
+    srcset: "/posts/2026-1126-wo-long-fallen-dynasty.webp 460w",
+    sizes:
+      "(min-width: 1024px) 642px, (min-width: 768px) 688px, calc(100vw - 72px)",
   },
   "/posts/how-to-live-like-your-cat-thai-cover.webp": {
     w: 600,
